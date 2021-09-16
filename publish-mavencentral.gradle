@@ -51,8 +51,8 @@ publishing {
                 }
                 developers {
                     developer {
-                        id = 'holder_man'
-                        name = 'holder_man'
+                        id = 'holderman'
+                        name = 'holderman'
                         email = 'xnimbb@163.com'
                     }
                 }

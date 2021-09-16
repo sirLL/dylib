@@ -3,4 +3,4 @@ include ':lib_http'
 include ':lib_base'
 include ':dy_lib'
 include ':app'
-rootProject.name = "DY"
+rootProject.name = "dylib"
