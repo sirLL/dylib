@@ -1,0 +1,68 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.2.0'
+
+    implementation rootProject.ext.deps.material
+    implementation rootProject.ext.deps.appcompat
+    implementation rootProject.ext.deps.lifecycleCommon
+    implementation rootProject.ext.deps.constraintLayout
+
+    api project(':lib_http')
+
+    /*****************************************状态栏**************************************/
+    // 基础依赖包，必须要依赖
+    api rootProject.ext.deps.immersionbarBase
+    // fragment快速实现（可选）
+    api rootProject.ext.deps.immersionbarComponents
+    // kotlin扩展（可选）
+    api rootProject.ext.deps.immersionbarKTX
+    /***********************************************************************************/
+
+    /**********************************下拉刷新、上拉加载更多******************************/
+    api rootProject.ext.deps.refreshLayoutBase
+    api rootProject.ext.deps.refreshLayoutHeader
+    api rootProject.ext.deps.refreshLayoutFooter
+    /***********************************************************************************/
+
+    //Toast
+    api 'com.github.getActivity:ToastUtils:9.5'
+    //Kotlin图片加载
+    api 'io.coil-kt:coil:1.3.0'
+    //MMKV
+    api 'com.tencent:mmkv-static:1.2.10'
+}

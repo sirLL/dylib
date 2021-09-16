@@ -1,0 +1,142 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+}
+//apply plugin: ""
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode 100001
+        versionName "1.0.1"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+//        manifestPlaceholders = [
+//                JPUSH_PKGNAME : applicationId,
+//                JPUSH_APPKEY  : "6c7a4e7fc5f1c43d33947cbb",//值来自开发者平台取得的AppKey
+//                JPUSH_CHANNEL : "default_developer",
+//
+//                //xiaomi_config_start
+//                XIAOMI_APPID  : "2882303761520040574",
+//                XIAOMI_APPKEY : "5112004073574",
+//                //xiaomi_config_end
+//                //oppo_config_start
+//                OPPO_APPKEY   : "1557e4f63a5b48a4bd582b006adc7cde",
+//                OPPO_APPID    : "30628575",
+//                OPPO_APPSECRET: "08c1b41655404f4da3a80c1644b4549b",
+//                //oppo_config_end
+//                //vivo_config_start
+//                VIVO_APPKEY   : "53e025a85044db424e2a8b1fa2b5063a",
+//                VIVO_APPID    : "105509443",
+//                //vivo_config_end
+//
+////                //jshare_config_start
+////                JSHARE_PKGNAME: applicationId,
+////                TENCENT_APPID : "腾讯的appid",//腾讯开放平台注册应用得到的appId
+////                FACEBOOK_APPID: "facebook的appid",//facebook注册应用得到的appId
+////                //jshare_config_end
+//
+//        ]
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+//    repositories {
+//        flatDir {
+//            dirs 'libs'
+//        }
+//    }
+
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.8'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation rootProject.ext.deps.material
+    implementation rootProject.ext.deps.appcompat
+    implementation rootProject.ext.deps.constraintLayout
+    implementation rootProject.ext.deps.eventBus
+
+    implementation project(':lib_base')
+//    implementation project(':qiyu')
+    implementation project(':FlycoTabLayout_Lib')
+
+    // 引入极光 SDK
+//    implementation project(':jiguang')
+
+    //滚动公告
+    implementation 'com.sunfusheng:MarqueeView:1.4.1'
+    //二维码
+    implementation 'com.github.bingoogolapple.BGAQRCode-Android:zxing:1.3.8'
+
+    //选择器
+    implementation 'com.github.gzu-liyujiang.AndroidPicker:AddressPicker:3.1.0'
+    implementation 'com.github.gzu-liyujiang.AndroidPicker:CalendarPicker:3.1.0'
+
+    //动态权限
+    implementation 'com.github.tbruyelle:rxpermissions:0.11'
+
+    implementation 'io.github.lucksiege:pictureselector:v2.7.3-rc06'
+
+    //banner
+    implementation 'io.github.youth5201314:banner:2.2.2'
+
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+}
+
+//buildscript {
+//    repositories {
+//        mavenCentral()
+//    }
+//    dependencies {
+//        classpath 'com.vanniktech:gradle-maven-publish-plugin:0.17.0'
+//    }
+//}
+//
+//allprojects {
+//    plugins.withId("com.vanniktech.maven.publish") {
+//        mavenPublish {
+//            sonatypeHost = "S01"
+//        }
+//    }
+//}
+//
+//apply plugin: "com.vanniktech.maven.publish"
+ext {
+    PUBLISH_GROUP_ID = "io.github.sirll"        //项目包名
+    PUBLISH_ARTIFACT_ID = 'dy_lib'            //项目名
+    PUBLISH_VERSION = "1.0.1"                   //版本号
+}
+apply from: "${rootProject.projectDir}/publish-mavencentral.gradle"

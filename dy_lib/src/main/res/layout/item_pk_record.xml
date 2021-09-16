@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="12dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/shape_ffffff_radius_6">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="18dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="--"
+        android:textColor="@color/color_333333"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/tv_status"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/divider1"
+        tools:text="PK结束" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="1dp"
+        android:layout_height="14dp"
+        android:layout_marginEnd="6dp"
+        android:background="@color/color_666666"
+        app:layout_constraintBottom_toBottomOf="@id/tv_status"
+        app:layout_constraintEnd_toStartOf="@id/tv_result"
+        app:layout_constraintStart_toEndOf="@id/tv_status"
+        app:layout_constraintTop_toTopOf="@id/tv_status" />
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="6dp"
+        android:textColor="@color/color_666666"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_title"
+        app:layout_constraintEnd_toStartOf="@id/divider1"
+        app:layout_constraintStart_toEndOf="@id/tv_title"
+        app:layout_goneMarginEnd="12dp"
+        tools:text="PK结束" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="我的战队"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@id/textView2"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="@id/tv_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="12dp"
+        android:text="对方战队"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/textView1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/textView1" />
+
+    <TextView
+        android:id="@+id/tv_my_team"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/color_333333"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/textView1"
+        app:layout_constraintStart_toStartOf="@id/textView1"
+        app:layout_constraintTop_toBottomOf="@id/textView1"
+        tools:text="天霸动霸战队" />
+
+    <TextView
+        android:id="@+id/tv_other_team"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_333333"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_my_team"
+        app:layout_constraintEnd_toEndOf="@id/textView2"
+        app:layout_constraintStart_toStartOf="@id/textView2"
+        tools:text="天霸动霸战队" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:text="PK奖励金额:"
+        android:textColor="@color/color_999999"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/tv_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_my_team" />
+
+    <TextView
+        android:id="@+id/tv_amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:singleLine="true"
+        android:textColor="@color/color_e2b16d"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/textView3"
+        app:layout_constraintEnd_toEndOf="@id/textView2"
+        app:layout_constraintStart_toEndOf="@id/textView3"
+        tools:text="¥599.00" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/color_divider"
+        app:layout_constraintEnd_toEndOf="@id/textView2"
+        app:layout_constraintStart_toStartOf="@id/textView1"
+        app:layout_constraintTop_toBottomOf="@id/textView3" />
+
+    <TextView
+        android:id="@+id/tv_cycle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:singleLine="true"
+        android:text="PK周期"
+        android:textColor="@color/color_999999"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_time"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="@id/textView1"
+        app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:gravity="end"
+        android:singleLine="true"
+        android:text="PK时间"
+        android:textColor="@color/color_999999"
+        android:textSize="10sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_cycle"
+        app:layout_constraintEnd_toEndOf="@id/textView2"
+        app:layout_constraintHorizontal_weight="1.5"
+        app:layout_constraintStart_toEndOf="@id/tv_cycle" />
+</androidx.constraintlayout.widget.ConstraintLayout>

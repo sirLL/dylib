@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.dianyinhuoban.hm">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-feature android:name="android.hardware.Camera" />
+
+    <application
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config">
+
+        <activity android:name=".mvp.order.OrderListActivity" />
+        <activity android:name=".mvp.auth.view.AuthInfoActivity" />
+        <activity android:name=".mvp.auth.view.AuthResultActivity" />
+        <activity android:name=".mvp.auth.view.FaceDetectionActivity" />
+        <activity android:name=".mvp.auth.view.RealnameAuthActivity" />
+        <activity android:name=".mvp.setting.view.MessageActivity" />
+        <activity android:name=".mvp.pk.view.WaitConfirmPkActivity" />
+        <activity android:name=".mvp.pk.view.PkSettingActivity" />
+        <activity android:name=".mvp.machine.view.BatchTransferActivity" />
+        <activity android:name=".mvp.machine.view.MachineTransferDetailActivity" />
+        <activity android:name=".mvp.machine.view.MachineTransferActivity" />
+        <activity android:name=".mvp.order.OrderResultActivity" />
+        <activity android:name=".mvp.order.SubmitOrderActivity" />
+        <activity android:name=".mvp.setting.view.AuthActivity" />
+        <activity android:name=".mvp.setting.view.JiangWuTangActivity" />
+        <activity android:name=".mvp.order.OrderDetailActivity" />
+        <activity android:name=".mvp.pk.view.PkResultActivity" />
+        <activity android:name=".mvp.pk.view.PkActivity" />
+        <activity android:name=".mvp.pk.view.PkListActivity" />
+        <activity
+            android:name=".mvp.pk.view.PkSearchListActivity"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity android:name=".mvp.setting.view.ChangePasswordActivity" />
+        <activity
+            android:name=".mvp.setting.view.EditInfoActivity"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity android:name=".mvp.setting.view.UserProfileActivity" />
+        <activity android:name=".mvp.setting.view.SettingActivity" />
+        <activity android:name=".mvp.income.view.WithdrawActivity" />
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait" /><!-- 注册 -->
+        <activity
+            android:name=".mvp.login.view.RegisterActivity"
+            android:screenOrientation="portrait" /> <!-- 登录 -->
+        <activity
+            android:name=".mvp.login.view.LoginActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" /> <!-- 重置密码 -->
+        <activity
+            android:name=".mvp.login.view.ResetPasswordActivity"
+            android:screenOrientation="portrait" /> <!-- 首页 -->
+        <activity
+            android:name=".mvp.home.view.HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.setting.view.BankManageActivity"
+            android:screenOrientation="portrait" /> <!-- 分享二维码 -->
+        <activity
+            android:name=".mvp.home.view.ShareQRActivity"
+            android:screenOrientation="portrait" /> <!-- 机具激活交易明细 -->
+        <activity
+            android:name=".mvp.machine.view.TradeRecordActivity"
+            android:screenOrientation="portrait" /> <!-- 收益 -->
+        <activity
+            android:name=".mvp.income.view.IncomeActivity"
+            android:screenOrientation="portrait" /> <!-- 提现 -->
+        <activity
+            android:name=".mvp.me.view.BindBankCardActivity"
+            android:screenOrientation="portrait" /> <!-- 提现成功 -->
+        <activity
+            android:name=".mvp.income.view.WithdrawSuccessActivity"
+            android:screenOrientation="portrait" /> <!-- 个人收益明细 -->
+        <activity
+            android:name=".mvp.income.view.IncomePersonalDetailActivity"
+            android:screenOrientation="portrait" /> <!-- 团队收益明细 -->
+        <activity
+            android:name=".mvp.income.view.IncomeTeamDetailActivity"
+            android:screenOrientation="portrait" /> <!-- 提现明细 -->
+        <activity
+            android:name=".mvp.income.view.WithdrawRecordActivity"
+            android:screenOrientation="portrait" /> <!-- 激活返现明细 -->
+        <activity
+            android:name=".mvp.income.view.IncomeActivationDetailActivity"
+            android:screenOrientation="portrait" /> <!-- 采购奖励明细 -->
+        <activity
+            android:name=".mvp.income.view.IncomePurchaseDetailActivity"
+            android:screenOrientation="portrait" /> <!-- 我的客户 -->
+        <activity
+            android:name=".mvp.me.view.MyClientActivity"
+            android:screenOrientation="portrait" /> <!-- 我的成员 -->
+        <activity
+            android:name=".mvp.me.view.MemberActivity"
+            android:screenOrientation="portrait" /> <!-- 搜索成员 -->
+        <activity
+            android:name=".mvp.me.view.MemberSearchActivity"
+            android:screenOrientation="portrait" /> <!-- 成员详情 -->
+        <activity
+            android:name=".mvp.me.view.MemberInfoActivity"
+            android:screenOrientation="portrait" /> <!-- 机具划拨 -->
+        <activity
+            android:name=".mvp.machine.view.TransferActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" /> <!-- 成员选择 -->
+        <activity
+            android:name=".mvp.machine.view.MemberPickerActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" /> <!-- 机具选择 -->
+        <activity
+            android:name=".mvp.machine.view.MachinePickerActivity"
+            android:screenOrientation="portrait" /> <!-- 批量划分 -->
+        <activity
+            android:name=".mvp.machine.view.TransferMultiActivity"
+            android:screenOrientation="portrait" /> <!-- 划拨成功 -->
+        <activity
+            android:name=".mvp.machine.view.TransferSuccessActivity"
+            android:screenOrientation="portrait" /> <!-- 扫一扫 -->
+        <activity
+            android:name=".mvp.ScanActivity"
+            android:screenOrientation="portrait" /> <!-- 确认订单 -->
+        <activity
+            android:name=".mvp.order.ConfirmOrderActivity"
+            android:screenOrientation="portrait" /> <!-- 添加收货地址 -->
+        <activity
+            android:name=".mvp.setting.view.AddShipAddressActivity"
+            android:screenOrientation="portrait" /> <!-- 机具扫码结果列表 -->
+        <activity
+            android:name=".mvp.machine.view.MachineScanResultActivity"
+            android:screenOrientation="portrait" /> <!-- 划拨记录 -->
+        <activity
+            android:name=".mvp.machine.view.TransferRecordActivity"
+            android:screenOrientation="portrait" /> <!-- 划拨记录详情 -->
+        <activity
+            android:name=".mvp.machine.view.TransferRecordDetailActivity"
+            android:screenOrientation="portrait" /> <!-- 地址列表 -->
+        <activity
+            android:name=".mvp.order.view.AddressManagerActivity"
+            android:screenOrientation="portrait" /> <!-- WebView -->
+        <activity
+            android:name=".mvp.WebHtmlActivity"
+            android:screenOrientation="portrait" /> <!-- WebView -->
+        <activity
+            android:name=".mvp.WebActivity"
+            android:screenOrientation="portrait" /> <!-- PK记录 -->
+        <activity
+            android:name=".mvp.pk.view.PKRecordActivity"
+            android:screenOrientation="portrait" /> <!-- 编辑海报 -->
+        <activity
+            android:name=".mvp.poster.view.PosterEditActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustUnspecified" /> <!-- 素材库 -->
+        <activity
+            android:name=".mvp.poster.view.PosterActivity"
+            android:screenOrientation="portrait" /> <!-- 修改登录密码 -->
+        <activity
+            android:name=".mvp.setting.view.ChangePayPwdActivity"
+            android:screenOrientation="portrait" /> <!-- 忘记支付密码 -->
+        <activity
+            android:name=".mvp.setting.view.ResetPayPasswordActivity"
+            android:screenOrientation="portrait" />
+        <!--成员收益排行榜-->
+        <activity
+            android:name=".mvp.income.view.IncomeTeamRankActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.order.view.ProductDetailActivity"
+            android:screenOrientation="portrait" /> <!-- 商品列表 -->
+        <activity
+            android:name=".mvp.order.view.ProductListActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

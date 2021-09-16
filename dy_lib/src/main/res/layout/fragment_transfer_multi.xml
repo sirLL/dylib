@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="0.5dp"
+        android:layout_weight="1">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/shape_14f60e36_radius_2"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="12dp"
+                    android:paddingBottom="10dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:src="@drawable/ic_tips" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        android:text="根据列表选择中您输入开始机器编号到结束机器编号这之间的机器，若划分返还机请单个进行操作。"
+                        android:textColor="@color/color_f60e36"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/shape_ffffff_radius_6">
+
+                    <TextView
+                        android:id="@+id/tv_machine"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shape_fff2da_radius_6"
+                        android:drawableEnd="@drawable/ic_arrow_right_cccccc"
+                        android:hint="请选择机具样式"
+                        android:maxLines="1"
+                        android:paddingStart="12dp"
+                        android:paddingTop="22dp"
+                        android:paddingEnd="12dp"
+                        android:paddingBottom="22dp"
+                        android:textColor="@color/color_333333"
+                        android:textColorHint="@color/color_d8d8d8"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_start_container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/shape_fbfafb_radius_4"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/iv_oval_start"
+                        app:layout_constraintTop_toBottomOf="@id/tv_machine">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="16dp"
+                            android:text="从"
+                            android:textColor="@color/color_333333"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/ed_start_no"
+                            android:layout_width="0dp"
+                            android:layout_height="46dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:hint="请输入开始机器编号"
+                            android:maxLines="1"
+                            android:textColor="@color/color_333333"
+                            android:textColorHint="@color/color_d8d8d8"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_start_scan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="12dp"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_scan_tranfer" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_end_container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/shape_fbfafb_radius_4"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/iv_oval_end"
+                        app:layout_constraintTop_toBottomOf="@id/ll_start_container">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="16dp"
+                            android:text="到"
+                            android:textColor="@color/color_333333"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/ed_end_no"
+                            android:layout_width="0dp"
+                            android:layout_height="46dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:hint="请输入结束机器编号"
+                            android:maxLines="1"
+                            android:textColor="@color/color_333333"
+                            android:textColorHint="@color/color_d8d8d8"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_end_scan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="12dp"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_scan_tranfer" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/iv_oval_start"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:src="@drawable/ic_oval_start_end"
+                        app:layout_constraintBottom_toBottomOf="@id/ll_start_container"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/ll_start_container" />
+
+                    <ImageView
+                        android:id="@+id/iv_oval_end"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:src="@drawable/ic_oval_start_end"
+                        app:layout_constraintBottom_toBottomOf="@id/ll_end_container"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/ll_end_container" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:background="@drawable/shape_dotted_line_e7e7e7"
+                        android:layerType="software"
+                        app:layout_constraintBottom_toTopOf="@id/iv_oval_end"
+                        app:layout_constraintEnd_toEndOf="@id/iv_oval_start"
+                        app:layout_constraintStart_toStartOf="@id/iv_oval_start"
+                        app:layout_constraintTop_toBottomOf="@id/iv_oval_start" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/shape_ffffff_radius_6">
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:drawableStart="@drawable/ic_line_left_blue"
+                        android:drawablePadding="9dp"
+                        android:maxLines="1"
+                        android:text="已选中机具"
+                        android:textColor="@color/color_333333"
+                        android:textColorHint="@color/color_d8d8d8"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:text="(0台)"
+                        android:textColor="@color/color_666666"
+                        android:textSize="14sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/textView1"
+                        app:layout_constraintStart_toEndOf="@id/textView1" />
+
+                    <View
+                        android:id="@+id/divider1"
+                        android:layout_width="0dp"
+                        android:layout_height="0.5dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@color/color_divider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView1" />
+
+                    <com.wareroom.lib_base.widget.LoadingLayout
+                        android:id="@+id/load_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/divider1">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:overScrollMode="never"
+                            android:scrollbars="none" />
+                    </com.wareroom.lib_base.widget.LoadingLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_white">
+
+        <Button
+            android:id="@+id/btn_submit"
+            style="@style/SubmitButton"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="14dp"
+            android:enabled="false"
+            android:text="提交" />
+    </FrameLayout>
+</LinearLayout>
