@@ -139,4 +139,4 @@ ext {
     PUBLISH_ARTIFACT_ID = 'dy_lib'            //项目名
     PUBLISH_VERSION = "1.0.1"                   //版本号
 }
-apply from: "${rootProject.projectDir}/publish-mavencentral.gradle"
+apply from: '../publish-mavencentral.gradle'
