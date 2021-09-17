@@ -11,8 +11,8 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
-        versionCode 100002
-        versionName "1.0.2"
+        versionCode 100003
+        versionName "1.0.3"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -119,7 +119,7 @@ dependencies {
 //    implementation project(':lib_base')
 //    implementation project(':qiyu')
 //    implementation project(':lib_http')
-    implementation project(':FlycoTabLayout_Lib')
+//    implementation project(':FlycoTabLayout_Lib')
 
     // 引入极光 SDK
 //    implementation project(':jiguang')
@@ -170,6 +170,6 @@ dependencies {
 ext {
     PUBLISH_GROUP_ID = "io.github.sirll"        //项目包名
     PUBLISH_ARTIFACT_ID = 'dy_lib'            //项目名
-    PUBLISH_VERSION = "1.0.2"                   //版本号
+    PUBLISH_VERSION = "1.0.3"                   //版本号
 }
 apply from: '../publish-mavencentral.gradle'
