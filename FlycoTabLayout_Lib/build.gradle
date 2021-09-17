@@ -25,4 +25,10 @@ dependencies {
     implementation rootProject.ext.deps.appcompat
 }
 
+ext {
+    PUBLISH_GROUP_ID = "io.github.sirll"        //项目包名
+    PUBLISH_ARTIFACT_ID = 'lib_tablayout'            //项目名
+    PUBLISH_VERSION = "1.0.1"                   //版本号
+}
+
 

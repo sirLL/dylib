@@ -11,7 +11,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 30
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -66,3 +66,11 @@ dependencies {
     //MMKV
     api 'com.tencent:mmkv-static:1.2.10'
 }
+
+ext {
+    PUBLISH_GROUP_ID = "io.github.sirll"        //项目包名
+    PUBLISH_ARTIFACT_ID = 'lib_base'            //项目名
+    PUBLISH_VERSION = "1.0.1"                   //版本号
+}
+
+apply from: '../publish-mavencentral.gradle'
