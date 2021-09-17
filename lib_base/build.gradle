@@ -42,8 +42,8 @@ dependencies {
     implementation rootProject.ext.deps.lifecycleCommon
     implementation rootProject.ext.deps.constraintLayout
 
-    implementation project(':lib_http')
-//    implementation 'io.github.sirll:lib_http:1.0.1'
+//    implementation project(':lib_http')
+    implementation 'io.github.sirll:lib_http:1.0.2'
 
     /*****************************************状态栏**************************************/
     // 基础依赖包，必须要依赖
