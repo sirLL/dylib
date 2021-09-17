@@ -116,15 +116,16 @@ dependencies {
     implementation rootProject.ext.deps.adapterRxJava
     implementation rootProject.ext.deps.okhttp3Logging
 
-//    implementation project(':lib_base')
+    implementation project(':lib_base')
 //    implementation project(':qiyu')
-//    implementation project(':FlycoTabLayout_Lib')
+    implementation project(':lib_http')
+    implementation project(':FlycoTabLayout_Lib')
 
     // 引入极光 SDK
 //    implementation project(':jiguang')
-    implementation 'io.github.sirll:lib_base:1.0.1'
-    implementation 'io.github.sirll:lib_http:1.0.1'
-    implementation 'io.github.sirll:lib_tablayout:2.1.2'
+//    implementation 'io.github.sirll:lib_base:1.0.1'
+//    implementation 'io.github.sirll:lib_http:1.0.1'
+//    implementation 'io.github.sirll:lib_tablayout:2.1.2'
 
     //滚动公告
     implementation 'com.sunfusheng:MarqueeView:1.4.1'
