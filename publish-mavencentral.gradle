@@ -84,7 +84,7 @@ publishing {
 //                        dependencyNode.appendNode('version', it.version)
 //                    }
 
-                    f (it.name != 'unspecified') {
+                    if (it.name != 'unspecified') {
                         def dependencyNode = dependenciesNode.appendNode('dependency')
                         dependencyNode.appendNode('groupId', it.group)
                         dependencyNode.appendNode('artifactId', it.name)
