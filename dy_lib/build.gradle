@@ -116,16 +116,16 @@ dependencies {
     implementation rootProject.ext.deps.adapterRxJava
     implementation rootProject.ext.deps.okhttp3Logging
 
-    implementation project(':lib_base')
+//    implementation project(':lib_base')
 //    implementation project(':qiyu')
-    implementation project(':lib_http')
+//    implementation project(':lib_http')
     implementation project(':FlycoTabLayout_Lib')
 
     // 引入极光 SDK
 //    implementation project(':jiguang')
-//    implementation 'io.github.sirll:lib_base:1.0.1'
-//    implementation 'io.github.sirll:lib_http:1.0.1'
-//    implementation 'io.github.sirll:lib_tablayout:2.1.2'
+    implementation 'io.github.sirll:lib_base:1.0.2'
+    implementation 'io.github.sirll:lib_http:1.0.4'
+    implementation 'io.github.sirll:lib_tablayout:2.1.2'
 
     //滚动公告
     implementation 'com.sunfusheng:MarqueeView:1.4.1'
@@ -170,6 +170,6 @@ dependencies {
 ext {
     PUBLISH_GROUP_ID = "io.github.sirll"        //项目包名
     PUBLISH_ARTIFACT_ID = 'dy_lib'            //项目名
-    PUBLISH_VERSION = "1.0.1"                   //版本号
+    PUBLISH_VERSION = "1.0.2"                   //版本号
 }
 apply from: '../publish-mavencentral.gradle'
