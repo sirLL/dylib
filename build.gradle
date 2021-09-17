@@ -4,9 +4,11 @@ buildscript {
     ext.kotlin_version = "1.4.32"
     ext.dokka_version = '1.4.10.2'
     repositories {
-        google()
+//        google()
         mavenCentral()
         jcenter()
+        maven{url "https://maven.aliyun.com/repository/google"}
+        maven { url 'https://jitpack.io' }
 //        mavenCentral()
     }
     dependencies {
@@ -20,12 +22,13 @@ buildscript {
 
 allprojects {
     repositories {
-        maven { url 'https://jitpack.io' }
-        google()
+
+//        google()
         mavenCentral()
         jcenter()
 
         maven{url "https://maven.aliyun.com/repository/google"}
+        maven { url 'https://jitpack.io' }
 //        maven {
 //            url "http://maven.aliyun.com/nexus/content/groups/public"
 //        }
