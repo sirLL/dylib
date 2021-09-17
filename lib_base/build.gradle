@@ -42,29 +42,37 @@ dependencies {
     implementation rootProject.ext.deps.lifecycleCommon
     implementation rootProject.ext.deps.constraintLayout
 
-    api project(':lib_http')
+//    implementation project(':lib_http')
+    implementation 'io.github.sirll:lib_http:1.0.1'
 
     /*****************************************状态栏**************************************/
     // 基础依赖包，必须要依赖
-    api rootProject.ext.deps.immersionbarBase
+    implementation rootProject.ext.deps.immersionbarBase
     // fragment快速实现（可选）
-    api rootProject.ext.deps.immersionbarComponents
+    implementation rootProject.ext.deps.immersionbarComponents
     // kotlin扩展（可选）
-    api rootProject.ext.deps.immersionbarKTX
+    implementation rootProject.ext.deps.immersionbarKTX
     /***********************************************************************************/
 
     /**********************************下拉刷新、上拉加载更多******************************/
-    api rootProject.ext.deps.refreshLayoutBase
-    api rootProject.ext.deps.refreshLayoutHeader
-    api rootProject.ext.deps.refreshLayoutFooter
+    implementation rootProject.ext.deps.refreshLayoutBase
+    implementation rootProject.ext.deps.refreshLayoutHeader
+    implementation rootProject.ext.deps.refreshLayoutFooter
     /***********************************************************************************/
 
     //Toast
-    api 'com.github.getActivity:ToastUtils:9.5'
+    implementation 'com.github.getActivity:ToastUtils:9.5'
     //Kotlin图片加载
-    api 'io.coil-kt:coil:1.3.0'
+    implementation 'io.coil-kt:coil:1.3.0'
     //MMKV
-    api 'com.tencent:mmkv-static:1.2.10'
+    implementation 'com.tencent:mmkv-static:1.2.10'
+
+    implementation rootProject.ext.deps.rxAndroid
+    implementation rootProject.ext.deps.rxJava
+    implementation rootProject.ext.deps.retrofit
+    implementation rootProject.ext.deps.converterGson
+    implementation rootProject.ext.deps.adapterRxJava
+    implementation rootProject.ext.deps.okhttp3Logging
 }
 
 ext {

@@ -36,12 +36,12 @@ dependencies {
     implementation rootProject.ext.deps.appcompat
     implementation rootProject.ext.deps.constraintLayout
     //-----------------三方库---------------//
-    api rootProject.ext.deps.rxAndroid
-    api rootProject.ext.deps.rxJava
-    api rootProject.ext.deps.retrofit
-    api rootProject.ext.deps.converterGson
-    api rootProject.ext.deps.adapterRxJava
-    api rootProject.ext.deps.okhttp3Logging
+    implementation rootProject.ext.deps.rxAndroid
+    implementation rootProject.ext.deps.rxJava
+    implementation rootProject.ext.deps.retrofit
+    implementation rootProject.ext.deps.converterGson
+    implementation rootProject.ext.deps.adapterRxJava
+    implementation rootProject.ext.deps.okhttp3Logging
 }
 ext {
     PUBLISH_GROUP_ID = "io.github.sirll"        //项目包名

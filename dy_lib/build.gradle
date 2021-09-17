@@ -87,13 +87,44 @@ dependencies {
     implementation rootProject.ext.deps.constraintLayout
     implementation rootProject.ext.deps.eventBus
 
+    /*****************************************状态栏**************************************/
+    // 基础依赖包，必须要依赖
+    implementation rootProject.ext.deps.immersionbarBase
+    // fragment快速实现（可选）
+    implementation rootProject.ext.deps.immersionbarComponents
+    // kotlin扩展（可选）
+    implementation rootProject.ext.deps.immersionbarKTX
+    /***********************************************************************************/
+
+    /**********************************下拉刷新、上拉加载更多******************************/
+    implementation rootProject.ext.deps.refreshLayoutBase
+    implementation rootProject.ext.deps.refreshLayoutHeader
+    implementation rootProject.ext.deps.refreshLayoutFooter
+    /***********************************************************************************/
+
+    //Toast
+    implementation 'com.github.getActivity:ToastUtils:9.5'
+    //Kotlin图片加载
+    implementation 'io.coil-kt:coil:1.3.0'
+    //MMKV
+    implementation 'com.tencent:mmkv-static:1.2.10'
+
+    implementation rootProject.ext.deps.rxAndroid
+    implementation rootProject.ext.deps.rxJava
+    implementation rootProject.ext.deps.retrofit
+    implementation rootProject.ext.deps.converterGson
+    implementation rootProject.ext.deps.adapterRxJava
+    implementation rootProject.ext.deps.okhttp3Logging
+
 //    implementation project(':lib_base')
 //    implementation project(':qiyu')
-    implementation project(':FlycoTabLayout_Lib')
+//    implementation project(':FlycoTabLayout_Lib')
 
     // 引入极光 SDK
 //    implementation project(':jiguang')
     implementation 'io.github.sirll:lib_base:1.0.1'
+    implementation 'io.github.sirll:lib_http:1.0.1'
+    implementation 'io.github.sirll:lib_tablayout:2.1.2'
 
     //滚动公告
     implementation 'com.sunfusheng:MarqueeView:1.4.1'
