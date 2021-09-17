@@ -5,8 +5,9 @@ buildscript {
     ext.dokka_version = '1.4.10.2'
     repositories {
         google()
-        jcenter()
         mavenCentral()
+        jcenter()
+//        mavenCentral()
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.1.3"
@@ -21,8 +22,10 @@ allprojects {
     repositories {
         maven { url 'https://jitpack.io' }
         google()
-        jcenter()
         mavenCentral()
+        jcenter()
+
+        maven{url "https://maven.aliyun.com/repository/google"}
 //        maven {
 //            url "http://maven.aliyun.com/nexus/content/groups/public"
 //        }

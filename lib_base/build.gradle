@@ -11,7 +11,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 30
         versionCode 1
-        versionName "1.0.1"
+        versionName "1.0.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -42,8 +42,8 @@ dependencies {
     implementation rootProject.ext.deps.lifecycleCommon
     implementation rootProject.ext.deps.constraintLayout
 
-    implementation project(':lib_http')
-//    implementation 'io.github.sirll:lib_http:1.0.2'
+//    implementation project(':lib_http')
+    implementation 'io.github.sirll:lib_http:1.0.4'
 
     /*****************************************状态栏**************************************/
     // 基础依赖包，必须要依赖
@@ -78,7 +78,7 @@ dependencies {
 ext {
     PUBLISH_GROUP_ID = "io.github.sirll"        //项目包名
     PUBLISH_ARTIFACT_ID = 'lib_base'            //项目名
-    PUBLISH_VERSION = "1.0.1"                   //版本号
+    PUBLISH_VERSION = "1.0.2"                   //版本号
 }
 
 apply from: '../publish-mavencentral.gradle'
