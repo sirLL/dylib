@@ -10,7 +10,7 @@ import cn.dianyinhuoban.hm.mvp.machine.contract.MachineTypeContract
 import cn.dianyinhuoban.hm.mvp.machine.presenter.MachineTypePresenter
 import cn.dianyinhuoban.hm.mvp.order.OrderListActivity
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_product_list.*
+import kotlinx.android.synthetic.main.dy_activity_product_list.*
 
 class ProductListActivity : BaseActivity<MachineTypePresenter?>(), MachineTypeContract.View {
     override fun getPresenter(): MachineTypePresenter? {
@@ -23,7 +23,7 @@ class ProductListActivity : BaseActivity<MachineTypePresenter?>(), MachineTypeCo
         setRightButtonText("采购订单") {
             startActivity(Intent(ProductListActivity@ this, OrderListActivity::class.java))
         }
-        setContentView(R.layout.activity_product_list)
+        setContentView(R.layout.dy_activity_product_list)
         mPresenter?.fetchMachineType()
     }
 

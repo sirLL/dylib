@@ -20,7 +20,7 @@ import cn.dianyinhuoban.hm.widget.dialog.PayPwdDialog
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.NumberUtils
 import com.wareroom.lib_base.utils.filter.NumberFilter
-import kotlinx.android.synthetic.main.activity_withdraw.*
+import kotlinx.android.synthetic.main.dy_activity_withdraw.*
 
 class WithdrawActivity : BaseActivity<WithdrawPresenter?>(), WithdrawContract.View {
     private var mCheckedBankCard: BankBean? = null
@@ -28,11 +28,11 @@ class WithdrawActivity : BaseActivity<WithdrawPresenter?>(), WithdrawContract.Vi
     private var mWithdrawTypePicker: WithdrawTypePicker? = null
 
     override fun getToolbarColor(): Int {
-        return ContextCompat.getColor(WithdrawActivity@ this, R.color.base_color_page_bg)
+        return ContextCompat.getColor(WithdrawActivity@ this, R.color.dy_base_color_page_bg)
     }
 
     override fun getStatusBarColor(): Int {
-        return R.color.base_color_page_bg
+        return R.color.dy_base_color_page_bg
     }
 
     override fun getPresenter(): WithdrawPresenter? {
@@ -41,7 +41,7 @@ class WithdrawActivity : BaseActivity<WithdrawPresenter?>(), WithdrawContract.Vi
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_withdraw)
+        setContentView(R.layout.dy_activity_withdraw)
         setTitle("提现")
         ed_amount.filters = arrayOf<InputFilter>(NumberFilter())
         setRightButtonText("提现明细") {

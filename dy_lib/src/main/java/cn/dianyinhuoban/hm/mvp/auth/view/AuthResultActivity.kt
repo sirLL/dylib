@@ -8,7 +8,7 @@ import cn.dianyinhuoban.hm.mvp.auth.contract.AuthStatusContract
 import cn.dianyinhuoban.hm.mvp.auth.presenter.AuthStatusPresenter
 import cn.dianyinhuoban.hm.mvp.bean.AuthResult
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_auth_result.*
+import kotlinx.android.synthetic.main.dy_activity_auth_result.*
 
 class AuthResultActivity : BaseActivity<AuthStatusPresenter?>(), AuthStatusContract.View {
 
@@ -22,7 +22,7 @@ class AuthResultActivity : BaseActivity<AuthStatusPresenter?>(), AuthStatusContr
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_auth_result)
+        setContentView(R.layout.dy_activity_auth_result)
     }
 
     override fun onStart() {
@@ -36,7 +36,7 @@ class AuthResultActivity : BaseActivity<AuthStatusPresenter?>(), AuthStatusContr
 
     override fun bindAuthResult(authResult: AuthResult?) {
         tv_status.text = if (authResult == null) {
-            iv_status.setImageResource(R.drawable.ic_order_result_wait)
+            iv_status.setImageResource(R.drawable.dy_ic_order_result_wait)
             tv_status_des.text = "您尚未提交认证"
             tv_return_home.text = "去认证"
             tv_return_home.setOnClickListener {
@@ -47,7 +47,7 @@ class AuthResultActivity : BaseActivity<AuthStatusPresenter?>(), AuthStatusContr
         } else {
             when (authResult.status) {
                 "0" -> {
-                    iv_status.setImageResource(R.drawable.ic_order_result_wait)
+                    iv_status.setImageResource(R.drawable.dy_ic_order_result_wait)
                     tv_status_des.text = "正在审核中，请耐心等待"
                     tv_return_home.text = "返回首页"
                     tv_return_home.setOnClickListener {
@@ -56,7 +56,7 @@ class AuthResultActivity : BaseActivity<AuthStatusPresenter?>(), AuthStatusContr
                     "审核中"
                 }
                 "1" -> {
-                    iv_status.setImageResource(R.drawable.ic_order_result_fail)
+                    iv_status.setImageResource(R.drawable.dy_ic_order_result_fail)
                     tv_status_des.text = "抱歉，认证失败"
                     tv_return_home.text = "重新认证"
                     tv_return_home.setOnClickListener {
@@ -66,7 +66,7 @@ class AuthResultActivity : BaseActivity<AuthStatusPresenter?>(), AuthStatusContr
                     "不通过"
                 }
                 else -> {
-                    iv_status.setImageResource(R.drawable.ic_order_result_success)
+                    iv_status.setImageResource(R.drawable.dy_ic_order_result_success)
                     tv_status_des.text = "恭喜您，认证成功"
                     tv_return_home.text = "返回首页"
                     tv_return_home.setOnClickListener {

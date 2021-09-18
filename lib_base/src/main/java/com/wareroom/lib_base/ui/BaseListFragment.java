@@ -71,7 +71,7 @@ public abstract class BaseListFragment<T, P extends IPresenter> extends BaseFrag
 
     @Override
     protected int getContentView() {
-        return R.layout.base_fragment_list;
+        return R.layout.dy_base_fragment_list;
     }
 
     protected boolean isSupportRefresh() {
@@ -91,7 +91,7 @@ public abstract class BaseListFragment<T, P extends IPresenter> extends BaseFrag
     }
 
     protected RecyclerView.ItemDecoration getItemDecoration() {
-        return new DividerDecoration(ContextCompat.getColor(getContext(), R.color.color_divider),
+        return new DividerDecoration(ContextCompat.getColor(getContext(), R.color.dy_color_divider),
                 DimensionUtils.dp2px(getContext(), 1));
     }
 

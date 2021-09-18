@@ -11,11 +11,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/FlycoTabLayout_Lib" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/dy_lib" />
             <option value="$PROJECT_DIR$/lib_base" />
             <option value="$PROJECT_DIR$/lib_http" />
+            <option value="$PROJECT_DIR$/lib_tablayout" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -12,7 +12,7 @@ class MyClientActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_my_client)
+        setContentView(R.layout.dy_activity_my_client)
         setTitle("我的客户")
         supportFragmentManager.beginTransaction()
             .add(R.id.fl_container, MyClientFragment.newInstance(), "MyClientActivity").commit()

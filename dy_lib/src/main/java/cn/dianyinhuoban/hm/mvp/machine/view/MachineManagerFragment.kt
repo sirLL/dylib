@@ -15,7 +15,6 @@ import cn.dianyinhuoban.hm.mvp.bean.MachineTypeBean
 import cn.dianyinhuoban.hm.mvp.bean.MyMachineBean
 import cn.dianyinhuoban.hm.mvp.machine.contract.MachineManagerContract
 import cn.dianyinhuoban.hm.mvp.machine.presenter.MachineManagerPresenter
-import cn.dianyinhuoban.hm.mvp.order.SubmitOrderActivity
 import cn.dianyinhuoban.hm.mvp.order.view.ProductListActivity
 import cn.dianyinhuoban.hm.widget.pop.PopListPicker
 import com.scwang.smart.refresh.layout.api.RefreshFooter
@@ -28,9 +27,9 @@ import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.DateTimeUtils
 import com.wareroom.lib_base.utils.DimensionUtils
 import com.wareroom.lib_base.widget.DividerDecoration
-import kotlinx.android.synthetic.main.fragment_machine_manager.*
-import kotlinx.android.synthetic.main.item_pop_list_picker.view.*
-import kotlinx.android.synthetic.main.item_machine_manager.view.*
+import kotlinx.android.synthetic.main.dy_fragment_machine_manager.*
+import kotlinx.android.synthetic.main.dy_item_pop_list_picker.view.*
+import kotlinx.android.synthetic.main.dy_item_machine_manager.view.*
 
 class MachineManagerFragment : BaseListFragment<MachineItemBean, MachineManagerPresenter?>(),
     MachineManagerContract.View {
@@ -50,11 +49,11 @@ class MachineManagerFragment : BaseListFragment<MachineItemBean, MachineManagerP
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_machine_manager
+        return R.layout.dy_item_machine_manager
     }
 
     override fun getContentView(): Int {
-        return R.layout.fragment_machine_manager
+        return R.layout.dy_fragment_machine_manager
     }
 
     override fun getPresenter(): MachineManagerPresenter? {

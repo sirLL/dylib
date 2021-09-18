@@ -8,7 +8,7 @@ import com.wareroom.lib_base.ui.BaseActivity
 class IncomeTeamRankActivity : BaseActivity<IPresenter?>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_income_team_rank)
+        setContentView(R.layout.dy_activity_income_team_rank)
         setTitle("成员收益排行榜")
         supportFragmentManager.beginTransaction()
             .add(R.id.fl_container, IncomeTeamRankFragment.newInstance(), "IncomeTeamRankFragment")

@@ -28,7 +28,7 @@ import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_poster_edit.*
+import kotlinx.android.synthetic.main.dy_activity_poster_edit.*
 import java.io.File
 import java.util.*
 
@@ -61,11 +61,11 @@ class PosterEditActivity : BaseActivity<IPresenter?>() {
     }
 
     override fun getBackButtonIcon(): Int {
-        return R.drawable.ic_back_circle
+        return R.drawable.dy_ic_back_circle
     }
 
     override fun getRootView(): Int {
-        return R.layout.activity_poster_edit_root
+        return R.layout.dy_activity_poster_edit_root
     }
 
     override fun initStatusBar() {
@@ -90,7 +90,7 @@ class PosterEditActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_poster_edit)
+        setContentView(R.layout.dy_activity_poster_edit)
         setupStatusBar()
 
         cb_show_qr.setOnCheckedChangeListener { _, isChecked ->

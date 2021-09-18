@@ -10,9 +10,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.StrictMode
 import android.text.TextUtils
-import android.util.Log
 import android.view.View
-import androidx.core.app.ShareCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
@@ -23,7 +21,6 @@ import cn.dianyinhuoban.hm.mvp.bean.ShareItemBean
 import cn.dianyinhuoban.hm.mvp.home.GalleryItemDecoration
 import cn.dianyinhuoban.hm.mvp.home.contract.ShareContract
 import cn.dianyinhuoban.hm.mvp.home.presenter.SharePresenter
-import coil.load
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.animation.GlideAnimation
 import com.bumptech.glide.request.target.SimpleTarget
@@ -37,9 +34,9 @@ import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_scan.*
-import kotlinx.android.synthetic.main.activity_share_qr.*
-import kotlinx.android.synthetic.main.item_share.view.*
+import kotlinx.android.synthetic.main.dy_activity_scan.*
+import kotlinx.android.synthetic.main.dy_activity_share_qr.*
+import kotlinx.android.synthetic.main.dy_item_share.view.*
 import java.io.File
 import java.util.*
 
@@ -59,10 +56,10 @@ class ShareQRActivity : BaseActivity<SharePresenter?>(), ShareContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_share_qr)
+        setContentView(R.layout.dy_activity_share_qr)
         setTitle(
             "二维码分享",
-            ContextCompat.getColor(ShareQRActivity@ this, R.color.color_base_page_title)
+            ContextCompat.getColor(ShareQRActivity@ this, R.color.dy_color_base_page_title)
         )
         val qrContent = URLConfig.PAGE_WEB_REGISTER+MMKVUtil.getInviteCode()
         createQR(qrContent)
@@ -104,7 +101,7 @@ class ShareQRActivity : BaseActivity<SharePresenter?>(), ShareContract.View {
     }
 
     private fun createAdapter() {
-        mAdapter = object : SimpleAdapter<ShareItemBean>(R.layout.item_share) {
+        mAdapter = object : SimpleAdapter<ShareItemBean>(R.layout.dy_item_share) {
             override fun convert(
                 viewHolder: SimpleViewHolder?,
                 position: Int,

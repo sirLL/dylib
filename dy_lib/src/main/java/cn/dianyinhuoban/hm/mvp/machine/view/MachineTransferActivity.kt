@@ -2,7 +2,6 @@ package cn.dianyinhuoban.hm.mvp.machine.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
 import android.text.TextUtils
 import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.mvp.bean.MyMachineBean
@@ -14,13 +13,12 @@ import com.scwang.smart.refresh.header.ClassicsHeader
 import com.scwang.smart.refresh.layout.api.RefreshLayout
 import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener
 import com.scwang.smart.refresh.layout.listener.OnRefreshListener
-import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.NumberUtils
 import com.wareroom.lib_base.widget.LoadingLayout
-import kotlinx.android.synthetic.main.activity_machine_transfer.*
-import kotlinx.android.synthetic.main.item_machine_transfer.view.*
+import kotlinx.android.synthetic.main.dy_activity_machine_transfer.*
+import kotlinx.android.synthetic.main.dy_item_machine_transfer.view.*
 import java.math.BigDecimal
 
 class MachineTransferActivity : BaseActivity<MyMachinePresenter?>(), OnRefreshListener,
@@ -41,7 +39,7 @@ class MachineTransferActivity : BaseActivity<MyMachinePresenter?>(), OnRefreshLi
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_machine_transfer)
+        setContentView(R.layout.dy_activity_machine_transfer)
         setTitle("机具划拨")
 
         setRightButtonText("划拨明细") {
@@ -60,7 +58,7 @@ class MachineTransferActivity : BaseActivity<MyMachinePresenter?>(), OnRefreshLi
     }
 
     private fun setupRecyclerView() {
-        mAdapter = object : SimpleAdapter<TeamMachineItemBean>(R.layout.item_machine_transfer) {
+        mAdapter = object : SimpleAdapter<TeamMachineItemBean>(R.layout.dy_item_machine_transfer) {
             override fun convert(
                 viewHolder: SimpleViewHolder?,
                 position: Int,

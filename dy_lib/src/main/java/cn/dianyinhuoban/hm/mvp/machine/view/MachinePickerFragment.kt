@@ -21,8 +21,8 @@ import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.DimensionUtils
 import com.wareroom.lib_base.widget.DividerDecoration
-import kotlinx.android.synthetic.main.fragment_machine_picker.*
-import kotlinx.android.synthetic.main.item_machine_picker.view.*
+import kotlinx.android.synthetic.main.dy_fragment_machine_picker.*
+import kotlinx.android.synthetic.main.dy_item_machine_picker.view.*
 
 class MachinePickerFragment : BaseListFragment<MachineItemBean?, MachineQueryPresenter?>(),
     MachineQueryContract.View {
@@ -49,7 +49,7 @@ class MachinePickerFragment : BaseListFragment<MachineItemBean?, MachineQueryPre
 
     override fun getItemDecoration(): RecyclerView.ItemDecoration {
         return DividerDecoration(
-            ContextCompat.getColor(requireContext(), R.color.color_divider),
+            ContextCompat.getColor(requireContext(), R.color.dy_color_divider),
             DimensionUtils.dp2px(context, 1),
             DimensionUtils.dp2px(context, 16),
             DimensionUtils.dp2px(context, 16)
@@ -57,7 +57,7 @@ class MachinePickerFragment : BaseListFragment<MachineItemBean?, MachineQueryPre
     }
 
     override fun getContentView(): Int {
-        return R.layout.fragment_machine_picker
+        return R.layout.dy_fragment_machine_picker
     }
 
     override fun getPresenter(): MachineQueryPresenter? {
@@ -135,7 +135,7 @@ class MachinePickerFragment : BaseListFragment<MachineItemBean?, MachineQueryPre
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_machine_picker
+        return R.layout.dy_item_machine_picker
     }
 
     override fun convert(

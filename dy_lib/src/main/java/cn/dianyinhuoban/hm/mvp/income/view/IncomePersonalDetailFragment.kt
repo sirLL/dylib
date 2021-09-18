@@ -18,10 +18,10 @@ import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.DateTimeUtils
 import com.wareroom.lib_base.utils.NumberUtils
-import kotlinx.android.synthetic.main.fragment_income_personal_detail.*
+import kotlinx.android.synthetic.main.dy_fragment_income_personal_detail.*
 import java.math.BigDecimal
 import java.util.*
-import kotlinx.android.synthetic.main.item_income_personal_detail.view.*
+import kotlinx.android.synthetic.main.dy_item_income_personal_detail.view.*
 
 class IncomePersonalDetailFragment : BaseListFragment<DetailBean, IncomeDetailPresenter?>(),
     IncomeDetailContract.View {
@@ -46,7 +46,7 @@ class IncomePersonalDetailFragment : BaseListFragment<DetailBean, IncomeDetailPr
     }
 
     override fun getContentView(): Int {
-        return R.layout.fragment_income_personal_detail
+        return R.layout.dy_fragment_income_personal_detail
     }
 
     override fun onCreateView(
@@ -133,10 +133,10 @@ class IncomePersonalDetailFragment : BaseListFragment<DetailBean, IncomeDetailPr
             mDatePicker?.topLineView?.setBackgroundColor(
                 ContextCompat.getColor(
                     requireContext(),
-                    R.color.color_divider
+                    R.color.dy_color_divider
                 )
             )
-            mDatePicker?.headerView?.setBackgroundResource(R.drawable.shape_ffffff_radius_top_6)
+            mDatePicker?.headerView?.setBackgroundResource(R.drawable.dy_shape_ffffff_radius_top_6)
             mDatePicker?.setOnDatePickedListener { year, month, day ->
                 val calendar = Calendar.getInstance()
                 if (mDataType == IncomeActivationDetailFragment.DATA_TYPE_MONTH) {
@@ -184,7 +184,7 @@ class IncomePersonalDetailFragment : BaseListFragment<DetailBean, IncomeDetailPr
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_income_personal_detail
+        return R.layout.dy_item_income_personal_detail
     }
 
     override fun convert(
@@ -261,9 +261,9 @@ class IncomePersonalDetailFragment : BaseListFragment<DetailBean, IncomeDetailPr
         )
         iv_status_transfer.setImageResource(
             if (rate >= 0) {
-                R.drawable.ic_arrow_rise
+                R.drawable.dy_ic_arrow_rise
             } else {
-                R.drawable.ic_arrow_fall
+                R.drawable.dy_ic_arrow_fall
             }
         )
     }

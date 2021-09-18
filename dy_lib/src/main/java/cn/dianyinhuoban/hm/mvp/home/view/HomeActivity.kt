@@ -14,7 +14,7 @@ import cn.dianyinhuoban.hm.mvp.poster.view.PosterActivity
 import cn.dianyinhuoban.hm.mvp.poster.view.PosterFragment
 import cn.dianyinhuoban.hm.mvp.ranking.view.RankingFragment
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.dy_activity_home.*
 import java.util.*
 
 class HomeActivity : BaseActivity<SystemPresenter?>(), SystemContract.View {
@@ -29,7 +29,7 @@ class HomeActivity : BaseActivity<SystemPresenter?>(), SystemContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.dy_activity_home)
         initView()
     }
 
@@ -51,27 +51,27 @@ class HomeActivity : BaseActivity<SystemPresenter?>(), SystemContract.View {
      */
     private fun setupNavigationBar() {
         navigation_bar.addTab(
-            R.drawable.ic_nav_home_normal, R.drawable.ic_nav_home_selector,
+            R.drawable.dy_ic_nav_home_normal, R.drawable.dy_ic_nav_home_selector,
             ContextCompat.getColor(HomeActivity@ this, R.color.color_nav_normal),
             ContextCompat.getColor(HomeActivity@ this, R.color.color_nav_selector), "首页"
         )
         navigation_bar.addTab(
-            R.drawable.ic_nav_machine_normal, R.drawable.ic_nav_machine_selector,
+            R.drawable.dy_ic_nav_machine_normal, R.drawable.dy_ic_nav_machine_selector,
             ContextCompat.getColor(HomeActivity@ this, R.color.color_nav_normal),
             ContextCompat.getColor(HomeActivity@ this, R.color.color_nav_selector), "机具管理"
         )
         navigation_bar.addTab(
-            R.drawable.ic_nav_poster_normal, R.drawable.ic_nav_poster_selector,
+            R.drawable.dy_ic_nav_poster_normal, R.drawable.dy_ic_nav_poster_selector,
             ContextCompat.getColor(HomeActivity@ this, R.color.color_nav_normal),
             ContextCompat.getColor(HomeActivity@ this, R.color.color_nav_selector), "素材库"
         )
         navigation_bar.addTab(
-            R.drawable.ic_nav_leaderboard_normal, R.drawable.ic_nav_leaderboard_selector,
+            R.drawable.dy_ic_nav_leaderboard_normal, R.drawable.dy_ic_nav_leaderboard_selector,
             ContextCompat.getColor(HomeActivity@ this, R.color.color_nav_normal),
             ContextCompat.getColor(HomeActivity@ this, R.color.color_nav_selector), "排行榜"
         )
         navigation_bar.addTab(
-            R.drawable.ic_nav_me_normal, R.drawable.ic_nav_me_selector,
+            R.drawable.dy_ic_nav_me_normal, R.drawable.dy_ic_nav_me_selector,
             ContextCompat.getColor(HomeActivity@ this, R.color.color_nav_normal),
             ContextCompat.getColor(HomeActivity@ this, R.color.color_nav_selector), "我的"
         )

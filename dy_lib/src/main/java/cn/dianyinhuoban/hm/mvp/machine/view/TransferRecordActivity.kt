@@ -14,7 +14,7 @@ class TransferRecordActivity : BaseActivity<IPresenter?>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTitle("划拨明细")
-        setContentView(R.layout.activity_transfer_record)
+        setContentView(R.layout.dy_activity_transfer_record)
         supportFragmentManager.beginTransaction()
             .add(R.id.fl_container, TransferRecordFragment.newInstance(), "TransferRecordFragment")
             .commit()

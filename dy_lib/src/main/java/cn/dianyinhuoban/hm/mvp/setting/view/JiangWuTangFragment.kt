@@ -11,7 +11,7 @@ import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_http.response.Response
 import io.reactivex.Observable
-import kotlinx.android.synthetic.main.item_jwt.view.*
+import kotlinx.android.synthetic.main.dy_item_jwt.view.*
 
 class JiangWuTangFragment : BaseListFragment<JiangWuTangBean, SettingPresenter>(), SettingContract.View {
 
@@ -24,7 +24,7 @@ class JiangWuTangFragment : BaseListFragment<JiangWuTangBean, SettingPresenter>(
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_jwt
+        return R.layout.dy_item_jwt
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

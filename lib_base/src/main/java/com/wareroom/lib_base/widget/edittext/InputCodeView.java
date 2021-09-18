@@ -80,12 +80,12 @@ public class InputCodeView extends androidx.appcompat.widget.AppCompatEditText i
     /**
      * 自定义密码图片选中
      */
-    private int mSelect = R.drawable.input_selelct;
+    private int mSelect = R.drawable.dy_input_selelct;
 
     /**
      * 自定义密码图片未选中选中
      */
-    private int mUnSelect = R.drawable.input_unselect;
+    private int mUnSelect = R.drawable.dy_input_unselect;
     /**
      * 设置paint宽度
      */

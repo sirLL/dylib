@@ -8,10 +8,8 @@ import android.text.method.PasswordTransformationMethod
 import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.mvp.setting.contract.ProfileContract
 import cn.dianyinhuoban.hm.mvp.setting.presenter.ProfilePresenter
-import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_change_password.*
-import kotlinx.android.synthetic.main.activity_register.*
+import kotlinx.android.synthetic.main.dy_activity_change_password.*
 
 class ChangePasswordActivity : BaseActivity<ProfilePresenter>(),ProfileContract.View {
 
@@ -24,7 +22,7 @@ class ChangePasswordActivity : BaseActivity<ProfilePresenter>(),ProfileContract.
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_change_password)
+        setContentView(R.layout.dy_activity_change_password)
         setTitle("修改登录密码")
 
         btn_change_pwd_submit.setOnClickListener {

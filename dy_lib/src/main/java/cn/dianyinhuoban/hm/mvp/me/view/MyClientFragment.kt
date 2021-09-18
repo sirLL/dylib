@@ -12,7 +12,7 @@ import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.DateTimeUtils
 import com.wareroom.lib_base.utils.NumberUtils
-import kotlinx.android.synthetic.main.item_my_client.view.*
+import kotlinx.android.synthetic.main.dy_item_my_client.view.*
 
 class MyClientFragment : BaseListFragment<MyClientBean, MyClientPresenter?>(),
     MyClientContract.View {
@@ -41,7 +41,7 @@ class MyClientFragment : BaseListFragment<MyClientBean, MyClientPresenter?>(),
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_my_client
+        return R.layout.dy_item_my_client
     }
 
     override fun bindMyClient(data: List<MyClientBean>?) {

@@ -1,7 +1,6 @@
 package cn.dianyinhuoban.hm.mvp.setting.view
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -12,11 +11,10 @@ import cn.dianyinhuoban.hm.mvp.me.view.BindBankCardActivity
 import cn.dianyinhuoban.hm.mvp.setting.contract.BankContract
 import cn.dianyinhuoban.hm.mvp.setting.presenter.BankPresenter
 import cn.dianyinhuoban.hm.widget.dialog.MessageDialog
-import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
-import kotlinx.android.synthetic.main.activity_bank_manage.*
-import kotlinx.android.synthetic.main.item_bank.view.*
+import kotlinx.android.synthetic.main.dy_activity_bank_manage.*
+import kotlinx.android.synthetic.main.dy_item_bank.view.*
 
 class BankManageActivity : BaseActivity<BankPresenter?>(), BankContract.View {
 
@@ -35,10 +33,10 @@ class BankManageActivity : BaseActivity<BankPresenter?>(), BankContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_bank_manage)
+        setContentView(R.layout.dy_activity_bank_manage)
         setTitle("银行卡管理")
 
-        rv_bank_list.adapter = object : SimpleAdapter<BankBean>(R.layout.item_bank) {
+        rv_bank_list.adapter = object : SimpleAdapter<BankBean>(R.layout.dy_item_bank) {
             override fun convert(
                 viewHolder: SimpleViewHolder?,
                 position: Int,

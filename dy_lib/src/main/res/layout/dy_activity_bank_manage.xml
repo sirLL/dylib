@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mvp.setting.view.BankManageActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:background="@color/color_eab160_a"
+        android:drawableLeft="@drawable/dy_ic_warning"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical|left"
+        android:paddingLeft="16dp"
+        android:text="绑定银行卡后，才可以充值、提现操作"
+        android:textColor="@color/color_eab160"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:drawableTop="@drawable/dy_ic_bank_empty"
+        android:drawablePadding="28dp"
+        android:text="您还未绑定银行卡"
+        android:textColor="@color/color_999999"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_bank_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:overScrollMode="never"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/el_add_bank"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/dy_selector_stroke_btn_bg"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="+"
+            android:textColor="@color/color_037dff"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="6dp"
+            android:text="立即绑定"
+            android:textColor="@color/color_037dff"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

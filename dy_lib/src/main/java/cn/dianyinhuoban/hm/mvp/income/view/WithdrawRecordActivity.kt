@@ -12,7 +12,7 @@ class WithdrawRecordActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_trade_record)
+        setContentView(R.layout.dy_activity_trade_record)
         setTitle("提现明细")
 
         supportFragmentManager.beginTransaction().add(R.id.fl_container,WithdrawRecordFragment.newInstance()).commit()

@@ -12,7 +12,7 @@ class TransferRecordDetailActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_transfer_record_detail)
+        setContentView(R.layout.dy_activity_transfer_record_detail)
         setTitle("划拨详情")
         val recordID = intent?.extras?.getString("recordID", "")
         supportFragmentManager.beginTransaction()

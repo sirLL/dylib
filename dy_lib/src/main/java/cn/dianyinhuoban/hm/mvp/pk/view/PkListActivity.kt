@@ -9,7 +9,7 @@ import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.mvp.bean.PkMember
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_pk_list.*
+import kotlinx.android.synthetic.main.dy_activity_pk_list.*
 
 class PkListActivity : BaseActivity<IPresenter?>() {
 
@@ -34,14 +34,14 @@ class PkListActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pk_list)
+        setContentView(R.layout.dy_activity_pk_list)
         setTitle("选择PK对象")
 
         mSelectType = intent.getStringExtra("type").toString()
 
         el_search_btn.setOnClickListener {
             PkSearchListActivity.open(PkListActivity@ this, REQ_CODE_SEARCH,mSelectType)
-            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+            overridePendingTransition(R.anim.dy_fade_in, R.anim.dy_fade_out)
         }
 
         supportFragmentManager

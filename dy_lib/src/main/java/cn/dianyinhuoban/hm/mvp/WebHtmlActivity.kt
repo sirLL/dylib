@@ -6,7 +6,7 @@ import android.os.Bundle
 import cn.dianyinhuoban.hm.R
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_web_html.*
+import kotlinx.android.synthetic.main.dy_activity_web_html.*
 
 class WebHtmlActivity : BaseActivity<IPresenter?>() {
     var mContent: String? = null
@@ -35,7 +35,7 @@ class WebHtmlActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_web_html)
+        setContentView(R.layout.dy_activity_web_html)
         setTitle(mTitle ?: "")
         web_view.loadDataWithBaseURL(
             null,

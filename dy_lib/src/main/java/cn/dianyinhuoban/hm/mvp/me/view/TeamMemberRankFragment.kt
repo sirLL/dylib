@@ -6,14 +6,9 @@ import android.view.View
 import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.mvp.bean.MemberMyRank
 import cn.dianyinhuoban.hm.mvp.bean.MemberRankBean
-import cn.dianyinhuoban.hm.mvp.bean.MyRank
-import cn.dianyinhuoban.hm.mvp.bean.TeamMemberBean
-import cn.dianyinhuoban.hm.mvp.me.contract.TeamMemberContract
 import cn.dianyinhuoban.hm.mvp.me.contract.TeamMemberRankContract
-import cn.dianyinhuoban.hm.mvp.me.presenter.TeamMemberPresenter
 import cn.dianyinhuoban.hm.mvp.me.presenter.TeamMemberRankPresenter
 import cn.dianyinhuoban.hm.mvp.me.view.adapter.TeamMemberRankAdapter
-import cn.dianyinhuoban.hm.mvp.ranking.view.RankingPersonalFragment
 import coil.load
 import com.scwang.smart.refresh.footer.ClassicsFooter
 import com.scwang.smart.refresh.header.ClassicsHeader
@@ -24,7 +19,7 @@ import com.wareroom.lib_base.ui.BaseFragment
 import com.wareroom.lib_base.utils.NumberUtils
 import com.wareroom.lib_base.utils.cache.MMKVUtil
 import com.wareroom.lib_base.widget.LoadingLayout
-import kotlinx.android.synthetic.main.fragment_ranking_personal.*
+import kotlinx.android.synthetic.main.dy_fragment_ranking_personal.*
 
 
 class TeamMemberRankFragment : BaseFragment<TeamMemberRankPresenter?>(), OnRefreshListener,
@@ -50,7 +45,7 @@ class TeamMemberRankFragment : BaseFragment<TeamMemberRankPresenter?>(), OnRefre
     }
 
     override fun getContentView(): Int {
-        return R.layout.fragment_ranking_personal
+        return R.layout.dy_fragment_ranking_personal
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -149,8 +144,8 @@ class TeamMemberRankFragment : BaseFragment<TeamMemberRankPresenter?>(), OnRefre
         iv_avatar_my.load(MMKVUtil.getAvatar()) {
             crossfade(true)//淡入效果
             allowHardware(false)
-            placeholder(R.drawable.img_avatar_def)
-            error(R.drawable.img_avatar_def)
+            placeholder(R.drawable.dy_img_avatar_def)
+            error(R.drawable.dy_img_avatar_def)
         }
     }
 }

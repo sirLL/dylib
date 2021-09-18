@@ -13,7 +13,7 @@ import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.DateTimeUtils
 import com.wareroom.lib_base.utils.NumberUtils
 import com.wareroom.lib_base.utils.cache.MMKVUtil
-import kotlinx.android.synthetic.main.item_pk_record.view.*
+import kotlinx.android.synthetic.main.dy_item_pk_record.view.*
 
 class PKRecordFragment : BaseListFragment<PKRecordBean, PKRecordPresenter>(),
     PKRecordContract.View {
@@ -32,7 +32,7 @@ class PKRecordFragment : BaseListFragment<PKRecordBean, PKRecordPresenter>(),
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_pk_record
+        return R.layout.dy_item_pk_record
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

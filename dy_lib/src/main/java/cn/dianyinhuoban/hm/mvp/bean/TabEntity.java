@@ -1,6 +1,6 @@
 package cn.dianyinhuoban.hm.mvp.bean;
 
-import com.flyco.tablayout.listener.CustomTabEntity;
+import com.dy.tablayout.listener.CustomTabEntity;
 
 public class TabEntity implements CustomTabEntity {
     private String title;

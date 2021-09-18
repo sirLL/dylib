@@ -1,6 +1,5 @@
 package com.wareroom.lib_base.ui;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -96,7 +95,7 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
 
     protected @LayoutRes
     int getRootView() {
-        return R.layout.activity_base;
+        return R.layout.dy_activity_base;
     }
 
 
@@ -153,12 +152,12 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
 
     protected @ColorRes
     int getStatusBarColor() {
-        return R.color.base_color_white;
+        return R.color.dy_base_color_white;
     }
 
     //获取返回键图标
     protected int getBackButtonIcon() {
-        return R.drawable.base_ic_back_black;
+        return R.drawable.dy_base_ic_back_black;
     }
 
     /**
@@ -167,7 +166,7 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
      * @param title
      */
     protected void setTitle(String title) {
-        setTitle(title, ContextCompat.getColor(this, R.color.color_base_page_title));
+        setTitle(title, ContextCompat.getColor(this, R.color.dy_color_base_page_title));
     }
 
     /**
@@ -188,7 +187,7 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
      * @param onClickListener
      */
     protected void setRightButtonText(String text, View.OnClickListener onClickListener) {
-        setRightButtonText(text, ContextCompat.getColor(this, R.color.color_base_page_title), onClickListener);
+        setRightButtonText(text, ContextCompat.getColor(this, R.color.dy_color_base_page_title), onClickListener);
     }
 
     /**

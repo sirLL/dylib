@@ -10,12 +10,11 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.mvp.bean.MemberRank
-import cn.dianyinhuoban.hm.mvp.bean.TeamMemberBean
 import coil.load
 import com.wareroom.lib_base.ui.adapter.BaseAdapter
 import com.wareroom.lib_base.utils.NumberUtils
 import com.wareroom.lib_base.widget.image_view.CircleImageView
-import kotlinx.android.synthetic.main.item_ranking_list.view.*
+import kotlinx.android.synthetic.main.dy_item_ranking_list.view.*
 
 class TeamMemberRankAdapter : BaseAdapter<MemberRank, RecyclerView.ViewHolder>() {
 
@@ -24,12 +23,12 @@ class TeamMemberRankAdapter : BaseAdapter<MemberRank, RecyclerView.ViewHolder>()
         return when (viewType) {
             ITEM_TYPE_HEADER -> {
                 itemView = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.header_ranking_list, parent, false)
+                    .inflate(R.layout.dy_header_ranking_list, parent, false)
                 HeaderViewHolder(itemView)
             }
             else -> {
                 itemView = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_ranking_list, parent, false)
+                    .inflate(R.layout.dy_item_ranking_list, parent, false)
                 ItemViewHolder(itemView)
             }
         }
@@ -57,30 +56,30 @@ class TeamMemberRankAdapter : BaseAdapter<MemberRank, RecyclerView.ViewHolder>()
                     if (mData.size == 4) {
                         ContextCompat.getDrawable(
                             holder.itemView.context,
-                            R.drawable.shape_ffffff_radius_6
+                            R.drawable.dy_shape_ffffff_radius_6
                         )
                     } else {
                         ContextCompat.getDrawable(
                             holder.itemView.context,
-                            R.drawable.shape_ffffff_radius_top_6
+                            R.drawable.dy_shape_ffffff_radius_top_6
                         )
                     }
                 } else if (position + 3 == mData.size) {
                     //最后一条
                     ContextCompat.getDrawable(
                         holder.itemView.context,
-                        R.drawable.shape_ffffff_radius_bottom_6
+                        R.drawable.dy_shape_ffffff_radius_bottom_6
                     )
                 } else {
-                    ContextCompat.getDrawable(holder.itemView.context, R.drawable.shape_ffffff)
+                    ContextCompat.getDrawable(holder.itemView.context, R.drawable.dy_shape_ffffff)
                 }
 //            }
             holder.itemView.tv_name.text = "名字"
             holder.itemView.tv_amount.text = "20w"
             holder.itemView.iv_avatar.load("") {
                 crossfade(true)//淡入效果
-                placeholder(R.drawable.img_avatar_def)
-                error(R.drawable.img_avatar_def)
+                placeholder(R.drawable.dy_img_avatar_def)
+                error(R.drawable.dy_img_avatar_def)
             }
         }
     }
@@ -104,8 +103,8 @@ class TeamMemberRankAdapter : BaseAdapter<MemberRank, RecyclerView.ViewHolder>()
         //第一名
         holder.ivAvatarNo1.load(no1?.avatar ?: "") {
             crossfade(true)//淡入效果
-            placeholder(R.drawable.img_avatar_def)
-            error(R.drawable.img_avatar_def)
+            placeholder(R.drawable.dy_img_avatar_def)
+            error(R.drawable.dy_img_avatar_def)
         }
         holder.tvNameNo1.text = if (no1 == null) {
             "--"
@@ -125,8 +124,8 @@ class TeamMemberRankAdapter : BaseAdapter<MemberRank, RecyclerView.ViewHolder>()
         //第二名
         holder.ivAvatarNo2.load(no2?.avatar ?: "") {
             crossfade(true)//淡入效果
-            placeholder(R.drawable.img_avatar_def)
-            error(R.drawable.img_avatar_def)
+            placeholder(R.drawable.dy_img_avatar_def)
+            error(R.drawable.dy_img_avatar_def)
         }
         holder.tvNameNo2.text = if (no2 == null) {
             "--"
@@ -146,8 +145,8 @@ class TeamMemberRankAdapter : BaseAdapter<MemberRank, RecyclerView.ViewHolder>()
         //第三名
         holder.ivAvatarNo3.load(no3?.avatar ?: "") {
             crossfade(true)//淡入效果
-            placeholder(R.drawable.img_avatar_def)
-            error(R.drawable.img_avatar_def)
+            placeholder(R.drawable.dy_img_avatar_def)
+            error(R.drawable.dy_img_avatar_def)
         }
         holder.tvNameNo3.text = if (no3 == null) {
             "--"

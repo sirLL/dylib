@@ -7,7 +7,7 @@ import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.mvp.bean.BankBean
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_withdraw_success.*
+import kotlinx.android.synthetic.main.dy_activity_withdraw_success.*
 
 class WithdrawSuccessActivity : BaseActivity<IPresenter?>() {
     companion object {
@@ -22,7 +22,7 @@ class WithdrawSuccessActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_withdraw_success)
+        setContentView(R.layout.dy_activity_withdraw_success)
 
         btn_submit.setOnClickListener {
             finish()

@@ -14,13 +14,13 @@ import cn.dianyinhuoban.hm.mvp.me.contract.TeamMemberContract
 import cn.dianyinhuoban.hm.mvp.me.presenter.TeamMemberPresenter
 import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
-import kotlinx.android.synthetic.main.fragment_member_picker.ed_search
-import kotlinx.android.synthetic.main.fragment_member_picker.iv_clean
-import kotlinx.android.synthetic.main.fragment_member_picker.tv_cancel
-import kotlinx.android.synthetic.main.item_member_picker.view.*
+import kotlinx.android.synthetic.main.dy_fragment_member_picker.ed_search
+import kotlinx.android.synthetic.main.dy_fragment_member_picker.iv_clean
+import kotlinx.android.synthetic.main.dy_fragment_member_picker.tv_cancel
+import kotlinx.android.synthetic.main.dy_item_member_picker.view.*
 
 class MemberPickerFragment : BaseListFragment<TeamMemberBean?, TeamMemberPresenter?>(),
-    TeamMemberContract.View {
+        TeamMemberContract.View {
     private var mCheckedID = "-1"
 
     companion object {
@@ -34,11 +34,11 @@ class MemberPickerFragment : BaseListFragment<TeamMemberBean?, TeamMemberPresent
     }
 
     override fun getContentView(): Int {
-        return R.layout.fragment_member_picker
+        return R.layout.dy_fragment_member_picker
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_member_picker
+        return R.layout.dy_item_member_picker
     }
 
     override fun getPresenter(): TeamMemberPresenter? {
@@ -102,9 +102,9 @@ class MemberPickerFragment : BaseListFragment<TeamMemberBean?, TeamMemberPresent
     }
 
     override fun convert(
-        viewHolder: SimpleAdapter.SimpleViewHolder?,
-        position: Int,
-        itemData: TeamMemberBean?
+            viewHolder: SimpleAdapter.SimpleViewHolder?,
+            position: Int,
+            itemData: TeamMemberBean?
     ) {
         viewHolder?.itemView?.tv_name?.text = if (!TextUtils.isEmpty(itemData?.name)) {
             itemData?.name
@@ -113,7 +113,7 @@ class MemberPickerFragment : BaseListFragment<TeamMemberBean?, TeamMemberPresent
         }
 
         viewHolder?.itemView?.tv_inactivated?.text =
-            "未激活数量：${itemData?.nonActive ?: "--"}台"
+                "未激活数量：${itemData?.nonActive ?: "--"}台"
         viewHolder?.itemView?.iv_check_box?.isSelected = if (itemData != null) {
             mCheckedID == itemData?.uid
         } else {

@@ -20,7 +20,7 @@ public class ProgressDialog extends Dialog {
     }
 
     public ProgressDialog(Context context, String message) {
-        super(context, R.style.promptDialog);
+        super(context, R.style.DYPromptDialog);
         this.message = message;
     }
 
@@ -28,7 +28,7 @@ public class ProgressDialog extends Dialog {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.base_dialog_progress);
+        setContentView(R.layout.dy_base_dialog_progress);
         progressWheel = findViewById(R.id.progressBarTwo);
         tvMessage = findViewById(R.id.tv_notice);
         tvMessage.setText(TextUtils.isEmpty(message) ? "加载中..." : message);

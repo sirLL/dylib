@@ -10,7 +10,7 @@ import cn.dianyinhuoban.hm.mvp.machine.presenter.TransferRecordDetailPresenter
 import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.DateTimeUtils
-import kotlinx.android.synthetic.main.item_transfer_record_detail.view.*
+import kotlinx.android.synthetic.main.dy_item_transfer_record_detail.view.*
 
 class TransferRecordDetailFragment :
     BaseListFragment<TransferRecordDetailBean?, TransferRecordDetailPresenter?>(),
@@ -41,7 +41,7 @@ class TransferRecordDetailFragment :
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_transfer_record_detail
+        return R.layout.dy_item_transfer_record_detail
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

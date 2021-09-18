@@ -13,15 +13,8 @@ import cn.dianyinhuoban.hm.widget.dialog.ImageCodeDialog
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.ValidatorUtils
-import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_register.*
-import kotlinx.android.synthetic.main.activity_reset_password.*
-import kotlinx.android.synthetic.main.activity_reset_password.btn_submit
-import kotlinx.android.synthetic.main.activity_reset_password.ed_password
-import kotlinx.android.synthetic.main.activity_reset_password.ed_phone
-import kotlinx.android.synthetic.main.activity_reset_password.ed_sms_code
-import kotlinx.android.synthetic.main.activity_reset_password.iv_eye
-import kotlinx.android.synthetic.main.activity_reset_password.tv_send
+import kotlinx.android.synthetic.main.dy_activity_reset_password.*
+
 
 class ResetPasswordActivity : BaseActivity<RegisterPresenter?>(), RegisterContract.View {
 
@@ -35,7 +28,7 @@ class ResetPasswordActivity : BaseActivity<RegisterPresenter?>(), RegisterContra
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_reset_password)
+        setContentView(R.layout.dy_activity_reset_password)
         setTitle("找回密码")
         initView()
     }

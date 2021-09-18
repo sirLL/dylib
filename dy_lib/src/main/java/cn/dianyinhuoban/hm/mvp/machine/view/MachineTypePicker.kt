@@ -16,7 +16,7 @@ import cn.dianyinhuoban.hm.widget.dialog.BaseBottomPicker
 import com.hjq.toast.ToastUtils
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.AppManager
-import kotlinx.android.synthetic.main.item_machine_type.view.*
+import kotlinx.android.synthetic.main.dy_item_machine_type.view.*
 
 class MachineTypePicker : BaseBottomPicker<MachineTypeBean?, MachineTypePresenter?>(),
     MachineTypeContract.View {
@@ -33,7 +33,7 @@ class MachineTypePicker : BaseBottomPicker<MachineTypeBean?, MachineTypePresente
     }
 
     override fun getItemLayoutRes(): Int {
-        return R.layout.item_machine_type
+        return R.layout.dy_item_machine_type
     }
 
     override fun isSupportLoadMore(): Boolean {

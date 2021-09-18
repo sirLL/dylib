@@ -22,7 +22,7 @@ public class NormalTab extends BaseTab implements DragPointView.OnDragCallback {
 
     public NormalTab(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        LayoutInflater.from(context).inflate(R.layout.view_tab_normal_bottom_navigation, this, true);
+        LayoutInflater.from(context).inflate(R.layout.dy_view_tab_normal_bottom_navigation, this, true);
         mIconImageView = findViewById(R.id.icon);
         mTitleTextView = findViewById(R.id.title);
         mMessagesView = findViewById(R.id.messages);

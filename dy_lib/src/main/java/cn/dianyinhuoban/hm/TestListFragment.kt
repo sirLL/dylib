@@ -16,7 +16,7 @@ class TestListFragment : BaseListFragment<Any?, IPresenter?>() {
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_test_list
+        return R.layout.dy_item_test_list
     }
 
 

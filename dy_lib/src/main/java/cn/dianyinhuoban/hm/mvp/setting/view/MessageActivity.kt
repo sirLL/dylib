@@ -5,14 +5,14 @@ import androidx.fragment.app.Fragment
 import cn.dianyinhuoban.hm.R
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_message.*
+import kotlinx.android.synthetic.main.dy_activity_message.*
 import java.util.*
 
 class MessageActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_message)
+        setContentView(R.layout.dy_activity_message)
         setTitle("消息通知")
 
         val fragments = ArrayList<Fragment>()

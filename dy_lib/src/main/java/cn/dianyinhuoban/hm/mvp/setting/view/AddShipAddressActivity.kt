@@ -9,23 +9,19 @@ import android.text.TextWatcher
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import cn.dianyinhuoban.hm.R
-import cn.dianyinhuoban.hm.bean.BaseAreaBean
 import cn.dianyinhuoban.hm.mvp.bean.AddressBean
-import cn.dianyinhuoban.hm.mvp.order.view.AddressManagerActivity
 import cn.dianyinhuoban.hm.mvp.setting.contract.AddShipAddressContract
 import cn.dianyinhuoban.hm.mvp.setting.presenter.AddShipAddressPresenter
-import cn.dianyinhuoban.hm.util.ToolUtil
 import cn.dianyinhuoban.hm.widget.dialog.MessageDialog
 import com.github.gzuliyujiang.wheelpicker.AddressPicker
 import com.github.gzuliyujiang.wheelpicker.annotation.AddressMode
-import com.github.gzuliyujiang.wheelpicker.contract.OnAddressPickedListener
 import com.github.gzuliyujiang.wheelpicker.entity.CityEntity
 import com.github.gzuliyujiang.wheelpicker.entity.CountyEntity
 import com.github.gzuliyujiang.wheelpicker.entity.ProvinceEntity
 import com.github.gzuliyujiang.wheelpicker.utility.AddressJsonParser
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.ValidatorUtils
-import kotlinx.android.synthetic.main.activity_add_ship_address.*
+import kotlinx.android.synthetic.main.dy_activity_add_ship_address.*
 
 
 class AddShipAddressActivity : BaseActivity<AddShipAddressPresenter?>(),
@@ -71,7 +67,7 @@ class AddShipAddressActivity : BaseActivity<AddShipAddressPresenter?>(),
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_ship_address)
+        setContentView(R.layout.dy_activity_add_ship_address)
         setTitle("添加收货地址")
         setupAction()
         setupInputListener()
@@ -156,8 +152,8 @@ class AddShipAddressActivity : BaseActivity<AddShipAddressPresenter?>(),
 
         picker.contentView.setBackgroundColor(Color.TRANSPARENT)
         picker.bodyView.setBackgroundColor(Color.WHITE)
-        picker.topLineView.setBackgroundColor(ContextCompat.getColor(this, R.color.color_divider))
-        picker.headerView.setBackgroundResource(R.drawable.shape_ffffff_radius_top_6)
+        picker.topLineView.setBackgroundColor(ContextCompat.getColor(this, R.color.dy_color_divider))
+        picker.headerView.setBackgroundResource(R.drawable.dy_shape_ffffff_radius_top_6)
         picker.show()
     }
 

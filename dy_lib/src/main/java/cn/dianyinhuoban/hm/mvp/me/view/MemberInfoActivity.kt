@@ -22,7 +22,7 @@ import com.scwang.smart.refresh.layout.listener.OnRefreshListener
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.DateTimeUtils
 import com.wareroom.lib_base.utils.NumberUtils
-import kotlinx.android.synthetic.main.activity_member_info.*
+import kotlinx.android.synthetic.main.dy_activity_member_info.*
 import java.math.BigDecimal
 import java.util.*
 
@@ -54,7 +54,7 @@ class MemberInfoActivity : BaseActivity<MemberInfoPresenter?>(), MemberInfoContr
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_member_info)
+        setContentView(R.layout.dy_activity_member_info)
         setTitle("成员详情")
         setupRefreshLayout()
         setupRecyclerView()
@@ -118,10 +118,10 @@ class MemberInfoActivity : BaseActivity<MemberInfoPresenter?>(), MemberInfoContr
             mDatePicker?.topLineView?.setBackgroundColor(
                 ContextCompat.getColor(
                     this,
-                    R.color.color_divider
+                    R.color.dy_color_divider
                 )
             )
-            mDatePicker?.headerView?.setBackgroundResource(R.drawable.shape_ffffff_radius_top_6)
+            mDatePicker?.headerView?.setBackgroundResource(R.drawable.dy_shape_ffffff_radius_top_6)
             mDatePicker?.setOnDatePickedListener { year, month, day ->
                 val calendar = Calendar.getInstance()
                 calendar.set(Calendar.YEAR, year)
@@ -166,8 +166,8 @@ class MemberInfoActivity : BaseActivity<MemberInfoPresenter?>(), MemberInfoContr
 
         iv_avatar.load(memberDetail?.avatar ?: "") {
             crossfade(true)
-            error(R.drawable.img_avatar_def)
-            placeholder(R.drawable.img_avatar_def)
+            error(R.drawable.dy_img_avatar_def)
+            placeholder(R.drawable.dy_img_avatar_def)
         }
         tv_name.text = if (!TextUtils.isEmpty(memberDetail?.name)) {
             memberDetail?.name

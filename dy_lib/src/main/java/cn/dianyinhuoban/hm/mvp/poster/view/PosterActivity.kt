@@ -8,14 +8,14 @@ import cn.dianyinhuoban.hm.mvp.bean.PosterTypeBean
 import cn.dianyinhuoban.hm.mvp.poster.contract.PosterTypeContract
 import cn.dianyinhuoban.hm.mvp.poster.presenter.PosterTypePresenter
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_poster.*
+import kotlinx.android.synthetic.main.dy_activity_poster.*
 
 
 class PosterActivity : BaseActivity<PosterTypePresenter?>(), PosterTypeContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTitle("素材库")
-        setContentView(R.layout.activity_poster)
+        setContentView(R.layout.dy_activity_poster)
         mPresenter?.fetchPosterType()
     }
 

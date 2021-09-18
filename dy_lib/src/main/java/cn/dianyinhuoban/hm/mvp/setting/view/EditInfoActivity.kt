@@ -10,7 +10,7 @@ import cn.dianyinhuoban.hm.mvp.setting.contract.ProfileContract
 import cn.dianyinhuoban.hm.mvp.setting.presenter.ProfilePresenter
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_edit_info.*
+import kotlinx.android.synthetic.main.dy_activity_edit_info.*
 
 class EditInfoActivity : BaseActivity<ProfilePresenter>(), ProfileContract.View {
 
@@ -47,7 +47,7 @@ class EditInfoActivity : BaseActivity<ProfilePresenter>(), ProfileContract.View 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_edit_info)
+        setContentView(R.layout.dy_activity_edit_info)
         setTitle("修改昵称")
         reqType = intent.getIntExtra("Type",0)
 

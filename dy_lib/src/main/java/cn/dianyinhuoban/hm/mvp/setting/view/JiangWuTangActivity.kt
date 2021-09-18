@@ -9,7 +9,7 @@ class JiangWuTangActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_jiang_wu_tang)
+        setContentView(R.layout.dy_activity_jiang_wu_tang)
         setTitle("讲武堂")
 
         supportFragmentManager.beginTransaction()

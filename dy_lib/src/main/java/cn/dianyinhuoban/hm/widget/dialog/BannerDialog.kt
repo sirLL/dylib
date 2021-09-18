@@ -11,7 +11,7 @@ import cn.dianyinhuoban.hm.mvp.WebActivity
 import cn.dianyinhuoban.hm.mvp.bean.BannerBean
 import cn.dianyinhuoban.hm.util.ToolUtil
 import coil.load
-import kotlinx.android.synthetic.main.dialog_home_banner.*
+import kotlinx.android.synthetic.main.dy_dialog_home_banner.*
 
 class BannerDialog(context: Context) : Dialog(context, R.style.MessageDialog) {
 
@@ -23,7 +23,7 @@ class BannerDialog(context: Context) : Dialog(context, R.style.MessageDialog) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.dialog_home_banner)
+        setContentView(R.layout.dy_dialog_home_banner)
 
         iv_cancel.setOnClickListener {
             dismiss()

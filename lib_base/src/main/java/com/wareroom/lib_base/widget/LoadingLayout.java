@@ -45,10 +45,10 @@ public class LoadingLayout extends FrameLayout {
 
     private void initView() {
         LayoutInflater layoutInflater = LayoutInflater.from(getContext());
-        mLoadingLayout = layoutInflater.inflate(R.layout.base_view_loading, this, false);
-        mErrorLayout = layoutInflater.inflate(R.layout.base_view_error, this, false);
-        mNetworkLayout = layoutInflater.inflate(R.layout.base_view_network_unenable, this, false);
-        mEmptyLayout = layoutInflater.inflate(R.layout.base_view_empty, this, false);
+        mLoadingLayout = layoutInflater.inflate(R.layout.dy_base_view_loading, this, false);
+        mErrorLayout = layoutInflater.inflate(R.layout.dy_base_view_error, this, false);
+        mNetworkLayout = layoutInflater.inflate(R.layout.dy_base_view_network_unenable, this, false);
+        mEmptyLayout = layoutInflater.inflate(R.layout.dy_base_view_empty, this, false);
     }
 
     public void showLoading() {

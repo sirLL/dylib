@@ -17,8 +17,8 @@ import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.NumberUtils
-import kotlinx.android.synthetic.main.activity_transfer.*
-import kotlinx.android.synthetic.main.item_transfer.view.*
+import kotlinx.android.synthetic.main.dy_activity_transfer.*
+import kotlinx.android.synthetic.main.dy_item_transfer.view.*
 import java.math.BigDecimal
 
 class TransferActivity : BaseActivity<TransferPresenter?>(), TransferContract.View {
@@ -52,7 +52,7 @@ class TransferActivity : BaseActivity<TransferPresenter?>(), TransferContract.Vi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_transfer)
+        setContentView(R.layout.dy_activity_transfer)
         setTitle("划拨")
 
         setupRecyclerView()
@@ -78,7 +78,7 @@ class TransferActivity : BaseActivity<TransferPresenter?>(), TransferContract.Vi
     }
 
     private fun setupRecyclerView() {
-        mAdapter = object : SimpleAdapter<MachineItemBean>(R.layout.item_transfer) {
+        mAdapter = object : SimpleAdapter<MachineItemBean>(R.layout.dy_item_transfer) {
             override fun convert(
                 viewHolder: SimpleViewHolder?,
                 position: Int,

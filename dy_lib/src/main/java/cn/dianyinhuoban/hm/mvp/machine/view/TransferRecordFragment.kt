@@ -13,7 +13,7 @@ import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.DateTimeUtils
 import com.wareroom.lib_base.utils.NumberUtils
-import kotlinx.android.synthetic.main.item_transfer_record.view.*
+import kotlinx.android.synthetic.main.dy_item_transfer_record.view.*
 
 class TransferRecordFragment : BaseListFragment<TransferRecordBean?, TransferRecordPresenter?>(),
     TransferRecordContract.View {
@@ -36,7 +36,7 @@ class TransferRecordFragment : BaseListFragment<TransferRecordBean?, TransferRec
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_transfer_record
+        return R.layout.dy_item_transfer_record
     }
 
     override fun getItemDecoration(): RecyclerView.ItemDecoration {

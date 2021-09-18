@@ -10,7 +10,7 @@ class MachineTransferDetailActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_machine_transfer_detail)
+        setContentView(R.layout.dy_activity_machine_transfer_detail)
         setTitle("划拨")
 
     }

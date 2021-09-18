@@ -47,7 +47,7 @@ public class PayPwdDialog extends Dialog implements InputCodeView.OnCodeComplete
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dialog_pay_password);
+        setContentView(R.layout.dy_dialog_pay_password);
         mCodeText = findViewById(R.id.code_pwd_view);
         mCodeText.setOnCodeCompleteListener(this);
         mCodeText.setEnabled(false);
@@ -127,7 +127,7 @@ public class PayPwdDialog extends Dialog implements InputCodeView.OnCodeComplete
                 customTv.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
                 customTv.setBackgroundColor(Color.parseColor("#FFFFFF"));
                 if (value == "back") {
-                    customTv.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.pwd_view_delete_bg));
+                    customTv.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.dy_pwd_view_delete_bg));
                     customTv.setTag(value);
                 } else if (value.isEmpty()) {
                     customTv.setBackgroundColor(Color.TRANSPARENT);

@@ -4,10 +4,10 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.mvp.bean.TabEntity
-import com.flyco.tablayout.listener.CustomTabEntity
+import com.dy.tablayout.listener.CustomTabEntity
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_income_activation_detail.tab_layout
+import kotlinx.android.synthetic.main.dy_activity_income_activation_detail.tab_layout
 
 import java.util.*
 
@@ -20,7 +20,7 @@ class IncomeActivationDetailActivity : BaseActivity<IPresenter?>(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_income_activation_detail)
+        setContentView(R.layout.dy_activity_income_activation_detail)
         setTitle("激活返现明细")
         setupTab()
     }

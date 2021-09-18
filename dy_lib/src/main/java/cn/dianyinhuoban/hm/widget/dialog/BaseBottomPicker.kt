@@ -17,8 +17,7 @@ import com.wareroom.lib_base.mvp.IView
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.AppManager
 import com.wareroom.lib_base.widget.LoadingLayout
-import kotlinx.android.synthetic.main.activity_member.*
-import kotlinx.android.synthetic.main.base_bottom_picker.*
+import kotlinx.android.synthetic.main.dy_base_bottom_picker.*
 
 
 abstract class BaseBottomPicker<D, P : IPresenter?> : DialogFragment(), OnRefreshListener,
@@ -46,7 +45,7 @@ abstract class BaseBottomPicker<D, P : IPresenter?> : DialogFragment(), OnRefres
     }
 
     protected open fun getContentLayoutRes(): Int {
-        return R.layout.base_bottom_picker
+        return R.layout.dy_base_bottom_picker
     }
 
     protected open fun isSupportLoadMore(): Boolean {
@@ -96,7 +95,7 @@ abstract class BaseBottomPicker<D, P : IPresenter?> : DialogFragment(), OnRefres
         window: Window?,
     ) {
         window?.setBackgroundDrawableResource(android.R.color.transparent)
-        window?.setWindowAnimations(R.style.BaseBottomDialogFragment)
+        window?.setWindowAnimations(R.style.DYBaseBottomDialogFragment)
         layoutParams?.gravity = Gravity.BOTTOM
         layoutParams?.width = WindowManager.LayoutParams.MATCH_PARENT
         window?.attributes = layoutParams

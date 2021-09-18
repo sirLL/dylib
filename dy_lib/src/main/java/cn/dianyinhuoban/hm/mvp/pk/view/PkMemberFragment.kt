@@ -16,7 +16,7 @@ import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.DimensionUtils
 import com.wareroom.lib_base.widget.DividerDecoration
 import java.util.*
-import kotlinx.android.synthetic.main.item_pk_object.view.*
+import kotlinx.android.synthetic.main.dy_item_pk_object.view.*
 
 
 class PkMemberFragment : BaseListFragment<PkMember, PKPresenter>(), PKContract.View {
@@ -63,7 +63,7 @@ class PkMemberFragment : BaseListFragment<PkMember, PKPresenter>(), PKContract.V
 
     override fun getItemDecoration(): RecyclerView.ItemDecoration {
         return DividerDecoration(
-            ContextCompat.getColor(requireContext(), R.color.color_divider),
+            ContextCompat.getColor(requireContext(), R.color.dy_color_divider),
             DimensionUtils.dp2px(context, 0)
         )
     }
@@ -75,7 +75,7 @@ class PkMemberFragment : BaseListFragment<PkMember, PKPresenter>(), PKContract.V
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_pk_object
+        return R.layout.dy_item_pk_object
     }
 
     override fun convert(

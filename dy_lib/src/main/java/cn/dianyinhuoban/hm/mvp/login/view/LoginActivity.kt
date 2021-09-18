@@ -13,7 +13,7 @@ import cn.dianyinhuoban.hm.mvp.login.presenter.LoginPresenter
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.ValidatorUtils
 import com.wareroom.lib_base.utils.cache.MMKVUtil
-import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.dy_activity_login.*
 
 class LoginActivity : BaseActivity<LoginPresenter?>(), LoginContract.View {
     override fun getPresenter(): LoginPresenter? {
@@ -26,7 +26,7 @@ class LoginActivity : BaseActivity<LoginPresenter?>(), LoginContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.dy_activity_login)
         initView()
         val defPhone = MMKVUtil.getUserName()
         val defPassword = MMKVUtil.getLoginPassword()

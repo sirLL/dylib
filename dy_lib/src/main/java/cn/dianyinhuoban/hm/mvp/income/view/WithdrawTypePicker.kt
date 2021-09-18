@@ -1,8 +1,6 @@
 package cn.dianyinhuoban.hm.mvp.income.view
 
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.*
@@ -14,10 +12,10 @@ import cn.dianyinhuoban.hm.mvp.me.view.BindBankCardActivity
 import cn.dianyinhuoban.hm.util.StringUtil
 import cn.dianyinhuoban.hm.widget.dialog.BaseBottomPicker
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
-import kotlinx.android.synthetic.main.base_bottom_picker.*
-import kotlinx.android.synthetic.main.fragment_withdraw_type_picker.*
-import kotlinx.android.synthetic.main.fragment_withdraw_type_picker.recycler_view
-import kotlinx.android.synthetic.main.item_withdraw_type.view.*
+import kotlinx.android.synthetic.main.dy_base_bottom_picker.*
+import kotlinx.android.synthetic.main.dy_fragment_withdraw_type_picker.*
+import kotlinx.android.synthetic.main.dy_fragment_withdraw_type_picker.recycler_view
+import kotlinx.android.synthetic.main.dy_item_withdraw_type.view.*
 
 class WithdrawTypePicker : BaseBottomPicker<BankBean, BankCardListPresenter>(),
     BankCardListContract.View {
@@ -60,7 +58,7 @@ class WithdrawTypePicker : BaseBottomPicker<BankBean, BankCardListPresenter>(),
             ) {
                 if (mData == null || mData.size == position) {
                     viewHolder?.itemView?.iv_hook?.visibility = View.INVISIBLE
-                    viewHolder?.itemView?.iv_icon?.setImageResource(R.drawable.ic_bank_card_add_picker)
+                    viewHolder?.itemView?.iv_icon?.setImageResource(R.drawable.dy_ic_bank_card_add_picker)
                     viewHolder?.itemView?.tv_title?.text = "使用新卡提现"
                 } else {
                     this@WithdrawTypePicker.convert(viewHolder, position, itemData)
@@ -92,7 +90,7 @@ class WithdrawTypePicker : BaseBottomPicker<BankBean, BankCardListPresenter>(),
     }
 
     override fun getItemLayoutRes(): Int {
-        return R.layout.item_withdraw_type
+        return R.layout.dy_item_withdraw_type
     }
 
     override fun getPresenter(): BankCardListPresenter? {
@@ -110,7 +108,7 @@ class WithdrawTypePicker : BaseBottomPicker<BankBean, BankCardListPresenter>(),
             } else {
                 View.INVISIBLE
             }
-        viewHolder?.itemView?.iv_icon?.setImageResource(R.drawable.ic_bank_card_picker)
+        viewHolder?.itemView?.iv_icon?.setImageResource(R.drawable.dy_ic_bank_card_picker)
         viewHolder?.itemView?.tv_title?.text =
             "${itemData?.bankName}(${StringUtil.getBankCardEndNo(itemData?.bankNo)})"
     }

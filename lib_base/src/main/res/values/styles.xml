@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="promptDialog" parent="@android:style/Theme.Dialog">
+    <style name="DYPromptDialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
@@ -9,8 +9,8 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
-    <style name="BaseBottomDialogFragment">
-        <item name="android:windowEnterAnimation">@anim/anim_dialog_bottom_in</item>
-        <item name="android:windowExitAnimation">@anim/anim_dialog_bottom_out</item>
+    <style name="DYBaseBottomDialogFragment">
+        <item name="android:windowEnterAnimation">@anim/dy_anim_dialog_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/dy_anim_dialog_bottom_out</item>
     </style>
 </resources>

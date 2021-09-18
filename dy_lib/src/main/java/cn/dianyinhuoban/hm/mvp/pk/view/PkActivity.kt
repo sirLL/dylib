@@ -8,7 +8,7 @@ import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.mvp.bean.PkMember
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_pk.*
+import kotlinx.android.synthetic.main.dy_activity_pk.*
 
 class PkActivity : BaseActivity<IPresenter?>() {
 
@@ -18,7 +18,7 @@ class PkActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pk)
+        setContentView(R.layout.dy_activity_pk)
         tv_right.setOnClickListener {
             startActivity(Intent(PkActivity@ this, PKRecordActivity::class.java))
         }

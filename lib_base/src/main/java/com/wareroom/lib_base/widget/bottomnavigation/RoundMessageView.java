@@ -34,7 +34,7 @@ public class RoundMessageView extends FrameLayout{
 
     public RoundMessageView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        LayoutInflater.from(context).inflate(R.layout.view_round_message, this, true);
+        LayoutInflater.from(context).inflate(R.layout.dy_view_round_message, this, true);
         mOval = findViewById(R.id.oval);
         mMessages = findViewById(R.id.msg);
         mMessages.setTypeface(Typeface.DEFAULT_BOLD);
@@ -77,7 +77,7 @@ public class RoundMessageView extends FrameLayout{
     }
 
     public void tintMessageBackground(@ColorInt int color) {
-        Drawable drawable = Utils.tint(ContextCompat.getDrawable(getContext(), R.drawable.shape_round_message_bg), color);
+        Drawable drawable = Utils.tint(ContextCompat.getDrawable(getContext(), R.drawable.dy_shape_round_message_bg), color);
         ViewCompat.setBackground(mOval, drawable);
         ViewCompat.setBackground(mMessages, drawable);
     }

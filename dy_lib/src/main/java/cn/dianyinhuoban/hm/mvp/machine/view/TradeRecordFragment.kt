@@ -11,7 +11,7 @@ import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.DateTimeUtils
 import com.wareroom.lib_base.utils.NumberUtils
-import kotlinx.android.synthetic.main.item_machine_trade_record.view.*
+import kotlinx.android.synthetic.main.dy_item_machine_trade_record.view.*
 
 class TradeRecordFragment :
     BaseListFragment<MachineTradeRecordBean, MachineTradeRecordPresenter?>(),
@@ -43,7 +43,7 @@ class TradeRecordFragment :
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_machine_trade_record
+        return R.layout.dy_item_machine_trade_record
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

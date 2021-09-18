@@ -11,7 +11,7 @@ import cn.dianyinhuoban.hm.mvp.income.presenter.IncomeDetailPresenter
 import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.NumberUtils
-import kotlinx.android.synthetic.main.item_income_team_rank.view.*
+import kotlinx.android.synthetic.main.dy_item_income_team_rank.view.*
 
 class IncomeTeamRankFragment : BaseListFragment<PersonalRank, IncomeDetailPresenter?>(),
     IncomeDetailContract.View {
@@ -26,11 +26,11 @@ class IncomeTeamRankFragment : BaseListFragment<PersonalRank, IncomeDetailPresen
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_income_team_rank
+        return R.layout.dy_item_income_team_rank
     }
 
     override fun getContentView(): Int {
-        return R.layout.fragment_income_team_rank
+        return R.layout.dy_fragment_income_team_rank
     }
 
     override fun getPresenter(): IncomeDetailPresenter? {

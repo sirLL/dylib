@@ -11,7 +11,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 30
         versionCode 1
-        versionName "1.0.2"
+        versionName "1.0.3"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -78,7 +78,7 @@ dependencies {
 ext {
     PUBLISH_GROUP_ID = "io.github.sirll"        //项目包名
     PUBLISH_ARTIFACT_ID = 'lib_base'            //项目名
-    PUBLISH_VERSION = "1.0.2"                   //版本号
+    PUBLISH_VERSION = "1.0.3"                   //版本号
 }
 
 apply from: '../publish-mavencentral.gradle'

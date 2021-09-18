@@ -5,10 +5,10 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.mvp.bean.TabEntity
-import com.flyco.tablayout.listener.CustomTabEntity
+import com.dy.tablayout.listener.CustomTabEntity
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_member.*
+import kotlinx.android.synthetic.main.dy_activity_member.*
 
 class MemberActivity : BaseActivity<IPresenter?>() {
     override fun getPresenter(): IPresenter? {
@@ -17,7 +17,7 @@ class MemberActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_member)
+        setContentView(R.layout.dy_activity_member)
         setTitle("我的成员")
         setupTabLayout()
 

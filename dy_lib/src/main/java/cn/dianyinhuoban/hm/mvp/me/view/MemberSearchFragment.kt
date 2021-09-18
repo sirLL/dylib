@@ -10,8 +10,8 @@ import cn.dianyinhuoban.hm.R
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
-import kotlinx.android.synthetic.main.fragment_member_search.*
-import kotlinx.android.synthetic.main.item_member.view.*
+import kotlinx.android.synthetic.main.dy_fragment_member_search.*
+import kotlinx.android.synthetic.main.dy_item_member.view.*
 
 class MemberSearchFragment : BaseListFragment<Any, IPresenter?>() {
 
@@ -25,11 +25,11 @@ class MemberSearchFragment : BaseListFragment<Any, IPresenter?>() {
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_member
+        return R.layout.dy_item_member
     }
 
     override fun getContentView(): Int {
-        return R.layout.fragment_member_search
+        return R.layout.dy_fragment_member_search
     }
 
     override fun getPresenter(): IPresenter? {

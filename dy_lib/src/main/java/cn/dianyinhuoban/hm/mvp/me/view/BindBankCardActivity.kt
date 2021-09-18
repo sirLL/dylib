@@ -13,12 +13,9 @@ import cn.dianyinhuoban.hm.widget.dialog.ImageCodeDialog
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.ValidatorUtils
-import kotlinx.android.synthetic.main.activity_bind_bank_card.*
-import kotlinx.android.synthetic.main.activity_bind_bank_card.btn_submit
-import kotlinx.android.synthetic.main.activity_bind_bank_card.ed_phone
-import kotlinx.android.synthetic.main.activity_register.*
+import kotlinx.android.synthetic.main.dy_activity_bind_bank_card.*
 
-class BindBankCardActivity : BaseActivity<BankPresenter?>(),BankContract.View {
+class BindBankCardActivity : BaseActivity<BankPresenter?>(), BankContract.View {
 
     companion object {
         fun open(context: Context) {
@@ -44,11 +41,11 @@ class BindBankCardActivity : BaseActivity<BankPresenter?>(),BankContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTitle("绑定银行卡")
-        setContentView(R.layout.activity_bind_bank_card)
+        setContentView(R.layout.dy_activity_bind_bank_card)
 
-        btn_submit.setOnClickListener{
+        btn_submit.setOnClickListener {
 
-            val bankUsername =  ed_name.text.toString().trim()
+            val bankUsername = ed_name.text.toString().trim()
             val bankName = ed_bank.text.toString().trim();
             val bankNo = ed_card_no.text.toString().trim();
             val phoneNumber = ed_phone.text.toString().trim();
@@ -79,7 +76,7 @@ class BindBankCardActivity : BaseActivity<BankPresenter?>(),BankContract.View {
                 return@setOnClickListener
             }
 
-            mPresenter?.addBank(bankUsername, bankName,bankNo,phoneNumber,phoneCode)
+            mPresenter?.addBank(bankUsername, bankName, bankNo, phoneNumber, phoneCode)
 
         }
 

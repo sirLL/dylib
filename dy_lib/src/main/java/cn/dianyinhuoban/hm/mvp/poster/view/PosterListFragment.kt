@@ -14,7 +14,7 @@ import com.luck.picture.lib.decoration.GridSpacingItemDecoration
 import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.DimensionUtils
-import kotlinx.android.synthetic.main.item_poster.view.*
+import kotlinx.android.synthetic.main.dy_item_poster.view.*
 
 class PosterListFragment : BaseListFragment<PosterItemBean, PosterListPresenter?>(),
     PosterListContract.View {
@@ -44,7 +44,7 @@ class PosterListFragment : BaseListFragment<PosterItemBean, PosterListPresenter?
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_poster
+        return R.layout.dy_item_poster
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

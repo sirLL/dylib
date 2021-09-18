@@ -1,7 +1,6 @@
 package cn.dianyinhuoban.hm.mvp.setting.view
 
 import android.os.Bundle
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,10 +18,10 @@ import com.wareroom.lib_base.ui.BaseFragment
 import com.wareroom.lib_base.utils.DateTimeUtils
 import com.wareroom.lib_base.utils.DimensionUtils
 import com.wareroom.lib_base.widget.DividerDecoration
-import kotlinx.android.synthetic.main.fragment_message_notify.*
-import kotlinx.android.synthetic.main.item_message_active.view.*
-import kotlinx.android.synthetic.main.item_message_dispatch.view.*
-import kotlinx.android.synthetic.main.item_message_pk.view.*
+import kotlinx.android.synthetic.main.dy_fragment_message_notify.*
+import kotlinx.android.synthetic.main.dy_item_message_active.view.*
+import kotlinx.android.synthetic.main.dy_item_message_dispatch.view.*
+import kotlinx.android.synthetic.main.dy_item_message_pk.view.*
 
 class MessageNotifyFragment : BaseFragment<MessagePresenter>(), MessageContract.View,
     PKContract.View {
@@ -70,7 +69,7 @@ class MessageNotifyFragment : BaseFragment<MessagePresenter>(), MessageContract.
     }
 
     override fun getContentView(): Int {
-        return R.layout.fragment_message_notify
+        return R.layout.dy_fragment_message_notify
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -96,7 +95,7 @@ class MessageNotifyFragment : BaseFragment<MessagePresenter>(), MessageContract.
             DividerDecoration(
                 ContextCompat.getColor(
                     requireContext(),
-                    R.color.base_color_transparent
+                    R.color.dy_base_color_transparent
                 ), DimensionUtils.dp2px(context, 12)
             )
         )
@@ -143,15 +142,15 @@ class MessageNotifyFragment : BaseFragment<MessagePresenter>(), MessageContract.
             return when (viewType) {
                 VIEW_ITEM_MESSAGE -> AnnouncementViewHolder(
                     LayoutInflater.from(parent.context)
-                        .inflate(R.layout.item_message_active, parent, false)
+                        .inflate(R.layout.dy_item_message_active, parent, false)
                 )
                 VIEW_ITEM_OPERATION -> PkNotifyViewHolder(
                     LayoutInflater.from(parent.context)
-                        .inflate(R.layout.item_message_pk, parent, false)
+                        .inflate(R.layout.dy_item_message_pk, parent, false)
                 )
                 else -> OtherViewHolder(
                     LayoutInflater.from(parent.context)
-                        .inflate(R.layout.item_message_dispatch, parent, false)
+                        .inflate(R.layout.dy_item_message_dispatch, parent, false)
                 )
             }
         }
@@ -171,26 +170,26 @@ class MessageNotifyFragment : BaseFragment<MessagePresenter>(), MessageContract.
                     // 1 2 3 5 6 7
                     when (data.type.toInt()) {
                         2 -> {
-                            h.itemView.img_msg_logo.setImageResource(R.drawable.ic_msg_invite)
+                            h.itemView.img_msg_logo.setImageResource(R.drawable.dy_ic_msg_invite)
                         }
 
                         3 -> {
-                            h.itemView.img_msg_logo.setImageResource(R.drawable.ic_msg_active)
+                            h.itemView.img_msg_logo.setImageResource(R.drawable.dy_ic_msg_active)
                         }
 
                         7 -> {
-                            h.itemView.img_msg_logo.setImageResource(R.drawable.ic_msg_add_child)
+                            h.itemView.img_msg_logo.setImageResource(R.drawable.dy_ic_msg_add_child)
                         }
 
                         else -> {
-                            h.itemView.img_msg_logo.setImageResource(R.drawable.ic_msg_activity)
+                            h.itemView.img_msg_logo.setImageResource(R.drawable.dy_ic_msg_activity)
                         }
                     }
                 }
 
                 VIEW_ITEM_DISPATCH -> {
                     val h = (holder as OtherViewHolder)
-                    h.itemView.img_msg_dispatch_logo.setImageResource(R.drawable.ic_msg_ship)
+                    h.itemView.img_msg_dispatch_logo.setImageResource(R.drawable.dy_ic_msg_ship)
                     h.itemView.tv_msg_dispatch_title.text = data.title
                     h.itemView.tv_msg_dispatch_sub_title.text = data.subTitle
                     h.itemView.tv_msg_dispatch_content.text = data.content
@@ -208,7 +207,7 @@ class MessageNotifyFragment : BaseFragment<MessagePresenter>(), MessageContract.
 
                 VIEW_ITEM_OPERATION -> {
                     val h = (holder as PkNotifyViewHolder)
-                    h.itemView.img_msg_pk_logo.setImageResource(R.drawable.ic_msg_invite)
+                    h.itemView.img_msg_pk_logo.setImageResource(R.drawable.dy_ic_msg_invite)
                     h.itemView.tv_msg_pk_title.text = data.title
                     h.itemView.tv_msg_pk_content.text = data.subTitle
                     h.itemView.tv_msg_pk_time.text =

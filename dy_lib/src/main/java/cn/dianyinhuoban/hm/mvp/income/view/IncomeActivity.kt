@@ -3,7 +3,6 @@ package cn.dianyinhuoban.hm.mvp.income.view
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.os.Handler
 import androidx.core.content.ContextCompat
 import androidx.core.widget.NestedScrollView
 import cn.dianyinhuoban.hm.R
@@ -13,19 +12,17 @@ import cn.dianyinhuoban.hm.mvp.income.contract.IncomeContract
 import cn.dianyinhuoban.hm.mvp.income.presenter.IncomePresenter
 import cn.dianyinhuoban.hm.mvp.income.view.adapter.IncomeAdapter
 import com.gyf.immersionbar.ImmersionBar
-import com.scwang.smart.refresh.footer.ClassicsFooter
 import com.scwang.smart.refresh.header.ClassicsHeader
 import com.scwang.smart.refresh.layout.api.RefreshLayout
 import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener
 import com.scwang.smart.refresh.layout.listener.OnRefreshListener
-import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.DimensionUtils
 import com.wareroom.lib_base.utils.NumberUtils
 import com.wareroom.lib_base.widget.LoadingLayout
-import kotlinx.android.synthetic.main.activity_image_status_bar.*
-import kotlinx.android.synthetic.main.activity_income.*
-import kotlinx.android.synthetic.main.header_income.*
+import kotlinx.android.synthetic.main.dy_activity_image_status_bar.*
+import kotlinx.android.synthetic.main.dy_activity_income.*
+import kotlinx.android.synthetic.main.dy_header_income.*
 
 
 class IncomeActivity : BaseActivity<IncomePresenter?>(), OnRefreshListener, OnLoadMoreListener,
@@ -47,7 +44,7 @@ class IncomeActivity : BaseActivity<IncomePresenter?>(), OnRefreshListener, OnLo
     }
 
     override fun getStatusBarColor(): Int {
-        return R.color.base_color_transparent
+        return R.color.dy_base_color_transparent
     }
 
     override fun getToolbarColor(): Int {
@@ -55,11 +52,11 @@ class IncomeActivity : BaseActivity<IncomePresenter?>(), OnRefreshListener, OnLo
     }
 
     override fun getBackButtonIcon(): Int {
-        return R.drawable.base_ic_back_white
+        return R.drawable.dy_base_ic_back_white
     }
 
     override fun getRootView(): Int {
-        return R.layout.activity_image_status_bar
+        return R.layout.dy_activity_image_status_bar
     }
 
     override fun getPresenter(): IncomePresenter? {
@@ -69,13 +66,13 @@ class IncomeActivity : BaseActivity<IncomePresenter?>(), OnRefreshListener, OnLo
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupStatusBar()
-        setContentView(R.layout.activity_income)
+        setContentView(R.layout.dy_activity_income)
 
         mHeaderImageMaxHeight =
             (762f / 1125f * DimensionUtils.getScreenWidth(IncomeActivity@ this)).toInt()
         mHeaderImageMinHeight =
             DimensionUtils.getStatusBarHeight(IncomeActivity@ this) + resources.getDimensionPixelOffset(
-                R.dimen.base_toolbar_height
+                R.dimen.dy_base_toolbar_height
             )
 
         setTitle("收益", ContextCompat.getColor(IncomeActivity@ this, R.color.color_white))

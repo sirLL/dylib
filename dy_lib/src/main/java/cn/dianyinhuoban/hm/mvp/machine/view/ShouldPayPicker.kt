@@ -6,7 +6,7 @@ import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.widget.dialog.BaseBottomPicker
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
-import kotlinx.android.synthetic.main.item_should_pay.view.*
+import kotlinx.android.synthetic.main.dy_item_should_pay.view.*
 
 class ShouldPayPicker : BaseBottomPicker<Boolean, IPresenter?>() {
     private var mCheckedPosition = -1
@@ -21,7 +21,7 @@ class ShouldPayPicker : BaseBottomPicker<Boolean, IPresenter?>() {
     }
 
     override fun getItemLayoutRes(): Int {
-        return R.layout.item_should_pay
+        return R.layout.dy_item_should_pay
     }
 
     override fun isSupportLoadMore(): Boolean {

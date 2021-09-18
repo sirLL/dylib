@@ -2,17 +2,17 @@
 <resources>
 
     <style name="SubmitButton" parent="TextAppearance.AppCompat.Widget.Button">
-        <item name="android:textColor">@color/color_enable_text_button</item>
+        <item name="android:textColor">@color/dy_color_enable_text_button</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:background">@drawable/selector_button_enable</item>
+        <item name="android:background">@drawable/dy_selector_button_enable</item>
         <item name="android:layout_height">46dp</item>
         <item name="android:layout_width">match_parent</item>
     </style>
 
     <style name="confirmButton">
-        <item name="android:textColor">@color/color_enable_text_button</item>
+        <item name="android:textColor">@color/dy_color_enable_text_button</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:background">@drawable/selector_037dff_radius_6</item>
+        <item name="android:background">@drawable/dy_selector_037dff_radius_6</item>
         <item name="android:layout_height">50dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:gravity">center</item>
@@ -32,7 +32,7 @@
         <item name="android:windowBackground">@android:color/transparent</item><!--背景透明 -->
         <item name="android:windowNoTitle">true</item><!--无标题 -->
         <item name="android:backgroundDimEnabled">true</item><!--背景亮 -->
-        <item name="android:windowAnimationStyle">@style/BaseBottomDialogFragment</item>
+        <item name="android:windowAnimationStyle">@style/DYBaseBottomDialogFragment</item>
     </style>
 
 

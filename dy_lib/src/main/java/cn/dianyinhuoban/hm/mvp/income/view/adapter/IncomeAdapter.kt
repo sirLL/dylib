@@ -8,7 +8,7 @@ import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.mvp.bean.IncomeItemBean
 import com.wareroom.lib_base.ui.adapter.BaseAdapter
 import com.wareroom.lib_base.utils.NumberUtils
-import kotlinx.android.synthetic.main.item_income.view.*
+import kotlinx.android.synthetic.main.dy_item_income.view.*
 
 class IncomeAdapter : BaseAdapter<IncomeItemBean, IncomeAdapter.IncomeViewHolder>() {
     var onItemClickListener: OnItemClickListener? = null
@@ -16,13 +16,13 @@ class IncomeAdapter : BaseAdapter<IncomeItemBean, IncomeAdapter.IncomeViewHolder
     private var mPurchaseBack: String? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IncomeViewHolder {
         val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_income, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.dy_item_income, parent, false)
         return IncomeViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: IncomeViewHolder, position: Int) {
         if (position == 0) {
-            holder.itemView.iv_income_type.setImageResource(R.drawable.ic_income_activation)
+            holder.itemView.iv_income_type.setImageResource(R.drawable.dy_ic_income_activation)
             holder.itemView.tv_amount.text = if (null == mActivationBack) {
                 "--"
             } else {
@@ -31,7 +31,7 @@ class IncomeAdapter : BaseAdapter<IncomeItemBean, IncomeAdapter.IncomeViewHolder
             holder.itemView.tv_title.text = "激活返现"
             holder.itemView.tv_other.text = "激活返现明细"
         } else {
-            holder.itemView.iv_income_type.setImageResource(R.drawable.ic_income_purchase)
+            holder.itemView.iv_income_type.setImageResource(R.drawable.dy_ic_income_purchase)
             holder.itemView.tv_amount.text = if (null == mPurchaseBack) {
                 "--"
             } else {
