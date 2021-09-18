@@ -4,14 +4,10 @@ import CustomResourceSubscriber
 import cn.dianyinhuoban.hm.mvp.bean.*
 import cn.dianyinhuoban.hm.mvp.pk.contract.PKContract
 import cn.dianyinhuoban.hm.mvp.pk.model.PKModel
-import cn.dianyinhuoban.hm.mvp.ranking.contract.RankContract
-import cn.dianyinhuoban.hm.mvp.ranking.model.RankModel
 import com.wareroom.lib_base.mvp.BasePresenter
 import com.wareroom.lib_http.exception.ApiException
-import com.wareroom.lib_http.response.Response
 import com.wareroom.lib_http.response.ResponseTransformer
 import com.wareroom.lib_http.schedulers.SchedulerProvider
-import io.reactivex.Observable
 
 class PKPresenter(view: PKContract.View) : BasePresenter<PKModel, PKContract.View>(view),
     PKContract.Presenter {

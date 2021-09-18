@@ -16,7 +16,6 @@ import com.wareroom.lib_base.utils.DimensionUtils
 import com.wareroom.lib_base.utils.NumberUtils
 import kotlinx.android.synthetic.main.dy_activity_order_detail.*
 import kotlinx.android.synthetic.main.dy_item_pos_order.*
-import kotlinx.android.synthetic.main.dy_item_pos_order.view.*
 
 class OrderDetailActivity : BaseActivity<OrderDetailPresenter?>(), OrderDetailContract.View {
     private var mOrderID: String? = null

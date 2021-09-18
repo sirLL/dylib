@@ -1,7 +1,6 @@
 package cn.dianyinhuoban.hm.mvp.order.contract
 
 import cn.dianyinhuoban.hm.mvp.bean.AddressBean
-import cn.dianyinhuoban.hm.mvp.bean.EmptyBean
 import cn.dianyinhuoban.hm.mvp.bean.PayInfoBean
 import com.wareroom.lib_base.mvp.IView
 import com.wareroom.lib_http.response.Response

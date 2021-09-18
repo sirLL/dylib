@@ -8,7 +8,6 @@ import android.text.TextWatcher
 import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.mvp.auth.contract.AuthContract
 import cn.dianyinhuoban.hm.mvp.auth.presenter.AuthPresenter
-import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.ValidatorUtils
 import kotlinx.android.synthetic.main.dy_activity_realname_auth.*

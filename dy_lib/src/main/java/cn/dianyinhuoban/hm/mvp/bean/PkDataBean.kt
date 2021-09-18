@@ -1,7 +1,5 @@
 package cn.dianyinhuoban.hm.mvp.bean
 
-import java.math.BigDecimal
-
 data class PkDataBean(
     var equalData: EqualData?,
     var myData: MyData,

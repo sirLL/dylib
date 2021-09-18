@@ -2,7 +2,6 @@ package cn.dianyinhuoban.hm.mvp.ranking.presenter
 
 import CustomResourceSubscriber
 import cn.dianyinhuoban.hm.mvp.bean.RankBean
-import cn.dianyinhuoban.hm.mvp.bean.RankItemBean
 import cn.dianyinhuoban.hm.mvp.ranking.contract.RankContract
 import cn.dianyinhuoban.hm.mvp.ranking.model.RankModel
 import com.wareroom.lib_base.mvp.BasePresenter

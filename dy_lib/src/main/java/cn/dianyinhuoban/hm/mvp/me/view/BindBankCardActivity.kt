@@ -10,7 +10,6 @@ import cn.dianyinhuoban.hm.mvp.bean.ImageCodeBean
 import cn.dianyinhuoban.hm.mvp.setting.contract.BankContract
 import cn.dianyinhuoban.hm.mvp.setting.presenter.BankPresenter
 import cn.dianyinhuoban.hm.widget.dialog.ImageCodeDialog
-import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.ValidatorUtils
 import kotlinx.android.synthetic.main.dy_activity_bind_bank_card.*

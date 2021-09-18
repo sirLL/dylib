@@ -1,13 +1,8 @@
 package cn.dianyinhuoban.hm.mvp.setting.presenter
 
 import CustomResourceSubscriber
-import cn.dianyinhuoban.hm.mvp.bean.BankBean
-import cn.dianyinhuoban.hm.mvp.bean.EmptyBean
-import cn.dianyinhuoban.hm.mvp.bean.ImageCodeBean
 import cn.dianyinhuoban.hm.mvp.bean.NotifyMessageBean
-import cn.dianyinhuoban.hm.mvp.setting.contract.BankContract
 import cn.dianyinhuoban.hm.mvp.setting.contract.MessageContract
-import cn.dianyinhuoban.hm.mvp.setting.model.BankModel
 import cn.dianyinhuoban.hm.mvp.setting.model.MessageModel
 import com.wareroom.lib_base.mvp.BasePresenter
 import com.wareroom.lib_http.exception.ApiException

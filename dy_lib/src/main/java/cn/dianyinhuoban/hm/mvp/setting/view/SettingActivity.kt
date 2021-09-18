@@ -1,7 +1,6 @@
 package cn.dianyinhuoban.hm.mvp.setting.view
 
 import android.app.Activity
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
@@ -16,7 +15,6 @@ import cn.dianyinhuoban.hm.mvp.bean.AuthResult
 import cn.dianyinhuoban.hm.mvp.setting.contract.SettingContract
 import cn.dianyinhuoban.hm.mvp.setting.presenter.SettingPresenter
 import com.wareroom.lib_base.api.BaseURLConfig
-import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.AppManager
 import com.wareroom.lib_base.utils.CacheFileUtils

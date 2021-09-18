@@ -2,7 +2,6 @@ package cn.dianyinhuoban.hm.mvp.order.model
 
 import cn.dianyinhuoban.hm.api.ApiService
 import cn.dianyinhuoban.hm.mvp.bean.AddressBean
-import cn.dianyinhuoban.hm.mvp.bean.EmptyBean
 import cn.dianyinhuoban.hm.mvp.bean.PayInfoBean
 import cn.dianyinhuoban.hm.mvp.order.contract.CreateOrderContract
 import com.wareroom.lib_base.mvp.BaseModel

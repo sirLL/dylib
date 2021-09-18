@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
-import android.view.inputmethod.InputMethodManager
 import cn.dianyinhuoban.hm.R
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity

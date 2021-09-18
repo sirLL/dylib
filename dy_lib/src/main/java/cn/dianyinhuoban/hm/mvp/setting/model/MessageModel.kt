@@ -1,11 +1,7 @@
 package cn.dianyinhuoban.hm.mvp.setting.model
 
-import cn.dianyinhuoban.hm.api.ApiService
-import cn.dianyinhuoban.hm.api.BankApiService
 import cn.dianyinhuoban.hm.api.MessageApiService
 import cn.dianyinhuoban.hm.mvp.bean.*
-import cn.dianyinhuoban.hm.mvp.login.contract.LoginContract
-import cn.dianyinhuoban.hm.mvp.setting.contract.BankContract
 import cn.dianyinhuoban.hm.mvp.setting.contract.MessageContract
 import com.wareroom.lib_base.mvp.BaseModel
 import com.wareroom.lib_http.response.Response

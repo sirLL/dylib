@@ -10,7 +10,6 @@ import cn.dianyinhuoban.hm.mvp.bean.ImageCodeBean
 import cn.dianyinhuoban.hm.mvp.login.contract.RegisterContract
 import cn.dianyinhuoban.hm.mvp.login.presenter.RegisterPresenter
 import cn.dianyinhuoban.hm.widget.dialog.ImageCodeDialog
-import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.ValidatorUtils
 import kotlinx.android.synthetic.main.dy_activity_reset_password.*

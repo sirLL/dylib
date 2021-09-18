@@ -3,14 +3,11 @@ package cn.dianyinhuoban.hm.mvp.setting.view
 import android.os.Bundle
 import android.view.View
 import cn.dianyinhuoban.hm.R
-import cn.dianyinhuoban.hm.mvp.bean.AuthResult
 import cn.dianyinhuoban.hm.mvp.bean.JiangWuTangBean
 import cn.dianyinhuoban.hm.mvp.setting.contract.SettingContract
 import cn.dianyinhuoban.hm.mvp.setting.presenter.SettingPresenter
 import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
-import com.wareroom.lib_http.response.Response
-import io.reactivex.Observable
 import kotlinx.android.synthetic.main.dy_item_jwt.view.*
 
 class JiangWuTangFragment : BaseListFragment<JiangWuTangBean, SettingPresenter>(), SettingContract.View {

@@ -1,9 +1,7 @@
 package cn.dianyinhuoban.hm.mvp.order.presenter
 
 import CustomResourceSubscriber
-import android.text.TextUtils
 import cn.dianyinhuoban.hm.mvp.bean.AddressBean
-import cn.dianyinhuoban.hm.mvp.bean.EmptyBean
 import cn.dianyinhuoban.hm.mvp.bean.PayInfoBean
 import cn.dianyinhuoban.hm.mvp.order.contract.CreateOrderContract
 import cn.dianyinhuoban.hm.mvp.order.model.CreateOrderModel

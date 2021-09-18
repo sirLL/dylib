@@ -1,13 +1,11 @@
 package cn.dianyinhuoban.hm.mvp.me.view
 
 import android.os.Bundle
-import android.os.Handler
 import android.view.View
 import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.mvp.bean.MyClientBean
 import cn.dianyinhuoban.hm.mvp.me.contract.MyClientContract
 import cn.dianyinhuoban.hm.mvp.me.presenter.MyClientPresenter
-import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.DateTimeUtils

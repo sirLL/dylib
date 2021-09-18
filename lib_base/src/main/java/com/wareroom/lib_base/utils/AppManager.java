@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 import com.wareroom.lib_base.utils.cache.MMKVUtil;
 
@@ -13,7 +14,7 @@ import java.util.List;
 import java.util.Stack;
 
 public class AppManager {
-
+    private static final String TAG = "AppManager";
     // 使用弱引用是因为存在未使用AppManager的finish方法来释放的activity，但mActivityStack并未断开对其应用导致内存泄露的问题
     private Stack<WeakReference<Activity>> mActivityStack;
     private static volatile AppManager sInstance;
@@ -297,9 +298,11 @@ public class AppManager {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+        Log.d(TAG, "onTokenInvalid: loginClass==null?" + (loginClass == null));
         if (loginClass != null) {
             context.startActivity(new Intent(context, loginClass));
         }
+
     }
 
     public void loginOut(Context context) {

@@ -1,7 +1,6 @@
 package cn.dianyinhuoban.hm.mvp.machine.presenter
 
 import CustomResourceSubscriber
-import cn.dianyinhuoban.hm.mvp.bean.MachineItemBean
 import cn.dianyinhuoban.hm.mvp.bean.MachineTypeBean
 import cn.dianyinhuoban.hm.mvp.bean.MyMachineBean
 import cn.dianyinhuoban.hm.mvp.machine.contract.MachineManagerContract

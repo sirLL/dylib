@@ -1,10 +1,8 @@
 package cn.dianyinhuoban.hm.mvp.setting.contract
 
 import cn.dianyinhuoban.hm.mvp.bean.EmptyBean
-import cn.dianyinhuoban.hm.mvp.bean.HomeDataBean
 import cn.dianyinhuoban.hm.mvp.bean.UserBean
 import com.wareroom.lib_base.mvp.IView
-import com.wareroom.lib_http.exception.ApiException
 import com.wareroom.lib_http.response.Response
 import io.reactivex.Observable
 

@@ -13,7 +13,7 @@ public class DYHelper {
         ToastUtils.init(application);
         MMKVUtil.saveUserID("7");
         MMKVUtil.saveUserName("15202353939");
-        MMKVUtil.saveToken("AMqh4jC7tpWMbMFag2cFGcRK5gpDuyWJs8kCVDr6m2PBdQFvcQH6sn3QYB7DBAYh");
+        MMKVUtil.saveToken("s5wfRzRXXX7AtEQuwzghCDEDerzSdKNGzHVbUnPMvEJvru7j4mbStsWehP5ENsTm");
         MMKVUtil.savePhone("15202353939");
         MMKVUtil.saveNick("吗咿呀嘿");
 //        MMKVUtil.saveLoginPassword(password);
