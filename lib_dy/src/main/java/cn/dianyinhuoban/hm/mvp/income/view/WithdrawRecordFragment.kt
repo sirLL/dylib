@@ -12,7 +12,7 @@ import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.DateTimeUtils
 import com.wareroom.lib_base.utils.NumberUtils
-import kotlinx.android.synthetic.main.item_withdraw_record.view.*
+import kotlinx.android.synthetic.main.dy_item_withdraw_record.view.*
 
 class WithdrawRecordFragment : BaseListFragment<WithdrawRecordBean, WithdrawRecordPresenter?>(),
     WithdrawRecordContract.View {
@@ -27,7 +27,7 @@ class WithdrawRecordFragment : BaseListFragment<WithdrawRecordBean, WithdrawReco
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_withdraw_record
+        return R.layout.dy_item_withdraw_record
     }
 
     override fun getPresenter(): WithdrawRecordPresenter? {

@@ -77,7 +77,7 @@
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
             android:text="发送验证码"
-            android:textColor="@color/color_enable_d8d8d8_1b68eb" />
+            android:textColor="@color/dy_color_enable_d8d8d8_1b68eb" />
     </LinearLayout>
 
     <LinearLayout

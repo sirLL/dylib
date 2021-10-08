@@ -13,7 +13,7 @@ import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.DimensionUtils
 import com.wareroom.lib_base.utils.NumberUtils
-import kotlinx.android.synthetic.main.item_product_list.view.*
+import kotlinx.android.synthetic.main.dy_item_product_list.view.*
 
 class ProductListFragment : BaseListFragment<PurchaseProductBean, ProductListPresenter>(),
     ProductListContract.View {
@@ -47,7 +47,7 @@ class ProductListFragment : BaseListFragment<PurchaseProductBean, ProductListPre
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_product_list
+        return R.layout.dy_item_product_list
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

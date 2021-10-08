@@ -10,7 +10,7 @@ class BatchTransferActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_batch_transfer)
+        setContentView(R.layout.dy_activity_batch_transfer)
 
 
     }

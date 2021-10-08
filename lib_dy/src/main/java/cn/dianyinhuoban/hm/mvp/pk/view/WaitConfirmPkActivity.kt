@@ -10,7 +10,7 @@ class WaitConfirmPkActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_wait_confirm_pk)
+        setContentView(R.layout.dy_activity_wait_confirm_pk)
 
 
     }

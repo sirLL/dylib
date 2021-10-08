@@ -20,11 +20,11 @@ import com.wareroom.lib_base.ui.BaseFragment
 import com.wareroom.lib_base.utils.NumberUtils
 import com.wareroom.lib_base.utils.cache.MMKVUtil
 import com.wareroom.lib_base.widget.LoadingLayout
-import kotlinx.android.synthetic.main.fragment_ranking_team.*
-import kotlinx.android.synthetic.main.fragment_ranking_team.loading_layout
-import kotlinx.android.synthetic.main.fragment_ranking_team.recycler_view
-import kotlinx.android.synthetic.main.fragment_ranking_team.refresh_layout
-import kotlinx.android.synthetic.main.fragment_ranking_team.tv_amount_team
+import kotlinx.android.synthetic.main.dy_fragment_ranking_team.*
+import kotlinx.android.synthetic.main.dy_fragment_ranking_team.loading_layout
+import kotlinx.android.synthetic.main.dy_fragment_ranking_team.recycler_view
+import kotlinx.android.synthetic.main.dy_fragment_ranking_team.refresh_layout
+import kotlinx.android.synthetic.main.dy_fragment_ranking_team.tv_amount_team
 
 class RankingTeamFragment : BaseFragment<RankPresenter?>(), OnRefreshListener, OnLoadMoreListener,
     LoadingLayout.OnViewClickListener, RankContract.View {
@@ -48,7 +48,7 @@ class RankingTeamFragment : BaseFragment<RankPresenter?>(), OnRefreshListener, O
     }
 
     override fun getContentView(): Int {
-        return R.layout.fragment_ranking_team
+        return R.layout.dy_fragment_ranking_team
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -11,7 +11,7 @@ class OrderResultActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_order_result)
+        setContentView(R.layout.dy_activity_order_result)
 
     }
 

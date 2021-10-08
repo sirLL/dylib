@@ -47,7 +47,7 @@ public class PayPwdDialog extends Dialog implements InputCodeView.OnCodeComplete
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dialog_pay_password);
+        setContentView(R.layout.dy_dialog_pay_password);
         mCodeText = findViewById(R.id.code_pwd_view);
         mCodeText.setOnCodeCompleteListener(this);
         mCodeText.setEnabled(false);

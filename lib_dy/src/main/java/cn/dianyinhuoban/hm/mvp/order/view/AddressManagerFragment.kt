@@ -11,8 +11,8 @@ import cn.dianyinhuoban.hm.mvp.order.presenter.AddressManagerPresenter
 import cn.dianyinhuoban.hm.mvp.setting.view.AddShipAddressActivity
 import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
-import kotlinx.android.synthetic.main.fragment_address_manager.*
-import kotlinx.android.synthetic.main.item_address_manager.view.*
+import kotlinx.android.synthetic.main.dy_fragment_address_manager.*
+import kotlinx.android.synthetic.main.dy_item_address_manager.view.*
 
 class AddressManagerFragment : BaseListFragment<AddressBean?, AddressManagerPresenter?>(),
     AddressManagerContract.View {
@@ -52,11 +52,11 @@ class AddressManagerFragment : BaseListFragment<AddressBean?, AddressManagerPres
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_address_manager
+        return R.layout.dy_item_address_manager
     }
 
     override fun getContentView(): Int {
-        return R.layout.fragment_address_manager
+        return R.layout.dy_fragment_address_manager
     }
 
     override fun onRequest(page: Int) {

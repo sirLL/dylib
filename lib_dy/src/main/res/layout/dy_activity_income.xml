@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    tools:context=".mvp.income.view.IncomeActivity">
+
     <com.scwang.smart.refresh.layout.SmartRefreshLayout
         android:id="@+id/refresh_layout"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="0.5dp"
-        android:layout_weight="1">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="true"
@@ -20,18 +25,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="12dp"
                 android:orientation="vertical">
 
-                <include layout="@layout/header_income_purchase_detail" />
+                <include layout="@layout/dy_header_income" />
 
                 <com.wareroom.lib_base.widget.LoadingLayout
-                    android:id="@+id/load_layout"
+                    android:id="@+id/loading_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/color_white">
+                    android:layout_height="0dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1">
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recycler_view"
@@ -43,8 +46,7 @@
                         android:scrollbars="none"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
                 </com.wareroom.lib_base.widget.LoadingLayout>
-
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
     </com.scwang.smart.refresh.layout.SmartRefreshLayout>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,7 +21,7 @@ import com.wareroom.lib_base.ui.BaseFragment
 import com.wareroom.lib_base.utils.NumberUtils
 import com.wareroom.lib_base.utils.cache.MMKVUtil
 import com.wareroom.lib_base.widget.LoadingLayout
-import kotlinx.android.synthetic.main.fragment_ranking_personal.*
+import kotlinx.android.synthetic.main.dy_fragment_ranking_personal.*
 
 
 class RankingActivationFragment : BaseFragment<RankPresenter?>(), OnRefreshListener,
@@ -47,7 +47,7 @@ class RankingActivationFragment : BaseFragment<RankPresenter?>(), OnRefreshListe
     }
 
     override fun getContentView(): Int {
-        return R.layout.fragment_ranking_personal
+        return R.layout.dy_fragment_ranking_personal
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

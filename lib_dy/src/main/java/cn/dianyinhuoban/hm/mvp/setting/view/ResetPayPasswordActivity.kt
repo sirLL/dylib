@@ -15,7 +15,7 @@ import cn.dianyinhuoban.hm.widget.dialog.ImageCodeDialog
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.ValidatorUtils
 import com.wareroom.lib_base.utils.cache.MMKVUtil
-import kotlinx.android.synthetic.main.activity_reset_pay_password.*
+import kotlinx.android.synthetic.main.dy_activity_reset_pay_password.*
 
 
 class ResetPayPasswordActivity : BaseActivity<PayPasswordPresenter?>(), PayPasswordContract.View {
@@ -35,7 +35,7 @@ class ResetPayPasswordActivity : BaseActivity<PayPasswordPresenter?>(), PayPassw
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_reset_pay_password)
+        setContentView(R.layout.dy_activity_reset_pay_password)
         setTitle("忘记支付密码")
         ed_phone.text = MMKVUtil.getUserName()
         initView()

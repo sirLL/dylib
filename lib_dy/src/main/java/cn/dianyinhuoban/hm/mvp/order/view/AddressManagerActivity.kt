@@ -31,7 +31,7 @@ class AddressManagerActivity : BaseActivity<IPresenter?>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTitle("地址列表")
-        setContentView(R.layout.activity_address_manager)
+        setContentView(R.layout.dy_activity_address_manager)
         val isPicker = intent?.extras?.getBoolean("isPicker", false)
         supportFragmentManager.beginTransaction()
             .add(

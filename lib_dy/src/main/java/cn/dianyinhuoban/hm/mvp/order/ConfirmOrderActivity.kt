@@ -24,7 +24,7 @@ import coil.transform.RoundedCornersTransformation
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.DimensionUtils
 import com.wareroom.lib_base.utils.NumberUtils
-import kotlinx.android.synthetic.main.activity_confirm_order.*
+import kotlinx.android.synthetic.main.dy_activity_confirm_order.*
 import org.greenrobot.eventbus.EventBus
 import java.math.BigDecimal
 
@@ -76,7 +76,7 @@ class ConfirmOrderActivity : BaseActivity<CreateOrderPresenter?>(), CreateOrderC
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_confirm_order)
+        setContentView(R.layout.dy_activity_confirm_order)
         setTitle("确认订单")
         btn_submit.setOnClickListener {
             submitOrder()

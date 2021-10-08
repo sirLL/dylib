@@ -21,7 +21,7 @@ import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.AppManager
 import com.wareroom.lib_base.utils.CacheFileUtils
 import com.wareroom.lib_base.utils.cache.MMKVUtil
-import kotlinx.android.synthetic.main.activity_setting.*
+import kotlinx.android.synthetic.main.dy_activity_setting.*
 
 class SettingActivity : BaseActivity<SettingPresenter?>(), SettingContract.View {
 
@@ -33,7 +33,7 @@ class SettingActivity : BaseActivity<SettingPresenter?>(), SettingContract.View 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_setting)
+        setContentView(R.layout.dy_activity_setting)
         setTitle("设置")
 
 

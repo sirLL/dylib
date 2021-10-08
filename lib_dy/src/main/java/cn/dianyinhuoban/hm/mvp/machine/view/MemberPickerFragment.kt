@@ -14,10 +14,10 @@ import cn.dianyinhuoban.hm.mvp.me.contract.TeamMemberContract
 import cn.dianyinhuoban.hm.mvp.me.presenter.TeamMemberPresenter
 import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
-import kotlinx.android.synthetic.main.fragment_member_picker.ed_search
-import kotlinx.android.synthetic.main.fragment_member_picker.iv_clean
-import kotlinx.android.synthetic.main.fragment_member_picker.tv_cancel
-import kotlinx.android.synthetic.main.item_member_picker.view.*
+import kotlinx.android.synthetic.main.dy_fragment_member_picker.ed_search
+import kotlinx.android.synthetic.main.dy_fragment_member_picker.iv_clean
+import kotlinx.android.synthetic.main.dy_fragment_member_picker.tv_cancel
+import kotlinx.android.synthetic.main.dy_item_member_picker.view.*
 
 class MemberPickerFragment : BaseListFragment<TeamMemberBean?, TeamMemberPresenter?>(),
     TeamMemberContract.View {
@@ -34,11 +34,11 @@ class MemberPickerFragment : BaseListFragment<TeamMemberBean?, TeamMemberPresent
     }
 
     override fun getContentView(): Int {
-        return R.layout.fragment_member_picker
+        return R.layout.dy_fragment_member_picker
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_member_picker
+        return R.layout.dy_item_member_picker
     }
 
     override fun getPresenter(): TeamMemberPresenter? {

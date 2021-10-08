@@ -7,7 +7,7 @@ import cn.dianyinhuoban.hm.R
 import com.hjq.toast.ToastUtils
 import com.wareroom.lib_base.utils.Base64Utils
 import com.wareroom.lib_base.utils.DimensionUtils
-import kotlinx.android.synthetic.main.dialog_image_code.*
+import kotlinx.android.synthetic.main.dy_dialog_image_code.*
 
 class ImageCodeDialog : DialogFragment() {
 
@@ -29,7 +29,7 @@ class ImageCodeDialog : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        return inflater.inflate(R.layout.dialog_image_code, container, false)
+        return inflater.inflate(R.layout.dy_dialog_image_code, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -16,7 +16,7 @@ abstract class PopListPicker<T>(context: Context) : PopupWindow() {
 
     init {
         val contentView =
-            LayoutInflater.from(context).inflate(R.layout.pop_list_picker, null, false)
+            LayoutInflater.from(context).inflate(R.layout.dy_pop_list_picker, null, false)
         mRecyclerView = contentView.findViewById(R.id.recycler_view)
         mAdapter = createAdapter()
         mRecyclerView?.adapter = mAdapter
@@ -30,7 +30,7 @@ abstract class PopListPicker<T>(context: Context) : PopupWindow() {
     }
 
     private fun createAdapter(): SimpleAdapter<T> {
-        return object : SimpleAdapter<T>(R.layout.item_pop_list_picker) {
+        return object : SimpleAdapter<T>(R.layout.dy_item_pop_list_picker) {
             override fun convert(
                 viewHolder: SimpleAdapter.SimpleViewHolder?,
                 position: Int,

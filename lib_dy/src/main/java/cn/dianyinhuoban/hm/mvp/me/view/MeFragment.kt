@@ -25,7 +25,7 @@ import coil.transform.CircleCropTransformation
 import com.wareroom.lib_base.ui.BaseFragment
 import com.wareroom.lib_base.utils.NumberUtils
 import com.wareroom.lib_base.utils.OSUtils
-import kotlinx.android.synthetic.main.fragment_me.*
+import kotlinx.android.synthetic.main.dy_fragment_me.*
 import java.util.*
 
 
@@ -46,7 +46,7 @@ class MeFragment : BaseFragment<MePresenter?>(), MeContract.View {
     }
 
     override fun getContentView(): Int {
-        return R.layout.fragment_me
+        return R.layout.dy_fragment_me
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

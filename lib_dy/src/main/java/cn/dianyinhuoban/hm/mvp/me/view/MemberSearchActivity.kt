@@ -16,7 +16,7 @@ class MemberSearchActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_member_search)
+        setContentView(R.layout.dy_activity_member_search)
         supportFragmentManager.beginTransaction()
             .add(R.id.fl_container, MemberSearchFragment.newInstance(), "MemberSearchFragment")
             .commit()

@@ -14,7 +14,7 @@ import coil.load
 import com.wareroom.lib_base.ui.adapter.BaseAdapter
 import com.wareroom.lib_base.utils.NumberUtils
 import com.wareroom.lib_base.widget.image_view.CircleImageView
-import kotlinx.android.synthetic.main.item_ranking_list.view.*
+import kotlinx.android.synthetic.main.dy_item_ranking_list.view.*
 
 class RankingTeamAdapter : BaseAdapter<RankItemBean, RecyclerView.ViewHolder>() {
 
@@ -23,12 +23,12 @@ class RankingTeamAdapter : BaseAdapter<RankItemBean, RecyclerView.ViewHolder>() 
         return when (viewType) {
             ITEM_TYPE_HEADER -> {
                 itemView = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.header_ranking_list, parent, false)
+                    .inflate(R.layout.dy_header_ranking_list, parent, false)
                 HeaderViewHolder(itemView)
             }
             else -> {
                 itemView = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_ranking_list, parent, false)
+                    .inflate(R.layout.dy_item_ranking_list, parent, false)
                 ItemViewHolder(itemView)
             }
         }

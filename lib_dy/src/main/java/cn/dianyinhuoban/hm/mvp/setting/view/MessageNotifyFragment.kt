@@ -1,7 +1,6 @@
 package cn.dianyinhuoban.hm.mvp.setting.view
 
 import android.os.Bundle
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,10 +18,10 @@ import com.wareroom.lib_base.ui.BaseFragment
 import com.wareroom.lib_base.utils.DateTimeUtils
 import com.wareroom.lib_base.utils.DimensionUtils
 import com.wareroom.lib_base.widget.DividerDecoration
-import kotlinx.android.synthetic.main.fragment_message_notify.*
-import kotlinx.android.synthetic.main.item_message_active.view.*
-import kotlinx.android.synthetic.main.item_message_dispatch.view.*
-import kotlinx.android.synthetic.main.item_message_pk.view.*
+import kotlinx.android.synthetic.main.dy_fragment_message_notify.*
+import kotlinx.android.synthetic.main.dy_item_message_active.view.*
+import kotlinx.android.synthetic.main.dy_item_message_dispatch.view.*
+import kotlinx.android.synthetic.main.dy_item_message_pk.view.*
 
 class MessageNotifyFragment : BaseFragment<MessagePresenter>(), MessageContract.View,
     PKContract.View {
@@ -70,7 +69,7 @@ class MessageNotifyFragment : BaseFragment<MessagePresenter>(), MessageContract.
     }
 
     override fun getContentView(): Int {
-        return R.layout.fragment_message_notify
+        return R.layout.dy_fragment_message_notify
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -143,15 +142,15 @@ class MessageNotifyFragment : BaseFragment<MessagePresenter>(), MessageContract.
             return when (viewType) {
                 VIEW_ITEM_MESSAGE -> AnnouncementViewHolder(
                     LayoutInflater.from(parent.context)
-                        .inflate(R.layout.item_message_active, parent, false)
+                        .inflate(R.layout.dy_item_message_active, parent, false)
                 )
                 VIEW_ITEM_OPERATION -> PkNotifyViewHolder(
                     LayoutInflater.from(parent.context)
-                        .inflate(R.layout.item_message_pk, parent, false)
+                        .inflate(R.layout.dy_item_message_pk, parent, false)
                 )
                 else -> OtherViewHolder(
                     LayoutInflater.from(parent.context)
-                        .inflate(R.layout.item_message_dispatch, parent, false)
+                        .inflate(R.layout.dy_item_message_dispatch, parent, false)
                 )
             }
         }

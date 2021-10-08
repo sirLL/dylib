@@ -18,10 +18,10 @@ import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.DateTimeUtils
 import com.wareroom.lib_base.utils.NumberUtils
-import kotlinx.android.synthetic.main.fragment_income_personal_detail.*
+import kotlinx.android.synthetic.main.dy_fragment_income_personal_detail.*
 import java.math.BigDecimal
 import java.util.*
-import kotlinx.android.synthetic.main.item_income_personal_detail.view.*
+import kotlinx.android.synthetic.main.dy_item_income_personal_detail.view.*
 
 class IncomePersonalDetailFragment : BaseListFragment<DetailBean, IncomeDetailPresenter?>(),
     IncomeDetailContract.View {
@@ -46,7 +46,7 @@ class IncomePersonalDetailFragment : BaseListFragment<DetailBean, IncomeDetailPr
     }
 
     override fun getContentView(): Int {
-        return R.layout.fragment_income_personal_detail
+        return R.layout.dy_fragment_income_personal_detail
     }
 
     override fun onCreateView(
@@ -184,7 +184,7 @@ class IncomePersonalDetailFragment : BaseListFragment<DetailBean, IncomeDetailPr
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_income_personal_detail
+        return R.layout.dy_item_income_personal_detail
     }
 
     override fun convert(

@@ -18,8 +18,8 @@ import com.wareroom.lib_base.ui.BaseFragment
 import com.wareroom.lib_base.utils.DateTimeUtils
 import com.wareroom.lib_base.utils.DimensionUtils
 import com.wareroom.lib_base.utils.cache.MMKVUtil
-import kotlinx.android.synthetic.main.activity_pk_fragment.*
-import kotlinx.android.synthetic.main.item_home_pk.*
+import kotlinx.android.synthetic.main.dy_activity_pk_fragment.*
+import kotlinx.android.synthetic.main.dy_item_home_pk.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -49,7 +49,7 @@ class PersonalPkFragment : BaseFragment<PKPresenter>(), PKContract.View {
     }
 
     override fun getContentView(): Int {
-        return R.layout.activity_pk_fragment
+        return R.layout.dy_activity_pk_fragment
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

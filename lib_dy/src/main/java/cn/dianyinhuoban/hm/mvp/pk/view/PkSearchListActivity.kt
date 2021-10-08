@@ -11,7 +11,7 @@ import android.view.inputmethod.InputMethodManager
 import cn.dianyinhuoban.hm.R
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_pk_search.*
+import kotlinx.android.synthetic.main.dy_activity_pk_search.*
 
 class PkSearchListActivity : BaseActivity<IPresenter?>() {
 
@@ -32,7 +32,7 @@ class PkSearchListActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pk_search)
+        setContentView(R.layout.dy_activity_pk_search)
 
         mSelectType = intent.getStringExtra("type").toString()
 

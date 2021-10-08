@@ -25,7 +25,7 @@ import com.github.gzuliyujiang.wheelpicker.entity.ProvinceEntity
 import com.github.gzuliyujiang.wheelpicker.utility.AddressJsonParser
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.ValidatorUtils
-import kotlinx.android.synthetic.main.activity_add_ship_address.*
+import kotlinx.android.synthetic.main.dy_activity_add_ship_address.*
 
 
 class AddShipAddressActivity : BaseActivity<AddShipAddressPresenter?>(),
@@ -71,7 +71,7 @@ class AddShipAddressActivity : BaseActivity<AddShipAddressPresenter?>(),
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_ship_address)
+        setContentView(R.layout.dy_activity_add_ship_address)
         setTitle("添加收货地址")
         setupAction()
         setupInputListener()

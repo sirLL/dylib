@@ -9,8 +9,8 @@ import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.mvp.setting.contract.PayPasswordContract
 import cn.dianyinhuoban.hm.mvp.setting.presenter.PayPasswordPresenter
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_change_password.*
-import kotlinx.android.synthetic.main.activity_register.*
+import kotlinx.android.synthetic.main.dy_activity_change_password.*
+import kotlinx.android.synthetic.main.dy_activity_register.*
 
 class ChangePayPwdActivity : BaseActivity<PayPasswordPresenter>(), PayPasswordContract.View {
 
@@ -23,7 +23,7 @@ class ChangePayPwdActivity : BaseActivity<PayPasswordPresenter>(), PayPasswordCo
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_change_pay_password)
+        setContentView(R.layout.dy_activity_change_pay_password)
         setTitle("修改支付密码")
 
         btn_change_pwd_submit.setOnClickListener {

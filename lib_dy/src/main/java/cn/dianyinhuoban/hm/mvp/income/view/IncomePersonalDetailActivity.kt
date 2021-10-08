@@ -9,7 +9,7 @@ import cn.dianyinhuoban.hm.mvp.income.view.IncomePersonalDetailFragment.Companio
 import com.dy.tablayout.listener.CustomTabEntity
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_income_personal_detail.*
+import kotlinx.android.synthetic.main.dy_activity_income_personal_detail.*
 import kotlin.collections.ArrayList
 
 class IncomePersonalDetailActivity : BaseActivity<IPresenter?>() {
@@ -19,7 +19,7 @@ class IncomePersonalDetailActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_income_personal_detail)
+        setContentView(R.layout.dy_activity_income_personal_detail)
         setTitle("个人收益明细")
         setupTab()
     }

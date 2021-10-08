@@ -12,15 +12,12 @@ import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import cn.dianyinhuoban.hm.R
-import cn.dianyinhuoban.hm.bean.BaseAreaBean
 import cn.dianyinhuoban.hm.mvp.bean.UploadResultBean
 import cn.dianyinhuoban.hm.mvp.bean.UserBean
-import cn.dianyinhuoban.hm.mvp.income.view.IncomeTeamDetailFragment
 import cn.dianyinhuoban.hm.mvp.setting.contract.ProfileContract
 import cn.dianyinhuoban.hm.mvp.setting.presenter.ProfilePresenter
 import cn.dianyinhuoban.hm.mvp.upload.FileModel
 import cn.dianyinhuoban.hm.util.CoilEngine
-import cn.dianyinhuoban.hm.util.ToolUtil
 import coil.load
 import coil.transform.CircleCropTransformation
 import com.github.gzuliyujiang.wheelpicker.AddressPicker
@@ -32,23 +29,20 @@ import com.github.gzuliyujiang.wheelpicker.entity.CountyEntity
 import com.github.gzuliyujiang.wheelpicker.entity.DateEntity
 import com.github.gzuliyujiang.wheelpicker.entity.ProvinceEntity
 import com.github.gzuliyujiang.wheelpicker.utility.AddressJsonParser
-import com.luck.picture.lib.PictureSelectionModel
 import com.luck.picture.lib.PictureSelector
 import com.luck.picture.lib.config.PictureConfig
 import com.luck.picture.lib.config.PictureMimeType
 import com.luck.picture.lib.entity.LocalMedia
 import com.luck.picture.lib.listener.OnResultCallbackListener
 import com.wareroom.lib_base.ui.BaseActivity
-import com.wareroom.lib_base.utils.DateTimeUtils
 import com.wareroom.lib_base.utils.cache.MMKVUtil
 import com.wareroom.lib_http.exception.ApiException
 import com.wareroom.lib_http.response.ResponseTransformer
 import com.wareroom.lib_http.schedulers.SchedulerProvider
-import kotlinx.android.synthetic.main.activity_add_ship_address.*
-import kotlinx.android.synthetic.main.activity_user_profile.*
+import kotlinx.android.synthetic.main.dy_activity_add_ship_address.*
+import kotlinx.android.synthetic.main.dy_activity_user_profile.*
 import java.io.File
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 class UserProfileActivity : BaseActivity<ProfilePresenter>(), ProfileContract.View {
@@ -65,7 +59,7 @@ class UserProfileActivity : BaseActivity<ProfilePresenter>(), ProfileContract.Vi
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_user_profile)
+        setContentView(R.layout.dy_activity_user_profile)
         setTitle("编辑个人资料")
 
         el_nick.setOnClickListener {

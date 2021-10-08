@@ -19,12 +19,12 @@ import cn.dianyinhuoban.hm.widget.dialog.ImageCodeDialog
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.OSUtils
 import com.wareroom.lib_base.utils.ValidatorUtils
-import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_register.*
-import kotlinx.android.synthetic.main.activity_register.btn_submit
-import kotlinx.android.synthetic.main.activity_register.ed_password
-import kotlinx.android.synthetic.main.activity_register.ed_phone
-import kotlinx.android.synthetic.main.activity_register.iv_eye
+import kotlinx.android.synthetic.main.dy_activity_login.*
+import kotlinx.android.synthetic.main.dy_activity_register.*
+import kotlinx.android.synthetic.main.dy_activity_register.btn_submit
+import kotlinx.android.synthetic.main.dy_activity_register.ed_password
+import kotlinx.android.synthetic.main.dy_activity_register.ed_phone
+import kotlinx.android.synthetic.main.dy_activity_register.iv_eye
 
 class RegisterActivity : BaseActivity<RegisterPresenter?>(), RegisterContract.View {
 
@@ -38,7 +38,7 @@ class RegisterActivity : BaseActivity<RegisterPresenter?>(), RegisterContract.Vi
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
+        setContentView(R.layout.dy_activity_register)
         initView()
     }
 

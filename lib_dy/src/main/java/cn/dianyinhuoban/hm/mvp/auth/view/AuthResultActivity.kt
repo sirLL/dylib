@@ -8,7 +8,7 @@ import cn.dianyinhuoban.hm.mvp.auth.contract.AuthStatusContract
 import cn.dianyinhuoban.hm.mvp.auth.presenter.AuthStatusPresenter
 import cn.dianyinhuoban.hm.mvp.bean.AuthResult
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_auth_result.*
+import kotlinx.android.synthetic.main.dy_activity_auth_result.*
 
 class AuthResultActivity : BaseActivity<AuthStatusPresenter?>(), AuthStatusContract.View {
 
@@ -22,7 +22,7 @@ class AuthResultActivity : BaseActivity<AuthStatusPresenter?>(), AuthStatusContr
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_auth_result)
+        setContentView(R.layout.dy_activity_auth_result)
     }
 
     override fun onStart() {

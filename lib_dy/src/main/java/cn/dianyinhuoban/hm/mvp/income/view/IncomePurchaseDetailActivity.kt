@@ -7,7 +7,7 @@ import cn.dianyinhuoban.hm.mvp.bean.TabEntity
 import com.dy.tablayout.listener.CustomTabEntity
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_income_purchase_detail.*
+import kotlinx.android.synthetic.main.dy_activity_income_purchase_detail.*
 import java.util.*
 
 
@@ -19,7 +19,7 @@ class IncomePurchaseDetailActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_income_purchase_detail)
+        setContentView(R.layout.dy_activity_income_purchase_detail)
         setTitle("采购奖励明细")
         setupTab()
     }

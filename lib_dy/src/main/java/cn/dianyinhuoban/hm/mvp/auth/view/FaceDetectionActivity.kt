@@ -6,7 +6,7 @@ import android.os.Bundle
 import cn.dianyinhuoban.hm.R
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_face_detection.*
+import kotlinx.android.synthetic.main.dy_activity_face_detection.*
 
 class FaceDetectionActivity : BaseActivity<IPresenter?>() {
 
@@ -20,7 +20,7 @@ class FaceDetectionActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_face_detection)
+        setContentView(R.layout.dy_activity_face_detection)
         setTitle("人脸识别")
 
         tv_start_face.setOnClickListener {

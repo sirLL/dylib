@@ -18,8 +18,8 @@ import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.DateTimeUtils
 import com.wareroom.lib_base.utils.NumberUtils
-import kotlinx.android.synthetic.main.header_income_purchase_detail.*
-import kotlinx.android.synthetic.main.item_income_purchase_detail.view.*
+import kotlinx.android.synthetic.main.dy_header_income_purchase_detail.*
+import kotlinx.android.synthetic.main.dy_item_income_purchase_detail.view.*
 import java.util.*
 
 class IncomePurchaseDetailFragment : BaseListFragment<DetailBean, IncomeDetailPresenter?>(),
@@ -42,11 +42,11 @@ class IncomePurchaseDetailFragment : BaseListFragment<DetailBean, IncomeDetailPr
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_income_purchase_detail
+        return R.layout.dy_item_income_purchase_detail
     }
 
     override fun getContentView(): Int {
-        return R.layout.fragment_income_purchase_detail
+        return R.layout.dy_fragment_income_purchase_detail
     }
 
     override fun getPresenter(): IncomeDetailPresenter? {

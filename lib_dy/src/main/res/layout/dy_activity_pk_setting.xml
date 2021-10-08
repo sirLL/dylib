@@ -85,7 +85,7 @@
         android:background="@drawable/dy_selector_27a4ff_radius_6"
         android:gravity="center"
         android:text="请求PK"
-        android:textColor="@color/color_enable_text_button" />
+        android:textColor="@color/dy_color_enable_text_button" />
 
 
 </LinearLayout>

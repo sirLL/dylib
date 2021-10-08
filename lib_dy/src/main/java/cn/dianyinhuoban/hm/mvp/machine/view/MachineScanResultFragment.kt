@@ -15,8 +15,8 @@ import cn.dianyinhuoban.hm.mvp.machine.contract.MachineQueryContract
 import cn.dianyinhuoban.hm.mvp.machine.presenter.MachineQueryPresenter
 import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
-import kotlinx.android.synthetic.main.fragment_machine_scan_result.*
-import kotlinx.android.synthetic.main.item_transfer.view.*
+import kotlinx.android.synthetic.main.dy_fragment_machine_scan_result.*
+import kotlinx.android.synthetic.main.dy_item_transfer.view.*
 
 class MachineScanResultFragment : BaseListFragment<MachineItemBean, MachineQueryPresenter?>(),
     MachineQueryContract.View {
@@ -47,11 +47,11 @@ class MachineScanResultFragment : BaseListFragment<MachineItemBean, MachineQuery
     }
 
     override fun getContentView(): Int {
-        return R.layout.fragment_machine_scan_result
+        return R.layout.dy_fragment_machine_scan_result
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_transfer
+        return R.layout.dy_item_transfer
     }
 
     override fun onCreateView(

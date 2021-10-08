@@ -22,7 +22,7 @@ import com.scwang.smart.refresh.layout.listener.OnRefreshListener
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.DateTimeUtils
 import com.wareroom.lib_base.utils.NumberUtils
-import kotlinx.android.synthetic.main.activity_member_info.*
+import kotlinx.android.synthetic.main.dy_activity_member_info.*
 import java.math.BigDecimal
 import java.util.*
 
@@ -54,7 +54,7 @@ class MemberInfoActivity : BaseActivity<MemberInfoPresenter?>(), MemberInfoContr
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_member_info)
+        setContentView(R.layout.dy_activity_member_info)
         setTitle("成员详情")
         setupRefreshLayout()
         setupRecyclerView()

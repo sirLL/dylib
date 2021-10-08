@@ -53,7 +53,7 @@ class MemberPickerActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_member_picker)
+        setContentView(R.layout.dy_activity_member_picker)
         setTitle(mTitle)
         supportFragmentManager.beginTransaction()
             .add(R.id.fl_container, MemberPickerFragment.newInstance(mCheckedID)).commit()

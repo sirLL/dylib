@@ -12,9 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/color_white"
-        app:tl_indicator_height="0dp"
+        app:tl_indicator_color="@color/color_27a4ff"
+        app:tl_indicator_gravity="BOTTOM"
+        app:tl_indicator_height="2dp"
+        app:tl_indicator_width="40dp"
         app:tl_tab_space_equal="true"
-        app:tl_textSelectColor="@color/colorPrimary"
+        app:tl_textSelectColor="@color/color_27a4ff"
         app:tl_textUnselectColor="@color/color_999999"
         app:tl_textsize="16sp" />
 

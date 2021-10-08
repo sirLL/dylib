@@ -20,9 +20,9 @@ import cn.dianyinhuoban.hm.mvp.machine.presenter.MachineTypePresenter
 import cn.dianyinhuoban.hm.widget.dialog.BaseBottomPicker
 import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
-import kotlinx.android.synthetic.main.fragment_transfer_multi.*
-import kotlinx.android.synthetic.main.fragment_transfer_multi.tv_machine
-import kotlinx.android.synthetic.main.item_transfer_multi.view.*
+import kotlinx.android.synthetic.main.dy_fragment_transfer_multi.*
+import kotlinx.android.synthetic.main.dy_fragment_transfer_multi.tv_machine
+import kotlinx.android.synthetic.main.dy_item_transfer_multi.view.*
 
 class TransferMultiFragment : BaseListFragment<MachineItemBean?, MachineQueryPresenter?>(),
     MachineQueryContract.View {
@@ -47,7 +47,7 @@ class TransferMultiFragment : BaseListFragment<MachineItemBean?, MachineQueryPre
     }
 
     override fun getContentView(): Int {
-        return R.layout.fragment_transfer_multi
+        return R.layout.dy_fragment_transfer_multi
     }
 
     override fun getPresenter(): MachineQueryPresenter? {
@@ -189,7 +189,7 @@ class TransferMultiFragment : BaseListFragment<MachineItemBean?, MachineQueryPre
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_transfer_multi
+        return R.layout.dy_item_transfer_multi
     }
 
     override fun bindMachineType(data: List<MachineTypeBean>?) {

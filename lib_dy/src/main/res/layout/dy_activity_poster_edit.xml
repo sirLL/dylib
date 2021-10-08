@@ -120,7 +120,7 @@
                 android:checked="true"
                 android:paddingStart="6dp"
                 android:text="展示个人信息"
-                android:textColor="@color/color_check_999999_27a4ff"
+                android:textColor="@color/dy_color_check_999999_27a4ff"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ed_content" />
 

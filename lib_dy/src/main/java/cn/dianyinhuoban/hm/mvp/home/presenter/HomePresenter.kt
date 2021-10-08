@@ -75,8 +75,10 @@ class HomePresenter(view: HomeContract.View) : BasePresenter<HomeModel, HomeCont
 
                         override fun onNext(data: List<BannerBean>) {
                             super.onNext(data)
-                            if (!isDestroy) {
-                                view?.bindDialogBanner(data)
+                            if (data.isNotEmpty()) {
+                                if (!isDestroy) {
+                                    view?.bindDialogBanner(data)
+                                }
                             }
                         }
                     })

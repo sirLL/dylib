@@ -119,13 +119,13 @@
                         app:mvTextSize="12sp" />
                 </LinearLayout>
 
-                <include layout="@layout/item_home_personal_income" />
+                <include layout="@layout/dy_item_home_personal_income" />
 
-                <include layout="@layout/item_home_team_income" />
+                <include layout="@layout/dy_item_home_team_income" />
 
-                <include layout="@layout/item_home_pk_personal" />
+                <include layout="@layout/dy_item_home_pk_personal" />
 
-                <include layout="@layout/item_home_pk_team" />
+                <include layout="@layout/dy_item_home_pk_team" />
 
             </LinearLayout>
 

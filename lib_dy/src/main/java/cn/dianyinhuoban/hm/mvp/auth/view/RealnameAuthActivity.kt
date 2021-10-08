@@ -11,7 +11,7 @@ import cn.dianyinhuoban.hm.mvp.auth.presenter.AuthPresenter
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.ValidatorUtils
-import kotlinx.android.synthetic.main.activity_realname_auth.*
+import kotlinx.android.synthetic.main.dy_activity_realname_auth.*
 
 class RealnameAuthActivity : BaseActivity<AuthPresenter?>(), AuthContract.View {
 
@@ -24,7 +24,7 @@ class RealnameAuthActivity : BaseActivity<AuthPresenter?>(), AuthContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_realname_auth)
+        setContentView(R.layout.dy_activity_realname_auth)
         setTitle("实名认证")
         setupAction()
         tv_realname_next.setOnClickListener {

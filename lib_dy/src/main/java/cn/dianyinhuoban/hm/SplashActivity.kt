@@ -22,7 +22,7 @@ class SplashActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
+        setContentView(R.layout.dy_activity_splash)
         Handler().postDelayed({
             openPage()
         }, 2000)

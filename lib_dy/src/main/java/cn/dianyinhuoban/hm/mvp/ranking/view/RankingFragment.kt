@@ -8,7 +8,7 @@ import cn.dianyinhuoban.hm.mvp.bean.TabEntity
 import com.dy.tablayout.listener.CustomTabEntity
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseFragment
-import kotlinx.android.synthetic.main.fragment_ranking.tab_layout
+import kotlinx.android.synthetic.main.dy_fragment_ranking.tab_layout
 
 class RankingFragment : BaseFragment<IPresenter?>() {
     companion object {
@@ -27,7 +27,7 @@ class RankingFragment : BaseFragment<IPresenter?>() {
     }
 
     override fun getContentView(): Int {
-        return R.layout.fragment_ranking
+        return R.layout.dy_fragment_ranking
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

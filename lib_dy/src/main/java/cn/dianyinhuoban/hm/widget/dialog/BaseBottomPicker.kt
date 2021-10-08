@@ -17,8 +17,8 @@ import com.wareroom.lib_base.mvp.IView
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.AppManager
 import com.wareroom.lib_base.widget.LoadingLayout
-import kotlinx.android.synthetic.main.activity_member.*
-import kotlinx.android.synthetic.main.base_bottom_picker.*
+import kotlinx.android.synthetic.main.dy_activity_member.*
+import kotlinx.android.synthetic.main.dy_base_bottom_picker.*
 
 
 abstract class BaseBottomPicker<D, P : IPresenter?> : DialogFragment(), OnRefreshListener,
@@ -46,7 +46,7 @@ abstract class BaseBottomPicker<D, P : IPresenter?> : DialogFragment(), OnRefres
     }
 
     protected open fun getContentLayoutRes(): Int {
-        return R.layout.base_bottom_picker
+        return R.layout.dy_base_bottom_picker
     }
 
     protected open fun isSupportLoadMore(): Boolean {

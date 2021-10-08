@@ -20,7 +20,7 @@ class PkResultActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pk_result)
+        setContentView(R.layout.dy_activity_pk_result)
 
     }
 

@@ -23,9 +23,9 @@ import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.DimensionUtils
 import com.wareroom.lib_base.utils.NumberUtils
 import com.wareroom.lib_base.widget.LoadingLayout
-import kotlinx.android.synthetic.main.activity_image_status_bar.*
-import kotlinx.android.synthetic.main.activity_income.*
-import kotlinx.android.synthetic.main.header_income.*
+import kotlinx.android.synthetic.main.dy_activity_image_status_bar.*
+import kotlinx.android.synthetic.main.dy_activity_income.*
+import kotlinx.android.synthetic.main.dy_header_income.*
 
 
 class IncomeActivity : BaseActivity<IncomePresenter?>(), OnRefreshListener, OnLoadMoreListener,
@@ -59,7 +59,7 @@ class IncomeActivity : BaseActivity<IncomePresenter?>(), OnRefreshListener, OnLo
     }
 
     override fun getRootView(): Int {
-        return R.layout.activity_image_status_bar
+        return R.layout.dy_activity_image_status_bar
     }
 
     override fun getPresenter(): IncomePresenter? {
@@ -69,7 +69,7 @@ class IncomeActivity : BaseActivity<IncomePresenter?>(), OnRefreshListener, OnLo
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupStatusBar()
-        setContentView(R.layout.activity_income)
+        setContentView(R.layout.dy_activity_income)
 
         mHeaderImageMaxHeight =
             (762f / 1125f * DimensionUtils.getScreenWidth(IncomeActivity@ this)).toInt()

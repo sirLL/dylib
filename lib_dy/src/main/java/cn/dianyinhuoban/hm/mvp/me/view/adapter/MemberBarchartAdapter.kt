@@ -12,7 +12,7 @@ import cn.dianyinhuoban.hm.mvp.bean.Purchase
 import com.wareroom.lib_base.ui.adapter.BaseAdapter
 import com.wareroom.lib_base.utils.DateTimeUtils
 import com.wareroom.lib_base.utils.DimensionUtils
-import kotlinx.android.synthetic.main.item_member_barchart.view.*
+import kotlinx.android.synthetic.main.dy_item_member_barchart.view.*
 import java.math.BigDecimal
 import java.util.*
 import kotlin.math.max
@@ -47,7 +47,7 @@ class MemberBarchartAdapter(context: Context) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BarCartViewHolder {
         val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_member_barchart, parent, false)
+            .inflate(R.layout.dy_item_member_barchart, parent, false)
         return BarCartViewHolder(itemView)
     }
 

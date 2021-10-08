@@ -13,7 +13,7 @@ import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.NumberUtils
-import kotlinx.android.synthetic.main.item_member.view.*
+import kotlinx.android.synthetic.main.dy_item_member.view.*
 
 class MemberFragment : BaseListFragment<TeamMemberBean, TeamMemberPresenter?>(),
     TeamMemberContract.View {
@@ -46,7 +46,7 @@ class MemberFragment : BaseListFragment<TeamMemberBean, TeamMemberPresenter?>(),
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_member
+        return R.layout.dy_item_member
     }
 
     override fun convert(

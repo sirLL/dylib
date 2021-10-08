@@ -21,9 +21,9 @@ import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.DateTimeUtils
 import com.wareroom.lib_base.utils.DimensionUtils
 import com.wareroom.lib_base.utils.NumberUtils
-import kotlinx.android.synthetic.main.activity_pk_team_fragment.*
-import kotlinx.android.synthetic.main.item_pk_member.view.*
-import kotlinx.android.synthetic.main.item_home_pk.*
+import kotlinx.android.synthetic.main.dy_activity_pk_team_fragment.*
+import kotlinx.android.synthetic.main.dy_item_pk_member.view.*
+import kotlinx.android.synthetic.main.dy_item_home_pk.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -54,7 +54,7 @@ class TeamPkFragment : BaseFragment<PKPresenter>(), PKContract.View {
     }
 
     override fun getContentView(): Int {
-        return R.layout.activity_pk_team_fragment
+        return R.layout.dy_activity_pk_team_fragment
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -114,7 +114,7 @@ class TeamPkFragment : BaseFragment<PKPresenter>(), PKContract.View {
         tv_percent.isSelected = false
 
         val dataList = Collections.emptyList<TeamData>()
-        recycler_view_team_pk.adapter = object : SimpleAdapter<TeamData>(R.layout.item_pk_member) {
+        recycler_view_team_pk.adapter = object : SimpleAdapter<TeamData>(R.layout.dy_item_pk_member) {
 
             override fun convert(viewHolder: SimpleViewHolder?, position: Int, itemData: TeamData) {
                 viewHolder?.itemView?.tv_name?.text = if (TextUtils.isEmpty(itemData?.name)) {

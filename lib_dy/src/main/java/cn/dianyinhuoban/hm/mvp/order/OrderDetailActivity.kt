@@ -16,10 +16,10 @@ import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.DateTimeUtils
 import com.wareroom.lib_base.utils.DimensionUtils
 import com.wareroom.lib_base.utils.NumberUtils
-import kotlinx.android.synthetic.main.activity_order_detail.*
-import kotlinx.android.synthetic.main.activity_order_detail.tv_status
-import kotlinx.android.synthetic.main.item_pos_order.*
-import kotlinx.android.synthetic.main.item_pos_order.view.*
+import kotlinx.android.synthetic.main.dy_activity_order_detail.*
+import kotlinx.android.synthetic.main.dy_activity_order_detail.tv_status
+import kotlinx.android.synthetic.main.dy_item_pos_order.*
+import kotlinx.android.synthetic.main.dy_item_pos_order.view.*
 
 class OrderDetailActivity : BaseActivity<OrderDetailPresenter?>(), OrderDetailContract.View {
     private var mOrderID: String? = null
@@ -44,7 +44,7 @@ class OrderDetailActivity : BaseActivity<OrderDetailPresenter?>(), OrderDetailCo
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_order_detail)
+        setContentView(R.layout.dy_activity_order_detail)
         setTitle("采购详情")
         fl_btn_container.setOnClickListener {
             mPresenter?.submitConfirmReceipt(mOrderID ?: "")

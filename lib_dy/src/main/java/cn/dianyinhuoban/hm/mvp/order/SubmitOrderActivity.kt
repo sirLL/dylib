@@ -18,8 +18,8 @@ import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.DimensionUtils
 import com.wareroom.lib_base.utils.NumberUtils
 import com.wareroom.lib_base.widget.GridSpacingItemDecoration
-import kotlinx.android.synthetic.main.activity_submit_order.*
-import kotlinx.android.synthetic.main.item_submit_order.view.*
+import kotlinx.android.synthetic.main.dy_activity_submit_order.*
+import kotlinx.android.synthetic.main.dy_item_submit_order.view.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -29,7 +29,7 @@ class SubmitOrderActivity : BaseActivity<ProductListPresenter?>(), ProductListCo
     var mAdapter: SimpleAdapter<PurchaseProductBean?>? = null
     var mCheckedProduct: PurchaseProductBean? = null
     override fun getRootView(): Int {
-        return R.layout.activity_submit_order_root
+        return R.layout.dy_activity_submit_order_root
     }
 
     override fun isDarkModeEnable(): Boolean {
@@ -51,7 +51,7 @@ class SubmitOrderActivity : BaseActivity<ProductListPresenter?>(), ProductListCo
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         EventBus.getDefault().register(this)
-        setContentView(R.layout.activity_submit_order)
+        setContentView(R.layout.dy_activity_submit_order)
         setupStatusBar()
         setupRecyclerView()
         setupAction()
@@ -127,7 +127,7 @@ class SubmitOrderActivity : BaseActivity<ProductListPresenter?>(), ProductListCo
             )
         )
         mAdapter =
-            object : SimpleAdapter<PurchaseProductBean?>(R.layout.item_submit_order) {
+            object : SimpleAdapter<PurchaseProductBean?>(R.layout.dy_item_submit_order) {
                 override fun convert(
                     viewHolder: SimpleViewHolder?,
                     position: Int,

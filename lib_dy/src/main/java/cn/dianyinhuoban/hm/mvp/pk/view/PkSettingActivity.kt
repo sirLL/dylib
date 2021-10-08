@@ -13,7 +13,7 @@ import cn.dianyinhuoban.hm.mvp.pk.contract.PKContract
 import cn.dianyinhuoban.hm.mvp.pk.presenter.PKPresenter
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_pk_setting.*
+import kotlinx.android.synthetic.main.dy_activity_pk_setting.*
 import org.greenrobot.eventbus.EventBus
 import java.math.BigDecimal
 
@@ -37,7 +37,7 @@ class PkSettingActivity : BaseActivity<PKPresenter>(), PKContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pk_setting)
+        setContentView(R.layout.dy_activity_pk_setting)
 
         mPkMember = intent.getParcelableExtra("data")
         mType = intent.getStringExtra("type")

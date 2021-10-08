@@ -45,7 +45,7 @@ class TransferMultiActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_transfer_multi)
+        setContentView(R.layout.dy_activity_transfer_multi)
         setTitle("批量划分")
         supportFragmentManager.beginTransaction()
             .add(R.id.fl_container, TransferMultiFragment.newInstance(mMachineType)).commit()

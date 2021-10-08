@@ -7,9 +7,8 @@ import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.mvp.auth.contract.AuthStatusContract
 import cn.dianyinhuoban.hm.mvp.auth.presenter.AuthStatusPresenter
 import cn.dianyinhuoban.hm.mvp.bean.AuthResult
-import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_auth_info.*
+import kotlinx.android.synthetic.main.dy_activity_auth_info.*
 
 class AuthInfoActivity : BaseActivity<AuthStatusPresenter?>(), AuthStatusContract.View {
 
@@ -22,7 +21,7 @@ class AuthInfoActivity : BaseActivity<AuthStatusPresenter?>(), AuthStatusContrac
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_auth_info)
+        setContentView(R.layout.dy_activity_auth_info)
         setTitle("实名认证")
         mPresenter?.fetchAuthResult()
     }

@@ -14,7 +14,7 @@ class PKRecordActivity : BaseActivity<IPresenter?>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTitle("PK记录")
-        setContentView(R.layout.activity_pk_record)
+        setContentView(R.layout.dy_activity_pk_record)
         supportFragmentManager.beginTransaction()
             .add(R.id.fl_container, PKRecordFragment.newInstance(), "PKRecordFragment").commit()
     }

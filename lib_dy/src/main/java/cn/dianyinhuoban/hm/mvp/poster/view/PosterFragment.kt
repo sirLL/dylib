@@ -10,7 +10,7 @@ import cn.dianyinhuoban.hm.mvp.bean.PosterTypeBean
 import cn.dianyinhuoban.hm.mvp.poster.contract.PosterTypeContract
 import cn.dianyinhuoban.hm.mvp.poster.presenter.PosterTypePresenter
 import com.wareroom.lib_base.ui.BaseFragment
-import kotlinx.android.synthetic.main.fragment_poster.*
+import kotlinx.android.synthetic.main.dy_fragment_poster.*
 
 class PosterFragment : BaseFragment<PosterTypePresenter>(), PosterTypeContract.View {
     companion object {
@@ -27,7 +27,7 @@ class PosterFragment : BaseFragment<PosterTypePresenter>(), PosterTypeContract.V
     }
 
     override fun getContentView(): Int {
-        return R.layout.fragment_poster
+        return R.layout.dy_fragment_poster
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

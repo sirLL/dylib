@@ -27,7 +27,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <include layout="@layout/item_home_pk" />
+                    <include layout="@layout/dy_item_home_pk" />
 
                 </FrameLayout>
 
@@ -86,7 +86,7 @@
                                     android:layout_height="wrap_content"
                                     android:padding="10dp"
                                     android:text="昨天"
-                                    android:textColor="@color/color_selector_333333_666"
+                                    android:textColor="@color/dy_color_selector_333333_666"
                                     android:textStyle="bold" />
 
                                 <View
@@ -100,7 +100,7 @@
                                     android:layout_height="wrap_content"
                                     android:padding="10dp"
                                     android:text="近7天"
-                                    android:textColor="@color/color_selector_333333_666"
+                                    android:textColor="@color/dy_color_selector_333333_666"
                                     android:textStyle="bold" />
                             </LinearLayout>
 
@@ -432,7 +432,7 @@
             android:background="@drawable/dy_selector_27a4ff_radius_6"
             android:gravity="center"
             android:text="我要PK"
-            android:textColor="@color/color_enable_text_button"
+            android:textColor="@color/dy_color_enable_text_button"
             android:textSize="16sp"
             android:textStyle="bold" />
 

@@ -13,7 +13,7 @@ import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.DimensionUtils
 import com.wareroom.lib_base.utils.NumberUtils
-import kotlinx.android.synthetic.main.item_pos_order.view.*
+import kotlinx.android.synthetic.main.dy_item_pos_order.view.*
 
 class OrderListFragment : BaseListFragment<OrderBean, OrderListPresenter?>(),
     OrderListContract.View {
@@ -57,7 +57,7 @@ class OrderListFragment : BaseListFragment<OrderBean, OrderListPresenter?>(),
     }
 
     override fun getItemLayout(): Int {
-        return R.layout.item_pos_order
+        return R.layout.dy_item_pos_order
     }
 
     override fun bindPurchaseRecord(data: List<OrderBean>?) {

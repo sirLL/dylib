@@ -22,7 +22,7 @@ import com.luck.picture.lib.listener.OnResultCallbackListener
 import com.tbruyelle.rxpermissions2.RxPermissions
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_scan.*
+import kotlinx.android.synthetic.main.dy_activity_scan.*
 
 class ScanActivity : BaseActivity<IPresenter?>(), QRCodeView.Delegate {
 
@@ -73,12 +73,12 @@ class ScanActivity : BaseActivity<IPresenter?>(), QRCodeView.Delegate {
     }
 
     override fun getRootView(): Int {
-        return R.layout.activity_scan_root
+        return R.layout.dy_activity_scan_root
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_scan)
+        setContentView(R.layout.dy_activity_scan)
         setupStatusBar()
         zxingview.setDelegate(ScanActivity@ this)
         setTitle("扫一扫", Color.WHITE)

@@ -43,7 +43,7 @@ class MachineScanResultActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_machine_scan_result)
+        setContentView(R.layout.dy_activity_machine_scan_result)
         setTitle("机具扫码")
         val machineType = intent.extras?.getParcelable<MachineTypeBean>("type")
         supportFragmentManager.beginTransaction()

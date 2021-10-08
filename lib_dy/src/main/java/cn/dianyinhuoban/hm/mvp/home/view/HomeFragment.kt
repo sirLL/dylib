@@ -22,7 +22,6 @@ import cn.dianyinhuoban.hm.mvp.income.view.IncomeTeamDetailActivity
 import cn.dianyinhuoban.hm.mvp.setting.view.EditInfoActivity
 import cn.dianyinhuoban.hm.mvp.setting.view.MessageActivity
 import cn.dianyinhuoban.hm.widget.dialog.BannerDialog
-import com.scwang.smart.refresh.footer.ClassicsFooter
 import com.scwang.smart.refresh.header.ClassicsHeader
 import com.scwang.smart.refresh.layout.api.RefreshLayout
 import com.scwang.smart.refresh.layout.listener.OnRefreshListener
@@ -31,13 +30,13 @@ import com.wareroom.lib_base.ui.BaseFragment
 import com.wareroom.lib_base.utils.NumberUtils
 import com.wareroom.lib_base.utils.cache.MMKVUtil
 import com.youth.banner.indicator.CircleIndicator
-import kotlinx.android.synthetic.main.base_bottom_picker.*
-import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.fragment_home.refresh_layout
-import kotlinx.android.synthetic.main.item_home_personal_income.*
-import kotlinx.android.synthetic.main.item_home_pk_personal.*
-import kotlinx.android.synthetic.main.item_home_pk_team.*
-import kotlinx.android.synthetic.main.item_home_team_income.*
+import kotlinx.android.synthetic.main.dy_base_bottom_picker.*
+import kotlinx.android.synthetic.main.dy_fragment_home.*
+import kotlinx.android.synthetic.main.dy_fragment_home.refresh_layout
+import kotlinx.android.synthetic.main.dy_item_home_personal_income.*
+import kotlinx.android.synthetic.main.dy_item_home_pk_personal.*
+import kotlinx.android.synthetic.main.dy_item_home_pk_team.*
+import kotlinx.android.synthetic.main.dy_item_home_team_income.*
 import java.util.*
 
 class HomeFragment : BaseFragment<HomePresenter?>(), OnRefreshListener, HomeContract.View {
@@ -66,7 +65,7 @@ class HomeFragment : BaseFragment<HomePresenter?>(), OnRefreshListener, HomeCont
     }
 
     override fun getContentView(): Int {
-        return R.layout.fragment_home
+        return R.layout.dy_fragment_home
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -188,7 +187,6 @@ class HomeFragment : BaseFragment<HomePresenter?>(), OnRefreshListener, HomeCont
 
     override fun bindHomeData(homeDataBean: HomeDataBean?) {
         refresh_layout.finishRefresh()
-
 
         homeDataBean?.let {
             //昵称

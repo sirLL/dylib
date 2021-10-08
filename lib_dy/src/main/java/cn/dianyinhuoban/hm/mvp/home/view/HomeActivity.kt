@@ -1,7 +1,5 @@
 package cn.dianyinhuoban.hm.mvp.home.view
 
-import android.app.Dialog
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.core.content.ContextCompat
@@ -16,7 +14,7 @@ import cn.dianyinhuoban.hm.mvp.poster.view.PosterActivity
 import cn.dianyinhuoban.hm.mvp.poster.view.PosterFragment
 import cn.dianyinhuoban.hm.mvp.ranking.view.RankingFragment
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.dy_activity_home.*
 import java.util.*
 
 class HomeActivity : BaseActivity<SystemPresenter?>(), SystemContract.View {
@@ -31,7 +29,7 @@ class HomeActivity : BaseActivity<SystemPresenter?>(), SystemContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.dy_activity_home)
         initView()
     }
 
@@ -118,7 +116,6 @@ class HomeActivity : BaseActivity<SystemPresenter?>(), SystemContract.View {
                         }
                         "5" -> {
                             //总部电话
-
                         }
                     }
                 }

@@ -46,7 +46,7 @@ class MachinePickerActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_machine_picker)
+        setContentView(R.layout.dy_activity_machine_picker)
         setTitle("机具选择")
         val machineType = intent?.extras?.getParcelable<MachineTypeBean>("type")
         val checkedIDList = intent.extras?.getStringArrayList("checkedIDList")

@@ -10,7 +10,7 @@ import cn.dianyinhuoban.hm.mvp.me.presenter.MePresenter
 import coil.load
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.NumberUtils
-import kotlinx.android.synthetic.main.item_pay_type_picker.view.*
+import kotlinx.android.synthetic.main.dy_item_pay_type_picker.view.*
 
 class PayTypePicker : BaseBottomPicker<PayTypeBean?, MePresenter>(), MeContract.View {
     private var mCheckedPosition = -1
@@ -33,7 +33,7 @@ class PayTypePicker : BaseBottomPicker<PayTypeBean?, MePresenter>(), MeContract.
     }
 
     override fun getItemLayoutRes(): Int {
-        return R.layout.item_pay_type_picker
+        return R.layout.dy_item_pay_type_picker
     }
 
     override fun getPresenter(): MePresenter {

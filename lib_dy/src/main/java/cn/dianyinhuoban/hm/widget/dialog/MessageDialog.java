@@ -29,7 +29,7 @@ public class MessageDialog extends Dialog {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dialog_message);
+        setContentView(R.layout.dy_dialog_message);
         tvContent = findViewById(R.id.tv_content);
         tvTitle = findViewById(R.id.tv_title);
         if (TextUtils.isEmpty(mTitle)) {

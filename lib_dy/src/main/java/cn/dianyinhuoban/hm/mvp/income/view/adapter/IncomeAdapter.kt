@@ -8,7 +8,7 @@ import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.mvp.bean.IncomeItemBean
 import com.wareroom.lib_base.ui.adapter.BaseAdapter
 import com.wareroom.lib_base.utils.NumberUtils
-import kotlinx.android.synthetic.main.item_income.view.*
+import kotlinx.android.synthetic.main.dy_item_income.view.*
 
 class IncomeAdapter : BaseAdapter<IncomeItemBean, IncomeAdapter.IncomeViewHolder>() {
     var onItemClickListener: OnItemClickListener? = null
@@ -16,7 +16,7 @@ class IncomeAdapter : BaseAdapter<IncomeItemBean, IncomeAdapter.IncomeViewHolder
     private var mPurchaseBack: String? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IncomeViewHolder {
         val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_income, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.dy_item_income, parent, false)
         return IncomeViewHolder(itemView)
     }
 

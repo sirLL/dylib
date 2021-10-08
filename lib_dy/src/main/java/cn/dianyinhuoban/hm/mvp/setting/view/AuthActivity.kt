@@ -15,8 +15,8 @@ import cn.dianyinhuoban.hm.mvp.setting.presenter.SettingPresenter
 import coil.load
 import coil.transform.CircleCropTransformation
 import com.wareroom.lib_base.ui.BaseActivity
-import kotlinx.android.synthetic.main.activity_auth.*
-import kotlinx.android.synthetic.main.fragment_me.*
+import kotlinx.android.synthetic.main.dy_activity_auth.*
+import kotlinx.android.synthetic.main.dy_fragment_me.*
 
 class AuthActivity : BaseActivity<SettingPresenter>(), SettingContract.View,
     AuthStatusContract.View {
@@ -25,7 +25,7 @@ class AuthActivity : BaseActivity<SettingPresenter>(), SettingContract.View,
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_auth)
+        setContentView(R.layout.dy_activity_auth)
         setTitle("授权书")
 
         tv_auth_apply.setOnClickListener {

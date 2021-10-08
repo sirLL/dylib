@@ -8,14 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.mvp.bean.MeMenuBean
 import com.wareroom.lib_base.ui.adapter.BaseAdapter
-import kotlinx.android.synthetic.main.item_me_menu.view.*
+import kotlinx.android.synthetic.main.dy_item_me_menu.view.*
 
 class MeMenuAdapter : BaseAdapter<MeMenuBean, MeMenuAdapter.MenuViewHolder>() {
     var onMenuClickListener: OnMenuClickListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {
         val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_me_menu, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.dy_item_me_menu, parent, false)
         return MenuViewHolder(itemView)
     }
 

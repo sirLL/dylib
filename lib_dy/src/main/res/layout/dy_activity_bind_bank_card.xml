@@ -176,7 +176,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:text="获取验证码"
-        android:textColor="@color/color_enable_d8d8d8_1b68eb"
+        android:textColor="@color/dy_color_enable_d8d8d8_1b68eb"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@id/ed_code"
         app:layout_constraintEnd_toEndOf="parent"

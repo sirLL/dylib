@@ -14,7 +14,7 @@ import coil.load
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.NumberUtils
-import kotlinx.android.synthetic.main.activity_product_detail.*
+import kotlinx.android.synthetic.main.dy_activity_product_detail.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -44,7 +44,7 @@ class ProductDetailActivity : BaseActivity<IPresenter?>() {
         super.onCreate(savedInstanceState)
         EventBus.getDefault().register(this)
         setTitle("商品详情")
-        setContentView(R.layout.activity_product_detail)
+        setContentView(R.layout.dy_activity_product_detail)
         setInputListener()
         setClickListener()
         bindDetail()

@@ -12,7 +12,7 @@ class TradeRecordActivity : BaseActivity<IPresenter?>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_trade_record)
+        setContentView(R.layout.dy_activity_trade_record)
         setTitle("交易明细")
         val sn = intent?.extras?.getString("sn")
         supportFragmentManager.beginTransaction().add(

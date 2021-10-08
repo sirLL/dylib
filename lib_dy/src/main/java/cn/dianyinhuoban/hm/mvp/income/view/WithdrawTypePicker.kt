@@ -14,10 +14,10 @@ import cn.dianyinhuoban.hm.mvp.me.view.BindBankCardActivity
 import cn.dianyinhuoban.hm.util.StringUtil
 import cn.dianyinhuoban.hm.widget.dialog.BaseBottomPicker
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
-import kotlinx.android.synthetic.main.base_bottom_picker.*
-import kotlinx.android.synthetic.main.fragment_withdraw_type_picker.*
-import kotlinx.android.synthetic.main.fragment_withdraw_type_picker.recycler_view
-import kotlinx.android.synthetic.main.item_withdraw_type.view.*
+import kotlinx.android.synthetic.main.dy_base_bottom_picker.*
+import kotlinx.android.synthetic.main.dy_fragment_withdraw_type_picker.*
+import kotlinx.android.synthetic.main.dy_fragment_withdraw_type_picker.recycler_view
+import kotlinx.android.synthetic.main.dy_item_withdraw_type.view.*
 
 class WithdrawTypePicker : BaseBottomPicker<BankBean, BankCardListPresenter>(),
     BankCardListContract.View {
@@ -92,7 +92,7 @@ class WithdrawTypePicker : BaseBottomPicker<BankBean, BankCardListPresenter>(),
     }
 
     override fun getItemLayoutRes(): Int {
-        return R.layout.item_withdraw_type
+        return R.layout.dy_item_withdraw_type
     }
 
     override fun getPresenter(): BankCardListPresenter? {

@@ -14,7 +14,7 @@
         android:layout_marginEnd="16dp"
         android:gravity="center"
         android:text="电银 5 台"
-        android:textColor="@color/color_selector_1b68eb_ffffff"
+        android:textColor="@color/dy_color_selector_1b68eb_ffffff"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -27,6 +27,6 @@
         android:layout_marginEnd="16dp"
         android:gravity="center_horizontal"
         android:text="售价900.00元"
-        android:textColor="@color/color_selector_80ffffff_9ea9b6"
+        android:textColor="@color/dy_color_selector_80ffffff_9ea9b6"
         android:textSize="12sp" />
 </LinearLayout>

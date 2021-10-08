@@ -23,7 +23,7 @@
                 android:layout_marginTop="12dp"
                 android:orientation="vertical">
 
-                <include layout="@layout/header_income_activation_detail" />
+                <include layout="@layout/dy_header_income_purchase_detail" />
 
                 <com.wareroom.lib_base.widget.LoadingLayout
                     android:id="@+id/load_layout"
