@@ -82,7 +82,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="80dp"
-        android:background="@drawable/dy_selector_037dff_radius_6"
+        android:background="@drawable/dy_selector_27a4ff_radius_6"
         android:gravity="center"
         android:text="请求PK"
         android:textColor="@color/dy_color_enable_text_button" />

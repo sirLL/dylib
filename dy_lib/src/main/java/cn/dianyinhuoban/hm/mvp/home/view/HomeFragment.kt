@@ -235,6 +235,11 @@ class HomeFragment : BaseFragment<HomePresenter?>(), OnRefreshListener, HomeCont
         } else {
             "No.${weekMonth?.rank}"
         }
+        if (TextUtils.isEmpty(weekMonth?.rank) || "0" == weekMonth?.rank) {
+            tv_no.setTextColor(ContextCompat.getColor(requireContext(), R.color.color_c50018))
+        } else {
+            tv_no.setTextColor(ContextCompat.getColor(requireContext(), R.color.color_333333))
+        }
         tv_machine_amount.text = NumberUtils.numberScale(weekMonth?.machineTrans)
         tv_activation_amount.text = NumberUtils.numberScale(weekMonth?.activeTrans)
     }
@@ -269,6 +274,11 @@ class HomeFragment : BaseFragment<HomePresenter?>(), OnRefreshListener, HomeCont
             "未上榜"
         } else {
             "No.${weekMonth?.rank}"
+        }
+        if (TextUtils.isEmpty(weekMonth?.rank) || "0" == weekMonth?.rank) {
+            tv_no_team.setTextColor(ContextCompat.getColor(requireContext(), R.color.color_c50018))
+        } else {
+            tv_no_team.setTextColor(ContextCompat.getColor(requireContext(), R.color.color_f7c164))
         }
     }
 

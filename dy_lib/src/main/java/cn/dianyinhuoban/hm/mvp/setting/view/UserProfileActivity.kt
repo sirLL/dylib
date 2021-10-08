@@ -276,7 +276,7 @@ class UserProfileActivity : BaseActivity<ProfilePresenter>(), ProfileContract.Vi
             mDatePicker?.okView?.setTextColor(
                 ContextCompat.getColor(
                     this,
-                    R.color.color_037dff
+                    R.color.color_27a4ff
                 )
             )
             mDatePicker?.okView?.textSize = 14f
@@ -343,7 +343,7 @@ class UserProfileActivity : BaseActivity<ProfilePresenter>(), ProfileContract.Vi
         picker.cancelView.setTextColor(ContextCompat.getColor(this, R.color.color_999999))
         picker.cancelView.textSize = 14f
 
-        picker.okView.setTextColor(ContextCompat.getColor(this, R.color.color_037dff))
+        picker.okView.setTextColor(ContextCompat.getColor(this, R.color.color_27a4ff))
         picker.okView.textSize = 14f
 
         picker.contentView.setBackgroundColor(Color.TRANSPARENT)

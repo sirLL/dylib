@@ -84,7 +84,7 @@ class PKRecordFragment : BaseListFragment<PKRecordBean, PKRecordPresenter>(),
                     viewHolder?.itemView?.tv_result?.setTextColor(
                         ContextCompat.getColor(
                             requireContext(),
-                            R.color.color_39cb75
+                            R.color.color_3797ff
                         )
                     )
                     viewHolder?.itemView?.tv_result?.text = "成功"
@@ -92,7 +92,7 @@ class PKRecordFragment : BaseListFragment<PKRecordBean, PKRecordPresenter>(),
                     viewHolder?.itemView?.tv_result?.setTextColor(
                         ContextCompat.getColor(
                             requireContext(),
-                            R.color.color_f60e36
+                            R.color.color_c50018
                         )
                     )
                     viewHolder?.itemView?.tv_result?.text = "失败"

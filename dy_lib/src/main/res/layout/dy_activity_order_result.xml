@@ -169,7 +169,7 @@
         android:layout_marginLeft="80dp"
         android:layout_marginTop="60dp"
         android:layout_marginRight="80dp"
-        android:background="@drawable/dy_selector_037dff_radius_6"
+        android:background="@drawable/dy_selector_27a4ff_radius_6"
         android:gravity="center"
         android:text="完成"
         android:textColor="@color/white"
@@ -182,7 +182,7 @@
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="返回首页"
-        android:textColor="#037DFF"
+        android:textColor="#27A4FF"
         android:textSize="14sp"
         android:textStyle="bold" />
 

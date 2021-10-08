@@ -11,7 +11,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="14dp"
         android:layout_marginBottom="14dp"
-        android:textColor="@color/dy_color_selector_161231_037dff"
+        android:textColor="@color/dy_color_selector_161231_27a4ff"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

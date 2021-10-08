@@ -179,7 +179,7 @@ class IncomePurchaseDetailFragment : BaseListFragment<DetailBean, IncomeDetailPr
             mDatePicker?.okView?.setTextColor(
                 ContextCompat.getColor(
                     requireContext(),
-                    R.color.color_037dff
+                    R.color.color_27a4ff
                 )
             )
             mDatePicker?.okView?.textSize = 14f
@@ -232,7 +232,7 @@ class IncomePurchaseDetailFragment : BaseListFragment<DetailBean, IncomeDetailPr
 //                .setSubmitColor(
 //                    ContextCompat.getColor(
 //                        requireContext(),
-//                        R.color.color_037dff
+//                        R.color.color_27a4ff
 //                    )
 //                )
 //                .setTitleColor(

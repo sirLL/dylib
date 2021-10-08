@@ -53,7 +53,7 @@ class PosterEditActivity : BaseActivity<IPresenter?>() {
     }
 
     override fun getStatusBarColor(): Int {
-        return R.color.color_037dff
+        return R.color.color_27a4ff
     }
 
     override fun getToolbarColor(): Int {

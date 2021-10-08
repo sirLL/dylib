@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.core.widget.PopupWindowCompat
 import androidx.recyclerview.widget.RecyclerView
 import cn.dianyinhuoban.hm.R
@@ -203,6 +204,15 @@ class MachineManagerFragment : BaseListFragment<MachineItemBean, MachineManagerP
             "已激活"
         } else {
             "--"
+        }
+        if ("1" == itemData?.act_status) {
+            viewHolder?.itemView?.tv_status?.setTextColor(
+                ContextCompat.getColor(requireContext(),
+                R.color.color_c50018))
+        } else {
+            viewHolder?.itemView?.tv_status?.setTextColor(
+                ContextCompat.getColor(requireContext(),
+                R.color.color_3797ff))
         }
     }
 

@@ -123,7 +123,7 @@ class IncomePersonalDetailFragment : BaseListFragment<DetailBean, IncomeDetailPr
             mDatePicker?.okView?.setTextColor(
                 ContextCompat.getColor(
                     requireContext(),
-                    R.color.color_037dff
+                    R.color.color_27a4ff
                 )
             )
             mDatePicker?.okView?.textSize = 14f

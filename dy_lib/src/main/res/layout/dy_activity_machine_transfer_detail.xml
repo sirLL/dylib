@@ -244,7 +244,7 @@
                 android:paddingTop="20dp"
                 android:paddingBottom="24dp"
                 android:text="批量划分"
-                android:textColor="@color/color_037dff"
+                android:textColor="@color/color_27a4ff"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -261,7 +261,7 @@
                 android:paddingTop="20dp"
                 android:paddingBottom="24dp"
                 android:text="选择划分"
-                android:textColor="@color/color_037dff"
+                android:textColor="@color/color_27a4ff"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -287,7 +287,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/dy_selector_037dff_radius_6"
+            android:background="@drawable/dy_selector_27a4ff_radius_6"
             android:gravity="center"
             android:text="提交"
             android:textColor="@color/color_white"

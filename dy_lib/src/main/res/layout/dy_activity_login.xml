@@ -101,7 +101,7 @@
             android:layout_marginTop="14dp"
             android:padding="10dp"
             android:text="立即注册"
-            android:textColor="@color/color_037dff"
+            android:textColor="@color/color_27a4ff"
             android:textSize="14sp" />
 
         <TextView

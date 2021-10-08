@@ -67,7 +67,7 @@ class MemberBarchartAdapter(context: Context) :
         }
         //柱的颜色
         val barBackground = if (itemValue?.num?.toLong() == mMaxValue) {
-            mContext?.let { ContextCompat.getColor(it, R.color.color_037dff) }
+            mContext?.let { ContextCompat.getColor(it, R.color.color_27a4ff) }
         } else {
             mContext?.let { ContextCompat.getColor(it, R.color.color_D3E8FF) }
         }

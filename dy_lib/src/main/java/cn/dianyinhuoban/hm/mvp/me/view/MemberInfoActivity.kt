@@ -108,7 +108,7 @@ class MemberInfoActivity : BaseActivity<MemberInfoPresenter?>(), MemberInfoContr
             mDatePicker?.okView?.setTextColor(
                 ContextCompat.getColor(
                     this,
-                    R.color.color_037dff
+                    R.color.color_27a4ff
                 )
             )
             mDatePicker?.okView?.textSize = 14f

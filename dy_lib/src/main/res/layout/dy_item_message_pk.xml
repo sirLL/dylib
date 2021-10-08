@@ -96,7 +96,7 @@
             android:gravity="center"
             android:padding="16dp"
             android:text="接受 PK"
-            android:textColor="@color/color_037dff"
+            android:textColor="@color/color_27a4ff"
             android:textSize="14sp" />
 
 

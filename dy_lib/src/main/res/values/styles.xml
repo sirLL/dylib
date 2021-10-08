@@ -12,7 +12,7 @@
     <style name="confirmButton">
         <item name="android:textColor">@color/dy_color_enable_text_button</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:background">@drawable/dy_selector_037dff_radius_6</item>
+        <item name="android:background">@drawable/dy_selector_27a4ff_radius_6</item>
         <item name="android:layout_height">50dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:gravity">center</item>

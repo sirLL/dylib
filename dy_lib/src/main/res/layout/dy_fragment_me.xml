@@ -84,7 +84,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="10dp"
-                android:background="@drawable/dy_shape_248eff_037dff_angle_45_radius_4">
+                android:background="@drawable/dy_shape_248eff_27a4ff_angle_45_radius_4">
 
                 <TextView
                     android:id="@+id/textView1"

@@ -52,7 +52,7 @@
             android:background="@drawable/dy_selector_auth_btn_bg"
             android:gravity="center"
             android:text="申请授权书"
-            android:textColor="@color/color_037dff"
+            android:textColor="@color/color_27a4ff"
             android:textSize="16sp"
             android:textStyle="bold" />
 

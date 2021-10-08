@@ -16,13 +16,13 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
-            app:pwBarColor="#4D037DFF"
+            app:pwBarColor="#4D27A4FF"
             app:pwBarLength="60dp"
             app:pwBarWidth="3dp"
             app:pwRimColor="@color/dy_base_color_page_bg"
             app:pwRimWidth="3dp"
             app:pwSpinSpeed="3dp"
-            app:pwTextColor="#4D037DFF"
+            app:pwTextColor="#4D27A4FF"
             app:pwTextSize="10sp" />
 
         <TextView

@@ -22,7 +22,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
-            app:pwBarColor="#4D037DFF"
+            app:pwBarColor="#4D27A4FF"
             app:pwBarLength="60dp"
             app:pwBarWidth="3dp"
             app:pwCircleColor="@color/dy_base_color_white"
