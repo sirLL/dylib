@@ -146,8 +146,8 @@ class RankingTeamFragment : BaseFragment<RankPresenter?>(), OnRefreshListener, O
         iv_avatar_team.load(MMKVUtil.getAvatar()) {
             crossfade(true)//淡入效果
             allowHardware(false)
-            placeholder(R.drawable.img_avatar_def)
-            error(R.drawable.img_avatar_def)
+            placeholder(R.drawable.dy_img_avatar_def)
+            error(R.drawable.dy_img_avatar_def)
         }
     }
 }

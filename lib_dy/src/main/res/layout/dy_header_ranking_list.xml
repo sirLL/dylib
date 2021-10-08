@@ -75,7 +75,7 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_ranking_list_top_2"
+            android:src="@drawable/dy_ic_ranking_list_top_2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/view_bg_left" />
@@ -93,7 +93,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginBottom="12dp"
-            android:src="@drawable/ic_ranking_list_no_2"
+            android:src="@drawable/dy_ic_ranking_list_no_2"
             app:layout_constraintBottom_toTopOf="@id/iv_avatar_left"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -169,7 +169,7 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_ranking_list_top_1"
+            android:src="@drawable/dy_ic_ranking_list_top_1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/view_bg_center" />
@@ -188,7 +188,7 @@
             android:layout_height="30dp"
             android:layout_marginTop="18dp"
             android:layout_marginBottom="13dp"
-            android:src="@drawable/ic_ranking_list_no_1"
+            android:src="@drawable/dy_ic_ranking_list_no_1"
             app:layout_constraintBottom_toTopOf="@id/iv_avatar_center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -265,7 +265,7 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_ranking_list_top_3"
+            android:src="@drawable/dy_ic_ranking_list_top_3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/view_bg_right" />
@@ -283,7 +283,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginBottom="12dp"
-            android:src="@drawable/ic_ranking_list_no_3"
+            android:src="@drawable/dy_ic_ranking_list_no_3"
             app:layout_constraintBottom_toTopOf="@id/iv_avatar_right"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -16,7 +16,7 @@
             android:layout_height="25dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="12dp"
-            android:src="@drawable/ic_msg_activity" />
+            android:src="@drawable/dy_ic_msg_activity" />
 
         <TextView
             android:id="@+id/tv_msg_dispatch_title"

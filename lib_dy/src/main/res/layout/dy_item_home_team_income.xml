@@ -72,7 +72,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView1"
-        tools:drawableEnd="@drawable/ic_home_item_edit"
+        tools:drawableEnd="@drawable/dy_ic_home_item_edit"
         tools:text="天霸动霸战队" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -216,6 +216,6 @@
         app:layout_constraintBottom_toBottomOf="@id/textView3"
         app:layout_constraintStart_toEndOf="@id/textView3"
         app:layout_constraintTop_toTopOf="@id/textView3"
-        tools:drawableEnd="@drawable/ic_home_no"
+        tools:drawableEnd="@drawable/dy_ic_home_no"
         tools:text="No.166" />
 </androidx.constraintlayout.widget.ConstraintLayout>

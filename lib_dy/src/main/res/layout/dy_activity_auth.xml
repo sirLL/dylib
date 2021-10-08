@@ -24,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_auth_banner" />
+                android:src="@drawable/dy_ic_auth_banner" />
         </FrameLayout>
 
         <LinearLayout
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="60dp"
-                android:src="@drawable/ic_wait_confirm" />
+                android:src="@drawable/dy_ic_wait_confirm" />
 
         </FrameLayout>
 
@@ -150,7 +150,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
-                android:src="@drawable/auth_bottom_icon"
+                android:src="@drawable/dy_auth_bottom_icon"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/img_auth" />

@@ -112,7 +112,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="12dp"
             android:layout_weight="1"
-            android:drawableEnd="@drawable/ic_arrow_right_999999"
+            android:drawableEnd="@drawable/dy_ic_arrow_right_999999"
             android:gravity="left|center_vertical"
             android:hint="省、市、区"
             android:paddingRight="16dp"

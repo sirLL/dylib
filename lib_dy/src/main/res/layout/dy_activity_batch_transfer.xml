@@ -22,7 +22,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_batch_transfer" />
+            android:src="@drawable/dy_ic_batch_transfer" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -63,7 +63,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="12dp"
-                android:src="@drawable/ic_right_arrow" />
+                android:src="@drawable/dy_ic_right_arrow" />
 
         </RelativeLayout>
 

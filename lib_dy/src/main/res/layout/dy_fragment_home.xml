@@ -20,7 +20,7 @@
             android:paddingStart="11dp"
             android:paddingEnd="16dp"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_home_message"
+            android:src="@drawable/dy_ic_home_message"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -32,7 +32,7 @@
             android:paddingStart="16dp"
             android:paddingEnd="11dp"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_home_share"
+            android:src="@drawable/dy_ic_home_share"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/iv_message"
             app:layout_constraintTop_toTopOf="parent" />
@@ -103,7 +103,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginStart="16dp"
-                        android:src="@drawable/ic_home_notice" />
+                        android:src="@drawable/dy_ic_home_notice" />
 
                     <com.sunfusheng.marqueeview.MarqueeView
                         android:id="@+id/marquee_view"

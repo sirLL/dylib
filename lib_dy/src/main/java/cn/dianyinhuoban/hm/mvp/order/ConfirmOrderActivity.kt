@@ -142,8 +142,8 @@ class ConfirmOrderActivity : BaseActivity<CreateOrderPresenter?>(), CreateOrderC
         val dp2px3: Float = DimensionUtils.dp2px(this, 3).toFloat()
         iv_cover.load(mProductImg ?: "") {
             crossfade(true)
-            error(R.drawable.ic_app_logo)
-            placeholder(R.drawable.ic_app_logo)
+            error(R.drawable.dy_ic_app_logo)
+            placeholder(R.drawable.dy_ic_app_logo)
             transformations(RoundedCornersTransformation(dp2px3, dp2px3, dp2px3, dp2px3))
         }
 

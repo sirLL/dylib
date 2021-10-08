@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/ic_right_arrow" />
+            android:src="@drawable/dy_ic_right_arrow" />
 
         <TextView
             android:id="@+id/tv_pk_period"

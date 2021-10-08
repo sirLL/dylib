@@ -28,7 +28,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:drawableStart="@drawable/ic_search_cccccc"
+                android:drawableStart="@drawable/dy_ic_search_cccccc"
                 android:drawablePadding="8dp"
                 android:hint="请输入您要找的成员姓名"
                 android:imeOptions="actionSearch"
@@ -43,7 +43,7 @@
                 android:layout_height="match_parent"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
-                android:src="@drawable/ic_clean_edittext"
+                android:src="@drawable/dy_ic_clean_edittext"
                 android:visibility="invisible" />
         </LinearLayout>
 

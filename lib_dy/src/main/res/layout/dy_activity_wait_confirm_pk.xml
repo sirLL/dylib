@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="60dp"
-            android:src="@drawable/ic_wait_confirm" />
+            android:src="@drawable/dy_ic_wait_confirm" />
 
     </FrameLayout>
 

@@ -61,7 +61,7 @@ class PosterEditActivity : BaseActivity<IPresenter?>() {
     }
 
     override fun getBackButtonIcon(): Int {
-        return R.drawable.ic_back_circle
+        return R.drawable.dy_ic_back_circle
     }
 
     override fun getRootView(): Int {

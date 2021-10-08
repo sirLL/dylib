@@ -3,5 +3,5 @@ include ':hmdemo'
 include ':lib_tablayout'
 include ':lib_http'
 include ':lib_base'
-include ':dy_lib'
+//include ':dy_lib'
 rootProject.name = "dylib"

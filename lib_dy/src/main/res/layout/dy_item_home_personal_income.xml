@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
-        android:drawableEnd="@drawable/ic_arrow_right_999999"
+        android:drawableEnd="@drawable/dy_ic_arrow_right_999999"
         android:text="个人本月总交易量/元"
         android:textColor="@color/color_999999"
         android:textSize="14sp"

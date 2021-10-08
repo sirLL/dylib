@@ -201,9 +201,9 @@ class HomeFragment : BaseFragment<HomePresenter?>(), OnRefreshListener, HomeCont
             //消息图标
             iv_message.setImageResource(
                 if (it.newNotice > 0) {
-                    R.drawable.ic_home_message_point
+                    R.drawable.dy_ic_home_message_point
                 } else {
-                    R.drawable.ic_home_message
+                    R.drawable.dy_ic_home_message
                 }
             )
             mHomeDataBean = homeDataBean
@@ -379,7 +379,7 @@ class HomeFragment : BaseFragment<HomePresenter?>(), OnRefreshListener, HomeCont
             tv_team_name.setCompoundDrawablesRelativeWithIntrinsicBounds(
                 null,
                 null,
-                ContextCompat.getDrawable(requireContext(), R.drawable.ic_home_item_edit),
+                ContextCompat.getDrawable(requireContext(), R.drawable.dy_ic_home_item_edit),
                 null
             )
         } else {

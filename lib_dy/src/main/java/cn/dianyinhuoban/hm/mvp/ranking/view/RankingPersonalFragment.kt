@@ -143,8 +143,8 @@ class RankingPersonalFragment : BaseFragment<RankPresenter?>(), OnRefreshListene
         iv_avatar_my.load(MMKVUtil.getAvatar()) {
             crossfade(true)//淡入效果
             allowHardware(false)
-            placeholder(R.drawable.img_avatar_def)
-            error(R.drawable.img_avatar_def)
+            placeholder(R.drawable.dy_img_avatar_def)
+            error(R.drawable.dy_img_avatar_def)
         }
     }
 

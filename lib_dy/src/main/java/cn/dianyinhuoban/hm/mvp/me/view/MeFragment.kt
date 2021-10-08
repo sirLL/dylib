@@ -15,7 +15,6 @@ import cn.dianyinhuoban.hm.mvp.me.presenter.MePresenter
 import cn.dianyinhuoban.hm.mvp.me.view.adapter.MeMenuAdapter
 import cn.dianyinhuoban.hm.mvp.me.view.adapter.MeMenuAdapter.OnMenuClickListener
 import cn.dianyinhuoban.hm.mvp.order.OrderListActivity
-import cn.dianyinhuoban.hm.mvp.order.SubmitOrderActivity
 import cn.dianyinhuoban.hm.mvp.order.view.ProductListActivity
 import cn.dianyinhuoban.hm.mvp.pk.view.PkActivity
 import cn.dianyinhuoban.hm.mvp.setting.view.*
@@ -129,15 +128,15 @@ class MeFragment : BaseFragment<MePresenter?>(), MeContract.View {
 
     private fun loadMenuData() {
         val menuData: MutableList<MeMenuBean> = ArrayList()
-        menuData.add(MeMenuBean(1, "机具划拨", R.drawable.ic_me_menu_transfer))
-        menuData.add(MeMenuBean(2, "机具采购", R.drawable.ic_me_menu_purchase))
+        menuData.add(MeMenuBean(1, "机具划拨", R.drawable.dy_ic_me_menu_transfer))
+        menuData.add(MeMenuBean(2, "机具采购", R.drawable.dy_ic_me_menu_purchase))
 //        menuData.add(MeMenuBean(3, "讲武堂", R.drawable.ic_me_menu_school))
-        menuData.add(MeMenuBean(4, "采购订单", R.drawable.ic_me_menu_purchase_order))
-        menuData.add(MeMenuBean(5, "银行卡", R.drawable.ic_me_menu_bank_card))
-        menuData.add(MeMenuBean(6, "PK", R.drawable.ic_me_menu_pk))
+        menuData.add(MeMenuBean(4, "采购订单", R.drawable.dy_ic_me_menu_purchase_order))
+        menuData.add(MeMenuBean(5, "银行卡", R.drawable.dy_ic_me_menu_bank_card))
+        menuData.add(MeMenuBean(6, "PK", R.drawable.dy_ic_me_menu_pk))
 //        menuData.add(MeMenuBean(7, "授权书", R.drawable.ic_me_menu_auth))
 //        menuData.add(MeMenuBean(8, "在线客服", R.drawable.ic_me_menu_online_service))
-        menuData.add(MeMenuBean(9, "设置", R.drawable.ic_me_menu_setting))
+        menuData.add(MeMenuBean(9, "设置", R.drawable.dy_ic_me_menu_setting))
         mAdapter?.data = menuData
     }
 
@@ -156,8 +155,8 @@ class MeFragment : BaseFragment<MePresenter?>(), MeContract.View {
             iv_avatar.load(it.avatar) {
                 crossfade(true)//淡入效果
                 allowHardware(false)
-                placeholder(R.drawable.img_avatar_def)
-                error(R.drawable.img_avatar_def)
+                placeholder(R.drawable.dy_img_avatar_def)
+                error(R.drawable.dy_img_avatar_def)
                 transformations(CircleCropTransformation())
             }
             //昵称

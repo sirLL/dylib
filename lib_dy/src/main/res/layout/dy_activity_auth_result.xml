@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="60dp"
-        tools:src="@drawable/ic_order_result_success" />
+        tools:src="@drawable/dy_ic_order_result_success" />
 
     <TextView
         android:id="@+id/tv_status"

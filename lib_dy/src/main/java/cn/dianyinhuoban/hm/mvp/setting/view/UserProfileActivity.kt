@@ -195,8 +195,8 @@ class UserProfileActivity : BaseActivity<ProfilePresenter>(), ProfileContract.Vi
         tv_position.text = profile.address
         img_avatar.load(profile.avatar) {
             crossfade(false)
-            placeholder(R.drawable.img_avatar_def)
-            error(R.drawable.img_avatar_def)
+            placeholder(R.drawable.dy_img_avatar_def)
+            error(R.drawable.dy_img_avatar_def)
         }
     }
 

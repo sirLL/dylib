@@ -26,7 +26,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_left_tab" />
+                android:src="@drawable/dy_ic_left_tab" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -78,7 +78,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_left_tab" />
+                android:src="@drawable/dy_ic_left_tab" />
 
             <TextView
                 android:layout_width="0dp"
@@ -95,7 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="12dp"
-                android:drawableRight="@drawable/ic_right_arrow"
+                android:drawableRight="@drawable/dy_ic_right_arrow"
                 android:drawablePadding="6dp"
                 android:text="电银"
                 android:textColor="@color/color_333333"
@@ -120,7 +120,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_left_tab"
+                android:src="@drawable/dy_ic_left_tab"
                 android:visibility="invisible" />
 
             <TextView
@@ -138,7 +138,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="12dp"
-                android:drawableRight="@drawable/ic_right_arrow"
+                android:drawableRight="@drawable/dy_ic_right_arrow"
                 android:drawablePadding="6dp"
                 android:text="否"
                 android:textColor="@color/color_333333"
@@ -162,7 +162,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_left_tab"
+                android:src="@drawable/dy_ic_left_tab"
                 android:visibility="invisible" />
 
             <TextView
@@ -208,7 +208,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_left_tab" />
+                android:src="@drawable/dy_ic_left_tab" />
 
             <TextView
                 android:layout_width="wrap_content"

@@ -263,9 +263,9 @@ class IncomePersonalDetailFragment : BaseListFragment<DetailBean, IncomeDetailPr
         )
         iv_status_transfer.setImageResource(
             if (rate >= 0) {
-                R.drawable.ic_arrow_rise
+                R.drawable.dy_ic_arrow_rise
             } else {
-                R.drawable.ic_arrow_fall
+                R.drawable.dy_ic_arrow_fall
             }
         )
     }

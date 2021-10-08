@@ -15,7 +15,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_left_tab" />
+            android:src="@drawable/dy_ic_left_tab" />
 
         <TextView
             android:id="@+id/tv_address_title"
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="12dp"
-            android:src="@drawable/ic_right_arrow" />
+            android:src="@drawable/dy_ic_right_arrow" />
     </LinearLayout>
 
     <TextView

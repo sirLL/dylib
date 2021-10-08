@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="54dp"
-        android:src="@drawable/ic_face_detection" />
+        android:src="@drawable/dy_ic_face_detection" />
 
     <TextView
         android:id="@+id/tv_start_face"
@@ -50,7 +50,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_x"
+            android:drawableLeft="@drawable/dy_ic_x"
             android:drawablePadding="7dp"
             android:text="不要戴帽子"
             android:textColor="@color/color_666666"
@@ -60,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:drawableLeft="@drawable/ic_ok"
+            android:drawableLeft="@drawable/dy_ic_ok"
             android:drawablePadding="7dp"
             android:text="保持光线充足"
             android:textColor="@color/color_666666"
@@ -73,7 +73,7 @@
         android:layout_marginLeft="59dp"
         android:layout_marginTop="17dp"
         android:layout_marginRight="59dp"
-        android:drawableLeft="@drawable/ic_x"
+        android:drawableLeft="@drawable/dy_ic_x"
         android:drawablePadding="7dp"
         android:text="动作不要太快"
         android:textColor="@color/color_666666"

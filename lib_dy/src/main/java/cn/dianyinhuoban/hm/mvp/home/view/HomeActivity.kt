@@ -51,12 +51,12 @@ class HomeActivity : BaseActivity<SystemPresenter?>(), SystemContract.View {
      */
     private fun setupNavigationBar() {
         navigation_bar.addTab(
-            R.drawable.dy_ic_nav_home_normal, R.drawable.ic_nav_home_selector,
+            R.drawable.dy_ic_nav_home_normal, R.drawable.dy_ic_nav_home_selector,
             ContextCompat.getColor(HomeActivity@ this, R.color.color_nav_normal),
             ContextCompat.getColor(HomeActivity@ this, R.color.color_nav_selector), "首页"
         )
         navigation_bar.addTab(
-            R.drawable.dy_ic_nav_machine_normal, R.drawable.ic_nav_machine_selector,
+            R.drawable.dy_ic_nav_machine_normal, R.drawable.dy_ic_nav_machine_selector,
             ContextCompat.getColor(HomeActivity@ this, R.color.color_nav_normal),
             ContextCompat.getColor(HomeActivity@ this, R.color.color_nav_selector), "机具管理"
         )
@@ -66,12 +66,12 @@ class HomeActivity : BaseActivity<SystemPresenter?>(), SystemContract.View {
             ContextCompat.getColor(HomeActivity@ this, R.color.color_nav_selector), "素材库"
         )
         navigation_bar.addTab(
-            R.drawable.dy_ic_nav_leaderboard_normal, R.drawable.ic_nav_leaderboard_selector,
+            R.drawable.dy_ic_nav_leaderboard_normal, R.drawable.dy_ic_nav_leaderboard_selector,
             ContextCompat.getColor(HomeActivity@ this, R.color.color_nav_normal),
             ContextCompat.getColor(HomeActivity@ this, R.color.color_nav_selector), "排行榜"
         )
         navigation_bar.addTab(
-            R.drawable.dy_ic_nav_me_normal, R.drawable.ic_nav_me_selector,
+            R.drawable.dy_ic_nav_me_normal, R.drawable.dy_ic_nav_me_selector,
             ContextCompat.getColor(HomeActivity@ this, R.color.color_nav_normal),
             ContextCompat.getColor(HomeActivity@ this, R.color.color_nav_selector), "我的"
         )

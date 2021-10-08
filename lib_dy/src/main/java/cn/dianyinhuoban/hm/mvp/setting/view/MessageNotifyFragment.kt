@@ -170,26 +170,26 @@ class MessageNotifyFragment : BaseFragment<MessagePresenter>(), MessageContract.
                     // 1 2 3 5 6 7
                     when (data.type.toInt()) {
                         2 -> {
-                            h.itemView.img_msg_logo.setImageResource(R.drawable.ic_msg_invite)
+                            h.itemView.img_msg_logo.setImageResource(R.drawable.dy_ic_msg_invite)
                         }
 
                         3 -> {
-                            h.itemView.img_msg_logo.setImageResource(R.drawable.ic_msg_active)
+                            h.itemView.img_msg_logo.setImageResource(R.drawable.dy_ic_msg_active)
                         }
 
                         7 -> {
-                            h.itemView.img_msg_logo.setImageResource(R.drawable.ic_msg_add_child)
+                            h.itemView.img_msg_logo.setImageResource(R.drawable.dy_ic_msg_add_child)
                         }
 
                         else -> {
-                            h.itemView.img_msg_logo.setImageResource(R.drawable.ic_msg_activity)
+                            h.itemView.img_msg_logo.setImageResource(R.drawable.dy_ic_msg_activity)
                         }
                     }
                 }
 
                 VIEW_ITEM_DISPATCH -> {
                     val h = (holder as OtherViewHolder)
-                    h.itemView.img_msg_dispatch_logo.setImageResource(R.drawable.ic_msg_ship)
+                    h.itemView.img_msg_dispatch_logo.setImageResource(R.drawable.dy_ic_msg_ship)
                     h.itemView.tv_msg_dispatch_title.text = data.title
                     h.itemView.tv_msg_dispatch_sub_title.text = data.subTitle
                     h.itemView.tv_msg_dispatch_content.text = data.content
@@ -207,7 +207,7 @@ class MessageNotifyFragment : BaseFragment<MessagePresenter>(), MessageContract.
 
                 VIEW_ITEM_OPERATION -> {
                     val h = (holder as PkNotifyViewHolder)
-                    h.itemView.img_msg_pk_logo.setImageResource(R.drawable.ic_msg_invite)
+                    h.itemView.img_msg_pk_logo.setImageResource(R.drawable.dy_ic_msg_invite)
                     h.itemView.tv_msg_pk_title.text = data.title
                     h.itemView.tv_msg_pk_content.text = data.subTitle
                     h.itemView.tv_msg_pk_time.text =

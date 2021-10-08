@@ -39,7 +39,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
-                        android:src="@drawable/ic_tips" />
+                        android:src="@drawable/dy_ic_tips" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -64,7 +64,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/dy_shape_fff2da_radius_6"
-                        android:drawableEnd="@drawable/ic_arrow_right_cccccc"
+                        android:drawableEnd="@drawable/dy_ic_arrow_right_cccccc"
                         android:hint="请选择机具样式"
                         android:maxLines="1"
                         android:paddingStart="12dp"
@@ -121,7 +121,7 @@
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="12dp"
                             android:padding="10dp"
-                            android:src="@drawable/ic_scan_tranfer" />
+                            android:src="@drawable/dy_ic_scan_tranfer" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -169,7 +169,7 @@
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="12dp"
                             android:padding="10dp"
-                            android:src="@drawable/ic_scan_tranfer" />
+                            android:src="@drawable/dy_ic_scan_tranfer" />
                     </LinearLayout>
 
                     <ImageView
@@ -177,7 +177,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
-                        android:src="@drawable/ic_oval_start_end"
+                        android:src="@drawable/dy_ic_oval_start_end"
                         app:layout_constraintBottom_toBottomOf="@id/ll_start_container"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="@id/ll_start_container" />
@@ -187,7 +187,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
-                        android:src="@drawable/ic_oval_start_end"
+                        android:src="@drawable/dy_ic_oval_start_end"
                         app:layout_constraintBottom_toBottomOf="@id/ll_end_container"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="@id/ll_end_container" />
@@ -218,7 +218,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:drawableStart="@drawable/ic_line_left_blue"
+                        android:drawableStart="@drawable/dy_ic_line_left_blue"
                         android:drawablePadding="9dp"
                         android:maxLines="1"
                         android:text="已选中机具"

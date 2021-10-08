@@ -22,7 +22,7 @@ class IncomeAdapter : BaseAdapter<IncomeItemBean, IncomeAdapter.IncomeViewHolder
 
     override fun onBindViewHolder(holder: IncomeViewHolder, position: Int) {
         if (position == 0) {
-            holder.itemView.iv_income_type.setImageResource(R.drawable.ic_income_activation)
+            holder.itemView.iv_income_type.setImageResource(R.drawable.dy_ic_income_activation)
             holder.itemView.tv_amount.text = if (null == mActivationBack) {
                 "--"
             } else {
@@ -31,7 +31,7 @@ class IncomeAdapter : BaseAdapter<IncomeItemBean, IncomeAdapter.IncomeViewHolder
             holder.itemView.tv_title.text = "激活返现"
             holder.itemView.tv_other.text = "激活返现明细"
         } else {
-            holder.itemView.iv_income_type.setImageResource(R.drawable.ic_income_purchase)
+            holder.itemView.iv_income_type.setImageResource(R.drawable.dy_ic_income_purchase)
             holder.itemView.tv_amount.text = if (null == mPurchaseBack) {
                 "--"
             } else {

@@ -13,14 +13,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/ic_pay_type_balance" />
+        tools:src="@drawable/dy_ic_pay_type_balance" />
 
     <ImageView
         android:id="@+id/iv_hook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:src="@drawable/ic_hook_picker"
+        android:src="@drawable/dy_ic_hook_picker"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

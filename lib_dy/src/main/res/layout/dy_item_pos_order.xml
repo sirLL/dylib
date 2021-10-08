@@ -53,7 +53,7 @@
             android:layout_width="68dp"
             android:layout_height="68dp"
             android:layout_marginTop="12dp"
-            tools:src="@drawable/ic_app_logo" />
+            tools:src="@drawable/dy_ic_app_logo" />
 
         <TextView
             android:id="@+id/tv_order_product"

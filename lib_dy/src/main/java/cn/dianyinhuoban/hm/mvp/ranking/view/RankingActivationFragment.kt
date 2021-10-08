@@ -6,8 +6,6 @@ import android.view.View
 import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.mvp.bean.MyRank
 import cn.dianyinhuoban.hm.mvp.bean.RankBean
-import cn.dianyinhuoban.hm.mvp.bean.RankItemBean
-import cn.dianyinhuoban.hm.mvp.bean.Team
 import cn.dianyinhuoban.hm.mvp.ranking.contract.RankContract
 import cn.dianyinhuoban.hm.mvp.ranking.presenter.RankPresenter
 import cn.dianyinhuoban.hm.mvp.ranking.view.adapter.RankingPersonalAdapter
@@ -145,8 +143,8 @@ class RankingActivationFragment : BaseFragment<RankPresenter?>(), OnRefreshListe
         iv_avatar_my.load(MMKVUtil.getAvatar()) {
             crossfade(true)//淡入效果
             allowHardware(false)
-            placeholder(R.drawable.img_avatar_def)
-            error(R.drawable.img_avatar_def)
+            placeholder(R.drawable.dy_img_avatar_def)
+            error(R.drawable.dy_img_avatar_def)
         }
     }
 

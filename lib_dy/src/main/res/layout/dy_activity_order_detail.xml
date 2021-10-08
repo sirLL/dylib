@@ -38,7 +38,7 @@
                         android:id="@+id/iv_status"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        tools:src="@drawable/ic_order_state_wait_ship" />
+                        tools:src="@drawable/dy_ic_order_state_wait_ship" />
 
                     <TextView
                         android:id="@+id/tv_status"
@@ -167,7 +167,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/ic_call_phone"
+                        android:drawableLeft="@drawable/dy_ic_call_phone"
                         android:drawablePadding="8dp"
                         android:gravity="center"
                         android:text="联系总部"
@@ -198,7 +198,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_left_tab" />
+                        android:src="@drawable/dy_ic_left_tab" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -289,7 +289,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_left_tab" />
+                        android:src="@drawable/dy_ic_left_tab" />
 
                     <TextView
                         android:layout_width="wrap_content"

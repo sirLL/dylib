@@ -124,7 +124,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="6dp"
         android:layout_marginEnd="10dp"
-        android:background="@drawable/img_home_pk_bg"
+        android:background="@drawable/dy_img_home_pk_bg"
         android:orientation="horizontal"
         app:layout_constraintDimensionRatio="h,1067:389"
         app:layout_constraintEnd_toEndOf="parent"

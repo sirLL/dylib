@@ -4,14 +4,12 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.core.content.ContextCompat
 import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.mvp.bean.OrderBean
 import cn.dianyinhuoban.hm.mvp.order.contract.OrderDetailContract
 import cn.dianyinhuoban.hm.mvp.order.presenter.OrderDetailPresenter
 import coil.load
 import coil.transform.RoundedCornersTransformation
-import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.DateTimeUtils
 import com.wareroom.lib_base.utils.DimensionUtils
@@ -19,7 +17,6 @@ import com.wareroom.lib_base.utils.NumberUtils
 import kotlinx.android.synthetic.main.dy_activity_order_detail.*
 import kotlinx.android.synthetic.main.dy_activity_order_detail.tv_status
 import kotlinx.android.synthetic.main.dy_item_pos_order.*
-import kotlinx.android.synthetic.main.dy_item_pos_order.view.*
 
 class OrderDetailActivity : BaseActivity<OrderDetailPresenter?>(), OrderDetailContract.View {
     private var mOrderID: String? = null
@@ -80,8 +77,8 @@ class OrderDetailActivity : BaseActivity<OrderDetailPresenter?>(), OrderDetailCo
 
         img_order_thumb?.load(order?.img ?: "") {
             crossfade(true)
-            placeholder(R.drawable.ic_app_logo)
-            error(R.drawable.ic_app_logo)
+            placeholder(R.drawable.dy_ic_app_logo)
+            error(R.drawable.dy_ic_app_logo)
             transformations(RoundedCornersTransformation(dp2px3, dp2px3, dp2px3, dp2px3))
         }
         tv_order_no.text = ""
@@ -153,22 +150,22 @@ class OrderDetailActivity : BaseActivity<OrderDetailPresenter?>(), OrderDetailCo
     private fun getStatusIcon(status: String): Int {
         return when (status) {
             "1" -> {
-                R.drawable.ic_order_state_wait_ship
+                R.drawable.dy_ic_order_state_wait_ship
             }
             "2" -> {
-                R.drawable.ic_order_state_wait_ship
+                R.drawable.dy_ic_order_state_wait_ship
             }
             "3" -> {
-                R.drawable.ic_order_state_sure
+                R.drawable.dy_ic_order_state_sure
             }
             "4" -> {
-                R.drawable.ic_order_state_complete
+                R.drawable.dy_ic_order_state_complete
             }
             "-1" -> {
-                R.drawable.ic_order_state_complete
+                R.drawable.dy_ic_order_state_complete
             }
             else -> {
-                R.drawable.ic_order_state_wait_ship
+                R.drawable.dy_ic_order_state_wait_ship
             }
         }
     }

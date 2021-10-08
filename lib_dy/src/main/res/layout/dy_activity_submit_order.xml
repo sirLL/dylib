@@ -24,7 +24,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="26dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/ic_order_product_bg">
+                android:background="@drawable/dy_ic_order_product_bg">
 
                 <ImageView
                     android:id="@+id/img_order_product_img"
@@ -32,7 +32,7 @@
                     android:layout_height="66dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="30dp"
-                    android:src="@drawable/ic_app_logo" />
+                    android:src="@drawable/dy_ic_app_logo" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -85,7 +85,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_left_tab" />
+                        android:src="@drawable/dy_ic_left_tab" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -134,7 +134,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_left_tab" />
+                        android:src="@drawable/dy_ic_left_tab" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -160,7 +160,7 @@
                         android:layout_width="56dp"
                         android:layout_height="38dp"
                         android:background="@drawable/dy_shape_f9fafb_radius_2"
-                        android:src="@drawable/ic_amount_sub_active" />
+                        android:src="@drawable/dy_ic_amount_sub_active" />
 
                     <TextView
                         android:id="@+id/tv_count"
@@ -182,7 +182,7 @@
                         android:layout_width="56dp"
                         android:layout_height="38dp"
                         android:background="@drawable/dy_shape_f9fafb_radius_2"
-                        android:src="@drawable/ic_amount_add_active" />
+                        android:src="@drawable/dy_ic_amount_add_active" />
 
                 </LinearLayout>
             </LinearLayout>

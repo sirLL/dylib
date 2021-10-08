@@ -27,7 +27,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_search" />
+                android:src="@drawable/dy_ic_search" />
 
             <EditText
                 android:id="@+id/ed_search_content"
@@ -47,7 +47,7 @@
                 android:paddingLeft="12dp"
                 android:paddingRight="12dp"
                 android:visibility="invisible"
-                android:src="@drawable/ic_input_close" />
+                android:src="@drawable/dy_ic_input_close" />
 
         </LinearLayout>
 

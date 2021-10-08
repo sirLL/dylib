@@ -78,8 +78,8 @@ class TeamMemberRankAdapter : BaseAdapter<MemberRank, RecyclerView.ViewHolder>()
             holder.itemView.tv_amount.text = "20w"
             holder.itemView.iv_avatar.load("") {
                 crossfade(true)//淡入效果
-                placeholder(R.drawable.img_avatar_def)
-                error(R.drawable.img_avatar_def)
+                placeholder(R.drawable.dy_img_avatar_def)
+                error(R.drawable.dy_img_avatar_def)
             }
         }
     }
@@ -103,8 +103,8 @@ class TeamMemberRankAdapter : BaseAdapter<MemberRank, RecyclerView.ViewHolder>()
         //第一名
         holder.ivAvatarNo1.load(no1?.avatar ?: "") {
             crossfade(true)//淡入效果
-            placeholder(R.drawable.img_avatar_def)
-            error(R.drawable.img_avatar_def)
+            placeholder(R.drawable.dy_img_avatar_def)
+            error(R.drawable.dy_img_avatar_def)
         }
         holder.tvNameNo1.text = if (no1 == null) {
             "--"
@@ -124,8 +124,8 @@ class TeamMemberRankAdapter : BaseAdapter<MemberRank, RecyclerView.ViewHolder>()
         //第二名
         holder.ivAvatarNo2.load(no2?.avatar ?: "") {
             crossfade(true)//淡入效果
-            placeholder(R.drawable.img_avatar_def)
-            error(R.drawable.img_avatar_def)
+            placeholder(R.drawable.dy_img_avatar_def)
+            error(R.drawable.dy_img_avatar_def)
         }
         holder.tvNameNo2.text = if (no2 == null) {
             "--"
@@ -145,8 +145,8 @@ class TeamMemberRankAdapter : BaseAdapter<MemberRank, RecyclerView.ViewHolder>()
         //第三名
         holder.ivAvatarNo3.load(no3?.avatar ?: "") {
             crossfade(true)//淡入效果
-            placeholder(R.drawable.img_avatar_def)
-            error(R.drawable.img_avatar_def)
+            placeholder(R.drawable.dy_img_avatar_def)
+            error(R.drawable.dy_img_avatar_def)
         }
         holder.tvNameNo3.text = if (no3 == null) {
             "--"

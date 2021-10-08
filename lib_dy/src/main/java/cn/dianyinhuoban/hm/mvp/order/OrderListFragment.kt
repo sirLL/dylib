@@ -84,8 +84,8 @@ class OrderListFragment : BaseListFragment<OrderBean, OrderListPresenter?>(),
 
         viewHolder?.itemView?.img_order_thumb?.load(itemData?.img ?: "") {
             crossfade(true)
-            placeholder(R.drawable.ic_app_logo)
-            error(R.drawable.ic_app_logo)
+            placeholder(R.drawable.dy_ic_app_logo)
+            error(R.drawable.dy_ic_app_logo)
             transformations(RoundedCornersTransformation(dp2px3, dp2px3, dp2px3, dp2px3))
         }
     }

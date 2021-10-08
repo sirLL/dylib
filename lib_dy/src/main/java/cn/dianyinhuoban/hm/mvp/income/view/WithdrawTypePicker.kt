@@ -1,8 +1,6 @@
 package cn.dianyinhuoban.hm.mvp.income.view
 
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.*
@@ -60,7 +58,7 @@ class WithdrawTypePicker : BaseBottomPicker<BankBean, BankCardListPresenter>(),
             ) {
                 if (mData == null || mData.size == position) {
                     viewHolder?.itemView?.iv_hook?.visibility = View.INVISIBLE
-                    viewHolder?.itemView?.iv_icon?.setImageResource(R.drawable.ic_bank_card_add_picker)
+                    viewHolder?.itemView?.iv_icon?.setImageResource(R.drawable.dy_ic_bank_card_add_picker)
                     viewHolder?.itemView?.tv_title?.text = "使用新卡提现"
                 } else {
                     this@WithdrawTypePicker.convert(viewHolder, position, itemData)
@@ -110,7 +108,7 @@ class WithdrawTypePicker : BaseBottomPicker<BankBean, BankCardListPresenter>(),
             } else {
                 View.INVISIBLE
             }
-        viewHolder?.itemView?.iv_icon?.setImageResource(R.drawable.ic_bank_card_picker)
+        viewHolder?.itemView?.iv_icon?.setImageResource(R.drawable.dy_ic_bank_card_picker)
         viewHolder?.itemView?.tv_title?.text =
             "${itemData?.bankName}(${StringUtil.getBankCardEndNo(itemData?.bankNo)})"
     }

@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="60dp"
-        android:drawableTop="@drawable/ic_order_result_success"
+        android:drawableTop="@drawable/dy_ic_order_result_success"
         android:drawablePadding="26dp"
         android:text="您已通过实名认证"
         android:textColor="@color/color_333333"

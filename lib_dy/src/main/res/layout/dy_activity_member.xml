@@ -22,7 +22,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/dy_shape_fafafa_radius_2"
-            android:drawableStart="@drawable/ic_search_cccccc"
+            android:drawableStart="@drawable/dy_ic_search_cccccc"
             android:drawablePadding="7dp"
             android:gravity="center_vertical"
             android:hint="请输入您要找的成员姓名"

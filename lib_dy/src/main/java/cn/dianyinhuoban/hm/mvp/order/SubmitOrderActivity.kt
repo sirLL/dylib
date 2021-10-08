@@ -171,8 +171,8 @@ class SubmitOrderActivity : BaseActivity<ProductListPresenter?>(), ProductListCo
         val dp2px6: Float = DimensionUtils.dp2px(this, 6).toFloat()
         img_order_product_img.load(mCheckedProduct?.img ?: "") {
             crossfade(true)
-            placeholder(R.drawable.ic_app_logo)
-            error(R.drawable.ic_app_logo)
+            placeholder(R.drawable.dy_ic_app_logo)
+            error(R.drawable.dy_ic_app_logo)
             transformations(RoundedCornersTransformation(dp2px6, dp2px6, dp2px6, dp2px6))
         }
         tv_product_title.text = mCheckedProduct?.describe ?: "--"

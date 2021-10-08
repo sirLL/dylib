@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toStartOf="@id/tv_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/ic_income_activation" />
+        tools:src="@drawable/dy_ic_income_activation" />
 
     <TextView
         android:id="@+id/tv_unit"
@@ -84,7 +84,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="16dp"
-        android:drawableEnd="@drawable/ic_arrow_right_cccccc"
+        android:drawableEnd="@drawable/dy_ic_arrow_right_cccccc"
         android:drawablePadding="32dp"
         android:maxLines="1"
         android:text="--"

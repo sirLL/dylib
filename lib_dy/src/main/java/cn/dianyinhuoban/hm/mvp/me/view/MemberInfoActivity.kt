@@ -166,8 +166,8 @@ class MemberInfoActivity : BaseActivity<MemberInfoPresenter?>(), MemberInfoContr
 
         iv_avatar.load(memberDetail?.avatar ?: "") {
             crossfade(true)
-            error(R.drawable.img_avatar_def)
-            placeholder(R.drawable.img_avatar_def)
+            error(R.drawable.dy_img_avatar_def)
+            placeholder(R.drawable.dy_img_avatar_def)
         }
         tv_name.text = if (!TextUtils.isEmpty(memberDetail?.name)) {
             memberDetail?.name

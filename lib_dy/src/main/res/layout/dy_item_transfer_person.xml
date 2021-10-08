@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
-        android:src="@drawable/ic_checked"
+        android:src="@drawable/dy_ic_checked"
         />
 
 

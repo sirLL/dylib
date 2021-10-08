@@ -101,7 +101,7 @@ class PayTypePicker : BaseBottomPicker<PayTypeBean?, MePresenter>(), MeContract.
         payTypeData.add(
             PayTypeBean(
                 1,
-                R.drawable.ic_pay_type_balance,
+                R.drawable.dy_ic_pay_type_balance,
                 "余额支付",
                 personalBean?.total ?: "0"
             )
@@ -110,7 +110,7 @@ class PayTypePicker : BaseBottomPicker<PayTypeBean?, MePresenter>(), MeContract.
         payTypeData.add(
             PayTypeBean(
                 2,
-                R.drawable.ic_pay_type_integral,
+                R.drawable.dy_ic_pay_type_integral,
                 "积分支付",
                 personalBean?.point ?: "0"
             )
@@ -119,7 +119,7 @@ class PayTypePicker : BaseBottomPicker<PayTypeBean?, MePresenter>(), MeContract.
         payTypeData.add(
             PayTypeBean(
                 3,
-                R.drawable.ic_pay_type_alipay,
+                R.drawable.dy_ic_pay_type_alipay,
                 "支付宝支付",
                 "0"
             )
