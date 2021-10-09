@@ -1,16 +1,13 @@
 package com.example.hmdemo
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import cn.dianyinhuoban.hm.DYHelper
-import cn.dianyinhuoban.hm.mvp.bean.UserBean
-import cn.dianyinhuoban.hm.mvp.home.view.HomeActivity
-import cn.dianyinhuoban.hm.mvp.login.view.LoginActivity
 
 class MainActivity : AppCompatActivity() {
     private val userNameEditText: EditText by lazy {
@@ -23,6 +20,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        findViewById<ImageView>(R.id.iv_logo).setOnClickListener {
+            DYHelper.openLoginPage(this@MainActivity, true)
+        }
         findViewById<Button>(R.id.btn_test).setOnClickListener {
             checkInput()
         }
@@ -42,24 +42,7 @@ class MainActivity : AppCompatActivity() {
         login(userName, password)
     }
 
-    //验证用户是否是原平台的用户
-    private fun checkUserType(): Boolean {
-        return false
-    }
-
     private fun login(userName: String, password: String) {
-        if (checkUserType()) {
 
-        } else {
-            DYHelper.login(userName, password, object : DYHelper.LoginCallback {
-                override fun onLoginError(code: Int, msg: String?) {
-                    Toast.makeText(this@MainActivity, msg, Toast.LENGTH_SHORT).show()
-                }
-
-                override fun onLoginSuccess(userBean: UserBean?) {
-                    startActivity(Intent(this@MainActivity, HomeActivity::class.java))
-                }
-            })
-        }
     }
 }

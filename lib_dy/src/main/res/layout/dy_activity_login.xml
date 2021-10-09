@@ -8,10 +8,22 @@
     android:orientation="vertical"
     tools:context=".mvp.login.view.LoginActivity">
 
-    <View
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="80" />
+        android:layout_weight="80">
+
+        <ImageView
+            android:id="@+id/base_iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/dy_base_ic_back_black"
+            android:visibility="gone" />
+    </LinearLayout>
+
 
     <TextView
         android:layout_width="wrap_content"

@@ -6,7 +6,11 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
+import android.view.View
+import cn.dianyinhuoban.hm.DYHelper
 import cn.dianyinhuoban.hm.R
+import cn.dianyinhuoban.hm.event.CloseLoadingEvent
+import cn.dianyinhuoban.hm.event.CloseLoginPageEvent
 import cn.dianyinhuoban.hm.mvp.home.view.HomeActivity
 import cn.dianyinhuoban.hm.mvp.login.contract.LoginContract
 import cn.dianyinhuoban.hm.mvp.login.presenter.LoginPresenter
@@ -14,6 +18,9 @@ import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.ValidatorUtils
 import com.wareroom.lib_base.utils.cache.MMKVUtil
 import kotlinx.android.synthetic.main.dy_activity_login.*
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 
 class LoginActivity : BaseActivity<LoginPresenter?>(), LoginContract.View {
     override fun getPresenter(): LoginPresenter? {
@@ -26,6 +33,7 @@ class LoginActivity : BaseActivity<LoginPresenter?>(), LoginContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        EventBus.getDefault().register(this)
         setContentView(R.layout.dy_activity_login)
         initView()
         val defPhone = MMKVUtil.getUserName()
@@ -34,6 +42,14 @@ class LoginActivity : BaseActivity<LoginPresenter?>(), LoginContract.View {
         ed_password.setText(defPassword)
         ed_phone.setSelection(defPhone.length)
         ed_password.setSelection(defPassword.length)
+    }
+
+    override fun handleIntent(bundle: Bundle?) {
+        super.handleIntent(bundle)
+        bundle?.let {
+            val showBackBtn = it.getBoolean("showBackBtn", false)
+            base_iv_back.visibility = if (showBackBtn) View.VISIBLE else View.GONE
+        }
     }
 
     private fun initView() {
@@ -69,7 +85,12 @@ class LoginActivity : BaseActivity<LoginPresenter?>(), LoginContract.View {
         }
         //登录
         btn_submit.setOnClickListener {
-            submitLogin()
+            if (DYHelper.LOGIN_HELPER != null) {
+                val userName = ed_phone.text.toString()
+                val password = ed_password.text.toString()
+                DYHelper.LOGIN_HELPER.checkUserName(userName, password)
+            }
+//            submitLogin()
         }
     }
 
@@ -95,6 +116,21 @@ class LoginActivity : BaseActivity<LoginPresenter?>(), LoginContract.View {
     override fun onLoginSuccess() {
         startActivity(Intent(LoginActivity@ this, HomeActivity::class.java))
         finish()
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public fun onCloseLoading(event: CloseLoadingEvent) {
+        hideLoading()
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public fun onCloseLoginPage(event: CloseLoginPageEvent) {
+        finish()
+    }
+
+    override fun onDestroy() {
+        EventBus.getDefault().unregister(this)
+        super.onDestroy()
     }
 
 }
