@@ -14,16 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/dy_selector_common_write_click_bg"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
         android:textColor="@color/color_333333"
         android:textSize="16sp"
         tools:text="关了电脑/手机，怎么手机/电脑还不能进入直播？" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/color_fa" />
-
 
 </LinearLayout>
