@@ -181,6 +181,8 @@
         <activity
             android:name="cn.dianyinhuoban.hm.mvp.order.view.ProductListActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".payapi.alipay.H5PayActivity" />
+        <activity android:name=".payapi.alipay.AlipayActivity" />
     </application>
 
 </manifest>

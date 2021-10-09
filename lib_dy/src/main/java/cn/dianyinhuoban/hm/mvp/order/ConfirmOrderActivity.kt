@@ -16,6 +16,7 @@ import cn.dianyinhuoban.hm.mvp.order.contract.CreateOrderContract
 import cn.dianyinhuoban.hm.mvp.order.presenter.CreateOrderPresenter
 import cn.dianyinhuoban.hm.mvp.order.view.AddressManagerActivity
 import cn.dianyinhuoban.hm.mvp.setting.view.AddShipAddressActivity
+import cn.dianyinhuoban.hm.payapi.alipay.AlipayActivity
 import cn.dianyinhuoban.hm.widget.dialog.BaseBottomPicker
 import cn.dianyinhuoban.hm.widget.dialog.PayPwdDialog
 import cn.dianyinhuoban.hm.widget.dialog.PayTypePicker
@@ -178,7 +179,7 @@ class ConfirmOrderActivity : BaseActivity<CreateOrderPresenter?>(), CreateOrderC
         mPayType?.let {
             if (it.id == 1L || it.id == 2L) {
                 showPasswordSubmitOrder()
-            } else if (it.id == 3L) {
+            } else if (it.id == 5L) {
                 submitOrder("")
             }
         }
@@ -218,7 +219,12 @@ class ConfirmOrderActivity : BaseActivity<CreateOrderPresenter?>(), CreateOrderC
     }
 
     override fun startAlipay(payInfo: String) {
-
+//        val intent = Intent(this, H5PayActivity::class.java)
+//        val bundle = Bundle()
+//        bundle.putString("url", payInfo)
+//        intent.putExtras(bundle)
+//        startActivity(intent)
+        AlipayActivity.openAlipayActivity(this, "支付宝支付", payInfo)
     }
 
     override fun startWechatPay() {

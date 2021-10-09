@@ -67,7 +67,7 @@ class CreateOrderPresenter(view: CreateOrderContract.View) :
                     .compose(ResponseTransformer.handleResult())
                     .subscribeWith(object : CustomResourceSubscriber<PayInfoBean?>() {
                         override fun onError(exception: ApiException?) {
-
+                            handleError(exception)
                         }
 
                         override fun onNext(t: PayInfoBean) {
@@ -76,7 +76,7 @@ class CreateOrderPresenter(view: CreateOrderContract.View) :
                                 view?.hideLoading()
                                 if ("1" == payType || "2" == payType) {
                                     view?.onSubmitOrderSuccess()
-                                } else if ("3" == payType) {
+                                } else if ("5" == payType) {
                                     if (!TextUtils.isEmpty(t.alipay)) {
                                         view?.startAlipay(t.alipay!!)
                                     } else {

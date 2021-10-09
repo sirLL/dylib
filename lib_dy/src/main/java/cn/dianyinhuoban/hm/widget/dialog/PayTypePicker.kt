@@ -118,7 +118,7 @@ class PayTypePicker : BaseBottomPicker<PayTypeBean?, MePresenter>(), MeContract.
 
         payTypeData.add(
             PayTypeBean(
-                3,
+                5,
                 R.drawable.dy_ic_pay_type_alipay,
                 "支付宝支付",
                 "0"
