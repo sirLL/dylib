@@ -1,6 +1,6 @@
 package cn.dianyinhuoban.hm.mvp.order.presenter
 
-import CustomResourceSubscriber
+import com.wareroom.lib_http.CustomResourceSubscriber
 import cn.dianyinhuoban.hm.mvp.bean.AddressBean
 import cn.dianyinhuoban.hm.mvp.bean.PayInfoBean
 import cn.dianyinhuoban.hm.mvp.order.contract.CreateOrderContract

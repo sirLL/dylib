@@ -1,6 +1,6 @@
 package cn.dianyinhuoban.hm.mvp.auth.presenter
 
-import CustomResourceSubscriber
+import com.wareroom.lib_http.CustomResourceSubscriber
 import cn.dianyinhuoban.hm.mvp.auth.contract.AuthStatusContract
 import cn.dianyinhuoban.hm.mvp.auth.model.AuthStatusModel
 import cn.dianyinhuoban.hm.mvp.bean.AuthResult

@@ -1,4 +1,4 @@
-
+package com.wareroom.lib_http;
 
 import com.wareroom.lib_http.exception.ApiException;
 import com.wareroom.lib_http.exception.CustomException;

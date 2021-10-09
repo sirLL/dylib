@@ -3,6 +3,7 @@ package cn.dianyinhuoban.hm.mvp.setting.view
 import android.os.Bundle
 import android.view.View
 import cn.dianyinhuoban.hm.R
+import cn.dianyinhuoban.hm.mvp.WebActivity
 import cn.dianyinhuoban.hm.mvp.bean.AuthResult
 import cn.dianyinhuoban.hm.mvp.bean.JiangWuTangBean
 import cn.dianyinhuoban.hm.mvp.setting.contract.SettingContract
@@ -13,7 +14,8 @@ import com.wareroom.lib_http.response.Response
 import io.reactivex.Observable
 import kotlinx.android.synthetic.main.dy_item_jwt.view.*
 
-class JiangWuTangFragment : BaseListFragment<JiangWuTangBean, SettingPresenter>(), SettingContract.View {
+class JiangWuTangFragment : BaseListFragment<JiangWuTangBean, SettingPresenter>(),
+    SettingContract.View {
 
     override fun getPresenter(): SettingPresenter {
         return SettingPresenter(this)
@@ -42,13 +44,14 @@ class JiangWuTangFragment : BaseListFragment<JiangWuTangBean, SettingPresenter>(
     }
 
     override fun onItemClick(data: JiangWuTangBean?, position: Int) {
-
+        data?.let {
+            WebActivity.openWebActivity(requireContext(), it.title, it.url)
+        }
     }
 
     override fun onLoadJWTList(data: MutableList<JiangWuTangBean>) {
         super.onLoadJWTList(data)
         loadData(data)
-
     }
 
 }

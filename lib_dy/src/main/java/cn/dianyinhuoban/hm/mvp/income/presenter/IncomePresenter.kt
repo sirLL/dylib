@@ -1,6 +1,6 @@
 package cn.dianyinhuoban.hm.mvp.income.presenter
 
-import CustomResourceSubscriber
+import com.wareroom.lib_http.CustomResourceSubscriber
 import cn.dianyinhuoban.hm.mvp.bean.PersonalBean
 import cn.dianyinhuoban.hm.mvp.income.contract.IncomeContract
 import cn.dianyinhuoban.hm.mvp.income.model.IncomeModel

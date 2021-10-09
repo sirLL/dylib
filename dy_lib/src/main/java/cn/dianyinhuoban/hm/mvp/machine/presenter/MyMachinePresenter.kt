@@ -1,6 +1,6 @@
 package cn.dianyinhuoban.hm.mvp.machine.presenter
 
-import CustomResourceSubscriber
+import com.wareroom.lib_http.CustomResourceSubscriber
 import cn.dianyinhuoban.hm.mvp.bean.MyMachineBean
 import cn.dianyinhuoban.hm.mvp.bean.TeamMachineItemBean
 import cn.dianyinhuoban.hm.mvp.machine.contract.MyMachineContract

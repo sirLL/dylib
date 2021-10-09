@@ -1,6 +1,6 @@
 package cn.dianyinhuoban.hm.mvp.poster.presenter
 
-import CustomResourceSubscriber
+import com.wareroom.lib_http.CustomResourceSubscriber
 import cn.dianyinhuoban.hm.mvp.bean.PosterItemBean
 import cn.dianyinhuoban.hm.mvp.poster.contract.PosterListContract
 import cn.dianyinhuoban.hm.mvp.poster.model.PosterListModel

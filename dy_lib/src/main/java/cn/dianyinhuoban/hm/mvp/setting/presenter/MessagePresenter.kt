@@ -1,6 +1,6 @@
 package cn.dianyinhuoban.hm.mvp.setting.presenter
 
-import CustomResourceSubscriber
+import com.wareroom.lib_http.CustomResourceSubscriber
 import cn.dianyinhuoban.hm.mvp.bean.NotifyMessageBean
 import cn.dianyinhuoban.hm.mvp.setting.contract.MessageContract
 import cn.dianyinhuoban.hm.mvp.setting.model.MessageModel

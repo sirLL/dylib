@@ -1,6 +1,6 @@
 package cn.dianyinhuoban.hm.mvp.me.presenter
 
-import CustomResourceSubscriber
+import com.wareroom.lib_http.CustomResourceSubscriber
 import cn.dianyinhuoban.hm.mvp.bean.MemberRankBean
 import cn.dianyinhuoban.hm.mvp.me.contract.TeamMemberRankContract
 import cn.dianyinhuoban.hm.mvp.me.model.TeamMemberRankModel

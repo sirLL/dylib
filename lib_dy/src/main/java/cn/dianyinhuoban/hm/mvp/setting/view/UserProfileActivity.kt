@@ -1,6 +1,6 @@
 package cn.dianyinhuoban.hm.mvp.setting.view
 
-import CustomResourceSubscriber
+import com.wareroom.lib_http.CustomResourceSubscriber
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context

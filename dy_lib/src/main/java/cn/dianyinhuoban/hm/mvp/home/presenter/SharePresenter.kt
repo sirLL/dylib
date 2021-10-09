@@ -1,6 +1,6 @@
 package cn.dianyinhuoban.hm.mvp.home.presenter
 
-import CustomResourceSubscriber
+import com.wareroom.lib_http.CustomResourceSubscriber
 import cn.dianyinhuoban.hm.mvp.bean.ShareItemBean
 import cn.dianyinhuoban.hm.mvp.home.contract.ShareContract
 import cn.dianyinhuoban.hm.mvp.home.model.ShareModel
