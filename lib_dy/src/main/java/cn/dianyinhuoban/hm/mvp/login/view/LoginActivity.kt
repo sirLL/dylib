@@ -90,12 +90,7 @@ class LoginActivity : BaseActivity<LoginPresenter?>(), LoginContract.View {
         }
         //登录
         btn_submit.setOnClickListener {
-            if (DYHelper.LOGIN_HELPER != null) {
-                val userName = ed_phone.text.toString()
-                val password = ed_password.text.toString()
-                DYHelper.LOGIN_HELPER.checkUserName(userName, password)
-            }
-//            submitLogin()
+            submitLogin()
         }
     }
 

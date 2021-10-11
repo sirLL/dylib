@@ -22,16 +22,15 @@ import cn.dianyinhuoban.hm.mvp.login.view.LoginActivity;
 
 public class DYHelper {
 
-    public static DYLoginHelper LOGIN_HELPER = null;
 
-    public static void init(Application application, DYLoginHelper loginHelper) {
+    public static void init(Application application) {
         MMKV.initialize(application.getApplicationContext());
         ToastUtils.init(application);
         RetrofitServiceManager.initialize(application.getApplicationContext());
-        LOGIN_HELPER = loginHelper;
     }
 
-    public static void login(Context context, String userName, String password) {
+    //登录电银泓盟
+    public static void loginDYHM(Context context, String userName, String password) {
         ApiService apiService = RetrofitServiceManager.getInstance().getRetrofit().create(ApiService.class);
         apiService.submitLogin(userName, password).compose(SchedulerProvider.getInstance().applySchedulers())
                 .compose(ResponseTransformer.handleResult())
@@ -61,7 +60,45 @@ public class DYHelper {
                 });
     }
 
+    //登录电银泓盟
+    public static void loginDYHM(Context context, String userName, String password, OnLoginCallBack callBack) {
+        ApiService apiService = RetrofitServiceManager.getInstance().getRetrofit().create(ApiService.class);
+        apiService.submitLogin(userName, password).compose(SchedulerProvider.getInstance().applySchedulers())
+                .compose(ResponseTransformer.handleResult())
+                .subscribeWith(new CustomResourceSubscriber<UserBean>() {
+                    @Override
+                    public void onError(ApiException exception) {
+                        if (callBack != null) {
+                            callBack.onLoginError(exception == null ? -1 : exception.getCode(), exception == null ? "登录发生了意外" : exception.getDisplayMessage());
+                        }
+                    }
 
+                    @Override
+                    public void onNext(UserBean userBean) {
+                        super.onNext(userBean);
+                        if (userBean != null) {
+                            MMKVUtil.saveUserID(userBean.getUid());
+                            MMKVUtil.saveUserName(userBean.getUsername());
+                            MMKVUtil.saveToken(userBean.getToken());
+                            MMKVUtil.savePhone(userBean.getPhone());
+                            MMKVUtil.saveNick(userBean.getName());
+                            MMKVUtil.saveLoginPassword(password);
+                            MMKVUtil.saveInviteCode(userBean.getInviteCode());
+                            MMKVUtil.saveAvatar(userBean.getAvatar());
+                            context.startActivity(new Intent(context, HomeActivity.class));
+                            if (callBack != null) {
+                                callBack.onLoginSuccess();
+                            }
+                        } else {
+                            if (callBack != null) {
+                                callBack.onLoginError(-1, "获取登录信息失败");
+                            }
+                        }
+                    }
+                });
+    }
+
+    //打卡电银泓盟
     public static void openDYHM(Context context) {
         String uid = MMKVUtil.getUserID();
         String userName = MMKVUtil.getUserName();
@@ -73,6 +110,12 @@ public class DYHelper {
         }
     }
 
+    /**
+     * 跳转电银泓盟登录页面
+     *
+     * @param context
+     * @param showBack 是否显示返回按钮
+     */
     public static void openLoginPage(Context context, boolean showBack) {
         Intent intent = new Intent(context, LoginActivity.class);
         Bundle bundle = new Bundle();
@@ -81,6 +124,7 @@ public class DYHelper {
         context.startActivity(intent);
     }
 
+    //判断是否登录过电银泓盟，若返回true,调用openDYHM()方法，打开电银泓盟
     public static boolean hasLoggedDYHM() {
         String uid = MMKVUtil.getUserID();
         String userName = MMKVUtil.getUserName();
@@ -90,6 +134,13 @@ public class DYHelper {
         } else {
             return false;
         }
+    }
+
+    //登录电银泓盟回调
+    public interface OnLoginCallBack {
+        void onLoginSuccess();
+
+        void onLoginError(int code, String message);
     }
 
 }
