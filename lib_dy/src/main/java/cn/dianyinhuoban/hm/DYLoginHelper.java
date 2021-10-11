@@ -59,6 +59,43 @@ public abstract class DYLoginHelper {
                 });
     }
 
+    public void loginDYHM(Context context, String userName, String password, OnLoginCallBack callBack) {
+        ApiService apiService = RetrofitServiceManager.getInstance().getRetrofit().create(ApiService.class);
+        apiService.submitLogin(userName, password).compose(SchedulerProvider.getInstance().applySchedulers())
+                .compose(ResponseTransformer.handleResult())
+                .subscribeWith(new CustomResourceSubscriber<UserBean>() {
+                    @Override
+                    public void onError(ApiException exception) {
+                        if (callBack != null) {
+                            callBack.onLoginError(exception == null ? -1 : exception.getCode(), exception == null ? "登录发生了意外" : exception.getDisplayMessage());
+                        }
+                    }
+
+                    @Override
+                    public void onNext(UserBean userBean) {
+                        super.onNext(userBean);
+                        if (userBean != null) {
+                            MMKVUtil.saveUserID(userBean.getUid());
+                            MMKVUtil.saveUserName(userBean.getUsername());
+                            MMKVUtil.saveToken(userBean.getToken());
+                            MMKVUtil.savePhone(userBean.getPhone());
+                            MMKVUtil.saveNick(userBean.getName());
+                            MMKVUtil.saveLoginPassword(password);
+                            MMKVUtil.saveInviteCode(userBean.getInviteCode());
+                            MMKVUtil.saveAvatar(userBean.getAvatar());
+                            context.startActivity(new Intent(context, HomeActivity.class));
+                            if (callBack != null) {
+                                callBack.onLoginSuccess();
+                            }
+                        } else {
+                            if (callBack != null) {
+                                callBack.onLoginError(-1, "获取登录信息失败");
+                            }
+                        }
+                    }
+                });
+    }
+
     //关闭电银泓盟版登录页面
     public void closeDYHMLoginPage() {
         closeLoading();
@@ -71,5 +108,11 @@ public abstract class DYLoginHelper {
 
     private void closeLoading() {
         EventBus.getDefault().post(new CloseLoadingEvent());
+    }
+
+    public interface OnLoginCallBack {
+        void onLoginSuccess();
+
+        void onLoginError(int code, String message);
     }
 }

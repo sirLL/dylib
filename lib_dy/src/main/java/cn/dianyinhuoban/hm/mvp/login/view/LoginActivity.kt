@@ -6,6 +6,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
+import android.util.Log
 import android.view.View
 import cn.dianyinhuoban.hm.DYHelper
 import cn.dianyinhuoban.hm.R
@@ -23,6 +24,7 @@ import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
 class LoginActivity : BaseActivity<LoginPresenter?>(), LoginContract.View {
+    private var showBackBtn = false
     override fun getPresenter(): LoginPresenter? {
         return LoginPresenter(this)
     }
@@ -47,8 +49,7 @@ class LoginActivity : BaseActivity<LoginPresenter?>(), LoginContract.View {
     override fun handleIntent(bundle: Bundle?) {
         super.handleIntent(bundle)
         bundle?.let {
-            val showBackBtn = it.getBoolean("showBackBtn", false)
-            base_iv_back.visibility = if (showBackBtn) View.VISIBLE else View.GONE
+             showBackBtn = it.getBoolean("showBackBtn", false)
         }
     }
 
@@ -59,6 +60,10 @@ class LoginActivity : BaseActivity<LoginPresenter?>(), LoginContract.View {
             override fun afterTextChanged(s: Editable) {
                 setSubmitButtonEnable()
             }
+        }
+        iv_back.visibility = if (showBackBtn) View.VISIBLE else View.GONE
+        iv_back.setOnClickListener {
+            onBackPressed()
         }
         ed_phone.addTextChangedListener(textWatcher)
         ed_password.addTextChangedListener(textWatcher)
