@@ -95,7 +95,6 @@ class UserProfileActivity : BaseActivity<ProfilePresenter>(), ProfileContract.Vi
                                 .imageEngine(CoilEngine.instance)
                                 .forResult(object : OnResultCallbackListener<LocalMedia> {
                                     override fun onResult(result: MutableList<LocalMedia>?) {
-                                        Log.d("IMAGE", result?.get(0).toString())
                                         img_avatar
                                             .load(File(result?.get(0)?.cutPath)) {
                                                 transformations(CircleCropTransformation())
@@ -125,11 +124,12 @@ class UserProfileActivity : BaseActivity<ProfilePresenter>(), ProfileContract.Vi
                                 .imageEngine(CoilEngine.instance)
                                 .forResult(object : OnResultCallbackListener<LocalMedia> {
                                     override fun onResult(result: MutableList<LocalMedia>?) {
-                                        Log.d("IMAGE", result?.get(0).toString())
                                         img_avatar
                                             .load(File(result?.get(0)?.cutPath)) {
                                                 transformations(CircleCropTransformation())
                                             }
+                                        val filePath = result?.get(0)?.cutPath
+                                        doUploadFile(filePath!!)
                                     }
 
                                     override fun onCancel() {
@@ -349,7 +349,12 @@ class UserProfileActivity : BaseActivity<ProfilePresenter>(), ProfileContract.Vi
 
         picker.contentView.setBackgroundColor(Color.TRANSPARENT)
         picker.bodyView.setBackgroundColor(Color.WHITE)
-        picker.topLineView.setBackgroundColor(ContextCompat.getColor(this, R.color.dy_color_divider))
+        picker.topLineView.setBackgroundColor(
+            ContextCompat.getColor(
+                this,
+                R.color.dy_color_divider
+            )
+        )
         picker.headerView.setBackgroundResource(R.drawable.dy_shape_ffffff_radius_top_6)
         picker.show()
     }
