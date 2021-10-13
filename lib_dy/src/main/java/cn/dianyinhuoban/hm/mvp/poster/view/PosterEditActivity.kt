@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
@@ -107,6 +108,12 @@ class PosterEditActivity : BaseActivity<IPresenter?>() {
         tv_share.setOnClickListener {
             saveView(cl_share_container, ACTION_SHARE_IMG)
         }
+        mPoster?.description?.let {
+            if(it.isNotEmpty()){
+                ed_content.setText(it)
+                ed_content.setSelection(it.length)
+            }
+        }
         Glide.with(this)
             .load(mPoster?.thumb ?: "")
             .asBitmap().into(object : SimpleTarget<Bitmap>() {
@@ -137,10 +144,15 @@ class PosterEditActivity : BaseActivity<IPresenter?>() {
     private fun createQR(qrContent: String) {
         Observable.just(qrContent)
             .map { s: String? ->
+                val bitmap: Bitmap = BitmapFactory.decodeResource(
+                    resources,
+                    R.drawable.dy_ic_app_logo
+                )
                 QRCodeEncoder.syncEncodeQRCode(
                     s,
                     400,
-                    Color.parseColor("#000000")
+                    Color.parseColor("#000000"),
+                    bitmap
                 )
             }
             .subscribeOn(Schedulers.io())

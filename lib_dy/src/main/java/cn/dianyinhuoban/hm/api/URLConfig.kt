@@ -10,7 +10,7 @@ interface URLConfig {
         const val PAGE_USER_AGREEMENT = "news_userAgreement.html"
 
         //网页注册
-        const val PAGE_WEB_REGISTER = "http://m.dianyinhuoban.vip/signup/"
+        const val PAGE_WEB_REGISTER = "http://m.dyhm.shop/signup/"
 
         //发送短信
         const val URL_SEND_SMS = "sms_aliSms.html"
