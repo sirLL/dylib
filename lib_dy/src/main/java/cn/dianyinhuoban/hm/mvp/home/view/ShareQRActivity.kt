@@ -22,8 +22,8 @@ import cn.dianyinhuoban.hm.mvp.home.GalleryItemDecoration
 import cn.dianyinhuoban.hm.mvp.home.contract.ShareContract
 import cn.dianyinhuoban.hm.mvp.home.presenter.SharePresenter
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.animation.GlideAnimation
 import com.bumptech.glide.request.target.SimpleTarget
+import com.bumptech.glide.request.transition.Transition
 import com.tbruyelle.rxpermissions2.RxPermissions
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
@@ -34,6 +34,7 @@ import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import kotlinx.android.synthetic.main.dy_activity_poster_edit.*
 import kotlinx.android.synthetic.main.dy_activity_scan.*
 import kotlinx.android.synthetic.main.dy_activity_share_qr.*
 import kotlinx.android.synthetic.main.dy_item_share.view.*
@@ -61,7 +62,7 @@ class ShareQRActivity : BaseActivity<SharePresenter?>(), ShareContract.View {
             "二维码分享",
             ContextCompat.getColor(ShareQRActivity@ this, R.color.dy_color_base_page_title)
         )
-        val qrContent = URLConfig.PAGE_WEB_REGISTER+MMKVUtil.getInviteCode()
+        val qrContent = URLConfig.PAGE_WEB_REGISTER + MMKVUtil.getInviteCode()
         createQR(qrContent)
         createAdapter()
         recycler_view.adapter = mAdapter
@@ -107,15 +108,14 @@ class ShareQRActivity : BaseActivity<SharePresenter?>(), ShareContract.View {
                 position: Int,
                 itemData: ShareItemBean?
             ) {
-                Glide.with(this@ShareQRActivity).load(itemData?.thumb ?: "").asBitmap()
-                    .into(object :SimpleTarget<Bitmap>(){
+                Glide.with(this@ShareQRActivity).asBitmap().load(itemData?.thumb ?: "")
+                    .into(object : SimpleTarget<Bitmap>() {
                         override fun onResourceReady(
-                            resource: Bitmap?,
-                            glideAnimation: GlideAnimation<in Bitmap>?
+                            resource: Bitmap,
+                            transition: Transition<in Bitmap>?
                         ) {
                             viewHolder?.itemView?.iv_cover?.setImageBitmap(resource)
                         }
-
                     })
 //                viewHolder?.itemView?.iv_cover?.load(itemData?.thumb ?: "") {
 //                    crossfade(true)

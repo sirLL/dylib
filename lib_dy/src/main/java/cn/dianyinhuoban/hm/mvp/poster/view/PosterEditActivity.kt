@@ -16,8 +16,8 @@ import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.api.URLConfig
 import cn.dianyinhuoban.hm.mvp.bean.PosterItemBean
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.animation.GlideAnimation
 import com.bumptech.glide.request.target.SimpleTarget
+import com.bumptech.glide.request.transition.Transition
 import com.gyf.immersionbar.ImmersionBar
 import com.tbruyelle.rxpermissions2.RxPermissions
 import com.wareroom.lib_base.mvp.IPresenter
@@ -109,21 +109,20 @@ class PosterEditActivity : BaseActivity<IPresenter?>() {
             saveView(cl_share_container, ACTION_SHARE_IMG)
         }
         mPoster?.description?.let {
-            if(it.isNotEmpty()){
+            if (it.isNotEmpty()) {
                 ed_content.setText(it)
                 ed_content.setSelection(it.length)
             }
         }
         Glide.with(this)
+            .asBitmap()
             .load(mPoster?.thumb ?: "")
-            .asBitmap().into(object : SimpleTarget<Bitmap>() {
-                override fun onResourceReady(
-                    resource: Bitmap?,
-                    glideAnimation: GlideAnimation<in Bitmap>?
-                ) {
+            .into(object : SimpleTarget<Bitmap>() {
+                override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
                     iv_cover.setImageBitmap(resource)
                 }
             })
+
 
         val qrContent = URLConfig.PAGE_WEB_REGISTER + MMKVUtil.getInviteCode()
         createQR(qrContent)
