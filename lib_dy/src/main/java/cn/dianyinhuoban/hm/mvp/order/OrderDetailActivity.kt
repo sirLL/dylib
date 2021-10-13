@@ -42,7 +42,7 @@ class OrderDetailActivity : BaseActivity<OrderDetailPresenter?>(), OrderDetailCo
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dy_activity_order_detail)
-        setTitle("采购详情")
+        setTitle("申领详情")
         fl_btn_container.setOnClickListener {
             mPresenter?.submitConfirmReceipt(mOrderID ?: "")
         }
@@ -136,7 +136,7 @@ class OrderDetailActivity : BaseActivity<OrderDetailPresenter?>(), OrderDetailCo
                 "上级已发货，请等待到货"
             }
             "4" -> {
-                "恭喜您，采购成功"
+                "恭喜您，申领成功"
             }
             "-1" -> {
                 "退款成功"

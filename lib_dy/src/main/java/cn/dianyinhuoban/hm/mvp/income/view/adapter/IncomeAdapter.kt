@@ -37,8 +37,8 @@ class IncomeAdapter : BaseAdapter<IncomeItemBean, IncomeAdapter.IncomeViewHolder
             } else {
                 NumberUtils.formatMoney(mPurchaseBack)
             }
-            holder.itemView.tv_title.text = "采购奖励"
-            holder.itemView.tv_other.text = "采购奖励明细"
+            holder.itemView.tv_title.text = "申领奖励"
+            holder.itemView.tv_other.text = "申领奖励明细"
         }
         var data: IncomeItemBean? = null
         if (mData != null && mData.size > position) {

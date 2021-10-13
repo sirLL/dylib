@@ -56,7 +56,7 @@ interface URLConfig {
         //我的机具列表
         const val URL_MY_MACHINE = "machine_myMachine.html"
 
-        //账单明细 个人收益/团队收益/激活返现/采购奖励
+        //账单明细 个人收益/团队收益/激活返现/申领奖励
         const val URL_INCOME_DETAIL = "bill_billDetail.html"
 
         //提现记录
@@ -64,10 +64,10 @@ interface URLConfig {
 
         const val URL_PROFILE = "user_memberInfo.html"
 
-        //采购产品列表
+        //申领产品列表
         const val URL_SUBMIT_ORDER_PRODUCT = "machine_purchaseProduct.html"
 
-        //发起采购
+        //发起申领
         const val URL_SUBMIT_ORDER = "machine_purchase.html"
 
         //添加/修改收货地址
@@ -106,10 +106,10 @@ interface URLConfig {
         //地址列表
         const val URL_ADDRESS_LIST = "machine_addressList.html"
 
-        //采购记录
+        //申领记录
         const val URL_PURCHASE_RECORD = "machine_purchaseLog.html"
 
-        //采购单确认收货
+        //申领单确认收货
         const val URL_CONFIRM_RECEIPT = "machine_purchaseConfirm.html"
 
         //上传文件

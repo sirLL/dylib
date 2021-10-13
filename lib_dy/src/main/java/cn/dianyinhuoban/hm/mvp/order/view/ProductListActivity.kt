@@ -19,8 +19,8 @@ class ProductListActivity : BaseActivity<MachineTypePresenter?>(), MachineTypeCo
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setTitle("机具采购")
-        setRightButtonText("采购订单") {
+        setTitle("机具申领")
+        setRightButtonText("申领订单") {
             startActivity(Intent(ProductListActivity@ this, OrderListActivity::class.java))
         }
         setContentView(R.layout.dy_activity_product_list)

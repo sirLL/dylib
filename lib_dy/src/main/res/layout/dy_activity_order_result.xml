@@ -30,7 +30,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="采购成功"
+            android:text="申领成功"
             android:textColor="@color/color_333333"
             android:textSize="22sp"
             android:textStyle="bold" />
@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="采购成功，等待平台发货"
+            android:text="申领成功，等待平台发货"
             android:textColor="@color/color_666666"
             android:textSize="16sp" />
     </LinearLayout>
@@ -67,7 +67,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="采购套餐"
+                android:text="申领套餐"
                 android:textColor="@color/color_666666"
                 android:textSize="14sp" />
 
@@ -91,7 +91,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="采购套餐"
+                android:text="申领套餐"
                 android:textColor="@color/color_666666"
                 android:textSize="14sp" />
 
@@ -115,7 +115,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="采购套餐"
+                android:text="申领套餐"
                 android:textColor="@color/color_666666"
                 android:textSize="14sp" />
 
@@ -139,7 +139,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="采购套餐"
+                android:text="申领套餐"
                 android:textColor="@color/color_666666"
                 android:textSize="14sp" />
 

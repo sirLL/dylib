@@ -141,8 +141,8 @@ interface ApiService {
     ): Observable<Response<MyMachineBean?>>
 
     /**
-     * 账单明细 个人收益/团队收益/激活返现/采购奖励
-     * @param type  1个人收益 2 团队收益 3 激活返现 4 采购奖励
+     * 账单明细 个人收益/团队收益/激活返现/申领奖励
+     * @param type  1个人收益 2 团队收益 3 激活返现 4 申领奖励
      * @param date  日搜索：2021-07-06 月搜索 2021-07
      */
     @FormUrlEncoded
@@ -163,7 +163,7 @@ interface ApiService {
     ): Observable<Response<List<WithdrawRecordBean>?>>
 
     /**
-     * 采购产品列表
+     * 申领产品列表
      */
     @FormUrlEncoded
     @POST(URLConfig.URL_SUBMIT_ORDER_PRODUCT)
@@ -173,7 +173,7 @@ interface ApiService {
     ): Observable<Response<List<PurchaseProductBean>?>>
 
     /**
-     * 发起采购
+     * 发起申领
      * @param payType 支付方式 1 余额 2 其他（未定）
      */
     @FormUrlEncoded
@@ -265,7 +265,7 @@ interface ApiService {
     ): Observable<Response<List<AddressBean>?>>
 
     /**
-     * 采购记录
+     * 申领记录
      */
     @FormUrlEncoded
     @POST(URLConfig.URL_PURCHASE_RECORD)
@@ -275,7 +275,7 @@ interface ApiService {
     ): Observable<Response<List<OrderBean>?>>
 
     /**
-     *采购记录详情
+     *申领记录详情
      */
     @FormUrlEncoded
     @POST(URLConfig.URL_PURCHASE_RECORD)
@@ -284,7 +284,7 @@ interface ApiService {
     ): Observable<Response<List<OrderBean>?>>
 
     /**
-     * 采购单确认收货
+     * 申领单确认收货
      */
     @FormUrlEncoded
     @POST(URLConfig.URL_CONFIRM_RECEIPT)

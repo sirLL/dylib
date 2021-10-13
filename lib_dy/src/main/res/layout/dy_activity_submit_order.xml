@@ -226,7 +226,7 @@
             android:layout_marginBottom="32dp"
             android:background="@drawable/dy_selector_27a4ff_radius_6"
             android:gravity="center"
-            android:text="立即采购"
+            android:text="立即申领"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold" />

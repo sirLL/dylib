@@ -20,7 +20,7 @@ class IncomePurchaseDetailActivity : BaseActivity<IPresenter?>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dy_activity_income_purchase_detail)
-        setTitle("采购奖励明细")
+        setTitle("申领奖励明细")
         setupTab()
     }
 

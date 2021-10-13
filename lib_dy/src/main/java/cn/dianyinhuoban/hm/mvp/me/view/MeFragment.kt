@@ -97,13 +97,13 @@ class MeFragment : BaseFragment<MePresenter?>(), MeContract.View {
                     1 -> {//机具划拨
                         startActivity(Intent(context, MachineTransferActivity::class.java))
                     }
-                    2 -> {//机具采购
+                    2 -> {//机具申领
                         startActivity(Intent(context, ProductListActivity::class.java))
                     }
                     3 -> {//讲武堂
                         startActivity(Intent(context, JiangWuTangActivity::class.java))
                     }
-                    4 -> {//采购订单
+                    4 -> {//申领订单
                         startActivity(Intent(context, OrderListActivity::class.java))
                     }
                     5 -> {//银行卡
@@ -129,9 +129,9 @@ class MeFragment : BaseFragment<MePresenter?>(), MeContract.View {
     private fun loadMenuData() {
         val menuData: MutableList<MeMenuBean> = ArrayList()
         menuData.add(MeMenuBean(1, "机具划拨", R.drawable.dy_ic_me_menu_transfer))
-        menuData.add(MeMenuBean(2, "机具采购", R.drawable.dy_ic_me_menu_purchase))
+        menuData.add(MeMenuBean(2, "机具申领", R.drawable.dy_ic_me_menu_purchase))
         menuData.add(MeMenuBean(3, "讲武堂", R.drawable.dy_ic_me_menu_school))
-        menuData.add(MeMenuBean(4, "采购订单", R.drawable.dy_ic_me_menu_purchase_order))
+        menuData.add(MeMenuBean(4, "申领订单", R.drawable.dy_ic_me_menu_purchase_order))
         menuData.add(MeMenuBean(5, "银行卡", R.drawable.dy_ic_me_menu_bank_card))
         menuData.add(MeMenuBean(6, "PK", R.drawable.dy_ic_me_menu_pk))
         menuData.add(MeMenuBean(7, "授权书", R.drawable.dy_ic_me_menu_auth))
@@ -175,7 +175,7 @@ class MeFragment : BaseFragment<MePresenter?>(), MeContract.View {
             tv_amount_team.text = NumberUtils.formatMoney(it.team)
             //激活返现
             tv_amount_activation.text = NumberUtils.formatMoney(it.personalActive)
-            //采购奖励
+            //申领奖励
             tv_amount_purchase.text = NumberUtils.formatMoney(it.purchase)
             //团队名称
             tv_team_name.text = if (TextUtils.isEmpty(it.teamName)) {

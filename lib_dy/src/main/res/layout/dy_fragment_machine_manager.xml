@@ -37,7 +37,7 @@
                 android:drawableStart="@drawable/dy_ic_machine_manager_purchase"
                 android:drawablePadding="8dp"
                 android:gravity="center_vertical"
-                android:text="机具采购"
+                android:text="机具申领"
                 android:textColor="@color/color_666666"
                 android:textSize="14sp" />
         </FrameLayout>

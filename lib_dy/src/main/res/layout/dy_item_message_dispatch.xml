@@ -91,7 +91,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:padding="16dp"
-            android:text="查看采购信息"
+            android:text="查看申领信息"
             android:textColor="@color/color_999999"
             android:textSize="14sp" />
 

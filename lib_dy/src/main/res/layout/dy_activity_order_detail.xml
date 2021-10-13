@@ -133,7 +133,7 @@
                     android:layout_below="@id/tv_order_detail_address"
                     android:layout_marginTop="20dp"
                     android:ems="5"
-                    android:text="采购时间"
+                    android:text="申领时间"
                     android:textColor="@color/color_333333"
                     android:textSize="12sp" />
 
@@ -311,7 +311,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="12dp"
-                        android:text="采购编号"
+                        android:text="申领编号"
                         android:textColor="@color/color_333333"
                         android:textSize="12sp" />
 

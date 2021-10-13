@@ -220,7 +220,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:alpha="0.8"
-                    android:text="采购奖励/元"
+                    android:text="申领奖励/元"
                     android:textColor="@color/color_white"
                     android:textSize="10sp"
                     app:layout_constraintEnd_toStartOf="@id/textView8"

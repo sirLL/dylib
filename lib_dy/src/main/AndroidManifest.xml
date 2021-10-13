@@ -95,7 +95,7 @@
             android:screenOrientation="portrait" /> <!-- 激活返现明细 -->
         <activity
             android:name="cn.dianyinhuoban.hm.mvp.income.view.IncomeActivationDetailActivity"
-            android:screenOrientation="portrait" /> <!-- 采购奖励明细 -->
+            android:screenOrientation="portrait" /> <!-- 申领奖励明细 -->
         <activity
             android:name="cn.dianyinhuoban.hm.mvp.income.view.IncomePurchaseDetailActivity"
             android:screenOrientation="portrait" /> <!-- 我的客户 -->

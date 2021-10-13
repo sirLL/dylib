@@ -65,14 +65,14 @@ class IncomePurchaseDetailFragment : BaseListFragment<DetailBean, IncomeDetailPr
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         tv_date_description.text = if (mDataType == DATA_TYPE_MONTH) {
-            "本月采购奖励/元"
+            "本月申领奖励/元"
         } else {
-            "今日采购奖励/元"
+            "今日申领奖励/元"
         }
         textView1.text = if (mDataType == DATA_TYPE_MONTH) {
-            "上月采购奖励/元"
+            "上月申领奖励/元"
         } else {
-            "昨日采购奖励/元"
+            "昨日申领奖励/元"
         }
         tv_date.setOnClickListener {
             showDatePicker()
@@ -90,7 +90,7 @@ class IncomePurchaseDetailFragment : BaseListFragment<DetailBean, IncomeDetailPr
         position: Int,
         itemData: DetailBean?
     ) {
-        viewHolder?.itemView?.tv_title?.text = "采购奖励"
+        viewHolder?.itemView?.tv_title?.text = "申领奖励"
         viewHolder?.itemView?.tv_amount?.text = if (itemData == null) {
             "--"
         } else {
