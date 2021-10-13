@@ -25,13 +25,11 @@
     </LinearLayout>
 
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="电银管家泓盟版"
-        android:textColor="@color/color_333333"
-        android:textSize="26sp" />
+        android:src="@drawable/dy_img_login_text" />
 
     <View
         android:layout_width="match_parent"
