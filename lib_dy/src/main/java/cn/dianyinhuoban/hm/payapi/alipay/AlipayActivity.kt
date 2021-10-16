@@ -1,8 +1,11 @@
 package cn.dianyinhuoban.hm.payapi.alipay
 
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -60,5 +63,35 @@ class AlipayActivity : BaseActivity<IPresenter?>() {
             super.onPageStarted(view, url, favicon)
         }
 
+        override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
+            // 获取上下文, H5PayDemoActivity为当前页面
+
+            // ------  对alipays:相关的scheme处理 -------
+            if (url.startsWith("alipays:") || url.startsWith("alipay")) {
+                try {
+                    startActivity(Intent("android.intent.action.VIEW", Uri.parse(url)))
+                } catch (e: Exception) {
+                    AlertDialog.Builder(this@AlipayActivity)
+                        .setMessage("未检测到支付宝客户端，请安装后重试。")
+                        .setPositiveButton("立即安装"
+                        ) { _, _ ->
+                            val alipayUrl: Uri = Uri.parse("https://d.alipay.com")
+                            startActivity(
+                                Intent(
+                                    "android.intent.action.VIEW",
+                                    alipayUrl
+                                )
+                            )
+                        }.setNegativeButton("取消", null).show()
+                }
+                return true
+            }
+            // ------- 处理结束 -------
+            if (!(url.startsWith("http") || url.startsWith("https"))) {
+                return true
+            }
+            view.loadUrl(url)
+            return true
+        }
     }
 }
