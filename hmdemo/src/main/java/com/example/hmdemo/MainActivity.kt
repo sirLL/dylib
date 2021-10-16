@@ -1,5 +1,9 @@
 package com.example.hmdemo
 
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -10,6 +14,9 @@ import android.widget.Toast
 import cn.dianyinhuoban.hm.DYHelper
 
 class MainActivity : AppCompatActivity() {
+    private val broadcastReceiver by lazy {
+        MyBroadcastReceiver()
+    }
     private val userNameEditText: EditText by lazy {
         findViewById(R.id.ed_phone)
     }
@@ -19,6 +26,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val intentFilter=IntentFilter()
+        intentFilter.addAction(DYHelper.ACTION_LOGIN_SUCCESS)
+        registerReceiver(broadcastReceiver,intentFilter)
+
+
         setContentView(R.layout.activity_main)
         findViewById<ImageView>(R.id.iv_logo).setOnClickListener {
             DYHelper.openLoginPage(this@MainActivity, true)
@@ -44,5 +56,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun login(userName: String, password: String) {
 
+    }
+
+    override fun onDestroy() {
+        unregisterReceiver(broadcastReceiver)
+        super.onDestroy()
+    }
+    inner class MyBroadcastReceiver : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            finish()
+        }
     }
 }

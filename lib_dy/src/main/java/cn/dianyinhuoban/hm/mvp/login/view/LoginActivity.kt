@@ -114,6 +114,8 @@ class LoginActivity : BaseActivity<LoginPresenter?>(), LoginContract.View {
     }
 
     override fun onLoginSuccess() {
+        val intent=Intent(DYHelper.ACTION_LOGIN_SUCCESS)
+        sendBroadcast(intent)
         startActivity(Intent(LoginActivity@ this, HomeActivity::class.java))
         finish()
     }

@@ -21,7 +21,7 @@ import cn.dianyinhuoban.hm.mvp.home.view.HomeActivity;
 import cn.dianyinhuoban.hm.mvp.login.view.LoginActivity;
 
 public class DYHelper {
-
+    public static final String ACTION_LOGIN_SUCCESS = "action.DYHM.LOGIN_SUCCESS";
 
     public static void init(Application application) {
         MMKV.initialize(application.getApplicationContext());

@@ -11,8 +11,8 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
-        versionCode 100106
-        versionName "1.1.6"
+        versionCode 100107
+        versionName "1.1.7"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -121,6 +121,6 @@ dependencies {
 ext {
     PUBLISH_GROUP_ID = "io.github.sirll"        //项目包名
     PUBLISH_ARTIFACT_ID = 'lib_dy'            //项目名
-    PUBLISH_VERSION = "1.1.6"                   //版本号
+    PUBLISH_VERSION = "1.1.7"                   //版本号
 }
 apply from: '../publish-mavencentral.gradle'
