@@ -12,10 +12,13 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import cn.dianyinhuoban.hm.CountdownTextUtils
 import cn.dianyinhuoban.hm.R
+import cn.dianyinhuoban.hm.api.URLConfig
+import cn.dianyinhuoban.hm.mvp.WebActivity
 import cn.dianyinhuoban.hm.mvp.bean.ImageCodeBean
 import cn.dianyinhuoban.hm.mvp.login.contract.RegisterContract
 import cn.dianyinhuoban.hm.mvp.login.presenter.RegisterPresenter
 import cn.dianyinhuoban.hm.widget.dialog.ImageCodeDialog
+import com.wareroom.lib_base.api.BaseURLConfig
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.OSUtils
 import com.wareroom.lib_base.utils.ValidatorUtils
@@ -108,7 +111,11 @@ class RegisterActivity : BaseActivity<RegisterPresenter?>(), RegisterContract.Vi
         val spannableStringBuilder = SpannableStringBuilder(agreementText)
         val clickableSpan: ClickableSpan = object : ClickableSpan() {
             override fun onClick(widget: View) {
-
+                WebActivity.openWebActivity(
+                    this@RegisterActivity,
+                    "用户协议",
+                    BaseURLConfig.BASE_URL + URLConfig.PAGE_USER_AGREEMENT
+                )
             }
         }
         val colorSpan = ForegroundColorSpan(
