@@ -103,4 +103,28 @@ class WithdrawPresenter(view: WithdrawContract.View) :
             )
         }
     }
+
+    override fun getWithdrawFee(amount: String) {
+        mModel?.let {
+            addDispose(
+                it.getWithdrawFee(amount)
+                    .compose(SchedulerProvider.getInstance().applySchedulers())
+                    .compose(ResponseTransformer.handleResult())
+                    .subscribeWith(object : CustomResourceSubscriber<String?>() {
+                        override fun onError(exception: ApiException?) {
+                            if (!isDestroy) {
+                                handleError(exception)
+                            }
+                        }
+
+                        override fun onNext(t: String) {
+                            super.onNext(t)
+                            if (!isDestroy) {
+                                view?.bindWithdrawFee(t)
+                            }
+                        }
+                    })
+            )
+        }
+    }
 }

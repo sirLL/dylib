@@ -21,35 +21,81 @@
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/dy_network_security_config">
 
-        <activity android:name="cn.dianyinhuoban.hm.mvp.order.OrderListActivity" />
-        <activity android:name="cn.dianyinhuoban.hm.mvp.auth.view.AuthInfoActivity" />
-        <activity android:name="cn.dianyinhuoban.hm.mvp.auth.view.AuthResultActivity" />
-        <activity android:name="cn.dianyinhuoban.hm.mvp.auth.view.FaceDetectionActivity" />
-        <activity android:name="cn.dianyinhuoban.hm.mvp.auth.view.RealnameAuthActivity" />
-        <activity android:name="cn.dianyinhuoban.hm.mvp.setting.view.MessageActivity" />
-        <activity android:name="cn.dianyinhuoban.hm.mvp.pk.view.WaitConfirmPkActivity" />
-        <activity android:name="cn.dianyinhuoban.hm.mvp.pk.view.PkSettingActivity" />
-        <activity android:name="cn.dianyinhuoban.hm.mvp.machine.view.BatchTransferActivity" />
-        <activity android:name="cn.dianyinhuoban.hm.mvp.machine.view.MachineTransferDetailActivity" />
-        <activity android:name="cn.dianyinhuoban.hm.mvp.machine.view.MachineTransferActivity" />
-        <activity android:name="cn.dianyinhuoban.hm.mvp.order.OrderResultActivity" />
-        <activity android:name="cn.dianyinhuoban.hm.mvp.order.SubmitOrderActivity" />
-        <activity android:name="cn.dianyinhuoban.hm.mvp.setting.view.AuthActivity" />
-        <activity android:name="cn.dianyinhuoban.hm.mvp.setting.view.JiangWuTangActivity" />
-        <activity android:name="cn.dianyinhuoban.hm.mvp.order.OrderDetailActivity" />
-        <activity android:name="cn.dianyinhuoban.hm.mvp.pk.view.PkResultActivity" />
-        <activity android:name="cn.dianyinhuoban.hm.mvp.pk.view.PkActivity" />
-        <activity android:name="cn.dianyinhuoban.hm.mvp.pk.view.PkListActivity" />
+        <activity
+            android:name="cn.dianyinhuoban.hm.mvp.order.OrderListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.dianyinhuoban.hm.mvp.auth.view.AuthInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.dianyinhuoban.hm.mvp.auth.view.AuthResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.dianyinhuoban.hm.mvp.auth.view.FaceDetectionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.dianyinhuoban.hm.mvp.auth.view.RealnameAuthActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.dianyinhuoban.hm.mvp.setting.view.MessageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.dianyinhuoban.hm.mvp.pk.view.WaitConfirmPkActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.dianyinhuoban.hm.mvp.pk.view.PkSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.dianyinhuoban.hm.mvp.machine.view.BatchTransferActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.dianyinhuoban.hm.mvp.machine.view.MachineTransferDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.dianyinhuoban.hm.mvp.machine.view.MachineTransferActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.dianyinhuoban.hm.mvp.order.OrderResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.dianyinhuoban.hm.mvp.order.SubmitOrderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.dianyinhuoban.hm.mvp.setting.view.AuthActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.dianyinhuoban.hm.mvp.setting.view.JiangWuTangActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.dianyinhuoban.hm.mvp.order.OrderDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.dianyinhuoban.hm.mvp.pk.view.PkResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.dianyinhuoban.hm.mvp.pk.view.PkActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.dianyinhuoban.hm.mvp.pk.view.PkListActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="cn.dianyinhuoban.hm.mvp.pk.view.PkSearchListActivity"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysVisible" />
         <activity android:name="cn.dianyinhuoban.hm.mvp.setting.view.ChangePasswordActivity" />
         <activity
             android:name="cn.dianyinhuoban.hm.mvp.setting.view.EditInfoActivity"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysVisible" />
-        <activity android:name="cn.dianyinhuoban.hm.mvp.setting.view.UserProfileActivity" />
-        <activity android:name="cn.dianyinhuoban.hm.mvp.setting.view.SettingActivity" />
-        <activity android:name="cn.dianyinhuoban.hm.mvp.income.view.WithdrawActivity" />
+        <activity
+            android:name="cn.dianyinhuoban.hm.mvp.setting.view.UserProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.dianyinhuoban.hm.mvp.setting.view.SettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.dianyinhuoban.hm.mvp.income.view.WithdrawActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="cn.dianyinhuoban.hm.SplashActivity"
             android:screenOrientation="portrait" /><!-- 注册 -->
@@ -181,8 +227,9 @@
         <activity
             android:name="cn.dianyinhuoban.hm.mvp.order.view.ProductListActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".payapi.alipay.H5PayActivity" />
-        <activity android:name=".payapi.alipay.AlipayActivity" />
+        <activity
+            android:name=".payapi.alipay.AlipayActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

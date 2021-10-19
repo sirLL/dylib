@@ -181,6 +181,9 @@ interface URLConfig {
 
         //忘记支付密码
         const val URL_RESET_PAY_PASSWORD = "user_forgetPayPassword.html"
+
+        //提现手续费
+        const val URL_WITHDRAW_FEE = "user_cashFee.html"
     }
 
 }

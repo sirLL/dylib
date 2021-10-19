@@ -15,6 +15,7 @@ import cn.bingoogolapple.qrcode.zxing.QRCodeEncoder
 import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.api.URLConfig
 import cn.dianyinhuoban.hm.mvp.bean.PosterItemBean
+import cn.dianyinhuoban.hm.util.StringUtil
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
@@ -107,6 +108,13 @@ class PosterEditActivity : BaseActivity<IPresenter?>() {
         }
         tv_share.setOnClickListener {
             saveView(cl_share_container, ACTION_SHARE_IMG)
+        }
+        tv_copy.setOnClickListener {
+            val content = ed_content.text.toString()
+            if (content.isNotEmpty()) {
+                StringUtil.copyString(PosterEditActivity@ this, content)
+                showToast("复制成功")
+            }
         }
         mPoster?.description?.let {
             if (it.isNotEmpty()) {

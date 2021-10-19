@@ -411,4 +411,13 @@ interface ApiService {
         @Field("password") password: String,
         @Field("code") code: String,
     ): Observable<Response<EmptyBean?>>
+
+    /**
+     * 提现手续费
+     */
+    @FormUrlEncoded
+    @POST(URLConfig.URL_WITHDRAW_FEE)
+    fun fetchWithdrawFee(
+        @Field("amount") amount: String
+    ): Observable<Response<String?>>
 }

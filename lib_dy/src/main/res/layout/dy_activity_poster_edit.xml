@@ -12,13 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:overScrollMode="never"
         android:background="@color/white"
+        android:overScrollMode="never"
         android:scrollbars="none">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/white">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_share_container"
@@ -111,19 +112,31 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cl_share_container" />
 
+            <TextView
+                android:id="@+id/tv_copy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="复制内容"
+                android:textColor="@color/color_27a4ff"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ed_content" />
+
             <CheckBox
                 android:id="@+id/cb_show_qr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="16dp"
                 android:button="@drawable/dy_check_check_box"
                 android:checked="true"
                 android:paddingStart="6dp"
                 android:text="展示个人信息"
                 android:textColor="@color/dy_color_check_999999_27a4ff"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ed_content" />
+                app:layout_constraintTop_toBottomOf="@id/tv_copy" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

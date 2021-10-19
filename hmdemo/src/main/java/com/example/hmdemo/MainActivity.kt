@@ -30,7 +30,6 @@ class MainActivity : AppCompatActivity() {
         intentFilter.addAction(DYHelper.ACTION_LOGIN_SUCCESS)
         registerReceiver(broadcastReceiver,intentFilter)
 
-
         setContentView(R.layout.activity_main)
         findViewById<ImageView>(R.id.iv_logo).setOnClickListener {
             DYHelper.openLoginPage(this@MainActivity, true)

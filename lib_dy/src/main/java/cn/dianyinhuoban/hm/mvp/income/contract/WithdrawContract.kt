@@ -13,6 +13,8 @@ interface WithdrawContract {
 
         fun getBankList(): Observable<Response<List<BankBean>?>>
 
+        fun getWithdrawFee(amount: String): Observable<Response<String?>>
+
         fun submitWithdraw(
             orderID: String,
             amount: String,
@@ -24,6 +26,8 @@ interface WithdrawContract {
         fun fetchPersonalData()
 
         fun getBankList()
+
+        fun getWithdrawFee(amount: String)
 
         fun submitWithdraw(
             bankCardID: String,
@@ -38,5 +42,7 @@ interface WithdrawContract {
         fun onLoadBankList(bankBeanList: List<BankBean>)
 
         fun onSubmitWithdrawSuccess()
+
+        fun bindWithdrawFee(fee: String?)
     }
 }

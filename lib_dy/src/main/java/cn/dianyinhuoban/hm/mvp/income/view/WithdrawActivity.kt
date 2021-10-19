@@ -3,10 +3,7 @@ package cn.dianyinhuoban.hm.mvp.income.view
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.InputFilter
-import android.text.TextUtils
-import android.text.TextWatcher
+import android.text.*
 import androidx.core.content.ContextCompat
 import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.mvp.bean.BankBean
@@ -76,6 +73,7 @@ class WithdrawActivity : BaseActivity<WithdrawPresenter?>(), WithdrawContract.Vi
         super.onStart()
         fetchBalance()
         fetchBankCard()
+        fetchWithdrawFee("")
     }
 
     private fun showWithdrawTypePicker() {
@@ -141,6 +139,20 @@ class WithdrawActivity : BaseActivity<WithdrawPresenter?>(), WithdrawContract.Vi
         setSubmitButtonEnable()
     }
     /************************************个人余额  END***********************************/
+
+    /************************************提现手续费  START***********************************/
+    private fun fetchWithdrawFee(amount: String) {
+        mPresenter?.getWithdrawFee(amount)
+    }
+
+    override fun bindWithdrawFee(fee: String?) {
+        var content = ""
+        fee?.let {
+            content = it.replace("\\n", "\n")
+        }
+        tv_tip.text = content
+    }
+    /************************************提现手续费  END*************************************/
 
 
     /************************************银行卡  START*************************************/

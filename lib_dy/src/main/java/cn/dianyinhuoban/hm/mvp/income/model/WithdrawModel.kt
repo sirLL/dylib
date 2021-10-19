@@ -29,4 +29,9 @@ class WithdrawModel : BaseModel(), WithdrawContract.Model {
         return mRetrofit.create(ApiService::class.java)
             .submitWithdraw(bankCardID, amount, payPassword)
     }
+
+    override fun getWithdrawFee(amount: String): Observable<Response<String?>> {
+        return mRetrofit.create(ApiService::class.java)
+            .fetchWithdrawFee(amount)
+    }
 }
