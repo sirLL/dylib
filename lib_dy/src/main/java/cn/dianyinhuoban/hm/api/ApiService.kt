@@ -17,6 +17,7 @@ interface ApiService {
         @Field("phone") phone: String,
         @Field("imgcode") imageCode: String,
         @Field("imgcodekey") imageKey: String,
+        @Field("type") type: String,
     ): Observable<Response<EmptyBean?>>
 
     /**

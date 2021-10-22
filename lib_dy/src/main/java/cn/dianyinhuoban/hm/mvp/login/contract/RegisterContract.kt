@@ -15,7 +15,8 @@ interface RegisterContract {
         fun sendSMS(
             phone: String,
             imageKey: String,
-            imageCode: String
+            imageCode: String,
+            type: String
         ): Observable<Response<EmptyBean?>>
 
         fun fetchImageCode(): Observable<Response<ImageCodeBean?>>
@@ -41,7 +42,7 @@ interface RegisterContract {
     interface Presenter {
         fun fetchImageCode()
 
-        fun onSendSMS(phone: String, imageKey: String, imageCode: String)
+        fun onSendSMS(phone: String, imageKey: String, imageCode: String, type: String)
 
         fun register(
             userName: String,

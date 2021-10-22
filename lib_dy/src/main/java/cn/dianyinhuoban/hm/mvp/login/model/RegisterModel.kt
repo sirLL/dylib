@@ -13,10 +13,11 @@ class RegisterModel : BaseModel(), RegisterContract.Model {
     override fun sendSMS(
         phone: String,
         imageKey: String,
-        imageCode: String
+        imageCode: String,
+        type: String
     ): Observable<Response<EmptyBean?>> {
         return mRetrofit.create(ApiService::class.java)
-            .sendSMS(phone, imageCode, imageKey)
+            .sendSMS(phone, imageCode, imageKey, type)
     }
 
 

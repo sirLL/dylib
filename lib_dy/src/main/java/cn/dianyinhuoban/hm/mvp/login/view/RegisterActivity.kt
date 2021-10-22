@@ -177,7 +177,7 @@ class RegisterActivity : BaseActivity<RegisterPresenter?>(), RegisterContract.Vi
             return
         }
         mPresenter?.let {
-            it.onSendSMS(phone, imageKey, imageCode)
+            it.onSendSMS(phone, imageKey, imageCode, "1")
         }
     }
 

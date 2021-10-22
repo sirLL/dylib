@@ -18,9 +18,9 @@ class RegisterPresenter(view: RegisterContract.View) :
     }
 
     //发送短信
-    override fun onSendSMS(phone: String, imageKey: String, imageCode: String) {
+    override fun onSendSMS(phone: String, imageKey: String, imageCode: String, type: String) {
         mModel?.let {
-            it.sendSMS(phone, imageKey, imageCode)
+            it.sendSMS(phone, imageKey, imageCode, type)
                 .compose(SchedulerProvider.getInstance().applySchedulers())
                 .compose(ResponseTransformer.handleResult())
                 .subscribeWith(object : CustomResourceSubscriber<EmptyBean?>() {

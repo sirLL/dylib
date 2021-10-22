@@ -142,7 +142,7 @@ class ResetPasswordActivity : BaseActivity<RegisterPresenter?>(), RegisterContra
             return
         }
         mPresenter?.let {
-            it.onSendSMS(phone, imageKey, imageCode)
+            it.onSendSMS(phone, imageKey, imageCode,"2")
         }
     }
 

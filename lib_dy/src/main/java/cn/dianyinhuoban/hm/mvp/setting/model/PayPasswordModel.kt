@@ -32,7 +32,7 @@ class PayPasswordModel : BaseModel(), PayPasswordContract.Model {
         imageCode: String
     ): Observable<Response<EmptyBean?>> {
         return mRetrofit.create(ApiService::class.java)
-            .sendSMS(phone, imageCode, imageKey)
+            .sendSMS(phone, imageCode, imageKey, "3")
     }
 
 
