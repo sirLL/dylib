@@ -120,6 +120,7 @@
         android:textColor="@color/color_333333"
         android:textColorHint="@color/color_cccccc"
         android:textSize="14sp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/textView4"
         app:layout_constraintTop_toBottomOf="@id/ed_card_no" />
@@ -133,6 +134,7 @@
         android:text="手机号"
         android:textColor="@color/color_333333"
         android:textSize="14sp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/ed_phone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/ed_phone" />
@@ -153,6 +155,7 @@
         android:textColor="@color/color_333333"
         android:textColorHint="@color/color_cccccc"
         android:textSize="14sp"
+        android:visibility="gone"
         app:layout_constraintEnd_toStartOf="@id/tv_get_code"
         app:layout_constraintStart_toEndOf="@id/textView5"
         app:layout_constraintTop_toBottomOf="@id/ed_phone" />
@@ -166,6 +169,7 @@
         android:text="短信验证码"
         android:textColor="@color/color_333333"
         android:textSize="14sp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/ed_code"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/ed_code" />
@@ -178,6 +182,7 @@
         android:text="获取验证码"
         android:textColor="@color/dy_color_enable_d8d8d8_1b68eb"
         android:textSize="14sp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/ed_code"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/ed_code" />

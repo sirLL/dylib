@@ -19,6 +19,7 @@ import cn.dianyinhuoban.hm.api.ApiService;
 import cn.dianyinhuoban.hm.mvp.bean.UserBean;
 import cn.dianyinhuoban.hm.mvp.home.view.HomeActivity;
 import cn.dianyinhuoban.hm.mvp.login.view.LoginActivity;
+import cn.dianyinhuoban.hm.qiyu.QYHelper;
 
 public class DYHelper {
     public static final String ACTION_LOGIN_SUCCESS = "action.DYHM.LOGIN_SUCCESS";
@@ -27,6 +28,7 @@ public class DYHelper {
         MMKV.initialize(application.getApplicationContext());
         ToastUtils.init(application);
         RetrofitServiceManager.initialize(application.getApplicationContext());
+        QYHelper.initQY(application.getApplicationContext());
     }
 
     //登录电银泓盟

@@ -18,6 +18,7 @@ import cn.dianyinhuoban.hm.mvp.order.OrderListActivity
 import cn.dianyinhuoban.hm.mvp.order.view.ProductListActivity
 import cn.dianyinhuoban.hm.mvp.pk.view.PkActivity
 import cn.dianyinhuoban.hm.mvp.setting.view.*
+import cn.dianyinhuoban.hm.qiyu.QYHelper
 import cn.dianyinhuoban.hm.widget.dialog.MessageDialog
 import coil.load
 import coil.transform.CircleCropTransformation
@@ -116,7 +117,8 @@ class MeFragment : BaseFragment<MePresenter?>(), MeContract.View {
                         startActivity(Intent(context, AuthActivity::class.java))
                     }
                     8 -> {//在线客服
-
+                        val title = "${getString(R.string.app_name)}客服"
+                        QYHelper.openQYService(requireContext(), title)
                     }
                     9 -> {//设置
                         startActivity(Intent(context, SettingActivity::class.java))
@@ -135,7 +137,7 @@ class MeFragment : BaseFragment<MePresenter?>(), MeContract.View {
         menuData.add(MeMenuBean(5, "银行卡", R.drawable.dy_ic_me_menu_bank_card))
         menuData.add(MeMenuBean(6, "PK", R.drawable.dy_ic_me_menu_pk))
         menuData.add(MeMenuBean(7, "授权书", R.drawable.dy_ic_me_menu_auth))
-//        menuData.add(MeMenuBean(8, "在线客服", R.drawable.ic_me_menu_online_service))
+        menuData.add(MeMenuBean(8, "在线客服", R.drawable.ic_me_menu_online_service))
         menuData.add(MeMenuBean(9, "设置", R.drawable.dy_ic_me_menu_setting))
         mAdapter?.data = menuData
     }

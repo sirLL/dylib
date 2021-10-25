@@ -13,6 +13,8 @@ import cn.dianyinhuoban.hm.mvp.me.view.MeFragment
 import cn.dianyinhuoban.hm.mvp.poster.view.PosterActivity
 import cn.dianyinhuoban.hm.mvp.poster.view.PosterFragment
 import cn.dianyinhuoban.hm.mvp.ranking.view.RankingFragment
+import cn.dianyinhuoban.hm.qiyu.QYHelper
+import com.qiyukf.unicorn.api.Unicorn
 import com.wareroom.lib_base.ui.BaseActivity
 import kotlinx.android.synthetic.main.dy_activity_home.*
 import java.util.*
@@ -29,6 +31,7 @@ class HomeActivity : BaseActivity<SystemPresenter?>(), SystemContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Unicorn.initSdk()
         setContentView(R.layout.dy_activity_home)
         initView()
     }
@@ -43,6 +46,7 @@ class HomeActivity : BaseActivity<SystemPresenter?>(), SystemContract.View {
         initFragment()
         iv_custom_service.setOnClickListener {
             val title = "${getString(R.string.app_name)}客服"
+            QYHelper.openQYService(HomeActivity@ this, title)
         }
     }
 

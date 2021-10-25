@@ -69,15 +69,15 @@ class BindBankCardActivity : BaseActivity<BankPresenter?>(),BankContract.View {
                 return@setOnClickListener
             }
 
-            if (phoneNumber.isEmpty()) {
-                showToast("请输入手机号")
-                return@setOnClickListener
-            }
-
-            if (phoneCode.isEmpty()) {
-                showToast("请输入验证码")
-                return@setOnClickListener
-            }
+//            if (phoneNumber.isEmpty()) {
+//                showToast("请输入手机号")
+//                return@setOnClickListener
+//            }
+//
+//            if (phoneCode.isEmpty()) {
+//                showToast("请输入验证码")
+//                return@setOnClickListener
+//            }
 
             mPresenter?.addBank(bankUsername, bankName,bankNo,phoneNumber,phoneCode)
 
