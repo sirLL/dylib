@@ -82,13 +82,15 @@ class BankManageActivity : BaseActivity<BankPresenter?>(), BankContract.View {
             }
 
             override fun onItemClick(data: BankBean?, position: Int) {
-                showToast(data?.bankName)
+                data?.let {
+                    BindBankCardActivity.open(this@BankManageActivity, it, REQ_UPDATE)
+                }
             }
 
         }
 
         el_add_bank.setOnClickListener {
-            BindBankCardActivity.open(BankManageActivity@ this,REQ_ADD)
+            BindBankCardActivity.open(BankManageActivity@ this, REQ_ADD)
         }
 
         loadData()
@@ -126,7 +128,7 @@ class BankManageActivity : BaseActivity<BankPresenter?>(), BankContract.View {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
-            when(requestCode) {
+            when (requestCode) {
                 REQ_ADD -> {
                     loadData()
                 }

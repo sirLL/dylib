@@ -7,6 +7,7 @@ import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -14,6 +15,10 @@ import android.widget.Toast
 import cn.dianyinhuoban.hm.DYHelper
 
 class MainActivity : AppCompatActivity() {
+    companion object {
+        const val TAG = "MainActivity"
+    }
+
     private val broadcastReceiver by lazy {
         MyBroadcastReceiver()
     }
@@ -26,9 +31,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val intentFilter=IntentFilter()
+        val intentFilter = IntentFilter()
         intentFilter.addAction(DYHelper.ACTION_LOGIN_SUCCESS)
-        registerReceiver(broadcastReceiver,intentFilter)
+        registerReceiver(broadcastReceiver, intentFilter)
 
         setContentView(R.layout.activity_main)
         findViewById<ImageView>(R.id.iv_logo).setOnClickListener {
@@ -54,13 +59,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun login(userName: String, password: String) {
+        DYHelper.loginDYHM(this, userName, password, object : DYHelper.OnLoginCallBack {
+            override fun onLoginSuccess() {
 
+            }
+
+            override fun onLoginError(code: Int, message: String?) {
+                //若code=2 账号不存在，其他直接弹toast
+                Log.d(TAG, "onLoginError: code=${code} message=${message}")
+            }
+        })
     }
 
     override fun onDestroy() {
         unregisterReceiver(broadcastReceiver)
         super.onDestroy()
     }
+
     inner class MyBroadcastReceiver : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             finish()

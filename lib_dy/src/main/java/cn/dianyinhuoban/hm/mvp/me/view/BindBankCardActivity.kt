@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Bundle
 import cn.dianyinhuoban.hm.CountdownTextUtils
 import cn.dianyinhuoban.hm.R
+import cn.dianyinhuoban.hm.mvp.bean.BankBean
 import cn.dianyinhuoban.hm.mvp.bean.ImageCodeBean
 import cn.dianyinhuoban.hm.mvp.setting.contract.BankContract
 import cn.dianyinhuoban.hm.mvp.setting.presenter.BankPresenter
@@ -18,7 +19,7 @@ import kotlinx.android.synthetic.main.dy_activity_bind_bank_card.btn_submit
 import kotlinx.android.synthetic.main.dy_activity_bind_bank_card.ed_phone
 import kotlinx.android.synthetic.main.dy_activity_register.*
 
-class BindBankCardActivity : BaseActivity<BankPresenter?>(),BankContract.View {
+class BindBankCardActivity : BaseActivity<BankPresenter?>(), BankContract.View {
 
     companion object {
         fun open(context: Context) {
@@ -29,9 +30,18 @@ class BindBankCardActivity : BaseActivity<BankPresenter?>(),BankContract.View {
         fun open(context: Activity, requestCode: Int) {
             var intent = Intent(context, BindBankCardActivity::class.java)
             context.startActivityForResult(intent, requestCode)
+        }
 
+        fun open(context: Activity, bankCard: BankBean, requestCode: Int) {
+            val intent = Intent(context, BindBankCardActivity::class.java)
+            val bundle = Bundle()
+            bundle.putParcelable("bankCard", bankCard)
+            intent.putExtras(bundle)
+            context.startActivityForResult(intent, requestCode)
         }
     }
+
+    private var mBankCard: BankBean? = null
 
     private val mImageCodeDialog: ImageCodeDialog by lazy {
         ImageCodeDialog.newInstance()
@@ -43,12 +53,15 @@ class BindBankCardActivity : BaseActivity<BankPresenter?>(),BankContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setTitle("绑定银行卡")
+        if (mBankCard == null) {
+            setTitle("绑定银行卡")
+        } else {
+            setTitle("修改银行卡")
+        }
         setContentView(R.layout.dy_activity_bind_bank_card)
-
-        btn_submit.setOnClickListener{
-
-            val bankUsername =  ed_name.text.toString().trim()
+        bindBankCard()
+        btn_submit.setOnClickListener {
+            val bankUsername = ed_name.text.toString().trim()
             val bankName = ed_bank.text.toString().trim();
             val bankNo = ed_card_no.text.toString().trim();
             val phoneNumber = ed_phone.text.toString().trim();
@@ -79,7 +92,18 @@ class BindBankCardActivity : BaseActivity<BankPresenter?>(),BankContract.View {
 //                return@setOnClickListener
 //            }
 
-            mPresenter?.addBank(bankUsername, bankName,bankNo,phoneNumber,phoneCode)
+            if (mBankCard == null || mBankCard?.id.isNullOrBlank()) {
+                mPresenter?.addBank(bankUsername, bankName, bankNo, phoneNumber, phoneCode)
+            } else {
+                mPresenter?.updateBank(
+                    bankUsername,
+                    bankName,
+                    bankNo,
+                    phoneNumber,
+                    phoneCode,
+                    mBankCard?.id ?: ""
+                )
+            }
 
         }
 
@@ -87,6 +111,31 @@ class BindBankCardActivity : BaseActivity<BankPresenter?>(),BankContract.View {
             fetchImageCode()
         }
 
+    }
+
+    private fun bindBankCard() {
+        mBankCard?.let {
+            val bankName = it.bankName
+            val bankCardNo = it.bankNo
+            val name = it.name
+            bankName?.let {
+                ed_bank.setText(bankName)
+                ed_bank.setSelection(bankName.length)
+            }
+            bankCardNo?.let {
+                ed_card_no.setText(bankCardNo)
+                ed_card_no.setSelection(bankCardNo.length)
+            }
+            name?.let {
+                ed_name.setText(name)
+                ed_name.setSelection(name.length)
+            }
+        }
+    }
+
+    override fun handleIntent(bundle: Bundle?) {
+        super.handleIntent(bundle)
+        mBankCard = bundle?.getParcelable("bankCard")
     }
 
     override fun showImageCode(imageCode: ImageCodeBean?) {
@@ -145,12 +194,13 @@ class BindBankCardActivity : BaseActivity<BankPresenter?>(),BankContract.View {
 
     override fun onUpdateBankSuccess() {
         super.onUpdateBankSuccess()
+        setResult(Activity.RESULT_OK)
+        finish()
     }
 
     override fun onAddBankSuccess() {
         super.onAddBankSuccess()
         setResult(Activity.RESULT_OK)
         finish()
-
     }
 }

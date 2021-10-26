@@ -90,7 +90,7 @@ class BankPresenter(view: BankContract.View) : BasePresenter<BankModel, BankCont
         bankNo: String,
         phone: String,
         code: String,
-        id: Int
+        id: String
     ) {
 
         if (!isDestroy) {

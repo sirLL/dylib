@@ -11,7 +11,7 @@ interface BankContract {
         fun addBank(name: String, bankName: String, bankNo: String, phone: String, code: String): Observable<Response<EmptyBean?>>
 
         //更新银行卡
-        fun updateBank(name: String, bankName: String, bankNo: String, phone: String, code: String,id: Int): Observable<Response<EmptyBean?>>
+        fun updateBank(name: String, bankName: String, bankNo: String, phone: String, code: String,id: String): Observable<Response<EmptyBean?>>
 
         //获取银行卡列表
         fun getBankList(): Observable<Response<List<BankBean>?>>
@@ -37,7 +37,7 @@ interface BankContract {
         fun addBank(name: String, bankName: String, bankNo: String, phone: String, code: String)
 
         //更新银行卡
-        fun updateBank(name: String, bankName: String, bankNo: String, phone: String, code: String,id: Int)
+        fun updateBank(name: String, bankName: String, bankNo: String, phone: String, code: String,id: String)
 
         //设置银行卡
         fun setBank(type: String, id: String)

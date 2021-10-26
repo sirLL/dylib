@@ -35,7 +35,7 @@ class AuthResultActivity : BaseActivity<AuthStatusPresenter?>(), AuthStatusContr
     }
 
     override fun bindAuthResult(authResult: AuthResult?) {
-        tv_status.text = if (authResult == null) {
+        tv_status.text = if (authResult == null || authResult.status.isNullOrBlank()) {
             iv_status.setImageResource(R.drawable.dy_ic_order_result_wait)
             tv_status_des.text = "您尚未提交认证"
             tv_return_home.text = "去认证"

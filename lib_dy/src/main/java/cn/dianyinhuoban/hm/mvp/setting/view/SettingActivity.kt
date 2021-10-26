@@ -65,7 +65,7 @@ class SettingActivity : BaseActivity<SettingPresenter?>(), SettingContract.View 
         }
 
         el_auth_name_item.setOnClickListener {
-            if (mAuthResult == null) {
+            if (mAuthResult == null || mAuthResult?.status.isNullOrBlank()) {
                 RealnameAuthActivity.open(SettingActivity@ this)
             } else {
                 when (mAuthResult?.status) {
@@ -148,7 +148,7 @@ class SettingActivity : BaseActivity<SettingPresenter?>(), SettingContract.View 
 
     override fun bindAuthResult(authResult: AuthResult?) {
         mAuthResult = authResult
-        tv_realname_status.text = if (authResult == null) {
+        tv_realname_status.text = if (authResult == null || authResult.status.isNullOrBlank()) {
             tv_realname_status.setTextColor(ContextCompat.getColor(this, R.color.color_f60e36))
             "未认证"
         } else {

@@ -32,7 +32,7 @@ interface BankApiService {
         @Field("bankNo") bankNo: String,
         @Field("phone") phone: String,
         @Field("code") code: String,
-        @Field("id") id: Int,
+        @Field("id") id: String,
     ): Observable<Response<EmptyBean?>>
 
     @POST(URLConfig.URL_BANK_LIST)

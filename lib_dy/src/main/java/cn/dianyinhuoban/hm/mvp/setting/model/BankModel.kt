@@ -38,7 +38,7 @@ class BankModel : BaseModel(), BankContract.Model {
         bankNo: String,
         phone: String,
         code: String,
-        id: Int
+        id: String
     ): Observable<Response<EmptyBean?>> {
 
         return mRetrofit.create(BankApiService::class.java)
