@@ -17,7 +17,7 @@ class MessageActivity : BaseActivity<IPresenter?>() {
 
         val fragments = ArrayList<Fragment>()
         fragments.add(MessageNotifyFragment.newInstance(MessageNotifyFragment.TYPE_ALL,false))
-        fragments.add(MessageNotifyFragment.newInstance(MessageNotifyFragment.TYPE_ALL, true))
+        fragments.add(MessageNotifyFragment.newInstance(MessageNotifyFragment.TYPE_PK, true))
         fragments.add(MessageNotifyFragment.newInstance(MessageNotifyFragment.TYPE_OTHER,false))
         fragments.add(MessageNotifyFragment.newInstance(MessageNotifyFragment.TYPE_ANNOUNCE,false))
 

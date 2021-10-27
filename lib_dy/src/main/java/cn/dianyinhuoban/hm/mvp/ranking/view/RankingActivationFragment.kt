@@ -8,6 +8,7 @@ import cn.dianyinhuoban.hm.mvp.bean.MyRank
 import cn.dianyinhuoban.hm.mvp.bean.RankBean
 import cn.dianyinhuoban.hm.mvp.ranking.contract.RankContract
 import cn.dianyinhuoban.hm.mvp.ranking.presenter.RankPresenter
+import cn.dianyinhuoban.hm.mvp.ranking.view.adapter.RankingActivationAdapter
 import cn.dianyinhuoban.hm.mvp.ranking.view.adapter.RankingPersonalAdapter
 import coil.load
 import com.scwang.smart.refresh.footer.ClassicsFooter
@@ -37,7 +38,7 @@ class RankingActivationFragment : BaseFragment<RankPresenter?>(), OnRefreshListe
     }
 
     private var mCurrentPage = DEF_START_PAGE
-    var mAdapter: RankingPersonalAdapter? = null
+    var mAdapter: RankingActivationAdapter? = null
     private var isLoadMore = false
 
     override fun getPresenter(): RankPresenter? {
@@ -58,7 +59,7 @@ class RankingActivationFragment : BaseFragment<RankPresenter?>(), OnRefreshListe
 
 
     private fun setupRecyclerView() {
-        mAdapter = RankingPersonalAdapter()
+        mAdapter = RankingActivationAdapter()
         recycler_view.adapter = mAdapter
     }
 
@@ -101,7 +102,7 @@ class RankingActivationFragment : BaseFragment<RankPresenter?>(), OnRefreshListe
     }
 
     private fun request(page: Int) {
-        mPresenter?.fetchRank("3", page)
+        mPresenter?.fetchRank("1", page)
     }
 
     private fun loadRankingData() {

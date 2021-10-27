@@ -8,10 +8,12 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.mvp.bean.NotifyMessageBean
+import cn.dianyinhuoban.hm.mvp.order.OrderDetailActivity
 import cn.dianyinhuoban.hm.mvp.pk.contract.PKContract
 import cn.dianyinhuoban.hm.mvp.pk.presenter.PKPresenter
 import cn.dianyinhuoban.hm.mvp.setting.contract.MessageContract
 import cn.dianyinhuoban.hm.mvp.setting.presenter.MessagePresenter
+import cn.dianyinhuoban.hm.util.StringUtil
 import com.scwang.smart.refresh.footer.ClassicsFooter
 import com.scwang.smart.refresh.header.ClassicsHeader
 import com.wareroom.lib_base.ui.BaseFragment
@@ -126,7 +128,7 @@ class MessageNotifyFragment : BaseFragment<MessagePresenter>(), MessageContract.
 
         private val VIEW_ITEM_MESSAGE = 10
         private val VIEW_ITEM_DISPATCH = 11
-        private val VIEW_ITEM_OPERATION = 12
+        private val VIEW_ITEM_PK = 12
 
         fun setData(data: MutableList<NotifyMessageBean>) {
             dataList = data
@@ -140,17 +142,17 @@ class MessageNotifyFragment : BaseFragment<MessagePresenter>(), MessageContract.
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
             return when (viewType) {
-                VIEW_ITEM_MESSAGE -> AnnouncementViewHolder(
+                VIEW_ITEM_DISPATCH -> DispatchViewHolder(
                     LayoutInflater.from(parent.context)
-                        .inflate(R.layout.dy_item_message_active, parent, false)
+                        .inflate(R.layout.dy_item_message_dispatch, parent, false)
                 )
-                VIEW_ITEM_OPERATION -> PkNotifyViewHolder(
+                VIEW_ITEM_PK -> PkNotifyViewHolder(
                     LayoutInflater.from(parent.context)
                         .inflate(R.layout.dy_item_message_pk, parent, false)
                 )
                 else -> OtherViewHolder(
                     LayoutInflater.from(parent.context)
-                        .inflate(R.layout.dy_item_message_dispatch, parent, false)
+                        .inflate(R.layout.dy_item_message_active, parent, false)
                 )
             }
         }
@@ -160,27 +162,31 @@ class MessageNotifyFragment : BaseFragment<MessagePresenter>(), MessageContract.
             val data = dataList[position]
             when (holder.itemViewType) {
                 VIEW_ITEM_MESSAGE -> {
-                    val h = (holder as AnnouncementViewHolder)
+                    val h = (holder as OtherViewHolder)
                     h.itemView.tv_msg_title.text = data.title
                     h.itemView.tv_msg_sub_title.text = data.subTitle
                     h.itemView.tv_msg_content.text = data.content
                     h.itemView.tv_msg_time.text =
-                        DateTimeUtils.getYYYYMMDDHHMMSS((data.inputTime.toLong() * 1000).toLong())
+                        DateTimeUtils.getYYYYMMDDHHMMSS((data.inputTime.toLong() * 1000))
 
-                    // 1 2 3 5 6 7
-                    when (data.type.toInt()) {
-                        2 -> {
+                    h.itemView.tv_msg_sub_title.visibility = if (data.subTitle.isNullOrBlank()) {
+                        View.GONE
+                    } else {
+                        View.VISIBLE
+                    }
+                    when (data.type) {
+                        "2", "11", "12", "15" -> {
                             h.itemView.img_msg_logo.setImageResource(R.drawable.dy_ic_msg_invite)
                         }
-
-                        3 -> {
+                        "3", "5", "6" -> {
                             h.itemView.img_msg_logo.setImageResource(R.drawable.dy_ic_msg_active)
                         }
-
-                        7 -> {
+                        "4" -> {
+                            h.itemView.img_msg_logo.setImageResource(R.drawable.dy_ic_msg_ship)
+                        }
+                        "7" -> {
                             h.itemView.img_msg_logo.setImageResource(R.drawable.dy_ic_msg_add_child)
                         }
-
                         else -> {
                             h.itemView.img_msg_logo.setImageResource(R.drawable.dy_ic_msg_activity)
                         }
@@ -188,24 +194,31 @@ class MessageNotifyFragment : BaseFragment<MessagePresenter>(), MessageContract.
                 }
 
                 VIEW_ITEM_DISPATCH -> {
-                    val h = (holder as OtherViewHolder)
+                    val h = (holder as DispatchViewHolder)
                     h.itemView.img_msg_dispatch_logo.setImageResource(R.drawable.dy_ic_msg_ship)
                     h.itemView.tv_msg_dispatch_title.text = data.title
                     h.itemView.tv_msg_dispatch_sub_title.text = data.subTitle
                     h.itemView.tv_msg_dispatch_content.text = data.content
                     h.itemView.tv_msg_dispatch_time.text =
-                        DateTimeUtils.getYYYYMMDDHHMMSS((data.inputTime.toLong() * 1000).toLong())
+                        DateTimeUtils.getYYYYMMDDHHMMSS((data.inputTime.toLong() * 1000))
 
                     h.itemView.tv_msg_dispatch.setOnClickListener {
+                        var content = ""
+                        if (!data.content.isNullOrBlank() && data.content.contains("运单号:")) {
+                            val strList = data.content.split("运单号:")
+                            if (strList.size >= 2) {
+                                content = strList[1]
+                            }
+                        }
+                        StringUtil.copyString(requireContext(), content)
                         showToast("复制成功")
                     }
-
                     h.itemView.tv_msg_dispatch_refuse.setOnClickListener {
-                        showToast("查看")
+                        OrderDetailActivity.open(requireContext(), data.cid)
                     }
                 }
 
-                VIEW_ITEM_OPERATION -> {
+                VIEW_ITEM_PK -> {
                     val h = (holder as PkNotifyViewHolder)
                     h.itemView.img_msg_pk_logo.setImageResource(R.drawable.dy_ic_msg_invite)
                     h.itemView.tv_msg_pk_title.text = data.title
@@ -232,28 +245,34 @@ class MessageNotifyFragment : BaseFragment<MessagePresenter>(), MessageContract.
 
         //1 公告 2 pk通知 3 激活 4 发货 5提现通过 6 提现拒绝 7 新增下级
         override fun getItemViewType(position: Int): Int {
+//            val notifyMessageBean = dataList[position]
+//            if (notifyMessageBean.type.toInt() == 1
+//                || notifyMessageBean.type.toInt() == 3
+//                || notifyMessageBean.type.toInt() == 7
+//                || notifyMessageBean.type.toInt() == 6
+//                || notifyMessageBean.type.toInt() == 5
+//                || (notifyMessageBean.type.toInt() == 2 && notifyMessageBean.isDeal.toInt() == 2)
+//            ) {
+//                return VIEW_ITEM_MESSAGE
+//            } else if (notifyMessageBean.type.toInt() == 4) {
+//                return VIEW_ITEM_DISPATCH
+//            } else {
+//                return VIEW_ITEM_PK
+//            }
             val notifyMessageBean = dataList[position]
-            if (notifyMessageBean.type.toInt() == 1
-                || notifyMessageBean.type.toInt() == 3
-                || notifyMessageBean.type.toInt() == 7
-                || notifyMessageBean.type.toInt() == 6
-                || notifyMessageBean.type.toInt() == 5
-                || (notifyMessageBean.type.toInt() == 2 && notifyMessageBean.isDeal.toInt() == 2)
-            ) {
-                return VIEW_ITEM_MESSAGE
-
+            return if (notifyMessageBean.type.toInt() == 2 && notifyMessageBean.isDeal.toInt() == 1) {
+                //PK 未处理
+                VIEW_ITEM_PK
             } else if (notifyMessageBean.type.toInt() == 4) {
-
-                return VIEW_ITEM_DISPATCH
+                //发货
+                VIEW_ITEM_DISPATCH
             } else {
-
-                return VIEW_ITEM_OPERATION
+                VIEW_ITEM_MESSAGE
             }
-
         }
 
 
-        inner class AnnouncementViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        inner class DispatchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         }
 

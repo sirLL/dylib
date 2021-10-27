@@ -104,7 +104,7 @@ class RankingTeamFragment : BaseFragment<RankPresenter?>(), OnRefreshListener, O
     }
 
     private fun request(page: Int) {
-        mPresenter?.fetchRank("2", page)
+        mPresenter?.fetchRank("3", page)
     }
 
     private fun loadRankingData() {

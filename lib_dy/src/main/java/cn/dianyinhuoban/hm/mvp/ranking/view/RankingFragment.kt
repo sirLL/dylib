@@ -41,7 +41,7 @@ class RankingFragment : BaseFragment<IPresenter?>() {
         tabData.add(TabEntity("交易排行"))
         tabData.add(TabEntity("团队排行"))
         val fragmentData: ArrayList<Fragment> = ArrayList()
-        fragmentData.add(RankingPersonalFragment.newInstance())
+        fragmentData.add(RankingActivationFragment.newInstance())
         fragmentData.add(RankingPersonalFragment.newInstance())
         fragmentData.add(RankingTeamFragment.newInstance())
         tab_layout.setTabData(
