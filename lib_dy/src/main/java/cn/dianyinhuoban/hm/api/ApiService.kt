@@ -321,6 +321,8 @@ interface ApiService {
     fun submitAuth(
         @Field("name") name: String,
         @Field("idNum") idCard: String,
+        @Field("auth_sfzzm") positiveURL: String,
+        @Field("auth_sfzfm") negativeURL: String,
     ): Observable<Response<EmptyBean?>>
 
     /**

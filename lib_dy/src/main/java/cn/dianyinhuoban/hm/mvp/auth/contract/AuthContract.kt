@@ -7,11 +7,21 @@ import io.reactivex.Observable
 
 interface AuthContract {
     interface Model {
-        fun submitAuth(name: String, idCard: String): Observable<Response<EmptyBean?>>
+        fun submitAuth(
+            name: String,
+            idCard: String,
+            positiveURL: String,
+            negativeURL: String
+        ): Observable<Response<EmptyBean?>>
     }
 
     interface Presenter {
-        fun submitAuth(name: String, idCard: String)
+        fun submitAuth(
+            name: String,
+            idCard: String,
+            positiveURL: String,
+            negativeURL: String
+        )
     }
 
     interface View : IView {

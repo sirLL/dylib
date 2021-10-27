@@ -8,8 +8,13 @@ import com.wareroom.lib_http.response.Response
 import io.reactivex.Observable
 
 class AuthModel : BaseModel(), AuthContract.Model {
-    override fun submitAuth(name: String, idCard: String): Observable<Response<EmptyBean?>> {
+    override fun submitAuth(
+        name: String,
+        idCard: String,
+        positiveURL: String,
+        negativeURL: String
+    ): Observable<Response<EmptyBean?>> {
         return mRetrofit.create(ApiService::class.java)
-            .submitAuth(name, idCard)
+            .submitAuth(name, idCard, positiveURL, negativeURL)
     }
 }

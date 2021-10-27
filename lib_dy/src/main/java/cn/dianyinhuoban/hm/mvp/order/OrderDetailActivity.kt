@@ -10,12 +10,13 @@ import cn.dianyinhuoban.hm.mvp.order.contract.OrderDetailContract
 import cn.dianyinhuoban.hm.mvp.order.presenter.OrderDetailPresenter
 import coil.load
 import coil.transform.RoundedCornersTransformation
+import com.tencent.mmkv.MMKV
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.DateTimeUtils
 import com.wareroom.lib_base.utils.DimensionUtils
 import com.wareroom.lib_base.utils.NumberUtils
+import com.wareroom.lib_base.utils.OSUtils
 import kotlinx.android.synthetic.main.dy_activity_order_detail.*
-import kotlinx.android.synthetic.main.dy_activity_order_detail.tv_status
 import kotlinx.android.synthetic.main.dy_item_pos_order.*
 
 class OrderDetailActivity : BaseActivity<OrderDetailPresenter?>(), OrderDetailContract.View {
@@ -43,10 +44,15 @@ class OrderDetailActivity : BaseActivity<OrderDetailPresenter?>(), OrderDetailCo
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dy_activity_order_detail)
         setTitle("申领详情")
-        fl_btn_container.setOnClickListener {
+        fetchOrder()
+
+        btn_submit.setOnClickListener {
             mPresenter?.submitConfirmReceipt(mOrderID ?: "")
         }
-        fetchOrder()
+        tv_call.setOnClickListener {
+            val phone = MMKV.defaultMMKV().decodeString("COMPANY_PHONE", "")
+            OSUtils.callPhone(this, phone)
+        }
     }
 
     override fun getPresenter(): OrderDetailPresenter? {

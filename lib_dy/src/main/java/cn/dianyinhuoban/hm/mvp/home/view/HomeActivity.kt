@@ -15,6 +15,7 @@ import cn.dianyinhuoban.hm.mvp.poster.view.PosterFragment
 import cn.dianyinhuoban.hm.mvp.ranking.view.RankingFragment
 import cn.dianyinhuoban.hm.qiyu.QYHelper
 import com.qiyukf.unicorn.api.Unicorn
+import com.tencent.mmkv.MMKV
 import com.wareroom.lib_base.ui.BaseActivity
 import kotlinx.android.synthetic.main.dy_activity_home.*
 import java.util.*
@@ -120,6 +121,10 @@ class HomeActivity : BaseActivity<SystemPresenter?>(), SystemContract.View {
                         }
                         "5" -> {
                             //总部电话
+                            MMKV.defaultMMKV().encode("COMPANY_PHONE", systemItemBean.content)
+                        }
+                        else -> {
+
                         }
                     }
                 }

@@ -68,7 +68,6 @@ class OrderDetailPresenter(view: OrderDetailContract.View) :
                                 view?.onConfirmReceiptSuccess()
                                 fetchPurchaseRecord(orderID)
                             }
-
                         }
                     })
             )

@@ -15,13 +15,18 @@ class AuthPresenter(view: AuthContract.View) : BasePresenter<AuthModel, AuthCont
         return AuthModel()
     }
 
-    override fun submitAuth(name: String, idCard: String) {
+    override fun submitAuth(
+        name: String,
+        idCard: String,
+        positiveURL: String,
+        negativeURL: String
+    ) {
         mModel?.let {
             if (!isDestroy) {
                 view?.showLoading(false)
             }
             addDispose(
-                it.submitAuth(name, idCard)
+                it.submitAuth(name, idCard, positiveURL, negativeURL)
                     .compose(SchedulerProvider.getInstance().applySchedulers())
                     .compose(ResponseTransformer.handleResult())
                     .subscribeWith(object : CustomResourceSubscriber<EmptyBean?>() {
@@ -33,7 +38,7 @@ class AuthPresenter(view: AuthContract.View) : BasePresenter<AuthModel, AuthCont
                             super.onNext(t)
                             if (!isDestroy) {
                                 view?.hideLoading()
-                                view.onSubmitAuthSuccess()
+                                view?.onSubmitAuthSuccess()
                             }
                         }
                     })

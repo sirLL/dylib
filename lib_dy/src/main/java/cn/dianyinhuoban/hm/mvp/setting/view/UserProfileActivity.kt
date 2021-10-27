@@ -113,8 +113,6 @@ class UserProfileActivity : BaseActivity<ProfilePresenter>(), ProfileContract.Vi
                         }
 
                         1 -> {
-
-
                             PictureSelector
                                 .create(UserProfileActivity@ this)
                                 .openCamera(PictureMimeType.ofImage())
@@ -140,11 +138,7 @@ class UserProfileActivity : BaseActivity<ProfilePresenter>(), ProfileContract.Vi
 
                         }
                     }
-
-
                 }.create().show()
-
-
         }
 
         el_gender.setOnClickListener {
