@@ -55,7 +55,16 @@ class AuthResultActivity : BaseActivity<AuthStatusPresenter?>(), AuthStatusContr
                     }
                     "审核中"
                 }
-                "1" -> {
+                "2" -> {
+                    iv_status.setImageResource(R.drawable.dy_ic_order_result_success)
+                    tv_status_des.text = "恭喜您，认证成功"
+                    tv_return_home.text = "返回首页"
+                    tv_return_home.setOnClickListener {
+                        finish()
+                    }
+                    "认证成功"
+                }
+                else -> {
                     iv_status.setImageResource(R.drawable.dy_ic_order_result_fail)
                     tv_status_des.text = "抱歉，认证失败"
                     tv_return_home.text = "重新认证"
@@ -64,15 +73,6 @@ class AuthResultActivity : BaseActivity<AuthStatusPresenter?>(), AuthStatusContr
                         finish()
                     }
                     "不通过"
-                }
-                else -> {
-                    iv_status.setImageResource(R.drawable.dy_ic_order_result_success)
-                    tv_status_des.text = "恭喜您，认证成功"
-                    tv_return_home.text = "返回首页"
-                    tv_return_home.setOnClickListener {
-                        finish()
-                    }
-                    "认证成功"
                 }
             }
         }

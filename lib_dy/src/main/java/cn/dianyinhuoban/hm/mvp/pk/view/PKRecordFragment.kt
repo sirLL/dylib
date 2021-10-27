@@ -61,7 +61,7 @@ class PKRecordFragment : BaseListFragment<PKRecordBean, PKRecordPresenter>(),
             }
         }
         viewHolder?.itemView?.tv_status?.text = when (itemData?.status) {
-            //状态 1 发起 2 接受 3 拒绝 4.完成
+            //状态 1 发起 2 接受 3 拒绝 4.完成 5.超时取消
             "1" -> {
                 viewHolder?.itemView?.tv_result?.visibility = View.GONE
                 viewHolder?.itemView?.divider1?.visibility = View.GONE
@@ -97,7 +97,18 @@ class PKRecordFragment : BaseListFragment<PKRecordBean, PKRecordPresenter>(),
                     )
                     viewHolder?.itemView?.tv_result?.text = "失败"
                 }
-
+                "PK结束"
+            }
+            "5" -> {
+                viewHolder?.itemView?.tv_result?.visibility = View.VISIBLE
+                viewHolder?.itemView?.divider1?.visibility = View.VISIBLE
+                viewHolder?.itemView?.tv_result?.setTextColor(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.color_c50018
+                    )
+                )
+                viewHolder?.itemView?.tv_result?.text = "超时取消"
                 "PK结束"
             }
             else -> {

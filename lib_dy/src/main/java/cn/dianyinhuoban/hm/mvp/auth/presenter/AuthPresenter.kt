@@ -23,7 +23,7 @@ class AuthPresenter(view: AuthContract.View) : BasePresenter<AuthModel, AuthCont
     ) {
         mModel?.let {
             if (!isDestroy) {
-                view?.showLoading(false)
+                view?.showLoading()
             }
             addDispose(
                 it.submitAuth(name, idCard, positiveURL, negativeURL)

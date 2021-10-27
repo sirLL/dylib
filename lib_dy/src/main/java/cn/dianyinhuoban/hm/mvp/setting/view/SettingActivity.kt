@@ -72,15 +72,17 @@ class SettingActivity : BaseActivity<SettingPresenter?>(), SettingContract.View 
                     "0" -> {
                         AuthResultActivity.open(this)
                     }
-                    "1" -> {
-                        RealnameAuthActivity.open(SettingActivity@ this)
+//                    "1" -> {
+//                        RealnameAuthActivity.open(SettingActivity@ this)
+//                    }
+                    "2" -> {
+                        AuthInfoActivity.open(this)
                     }
                     else -> {
-                        AuthInfoActivity.open(this)
+                        AuthResultActivity.open(this)
                     }
                 }
             }
-
         }
 
         el_about_item.setOnClickListener {
@@ -162,16 +164,7 @@ class SettingActivity : BaseActivity<SettingPresenter?>(), SettingContract.View 
                     )
                     "审核中"
                 }
-                "1" -> {
-                    tv_realname_status.setTextColor(
-                        ContextCompat.getColor(
-                            this,
-                            R.color.color_f60e36
-                        )
-                    )
-                    "不通过"
-                }
-                else -> {
+                "2" -> {
                     tv_realname_status.setTextColor(
                         ContextCompat.getColor(
                             this,
@@ -179,6 +172,15 @@ class SettingActivity : BaseActivity<SettingPresenter?>(), SettingContract.View 
                         )
                     )
                     "已认证"
+                }
+                else -> {
+                    tv_realname_status.setTextColor(
+                        ContextCompat.getColor(
+                            this,
+                            R.color.color_f60e36
+                        )
+                    )
+                    "不通过"
                 }
             }
         }
