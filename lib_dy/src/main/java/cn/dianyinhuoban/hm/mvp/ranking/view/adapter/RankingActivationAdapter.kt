@@ -92,7 +92,11 @@ class RankingActivationAdapter : BaseAdapter<RankItemBean, RecyclerView.ViewHold
                     }
                 }
             }
-            holder.itemView.tv_amount.text = NumberUtils.formatMoney(data?.total ?: "")
+            holder.itemView.tv_amount.text = if (data?.total.isNullOrBlank()) {
+                "--"
+            } else {
+                data?.total
+            }
             holder.itemView.iv_avatar.load(data?.avatar ?: "") {
                 crossfade(true)//淡入效果
                 allowHardware(false)
@@ -236,9 +240,9 @@ class RankingActivationAdapter : BaseAdapter<RankItemBean, RecyclerView.ViewHold
         val textView3 = itemView.findViewById<TextView>(R.id.textView3)
 
         init {
-            textView1.text = "激活量"
-            textView2.text = "激活量"
-            textView3.text = "激活量"
+            textView1.text = "激活户数"
+            textView2.text = "激活户数"
+            textView3.text = "激活户数"
         }
     }
 

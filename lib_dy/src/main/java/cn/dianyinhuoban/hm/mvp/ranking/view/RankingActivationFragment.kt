@@ -140,7 +140,11 @@ class RankingActivationFragment : BaseFragment<RankPresenter?>(), OnRefreshListe
         } else {
             MMKVUtil.getUserName()
         }
-        tv_amount_my.text = NumberUtils.formatMoney(myRank?.total)
+        tv_amount_my.text = if (myRank?.total.isNullOrBlank()) {
+            "--"
+        } else {
+            myRank?.total
+        }
         iv_avatar_my.load(MMKVUtil.getAvatar()) {
             crossfade(true)//淡入效果
             allowHardware(false)
