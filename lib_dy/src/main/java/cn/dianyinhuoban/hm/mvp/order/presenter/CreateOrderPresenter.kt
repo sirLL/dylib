@@ -37,7 +37,7 @@ class CreateOrderPresenter(view: CreateOrderContract.View) :
                             super.onNext(t)
                             if (!isDestroy) {
                                 view?.hideLoading()
-                                val address = if (t != null && t!!.size >= 0) {
+                                val address = if (!t.isNullOrEmpty()) {
                                     t[0]
                                 } else {
                                     null
