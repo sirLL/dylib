@@ -141,7 +141,6 @@ class HomeFragment : BaseFragment<HomePresenter?>(), OnRefreshListener, HomeCont
         }
 
         mPresenter?.fetchDialogBanner()
-        mPresenter?.fetchBanner()
     }
 
     private fun setupRefreshLayout() {
@@ -183,6 +182,7 @@ class HomeFragment : BaseFragment<HomePresenter?>(), OnRefreshListener, HomeCont
         mPresenter?.fetchPersonalData()
         mPresenter?.fetchHomeData()
         mPresenter?.fetchNoticeList()
+        mPresenter?.fetchBanner()
     }
 
     override fun bindHomeData(homeDataBean: HomeDataBean?) {

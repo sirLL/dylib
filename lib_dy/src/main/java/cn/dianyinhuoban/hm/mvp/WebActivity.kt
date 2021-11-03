@@ -37,6 +37,7 @@ class WebActivity : BaseActivity<IPresenter?>() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dy_activity_web_html)
         setTitle(mTitle ?: "")
+        web_view.settings.javaScriptEnabled = true
         web_view.loadUrl(mUrl ?: "")
     }
 
