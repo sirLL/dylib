@@ -3,10 +3,13 @@ package cn.dianyinhuoban.hm.mvp
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.Html
 import cn.dianyinhuoban.hm.R
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
 import kotlinx.android.synthetic.main.dy_activity_web_html.*
+import java.io.UnsupportedEncodingException
+import java.net.URLDecoder
 
 class WebHtmlActivity : BaseActivity<IPresenter?>() {
     var mContent: String? = null
@@ -40,7 +43,7 @@ class WebHtmlActivity : BaseActivity<IPresenter?>() {
         web_view.settings.javaScriptEnabled = true
         web_view.loadDataWithBaseURL(
             null,
-            getHtmlData(mContent ?: "") ?: "",
+            getHtmlData(getURLDecoderString(mContent) ?: "") ?: "",
             "text/html",
             "utf-8",
             null
@@ -54,11 +57,24 @@ class WebHtmlActivity : BaseActivity<IPresenter?>() {
      * @return
      */
     private fun getHtmlData(bodyHTML: String): String? {
+        val data: String = Html.fromHtml(bodyHTML).toString()
         val head = "<head>" +
                 "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\"> " +
                 "<style>img{max-width: 100%; width:auto; height:auto!important;}</style>" +
                 "</head>"
-        return "<html>$head<body>$bodyHTML</body></html>"
+        return "<html>$head<body>$data</body></html>"
     }
 
+    private fun getURLDecoderString(str: String?): String? {
+        var result: String? = ""
+        if (null == str) {
+            return ""
+        }
+        try {
+            result = URLDecoder.decode(str, "UTF-8")
+        } catch (e: UnsupportedEncodingException) {
+            e.printStackTrace()
+        }
+        return result
+    }
 }
