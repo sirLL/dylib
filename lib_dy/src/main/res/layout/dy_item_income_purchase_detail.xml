@@ -34,7 +34,7 @@
         tools:text="提现-工商银行(7513)" />
 
     <TextView
-        android:id="@+id/tv_status"
+        android:id="@+id/tv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -49,7 +49,7 @@
         tools:text="提现成功" />
 
     <TextView
-        android:id="@+id/tv_date"
+        android:id="@+id/tv_note"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -59,8 +59,8 @@
         android:text="--"
         android:textColor="@color/color_999999"
         android:textSize="12sp"
-        app:layout_constraintBaseline_toBaselineOf="@id/tv_status"
-        app:layout_constraintEnd_toStartOf="@id/tv_status"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_date"
+        app:layout_constraintEnd_toStartOf="@id/tv_date"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="提现成功" />
 </androidx.constraintlayout.widget.ConstraintLayout>

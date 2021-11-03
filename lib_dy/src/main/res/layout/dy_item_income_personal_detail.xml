@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_time"
+        android:id="@+id/tv_no"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -29,22 +29,21 @@
         android:singleLine="true"
         android:textColor="@color/color_999999"
         android:textSize="12sp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/tv_no"
-        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintEnd_toStartOf="@id/tv_time"
         app:layout_constraintStart_toStartOf="@id/tv_title"
         app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
     <TextView
-        android:id="@+id/tv_no"
-        android:layout_width="0dp"
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:singleLine="true"
         android:textColor="@color/color_999999"
         android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_no"
         app:layout_constraintEnd_toEndOf="@id/tv_title"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toEndOf="@id/tv_time"
-        app:layout_constraintBaseline_toBaselineOf="@id/tv_time"/>
+        app:layout_constraintStart_toEndOf="@id/tv_no" />
 </androidx.constraintlayout.widget.ConstraintLayout>

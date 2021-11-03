@@ -98,12 +98,12 @@ class IncomeActivationDetailFragment : BaseListFragment<DetailBean?, IncomeDetai
         } else {
             NumberUtils.numberScale(itemData.price)
         }
-        viewHolder?.itemView?.tv_status?.text = if (itemData == null) {
+        viewHolder?.itemView?.tv_date?.text = if (itemData == null) {
             "--"
         } else {
             itemData.order_no
         }
-        viewHolder?.itemView?.tv_date?.text = if (itemData == null) {
+        viewHolder?.itemView?.tv_status?.text = if (itemData == null) {
             "--"
         } else {
             DateTimeUtils.getYYYYMMDDHHMMSS((itemData.add_time?.toLong() ?: 0) * 1000)

@@ -96,10 +96,10 @@ class IncomePurchaseDetailFragment : BaseListFragment<DetailBean, IncomeDetailPr
         } else {
             NumberUtils.numberScale(itemData.price)
         }
-        viewHolder?.itemView?.tv_status?.text = if (itemData == null) {
-            "--"
+        viewHolder?.itemView?.tv_note?.text = if (itemData?.order_no.isNullOrBlank()) {
+            ""
         } else {
-            NumberUtils.numberScale(itemData.order_no)
+            itemData?.order_no
         }
         viewHolder?.itemView?.tv_date?.text = if (itemData == null) {
             "--"
