@@ -134,6 +134,16 @@ class ConfirmOrderActivity : BaseActivity<CreateOrderPresenter?>(), CreateOrderC
             }
 
         }
+        if (address == null && mAddress != null) {
+            if (!addressData.isNullOrEmpty()) {
+                addressData.forEach { addressBean ->
+                    if (addressBean != null && !addressBean.id.isNullOrBlank()) {
+                        address = addressBean
+                        return@forEach
+                    }
+                }
+            }
+        }
         bindCheckedAddress(address)
     }
 
