@@ -39,6 +39,6 @@ interface CreateOrderContract {
         fun startWechatPay()
         fun onSubmitOrderSuccess()
 
-        fun bindDefAddress(address: AddressBean?)
+        fun bindDefAddress(addressData: List<AddressBean?>?)
     }
 }

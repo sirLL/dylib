@@ -43,6 +43,7 @@ class ConfirmOrderActivity : BaseActivity<CreateOrderPresenter?>(), CreateOrderC
     companion object {
         const val RC_ADDRESS_PICKER = 1021
         const val RC_ADDRESS_EDIT = 1022
+        const val RC_ADDRESS_ADD = 1023
 
         fun openConfirmOrderActivity(
             context: Context,
@@ -86,13 +87,21 @@ class ConfirmOrderActivity : BaseActivity<CreateOrderPresenter?>(), CreateOrderC
             showPayTypePicker()
         }
         ll_add_address_container.setOnClickListener {
-            startActivity(Intent(ConfirmOrderActivity@ this, AddShipAddressActivity::class.java))
+            AddShipAddressActivity.openAddShipAddressActivity(
+                ConfirmOrderActivity@ this, null,
+                RC_ADDRESS_ADD
+            )
         }
         cl_address_container.setOnClickListener {
             AddressManagerActivity.openAddressManagerActivity(this, RC_ADDRESS_PICKER)
         }
-        fetchAddress()
+
         loadProduct()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        fetchAddress()
     }
 
     private fun setSubmitEnable() {
@@ -107,7 +116,24 @@ class ConfirmOrderActivity : BaseActivity<CreateOrderPresenter?>(), CreateOrderC
         mPresenter?.fetchAddress()
     }
 
-    override fun bindDefAddress(address: AddressBean?) {
+    override fun bindDefAddress(addressData: List<AddressBean?>?) {
+        var address: AddressBean? = null
+        if (!addressData.isNullOrEmpty()) {
+            addressData.forEach { addressBean ->
+                if (mAddress == null || TextUtils.isEmpty(mAddress?.id)) {
+                    if (addressBean != null && !addressBean.id.isNullOrBlank()) {
+                        address = addressBean
+                        return@forEach
+                    }
+                } else {
+                    if (addressBean != null && !addressBean.id.isNullOrBlank() && addressBean.id == mAddress?.id) {
+                        address = addressBean
+                        return@forEach
+                    }
+                }
+            }
+
+        }
         bindCheckedAddress(address)
     }
 
@@ -253,6 +279,10 @@ class ConfirmOrderActivity : BaseActivity<CreateOrderPresenter?>(), CreateOrderC
                 RC_ADDRESS_PICKER -> {
                     val address = data?.extras?.getParcelable<AddressBean>("address")
                     bindCheckedAddress(address)
+                }
+
+                RC_ADDRESS_ADD -> {
+                    mPresenter?.fetchAddress()
                 }
             }
         }

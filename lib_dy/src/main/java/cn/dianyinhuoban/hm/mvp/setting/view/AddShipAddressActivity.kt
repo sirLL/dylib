@@ -156,7 +156,12 @@ class AddShipAddressActivity : BaseActivity<AddShipAddressPresenter?>(),
 
         picker.contentView.setBackgroundColor(Color.TRANSPARENT)
         picker.bodyView.setBackgroundColor(Color.WHITE)
-        picker.topLineView.setBackgroundColor(ContextCompat.getColor(this, R.color.dy_color_divider))
+        picker.topLineView.setBackgroundColor(
+            ContextCompat.getColor(
+                this,
+                R.color.dy_color_divider
+            )
+        )
         picker.headerView.setBackgroundResource(R.drawable.dy_shape_ffffff_radius_top_6)
         picker.show()
     }
@@ -191,14 +196,27 @@ class AddShipAddressActivity : BaseActivity<AddShipAddressPresenter?>(),
         val name = ed_name.text.toString()
         val phone = ed_phone.text.toString()
         val address = ed_address.text.toString()
+        val area = tv_city.text.toString()
+
+        var provinceID = ""
+        var cityID = ""
+        var districtID = ""
+        if (mProvince != null) {
+            provinceID = mProvince?.code ?: ""
+            cityID = mCity?.code ?: ""
+            districtID = mDistrict?.code ?: ""
+        } else if (mAddress != null) {
+            provinceID = mAddress?.provinceId ?: ""
+            cityID = mAddress?.cityId ?: ""
+            districtID = mAddress?.districtId ?: ""
+        }
+
         mPresenter?.submitShipAddress(
             name,
-            mProvince?.code ?: "",
-            mCity?.code ?: "",
-            mDistrict?.code ?: "",
-            mProvince?.name ?: "",
-            mCity?.name ?: "",
-            mDistrict?.name ?: "",
+            provinceID,
+            cityID,
+            districtID,
+            area,
             address,
             phone,
             mAddress?.id ?: ""

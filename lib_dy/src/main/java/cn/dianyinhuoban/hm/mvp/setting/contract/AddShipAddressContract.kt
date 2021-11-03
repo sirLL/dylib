@@ -27,9 +27,7 @@ interface AddShipAddressContract {
             provinceId: String,
             cityId: String,
             districtId: String,
-            province: String,
-            city: String,
-            district: String,
+            area: String,
             address: String,
             phone: String,
             id: String
