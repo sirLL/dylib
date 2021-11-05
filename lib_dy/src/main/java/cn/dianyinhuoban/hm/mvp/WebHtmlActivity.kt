@@ -41,6 +41,11 @@ class WebHtmlActivity : BaseActivity<IPresenter?>() {
         setContentView(R.layout.dy_activity_web_html)
         setTitle(mTitle ?: "")
         web_view.settings.javaScriptEnabled = true
+        web_view.settings.allowFileAccess = true
+        web_view.settings.javaScriptCanOpenWindowsAutomatically = true
+        web_view.settings.useWideViewPort = true
+        web_view.settings.loadWithOverviewMode = true
+        web_view.settings.databaseEnabled = true
         web_view.loadDataWithBaseURL(
             null,
             getHtmlData(getURLDecoderString(mContent) ?: "") ?: "",
