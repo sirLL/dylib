@@ -10,6 +10,4 @@ public class MyApp extends Application {
         super.onCreate();
         DYHelper.init(this);
     }
-
-
 }
