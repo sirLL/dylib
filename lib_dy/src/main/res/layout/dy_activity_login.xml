@@ -42,16 +42,23 @@
         android:layout_height="52dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:background="@drawable/dy_shape_fbfafb_radius_6"
+        android:background="@android:color/transparent"
+        android:drawableStart="@drawable/dy_ic_phone_login"
+        android:drawablePadding="20dp"
         android:gravity="center_vertical"
         android:hint="输入您的手机号"
         android:inputType="phone"
         android:maxLines="1"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
         android:textColor="@color/color_333333"
         android:textColorHint="@color/color_d8d8d8"
         android:textSize="14sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@color/color_999999" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -59,7 +66,6 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="30dp"
-        android:background="@drawable/dy_shape_fbfafb_radius_6"
         android:orientation="horizontal">
 
         <EditText
@@ -68,10 +74,11 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@android:color/transparent"
+            android:drawableStart="@drawable/dy_ic_pwd_login"
+            android:drawablePadding="20dp"
             android:hint="输入您的密码"
             android:inputType="textPassword"
             android:maxLines="1"
-            android:paddingStart="20dp"
             android:textColor="@color/color_333333"
             android:textColorHint="@color/color_d8d8d8"
             android:textSize="14sp" />
@@ -83,21 +90,15 @@
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
             android:scaleType="centerInside"
-            android:src="@drawable/dy_selector_eye_pwd" />
+            android:src="@drawable/dy_selector_eye_pwd_login" />
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="110" />
-
-    <Button
-        android:id="@+id/btn_submit"
-        style="@style/SubmitButton"
+        android:layout_height="1px"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:enabled="false"
-        android:text="登录" />
+        android:background="@color/color_999999" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -126,6 +127,21 @@
             android:textColor="@color/color_999999"
             android:textSize="14sp" />
     </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+        android:minHeight="40dp" />
+
+    <Button
+        android:id="@+id/btn_submit"
+        style="@style/SubmitButton"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/dy_selector_button_enable_radius_30"
+        android:enabled="false"
+        android:text="登录" />
 
     <View
         android:layout_width="match_parent"

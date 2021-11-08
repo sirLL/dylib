@@ -109,11 +109,11 @@ class HomeFragment : BaseFragment<HomePresenter?>(), OnRefreshListener, HomeCont
             bindTeamIncomeData()
         }
 
-        tv_team_name.setOnClickListener {
-            if (MMKVUtil.getIsTeamLeader()) {
-                EditInfoActivity.open(this, RC_EDIT_TEAM_NAME, EditInfoActivity.REQ_TYPE_TEAM)
-            }
-        }
+//        tv_team_name.setOnClickListener {
+//            if (MMKVUtil.getIsTeamLeader()) {
+//                EditInfoActivity.open(this, RC_EDIT_TEAM_NAME, EditInfoActivity.REQ_TYPE_TEAM)
+//            }
+//        }
 
         cl_income_personal_container.setOnClickListener {
             startActivity(Intent(context, IncomePersonalDetailActivity::class.java))
@@ -255,10 +255,8 @@ class HomeFragment : BaseFragment<HomePresenter?>(), OnRefreshListener, HomeCont
 
         val teamName = if (!TextUtils.isEmpty(mHomeDataBean?.userInfo?.teamName)) {
             mHomeDataBean?.userInfo?.teamName
-        } else if (!TextUtils.isEmpty(MMKVUtil.getNick())) {
-            "${MMKVUtil.getNick()}的团队"
-        } else {
-            "${MMKVUtil.getUserName()}的团队"
+        }  else {
+            "--的团队"
         }
         tv_team_name.text = teamName
         tv_amount_title_team.text = if (tv_tab_week_team.isSelected) {
@@ -374,22 +372,22 @@ class HomeFragment : BaseFragment<HomePresenter?>(), OnRefreshListener, HomeCont
 
     override fun bindPersonalData(personalBean: PersonalBean?) {
         MMKVUtil.saveIsTeamLeader(personalBean?.isTeamLeader == 2)
-        if (personalBean?.isTeamLeader == 2) {
-            //当前用户是团队长
-            tv_team_name.setCompoundDrawablesRelativeWithIntrinsicBounds(
-                null,
-                null,
-                ContextCompat.getDrawable(requireContext(), R.drawable.dy_ic_home_item_edit),
-                null
-            )
-        } else {
-            tv_team_name.setCompoundDrawablesRelativeWithIntrinsicBounds(
-                null,
-                null,
-                null,
-                null
-            )
-        }
+//        if (personalBean?.isTeamLeader == 2) {
+//            //当前用户是团队长
+//            tv_team_name.setCompoundDrawablesRelativeWithIntrinsicBounds(
+//                null,
+//                null,
+//                ContextCompat.getDrawable(requireContext(), R.drawable.dy_ic_home_item_edit),
+//                null
+//            )
+//        } else {
+//            tv_team_name.setCompoundDrawablesRelativeWithIntrinsicBounds(
+//                null,
+//                null,
+//                null,
+//                null
+//            )
+//        }
     }
 
     override fun onDestroyView() {

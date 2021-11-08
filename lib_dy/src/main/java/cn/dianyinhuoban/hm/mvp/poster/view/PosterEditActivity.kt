@@ -24,6 +24,7 @@ import com.tbruyelle.rxpermissions2.RxPermissions
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.BitmapUtils
+import com.wareroom.lib_base.utils.DateTimeUtils
 import com.wareroom.lib_base.utils.cache.MMKVUtil
 import io.reactivex.Observable
 import io.reactivex.Observer
@@ -103,6 +104,14 @@ class PosterEditActivity : BaseActivity<IPresenter?>() {
             }
         }
 
+        cb_show_date.setOnCheckedChangeListener { _, isChecked ->
+            cl_date_container.visibility = if (isChecked) {
+                View.VISIBLE
+            } else {
+                View.GONE
+            }
+        }
+
         tv_save.setOnClickListener {
             saveView(cl_share_container, ACTION_SAVE_IMG)
         }
@@ -142,6 +151,11 @@ class PosterEditActivity : BaseActivity<IPresenter?>() {
         }
         tv_name.text = "姓名:${name}"
         tv_invite_code.text = "推荐码:${MMKVUtil.getInviteCode()}"
+
+        tv_date.text = DateTimeUtils.formatDate(
+            Calendar.getInstance().timeInMillis,
+            DateTimeUtils.PATTERN_YYYY_MM_DD_CHAR
+        )
     }
 
     override fun getPresenter(): IPresenter? {

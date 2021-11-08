@@ -97,6 +97,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/view_4" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_test"
+        android:text="这是电银管家APP的页面，\n输入账号密码，先登录电银泓盟，\n判断是否是泓盟用户\n若是泓盟用户，跳转由SDK处理，\n若不是则走管家APP原有逻辑" />
+
     <View
         android:id="@+id/view_5"
         android:layout_width="0dp"

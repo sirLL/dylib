@@ -181,7 +181,7 @@ class MeFragment : BaseFragment<MePresenter?>(), MeContract.View {
             tv_amount_purchase.text = NumberUtils.formatMoney(it.purchase)
             //团队名称
             tv_team_name.text = if (TextUtils.isEmpty(it.teamName)) {
-                "${it.username})的团队"
+                "--的团队"
             } else {
                 it.teamName
             }

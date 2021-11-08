@@ -72,7 +72,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView1"
-        tools:drawableEnd="@drawable/dy_ic_home_item_edit"
         tools:text="天霸动霸战队" />
 
     <androidx.constraintlayout.widget.ConstraintLayout

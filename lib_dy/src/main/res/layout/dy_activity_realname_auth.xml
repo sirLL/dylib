@@ -129,7 +129,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="上传国徽面"
+                    android:text="上传人像面"
                     android:textColor="@color/color_d8d8d8"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -137,7 +137,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/iv_positive"
+                    android:id="@+id/iv_negative"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:scaleType="centerInside"
@@ -160,7 +160,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="上传人像面"
+                    android:text="上传国徽面"
                     android:textColor="@color/color_d8d8d8"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -168,7 +168,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/iv_negative"
+                    android:id="@+id/iv_positive"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:scaleType="centerInside"
@@ -178,6 +178,8 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

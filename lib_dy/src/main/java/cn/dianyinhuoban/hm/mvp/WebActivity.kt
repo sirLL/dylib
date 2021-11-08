@@ -4,12 +4,14 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import cn.dianyinhuoban.hm.R
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
+import com.wareroom.lib_base.utils.cache.MMKVUtil
 import kotlinx.android.synthetic.main.dy_activity_web_html.*
 
 class WebActivity : BaseActivity<IPresenter?>() {
@@ -31,6 +33,22 @@ class WebActivity : BaseActivity<IPresenter?>() {
         super.handleIntent(bundle)
         mTitle = bundle?.getString("title", "")
         mUrl = bundle?.getString("url", "")
+        if (!mUrl.isNullOrBlank()) {
+            val builder = StringBuilder(mUrl!!)
+            if (builder.contains("?")) {
+                if (builder.endsWith("&") || builder.endsWith("?")) {
+                    builder.append("token=")
+                    builder.append(MMKVUtil.getToken())
+                } else {
+                    builder.append("&token=")
+                    builder.append(MMKVUtil.getToken())
+                }
+            } else {
+                builder.append("?token=")
+                builder.append(MMKVUtil.getToken())
+            }
+            mUrl = builder.toString()
+        }
     }
 
     override fun getPresenter(): IPresenter? {
@@ -42,7 +60,7 @@ class WebActivity : BaseActivity<IPresenter?>() {
         setContentView(R.layout.dy_activity_web_html)
         setTitle(mTitle ?: "")
         web_view.settings.javaScriptEnabled = true
-        web_view.settings.domStorageEnabled=true
+        web_view.settings.domStorageEnabled = true
         web_view.settings.allowFileAccess = true
         web_view.settings.setAppCacheEnabled(true)
 //        web_view.settings.javaScriptCanOpenWindowsAutomatically = true
@@ -50,7 +68,7 @@ class WebActivity : BaseActivity<IPresenter?>() {
         web_view.settings.loadWithOverviewMode = true
         web_view.settings.databaseEnabled = true
         web_view.loadUrl(mUrl ?: "")
-        web_view.webViewClient=object : WebViewClient() {
+        web_view.webViewClient = object : WebViewClient() {
             override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
                 super.onPageStarted(view, url, favicon)
 
