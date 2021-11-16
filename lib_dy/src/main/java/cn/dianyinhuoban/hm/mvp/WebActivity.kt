@@ -4,22 +4,26 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
-import android.text.TextUtils
 import android.util.Log
-import android.webkit.WebView
-import android.webkit.WebViewClient
 import cn.dianyinhuoban.hm.R
+import com.tencent.smtt.export.external.TbsCoreSettings
+import com.tencent.smtt.sdk.QbSdk
+import com.tencent.smtt.sdk.WebView
+import com.tencent.smtt.sdk.WebViewClient
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
 import com.wareroom.lib_base.utils.cache.MMKVUtil
 import kotlinx.android.synthetic.main.dy_activity_web_html.*
 
 class WebActivity : BaseActivity<IPresenter?>() {
+
     var mUrl: String? = null
     var mTitle: String? = null
 
     companion object {
+        const val TAG = "WebActivity"
         fun openWebActivity(context: Context, title: String, url: String) {
+            if (url.isNullOrBlank()) return
             val intent = Intent(context, WebActivity::class.java)
             val bundle = Bundle()
             bundle.putString("title", title)
@@ -56,6 +60,9 @@ class WebActivity : BaseActivity<IPresenter?>() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val map = mapOf(TbsCoreSettings.TBS_SETTINGS_USE_SPEEDY_CLASSLOADER to true,
+            TbsCoreSettings.TBS_SETTINGS_USE_DEXLOADER_SERVICE to true)
+        QbSdk.initTbsSettings(map)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dy_activity_web_html)
         setTitle(mTitle ?: "")
@@ -71,14 +78,16 @@ class WebActivity : BaseActivity<IPresenter?>() {
         web_view.webViewClient = object : WebViewClient() {
             override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
                 super.onPageStarted(view, url, favicon)
-
+                Log.d(TAG, "onPageStarted: $url")
             }
 
             override fun onPageFinished(view: WebView?, url: String?) {
                 super.onPageFinished(view, url)
+                Log.d(TAG, "onPageFinished: $url")
             }
 
         }
+
     }
 
     override fun onBackPressed() {

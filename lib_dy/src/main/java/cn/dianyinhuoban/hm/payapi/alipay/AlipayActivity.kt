@@ -2,17 +2,19 @@ package cn.dianyinhuoban.hm.payapi.alipay
 
 import android.app.AlertDialog
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
-import android.webkit.WebView
-import android.webkit.WebViewClient
 import cn.dianyinhuoban.hm.R
+import com.tencent.smtt.export.external.TbsCoreSettings
+import com.tencent.smtt.sdk.QbSdk
+import com.tencent.smtt.sdk.WebView
+import com.tencent.smtt.sdk.WebViewClient
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
 import kotlinx.android.synthetic.main.dy_activity_web_html.*
+
 
 class AlipayActivity : BaseActivity<IPresenter?>() {
     var mContent: String? = null
@@ -44,6 +46,9 @@ class AlipayActivity : BaseActivity<IPresenter?>() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val map = mapOf(TbsCoreSettings.TBS_SETTINGS_USE_SPEEDY_CLASSLOADER to true,
+            TbsCoreSettings.TBS_SETTINGS_USE_DEXLOADER_SERVICE to true)
+        QbSdk.initTbsSettings(map)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dy_activity_web_html)
         setTitle(mTitle ?: "")

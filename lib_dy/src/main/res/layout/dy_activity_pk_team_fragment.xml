@@ -382,6 +382,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="激活量/元"
+                            android:visibility="gone"
                             android:textColor="@color/color_333333"
                             android:textStyle="bold" />
 

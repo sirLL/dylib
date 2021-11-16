@@ -5,6 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Html
 import cn.dianyinhuoban.hm.R
+import com.tencent.smtt.export.external.TbsCoreSettings
+import com.tencent.smtt.sdk.QbSdk
 import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseActivity
 import kotlinx.android.synthetic.main.dy_activity_web_html.*
@@ -17,6 +19,7 @@ class WebHtmlActivity : BaseActivity<IPresenter?>() {
 
     companion object {
         fun openWebHtmlActivity(context: Context, title: String, content: String) {
+            if (content.isNullOrBlank()) return
             val intent = Intent(context, WebHtmlActivity::class.java)
             val bundle = Bundle()
             bundle.putString("title", title)
@@ -37,6 +40,9 @@ class WebHtmlActivity : BaseActivity<IPresenter?>() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val map = mapOf(TbsCoreSettings.TBS_SETTINGS_USE_SPEEDY_CLASSLOADER to true,
+            TbsCoreSettings.TBS_SETTINGS_USE_DEXLOADER_SERVICE to true)
+        QbSdk.initTbsSettings(map)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dy_activity_web_html)
         setTitle(mTitle ?: "")

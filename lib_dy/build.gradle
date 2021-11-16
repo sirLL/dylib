@@ -11,8 +11,8 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
-        versionCode 100210
-        versionName "1.2.10"
+        versionCode 100211
+        versionName "1.2.11"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -118,11 +118,13 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.9.0'
 
     implementation 'com.qiyukf.unicorn:unicorn:6.6.0'
+
+    implementation 'com.tencent.tbs:tbssdk:44115'
 }
 
 ext {
     PUBLISH_GROUP_ID = "io.github.sirll"        //项目包名
     PUBLISH_ARTIFACT_ID = 'lib_dy'            //项目名
-    PUBLISH_VERSION = "1.2.10"                   //版本号
+    PUBLISH_VERSION = "1.2.11"                   //版本号
 }
 apply from: '../publish-mavencentral.gradle'
