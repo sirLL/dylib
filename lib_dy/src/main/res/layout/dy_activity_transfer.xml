@@ -353,9 +353,11 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginEnd="10dp"
                             android:layout_weight="1"
+                            android:gravity="center_vertical"
                             android:maxLines="1"
                             android:textColor="@color/color_333333"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            tools:text="8899777878787878787" />
 
                     </LinearLayout>
 
@@ -391,9 +393,11 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginEnd="10dp"
                             android:layout_weight="1"
+                            android:gravity="center_vertical"
                             android:maxLines="1"
                             android:textColor="@color/color_333333"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            tools:text="8899777878787878787" />
 
                     </LinearLayout>
 

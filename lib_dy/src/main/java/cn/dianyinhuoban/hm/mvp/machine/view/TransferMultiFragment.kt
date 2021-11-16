@@ -184,7 +184,7 @@ class TransferMultiFragment : BaseListFragment<MachineItemBean?, MachineQueryPre
         if (TextUtils.isEmpty(startSN) || TextUtils.isEmpty(endSN) || mMachineType == null) {
             loadData(null)
         } else {
-            mPresenter?.fetchMachine(mMachineType?.id ?: "", "", "${startSN},${endSN}", page)
+            mPresenter?.fetchMachine(mMachineType?.id ?: "", "1", "${startSN},${endSN}", page)
         }
     }
 
@@ -250,6 +250,10 @@ class TransferMultiFragment : BaseListFragment<MachineItemBean?, MachineQueryPre
     override fun bindMachineBySN(data: MyMachineBean?, requestCode: Int) {
         if (data?.data == null || data?.data?.size == 0 || data?.data[0] == null) {
             showToast("编码无效")
+            return
+        }
+        if ("1" != data.data[0].act_status) {
+            showToast("该机具已激活")
             return
         }
         if (requestCode == RC_SCAN_START_MACHINE) {

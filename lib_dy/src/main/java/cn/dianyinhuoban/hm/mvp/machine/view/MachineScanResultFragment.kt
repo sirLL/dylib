@@ -130,13 +130,16 @@ class MachineScanResultFragment : BaseListFragment<MachineItemBean, MachineQuery
         if (data?.data == null || data?.data?.isEmpty()) {
             showToast("编码无效")
             return
+        } else if ("1" != data.data[0].act_status) {
+            showToast("该机具已激活")
+            return
         } else {
             mAdapter?.appendData(data?.data)
         }
-       setSubmitEnable()
+        setSubmitEnable()
     }
 
-    private fun setSubmitEnable(){
+    private fun setSubmitEnable() {
         btn_submit.isEnabled = mAdapter?.data != null && mAdapter?.data?.size!! > 0
     }
 

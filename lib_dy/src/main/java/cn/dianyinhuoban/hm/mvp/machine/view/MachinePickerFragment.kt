@@ -131,7 +131,7 @@ class MachinePickerFragment : BaseListFragment<MachineItemBean?, MachineQueryPre
     }
 
     override fun onRequest(page: Int) {
-        mPresenter?.fetchMachine(mMachineType?.id ?: "", "", "", page)
+        mPresenter?.fetchMachine(mMachineType?.id ?: "", "1", "", page)
     }
 
     override fun getItemLayout(): Int {
