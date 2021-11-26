@@ -184,6 +184,12 @@ interface URLConfig {
 
         //提现手续费
         const val URL_WITHDRAW_FEE = "user_cashFee.html"
+
+        //团队成员新版
+        const val URL_MY_TEAM = "user_myTeamNew.html"
+
+        //会员等级
+        const val URL_MEMBER_LEVEL_LIST = "user_memberGroup.html"
     }
 
 }

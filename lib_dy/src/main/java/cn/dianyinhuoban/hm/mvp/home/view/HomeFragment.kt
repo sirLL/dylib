@@ -37,6 +37,7 @@ import kotlinx.android.synthetic.main.dy_item_home_personal_income.*
 import kotlinx.android.synthetic.main.dy_item_home_pk_personal.*
 import kotlinx.android.synthetic.main.dy_item_home_pk_team.*
 import kotlinx.android.synthetic.main.dy_item_home_team_income.*
+import java.math.BigDecimal
 import java.util.*
 
 class HomeFragment : BaseFragment<HomePresenter?>(), OnRefreshListener, HomeContract.View {
@@ -79,32 +80,32 @@ class HomeFragment : BaseFragment<HomePresenter?>(), OnRefreshListener, HomeCont
         iv_message.setOnClickListener {
             startActivity(Intent(context, MessageActivity::class.java))
         }
-        tv_tab_month.isSelected = true
-        tv_tab_week.setOnClickListener {
-            if (tv_tab_week.isSelected) return@setOnClickListener
-            tv_tab_week.isSelected = true
+        tv_tab_day.isSelected = true
+        tv_tab_day.setOnClickListener {
+            if (tv_tab_day.isSelected) return@setOnClickListener
+            tv_tab_day.isSelected = true
             tv_tab_month.isSelected = false
             bindPersonalIncomeData()
         }
 
         tv_tab_month.setOnClickListener {
             if (tv_tab_month.isSelected) return@setOnClickListener
-            tv_tab_week.isSelected = false
+            tv_tab_day.isSelected = false
             tv_tab_month.isSelected = true
             bindPersonalIncomeData()
         }
 
-        tv_tab_month_team.isSelected = true
-        tv_tab_week_team.setOnClickListener {
-            if (tv_tab_week_team.isSelected) return@setOnClickListener
-            tv_tab_week_team.isSelected = true
+        tv_tab_day_team.isSelected = true
+        tv_tab_day_team.setOnClickListener {
+            if (tv_tab_day_team.isSelected) return@setOnClickListener
+            tv_tab_day_team.isSelected = true
             tv_tab_month_team.isSelected = false
             bindTeamIncomeData()
         }
 
         tv_tab_month_team.setOnClickListener {
             if (tv_tab_month_team.isSelected) return@setOnClickListener
-            tv_tab_week_team.isSelected = false
+            tv_tab_day_team.isSelected = false
             tv_tab_month_team.isSelected = true
             bindTeamIncomeData()
         }
@@ -217,57 +218,67 @@ class HomeFragment : BaseFragment<HomePresenter?>(), OnRefreshListener, HomeCont
     //个人收益
     private fun bindPersonalIncomeData() {
         refresh_layout.finishRefresh()
-        val weekMonth = if (tv_tab_week.isSelected) {
-            mHomeDataBean?.personal?.week
+        val dayMonth = if (tv_tab_day.isSelected) {
+            mHomeDataBean?.personal?.day
         } else {
             mHomeDataBean?.personal?.month
         }
 
-        tv_amount_title.text = if (tv_tab_week.isSelected) {
-            "个人本周总交易量/元"
+        tv_amount_title.text = if (tv_tab_day.isSelected) {
+            "个人今日总交易量/元"
         } else {
             "个人本月总交易量/元"
         }
-        tv_amount.text = NumberUtils.numberScale(weekMonth?.total)
-        tv_no.text = if (TextUtils.isEmpty(weekMonth?.rank) || "0" == weekMonth?.rank) {
+        tv_amount.text = NumberUtils.numberScale(dayMonth?.total)
+        tv_no.text = if (TextUtils.isEmpty(dayMonth?.rank) || "0" == dayMonth?.rank) {
             "未上榜"
         } else {
-            "No.${weekMonth?.rank}"
+            "No.${dayMonth?.rank}"
         }
-        if (TextUtils.isEmpty(weekMonth?.rank) || "0" == weekMonth?.rank) {
+        if (TextUtils.isEmpty(dayMonth?.rank) || "0" == dayMonth?.rank) {
             tv_no.setTextColor(ContextCompat.getColor(requireContext(), R.color.color_c50018))
         } else {
             tv_no.setTextColor(ContextCompat.getColor(requireContext(), R.color.color_333333))
         }
-
-        tv_machine_amount.text = NumberUtils.numberScale(weekMonth?.machineTrans)
-        tv_activation_amount.text = NumberUtils.numberScale(weekMonth?.activeTrans)
+        tv_income_title.text = if (tv_tab_day.isSelected) {
+            "今日收益/元"
+        } else {
+            "本月收益/元"
+        }
+        tv_machine_amount.text = NumberUtils.numberScale(dayMonth?.inCome)
+        tv_activation_amount.text = NumberUtils.numberScale(dayMonth?.activeTrans)
     }
 
     //团队收益
     private fun bindTeamIncomeData() {
-
-        val weekMonth = if (tv_tab_week_team.isSelected) {
-            mHomeDataBean?.team?.week
+        val weekMonth = if (tv_tab_day_team.isSelected) {
+            mHomeDataBean?.team?.day
         } else {
             mHomeDataBean?.team?.month
         }
 
         val teamName = if (!TextUtils.isEmpty(mHomeDataBean?.userInfo?.teamName)) {
             mHomeDataBean?.userInfo?.teamName
-        }  else {
+        } else {
             "--的团队"
         }
         tv_team_name.text = teamName
-        tv_amount_title_team.text = if (tv_tab_week_team.isSelected) {
-            "团队本周总交易量/元"
+        tv_amount_title_team.text = if (tv_tab_day_team.isSelected) {
+            "团队今日总交易量/元"
         } else {
-            Log.d("OOO", "bindTeamIncomeData: 本月")
             "团队本月总交易量/元"
         }
         tv_amount_team.text = NumberUtils.numberScale(weekMonth?.total)
-        tv_activation_amount_team.text = NumberUtils.numberScale(weekMonth?.activeTrans)
-        tv_machine_amount_team.text = NumberUtils.numberScale(weekMonth?.machineTrans)
+        tv_activation_amount_team.text = if (weekMonth?.activeMachine.isNullOrBlank()) {
+            "0"
+        } else {
+            NumberUtils.numberScale(
+                weekMonth?.activeMachine?.toDouble() ?: 0.0,
+                BigDecimal.ROUND_DOWN,
+                0
+            )
+        }
+        tv_machine_amount_team.text = NumberUtils.numberScale(weekMonth?.inCome)
         tv_no_team.text = if (TextUtils.isEmpty(weekMonth?.rank) || "0" == weekMonth?.rank) {
             "未上榜"
         } else {
@@ -298,12 +309,12 @@ class HomeFragment : BaseFragment<HomePresenter?>(), OnRefreshListener, HomeCont
         }
         tv_left_no.text = "当前排名:${mHomeDataBean?.personalRank?.rank ?: "--"}名"
         tv_left_activation_amount.text =
-            "激活额/元:${NumberUtils.numberScale(mHomeDataBean?.personalRank?.activeTrans)}"
+            "激活量/台:${mHomeDataBean?.personalRank?.activeTrans ?: "--"}"
 
         tv_right_name.text = mHomeDataBean?.personalPK?.name
         tv_right_no.text = "当前排名:${mHomeDataBean?.personalPK?.rank ?: "--"}名"
         tv_right_activation_amount.text =
-            "激活额/元:${NumberUtils.numberScale(mHomeDataBean?.personalPK?.activeTrans)}"
+            "激活量/台:${mHomeDataBean?.personalPK?.activeTrans ?: "--"}"
     }
 
     //团队PK
@@ -327,12 +338,12 @@ class HomeFragment : BaseFragment<HomePresenter?>(), OnRefreshListener, HomeCont
         }
         tv_left_no_team.text = "当前排名:${mHomeDataBean?.teamRank?.rank ?: "--"}名"
         tv_left_activation_amount_team.text =
-            "激活额/元:${NumberUtils.numberScale(mHomeDataBean?.teamRank?.activeTrans)}"
+            "激活量/台:${mHomeDataBean?.teamRank?.activeTrans ?: "--"}"
 
         tv_right_name_team.text = mHomeDataBean?.teamPK?.name
         tv_right_no_team.text = "当前排名:${mHomeDataBean?.teamPK?.rank ?: "--"}名"
         tv_right_activation_amount_team.text =
-            "激活额/元:${NumberUtils.numberScale(mHomeDataBean?.teamPK?.activeTrans)}"
+            "激活量/台:${mHomeDataBean?.teamPK?.activeTrans ?: "--"}"
     }
 
     var mNoticeData: List<CustomModel>? = null

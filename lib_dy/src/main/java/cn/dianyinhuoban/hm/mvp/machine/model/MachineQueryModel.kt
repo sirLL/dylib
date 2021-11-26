@@ -18,9 +18,10 @@ class MachineQueryModel : BaseModel(), MachineQueryContract.Model {
         type: String,
         status: String,
         sn: String,
+        backMoney: String,
         page: Int
     ): Observable<Response<MyMachineBean?>> {
         return mRetrofit.create(ApiService::class.java)
-            .fetchMyMachine(type, status, sn, page)
+            .fetchMyMachine(type, status, sn, backMoney, page)
     }
 }

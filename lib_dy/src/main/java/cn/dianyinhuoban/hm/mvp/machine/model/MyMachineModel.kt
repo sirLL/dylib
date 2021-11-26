@@ -15,7 +15,7 @@ class MyMachineModel : BaseModel(), MyMachineContract.Model {
         sn: String,
         page: Int
     ): Observable<Response<MyMachineBean?>> {
-        return mRetrofit.create(ApiService::class.java).fetchMyMachine(type, status, sn, page)
+        return mRetrofit.create(ApiService::class.java).fetchMyMachine(type, status, sn, "", page)
     }
 
     override fun fetchTeamMachine(

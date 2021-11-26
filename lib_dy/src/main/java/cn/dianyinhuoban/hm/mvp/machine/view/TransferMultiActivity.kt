@@ -12,16 +12,19 @@ import com.wareroom.lib_base.ui.BaseActivity
 class TransferMultiActivity : BaseActivity<IPresenter?>() {
 
     var mMachineType: MachineTypeBean? = null
+    var mCashBackAmount: Double = 0.0
 
     companion object {
         fun openTransferMultiActivity(
             activity: Activity,
             machineType: MachineTypeBean?,
+            cashBackAmount: String?,
             requestCode: Int
         ) {
             val intent = Intent(activity, TransferMultiActivity::class.java)
             val bundle = Bundle()
             bundle.putParcelable("type", machineType)
+            bundle.putString("cashBackAmount", cashBackAmount)
             intent.putExtras(bundle)
             activity.startActivityForResult(intent, requestCode)
         }
@@ -29,11 +32,13 @@ class TransferMultiActivity : BaseActivity<IPresenter?>() {
         fun openTransferMultiActivity(
             fragment: Fragment,
             machineType: MachineTypeBean?,
+            cashBackAmount: String?,
             requestCode: Int
         ) {
             val intent = Intent(fragment.context, TransferMultiActivity::class.java)
             val bundle = Bundle()
             bundle.putParcelable("type", machineType)
+            bundle.putString("cashBackAmount", cashBackAmount)
             intent.putExtras(bundle)
             fragment.startActivityForResult(intent, requestCode)
         }
@@ -48,11 +53,17 @@ class TransferMultiActivity : BaseActivity<IPresenter?>() {
         setContentView(R.layout.dy_activity_transfer_multi)
         setTitle("批量划分")
         supportFragmentManager.beginTransaction()
-            .add(R.id.fl_container, TransferMultiFragment.newInstance(mMachineType)).commit()
+            .add(R.id.fl_container, TransferMultiFragment.newInstance(mMachineType, mCashBackAmount.toString())).commit()
     }
 
     override fun handleIntent(bundle: Bundle?) {
         super.handleIntent(bundle)
         mMachineType = bundle?.getParcelable("type")
+        val cashBackAmount = bundle?.getString("cashBackAmount", "0.0")
+        mCashBackAmount = if (cashBackAmount.isNullOrBlank()) {
+            0.0
+        } else {
+            cashBackAmount.toDouble()
+        }
     }
 }

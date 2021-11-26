@@ -21,6 +21,6 @@ class MachineManagerModel : BaseModel(), MachineManagerContract.Model {
         page: Int
     ): Observable<Response<MyMachineBean?>> {
         return mRetrofit.create(ApiService::class.java)
-            .fetchMyMachine(type, status, sn, page)
+            .fetchMyMachine(type, status, sn,"", page)
     }
 }

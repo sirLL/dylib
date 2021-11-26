@@ -20,6 +20,7 @@ import cn.dianyinhuoban.hm.mvp.machine.view.TransferActivity.Companion.PICKER_TY
 import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.DimensionUtils
+import com.wareroom.lib_base.utils.NumberUtils
 import com.wareroom.lib_base.widget.DividerDecoration
 import kotlinx.android.synthetic.main.dy_fragment_machine_picker.*
 import kotlinx.android.synthetic.main.dy_item_machine_picker.view.*
@@ -27,6 +28,7 @@ import kotlinx.android.synthetic.main.dy_item_machine_picker.view.*
 class MachinePickerFragment : BaseListFragment<MachineItemBean?, MachineQueryPresenter?>(),
     MachineQueryContract.View {
     private var mMachineType: MachineTypeBean? = null
+    private var mCashBackAmount: String? = null
     private val mCheckedIDList: MutableList<String> by lazy {
         mutableListOf()
     }
@@ -36,11 +38,13 @@ class MachinePickerFragment : BaseListFragment<MachineItemBean?, MachineQueryPre
         const val RC_MACHINE_MULTI = 1022
         fun newInstance(
             machineType: MachineTypeBean?,
-            checkedIDList: ArrayList<String>?
+            checkedIDList: ArrayList<String>?,
+            cashBackAmount: String?
         ): MachinePickerFragment {
             val args = Bundle()
             args.putParcelable("type", machineType)
             args.putStringArrayList("checkedIDList", checkedIDList)
+            args.putString("cashBackAmount", cashBackAmount)
             val fragment = MachinePickerFragment()
             fragment.arguments = args
             return fragment
@@ -70,6 +74,7 @@ class MachinePickerFragment : BaseListFragment<MachineItemBean?, MachineQueryPre
         savedInstanceState: Bundle?
     ): View? {
         mMachineType = arguments?.getParcelable("type")
+        mCashBackAmount = arguments?.getString("cashBackAmount", "0.0")
         val checkedIDList = arguments?.getStringArrayList("checkedIDList")
         checkedIDList?.let {
             for (id in it) {
@@ -93,12 +98,12 @@ class MachinePickerFragment : BaseListFragment<MachineItemBean?, MachineQueryPre
 
         fl_tab_scan.setOnClickListener {
             mMachineType?.let {
-                MachineScanResultActivity.openScanResultActivity(this, it, RC_SCAN_MACHINE_SN)
+                MachineScanResultActivity.openScanResultActivity(this, it, mCashBackAmount, RC_SCAN_MACHINE_SN)
             }
         }
 
         fl_tab_multi.setOnClickListener {
-            TransferMultiActivity.openTransferMultiActivity(this, mMachineType, RC_MACHINE_MULTI)
+            TransferMultiActivity.openTransferMultiActivity(this, mMachineType, mCashBackAmount, RC_MACHINE_MULTI)
         }
     }
 
@@ -131,7 +136,7 @@ class MachinePickerFragment : BaseListFragment<MachineItemBean?, MachineQueryPre
     }
 
     override fun onRequest(page: Int) {
-        mPresenter?.fetchMachine(mMachineType?.id ?: "", "1", "", page)
+        mPresenter?.fetchMachine(mMachineType?.id ?: "", "1", "", mCashBackAmount ?: "", page)
     }
 
     override fun getItemLayout(): Int {
@@ -143,12 +148,25 @@ class MachinePickerFragment : BaseListFragment<MachineItemBean?, MachineQueryPre
         position: Int,
         itemData: MachineItemBean?
     ) {
-        viewHolder?.itemView?.tv_title?.text = "${itemData?.name} ${itemData?.pos_sn}"
-        viewHolder?.itemView?.tv_status?.text = if ("1" == itemData?.isNew) {
-            "新机器"
+        val backMoney = if (itemData?.backMoney.isNullOrBlank()) {
+            0.0
         } else {
-            "返还机"
+            NumberUtils.numberScale(itemData?.backMoney).toDouble()
         }
+        viewHolder?.itemView?.tv_title?.text = "${itemData?.name} ${itemData?.pos_sn}"
+        viewHolder?.itemView?.tv_status?.text = "返现金额：${NumberUtils.formatMoney(backMoney)}"
+        val cashBackAmount = if (mCashBackAmount.isNullOrBlank()) {
+            0.0
+        } else {
+            mCashBackAmount!!.toDouble()
+        }
+        viewHolder?.itemView?.tv_status?.setTextColor(
+            if (cashBackAmount > backMoney) {
+                ContextCompat.getColor(requireContext(), R.color.color_ea2618)
+            } else {
+                ContextCompat.getColor(requireContext(), R.color.color_999999)
+            }
+        )
         viewHolder?.itemView?.iv_check_box?.isSelected = if (itemData == null) {
             false
         } else {
@@ -158,12 +176,24 @@ class MachinePickerFragment : BaseListFragment<MachineItemBean?, MachineQueryPre
 
     override fun onItemClick(data: MachineItemBean?, position: Int) {
         data?.let {
-            if (mCheckedIDList.contains(it.id)) {
-                mCheckedIDList.remove(it.id)
+            val cashBackAmount = if (mCashBackAmount.isNullOrBlank()) {
+                0.0
             } else {
-                mCheckedIDList.add(it.id)
+                mCashBackAmount!!.toDouble()
             }
-            mAdapter?.notifyItemChanged(position)
+            val backMoney = if (data?.backMoney.isNullOrBlank()) {
+                0.0
+            } else {
+                NumberUtils.numberScale(data?.backMoney).toDouble()
+            }
+            if (cashBackAmount <= backMoney) {
+                if (mCheckedIDList.contains(it.id)) {
+                    mCheckedIDList.remove(it.id)
+                } else {
+                    mCheckedIDList.add(it.id)
+                }
+                mAdapter?.notifyItemChanged(position)
+            }
         }
         setSubmitEnable()
     }
@@ -195,20 +225,25 @@ class MachinePickerFragment : BaseListFragment<MachineItemBean?, MachineQueryPre
                     setResult(checkedData, machineType)
                 }
                 RC_MACHINE_MULTI -> {
-                    val startSN = data?.extras?.getString("startSN")
-                    val endSN = data?.extras?.getString("endSN")
+//                    val startSN = data?.extras?.getString("startSN")
+//                    val endSN = data?.extras?.getString("endSN")
+//                    val machineType = data?.extras?.getParcelable<MachineTypeBean>("type")
+//                    val machineCount = data?.extras?.getInt("machineCount", 0)
+//                    val intent = Intent()
+//                    val bundle = Bundle()
+//                    bundle.putParcelable("type", machineType)
+//                    bundle.putString("startSN", startSN)
+//                    bundle.putString("endSN", endSN)
+//                    bundle.putString("pickerType", PICKER_TYPE_MULTI)
+//                    bundle.putInt("machineCount", machineCount ?: 0)
+//                    intent.putExtras(bundle)
+//                    activity?.setResult(Activity.RESULT_OK, intent)
+//                    activity?.finish()
+
+                    val checkedData =
+                        data?.extras?.getParcelableArrayList<MachineItemBean>("checkedData")
                     val machineType = data?.extras?.getParcelable<MachineTypeBean>("type")
-                    val machineCount = data?.extras?.getInt("machineCount", 0)
-                    val intent = Intent()
-                    val bundle = Bundle()
-                    bundle.putParcelable("type", machineType)
-                    bundle.putString("startSN", startSN)
-                    bundle.putString("endSN", endSN)
-                    bundle.putString("pickerType", PICKER_TYPE_MULTI)
-                    bundle.putInt("machineCount", machineCount ?: 0)
-                    intent.putExtras(bundle)
-                    activity?.setResult(Activity.RESULT_OK, intent)
-                    activity?.finish()
+                    setResult(checkedData, machineType)
                 }
             }
         }

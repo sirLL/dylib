@@ -40,10 +40,10 @@ class MachineQueryPresenter(view: MachineQueryContract.View) :
         }
     }
 
-    override fun fetchMachine(type: String, status: String, sn: String, page: Int) {
+    override fun fetchMachine(type: String, status: String, sn: String, backMoney: String, page: Int) {
         mModel?.let {
             addDispose(
-                it.fetchMachine(type, status, sn, page)
+                it.fetchMachine(type, status, sn, backMoney, page)
                     .compose(SchedulerProvider.getInstance().applySchedulers())
                     .compose(ResponseTransformer.handleResult())
                     .subscribeWith(object : CustomResourceSubscriber<MyMachineBean?>() {
@@ -62,16 +62,13 @@ class MachineQueryPresenter(view: MachineQueryContract.View) :
         }
     }
 
-    override fun fetchMachineBySN(
-        type: String, sn: String, page: Int,
-        requestCode: Int
-    ) {
+    override fun fetchMachineBySN(type: String, sn: String, backMoney: String, page: Int, requestCode: Int) {
         if (!isDestroy) {
             view?.showLoading(false)
         }
         mModel?.let {
             addDispose(
-                it.fetchMachine(type, "", sn, page)
+                it.fetchMachine(type, "", sn, backMoney, page)
                     .compose(SchedulerProvider.getInstance().applySchedulers())
                     .compose(ResponseTransformer.handleResult())
                     .subscribeWith(object : CustomResourceSubscriber<MyMachineBean?>() {

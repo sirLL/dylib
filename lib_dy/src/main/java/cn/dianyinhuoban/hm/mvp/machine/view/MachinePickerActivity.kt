@@ -19,12 +19,14 @@ class MachinePickerActivity : BaseActivity<IPresenter?>() {
             activity: Activity,
             machineType: MachineTypeBean,
             checkedIDList: ArrayList<String>,
+            cashBackAmount: String,
             requestCode: Int
         ) {
             val intent = Intent(activity, MachinePickerActivity::class.java)
             val bundle = Bundle()
             bundle.putParcelable("type", machineType)
             bundle.putStringArrayList("checkedIDList", checkedIDList)
+            bundle.putString("cashBackAmount", cashBackAmount)
             intent.putExtras(bundle)
             activity.startActivityForResult(intent, requestCode)
         }
@@ -33,12 +35,14 @@ class MachinePickerActivity : BaseActivity<IPresenter?>() {
             fragment: Fragment,
             machineType: MachineTypeBean,
             checkedIDList: ArrayList<String>,
+            cashBackAmount: String,
             requestCode: Int
         ) {
             val intent = Intent(fragment.requireContext(), MachinePickerActivity::class.java)
             val bundle = Bundle()
             bundle.putParcelable("type", machineType)
             bundle.putStringArrayList("checkedIDList", checkedIDList)
+            bundle.putString("cashBackAmount", cashBackAmount)
             intent.putExtras(bundle)
             fragment.startActivityForResult(intent, requestCode)
         }
@@ -50,8 +54,9 @@ class MachinePickerActivity : BaseActivity<IPresenter?>() {
         setTitle("机具选择")
         val machineType = intent?.extras?.getParcelable<MachineTypeBean>("type")
         val checkedIDList = intent.extras?.getStringArrayList("checkedIDList")
+        val cashBackAmount = intent?.extras?.getString("cashBackAmount", "0.0")
         supportFragmentManager.beginTransaction()
-            .add(R.id.fl_container, MachinePickerFragment.newInstance(machineType, checkedIDList))
+            .add(R.id.fl_container, MachinePickerFragment.newInstance(machineType, checkedIDList,cashBackAmount))
             .commit()
     }
 }

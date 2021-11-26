@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="8dp"
-                android:text="直属团队数量"
+                android:text="团队数量"
                 android:textColor="@color/color_999999"
                 android:textSize="10sp" />
 

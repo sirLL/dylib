@@ -14,6 +14,7 @@ interface MachineQueryContract {
             type: String,
             status: String,
             sn: String,
+            backMoney:String,
             page: Int
         ): Observable<Response<MyMachineBean?>>
 
@@ -26,12 +27,14 @@ interface MachineQueryContract {
             type: String,
             status: String,
             sn: String,
+            backMoney:String,
             page: Int
         )
 
         fun fetchMachineBySN(
             type: String,
             sn: String,
+            backMoney:String,
             page: Int,
             requestCode: Int
         )

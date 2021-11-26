@@ -13,5 +13,6 @@ data class MachineItemBean(
     val isNew: String,
     val member_id: String,
     val name: String,
-    val pos_sn: String
-):Parcelable
+    val pos_sn: String,
+    val backMoney: String
+) : Parcelable

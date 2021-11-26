@@ -39,44 +39,50 @@ class TeamMemberRankAdapter : BaseAdapter<MemberRank, RecyclerView.ViewHolder>()
             //第一、二、三名
             bindHeaderData(holder)
         } else if (holder is ItemViewHolder) {
-//            if (position == 4) {
-//                //自己
-//                holder.itemView.setBackgroundColor(
-//                    ContextCompat.getColor(
-//                        holder.itemView.context,
-//                        R.color.color_fff2da
-//                    )
-//                )
-//                holder.itemView.view_bg.background = null
-//            } else {
-                //其他人
-                holder.itemView.setBackgroundColor(Color.TRANSPARENT)
-                holder.itemView.view_bg.background = if (position == 1) {
-                    //第一条
-                    if (mData.size == 4) {
-                        ContextCompat.getDrawable(
-                            holder.itemView.context,
-                            R.drawable.dy_shape_ffffff_radius_6
-                        )
-                    } else {
-                        ContextCompat.getDrawable(
-                            holder.itemView.context,
-                            R.drawable.dy_shape_ffffff_radius_top_6
-                        )
-                    }
-                } else if (position + 3 == mData.size) {
-                    //最后一条
+            //其他人
+            holder.itemView.setBackgroundColor(Color.TRANSPARENT)
+            holder.itemView.view_bg.background = if (position == 1) {
+                //第一条
+                if (mData.size == 4) {
                     ContextCompat.getDrawable(
                         holder.itemView.context,
-                        R.drawable.dy_shape_ffffff_radius_bottom_6
+                        R.drawable.dy_shape_ffffff_radius_6
                     )
                 } else {
-                    ContextCompat.getDrawable(holder.itemView.context, R.drawable.dy_shape_ffffff)
+                    ContextCompat.getDrawable(
+                        holder.itemView.context,
+                        R.drawable.dy_shape_ffffff_radius_top_6
+                    )
                 }
-//            }
-            holder.itemView.tv_name.text = "名字"
-            holder.itemView.tv_amount.text = "20w"
-            holder.itemView.iv_avatar.load("") {
+            } else if (position + 3 == mData.size) {
+                //最后一条
+                ContextCompat.getDrawable(
+                    holder.itemView.context,
+                    R.drawable.dy_shape_ffffff_radius_bottom_6
+                )
+            } else {
+                ContextCompat.getDrawable(holder.itemView.context, R.drawable.dy_shape_ffffff)
+            }
+            val itemData: MemberRank? = if (mData.size > position + 2) {
+                mData[position + 2]
+            } else {
+                null
+            }
+            holder.itemView.tv_name.text = if (itemData != null) {
+                if (itemData.name.isNullOrBlank()) {
+                    itemData.username
+                } else {
+                    itemData.name
+                }
+            } else {
+                "--"
+            }
+            holder.itemView.tv_amount.text = if (itemData != null) {
+                NumberUtils.formatMoney(itemData.personal)
+            } else {
+                "--"
+            }
+            holder.itemView.iv_avatar.load(itemData?.avatar) {
                 crossfade(true)//淡入效果
                 placeholder(R.drawable.dy_img_avatar_def)
                 error(R.drawable.dy_img_avatar_def)

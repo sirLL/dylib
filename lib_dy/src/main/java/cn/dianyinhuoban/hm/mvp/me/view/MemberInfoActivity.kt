@@ -178,7 +178,7 @@ class MemberInfoActivity : BaseActivity<MemberInfoPresenter?>(), MemberInfoContr
         tv_member_count.text = memberDetail?.inviteNum ?: ""
         tv_no.text = memberDetail?.teamRank ?: ""
 
-        tv_amount_personal.text = NumberUtils.formatMoney(memberDetail?.weekTrans)
+        tv_amount_personal.text = NumberUtils.formatMoney(memberDetail?.dailyTrans)
         tv_amount_activation.text = NumberUtils.formatMoney(memberDetail?.monthTrans)
 
         tv_amount_machine.text = memberDetail?.machineActive ?: "--"

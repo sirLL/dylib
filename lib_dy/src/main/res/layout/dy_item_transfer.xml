@@ -16,6 +16,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/iv_unavailable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp"
+        android:visibility="invisible"
+        android:src="@drawable/dy_ic_machine_unavailable"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="0dp"
@@ -27,7 +38,7 @@
         android:text="--"
         android:textColor="@color/color_333333"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/iv_unavailable"
         app:layout_constraintStart_toEndOf="@id/iv_delete"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="电银 526 7320 2105 2401" />

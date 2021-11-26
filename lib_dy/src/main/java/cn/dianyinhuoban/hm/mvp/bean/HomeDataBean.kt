@@ -46,16 +46,18 @@ data class WeekMonth(
     val machineTrans: String,
     val activeTrans: String,
     val type: String,
+    val inCome: String,
+    val activeMachine: String,
     val inputTime: String
 )
 
 data class Personal(
-    val week: WeekMonth,
+    val day: WeekMonth,
     val month: WeekMonth
 )
 
 data class Team(
-    val week: WeekMonth,
+    val day: WeekMonth,
     val month: WeekMonth
 )
 

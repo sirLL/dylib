@@ -174,7 +174,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="激活/元"
+                            android:text="激活量/台"
                             android:textColor="@color/color_666666" />
 
                         <TextView
@@ -201,6 +201,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:orientation="horizontal"
+                        android:layout_marginBottom="20dp"
                         android:paddingLeft="12dp"
                         android:paddingRight="12dp">
 
@@ -235,6 +236,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:layout_marginBottom="20dp"
+                        android:visibility="gone"
                         android:orientation="horizontal"
                         android:paddingLeft="12dp"
                         android:paddingRight="12dp">
@@ -381,8 +383,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="激活量/元"
-                            android:visibility="gone"
+                            android:text="激活量/台"
                             android:textColor="@color/color_333333"
                             android:textStyle="bold" />
 

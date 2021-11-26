@@ -1,6 +1,7 @@
 package cn.dianyinhuoban.hm.api
 
 import cn.dianyinhuoban.hm.bean.CustomModel
+import cn.dianyinhuoban.hm.bean.MemberLevelBean
 import cn.dianyinhuoban.hm.mvp.bean.*
 import com.wareroom.lib_http.response.Response
 import io.reactivex.Observable
@@ -138,6 +139,7 @@ interface ApiService {
         @Field("machine_type_id") type: String,
         @Field("act_status") status: String,
         @Field("sn") sn: String,
+        @Field("backMoney") backMoney: String,
         @Field("page") page: Int,
     ): Observable<Response<MyMachineBean?>>
 
@@ -423,4 +425,27 @@ interface ApiService {
     fun fetchWithdrawFee(
         @Field("amount") amount: String
     ): Observable<Response<String?>>
+
+    /**
+     * 团队成员新版
+     * @param trans 交易量排序 DESC 降序 ASC 升序
+     * @param regTime 注册时间排序 DESC 降序 ASC 升序
+     * @param groupId 用户等级 可多个 ，隔开
+     * @param isAuth 是否实名 1 未实名 2 已实名
+     */
+    @FormUrlEncoded
+    @POST(URLConfig.URL_MY_TEAM)
+    fun fetchMyTeam(
+        @Field("trans") trans: String,
+        @Field("regTime") regTime: String,
+        @Field("groupId") groupId: String,
+        @Field("page") page: Int,
+        @Field("isAuth") isAuth: String
+    ): Observable<Response<TeamInfoBean?>>
+
+    /**
+     * 会员等级
+     */
+    @GET(URLConfig.URL_MEMBER_LEVEL_LIST)
+    fun fetchMemberLevelList(): Observable<Response<List<MemberLevelBean?>?>>
 }

@@ -172,7 +172,7 @@ class PersonalPkFragment : BaseFragment<PKPresenter>(), PKContract.View {
             if (TextUtils.isEmpty(data.myData.name)) data.myData.username else data.myData.name
         tv_left_no.text =
             if (TextUtils.isEmpty(data.myData.rank)) "当前没有排名" else "当前排名:" + data.myData.rank + " 名"
-        tv_left_activation_amount.text = "本月激活额/元：" + data.myData.active
+        tv_left_activation_amount.text = "本月激活量/台：" + data.myData.active
 
 
 
@@ -197,7 +197,7 @@ class PersonalPkFragment : BaseFragment<PKPresenter>(), PKContract.View {
             tv_opponent.text =
                 if (TextUtils.isEmpty(equalData.name)) equalData.username else equalData.name
 
-            tv_right_activation_amount.text = "本月激活额/元：" + equalData.active
+            tv_right_activation_amount.text = "本月激活量/台：" + equalData.active
             tv_right_no.text =
                 if (TextUtils.isEmpty(equalData.rank)) "当前没有排名" else "当前排名:" + equalData.rank + " 名"
 

@@ -20,27 +20,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_tab_week"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/dy_selector_1a999999_1a27a4ff_radius_2"
-        android:paddingStart="12dp"
-        android:paddingTop="6dp"
-        android:paddingEnd="12dp"
-        android:paddingBottom="6dp"
-        android:text="本周"
-        android:textColor="@color/dy_color_selector_999999_27a4ff"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@id/textView1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/textView1" />
-
-    <TextView
         android:id="@+id/tv_tab_month"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/dy_selector_1a999999_1a27a4ff_radius_2"
         android:paddingStart="12dp"
         android:paddingTop="6dp"
@@ -50,7 +33,24 @@
         android:textColor="@color/dy_color_selector_999999_27a4ff"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@id/textView1"
-        app:layout_constraintEnd_toStartOf="@id/tv_tab_week"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textView1" />
+
+    <TextView
+        android:id="@+id/tv_tab_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/dy_selector_1a999999_1a27a4ff_radius_2"
+        android:paddingStart="12dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="6dp"
+        android:text="今日"
+        android:textColor="@color/dy_color_selector_999999_27a4ff"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/textView1"
+        app:layout_constraintEnd_toStartOf="@id/tv_tab_month"
         app:layout_constraintTop_toTopOf="@id/textView1" />
 
     <TextView
@@ -117,13 +117,12 @@
         app:layout_constraintTop_toBottomOf="@id/tv_no" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tv_income_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
-        android:text="机具交易额/元"
         android:textColor="@color/color_999999"
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@id/textView5"
@@ -143,7 +142,7 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toEndOf="@id/textView4"
+        app:layout_constraintStart_toEndOf="@id/tv_income_title"
         app:layout_constraintTop_toBottomOf="@id/divider1" />
 
     <TextView
@@ -157,9 +156,9 @@
         android:textColor="@color/color_333333"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/textView4"
-        app:layout_constraintStart_toStartOf="@id/textView4"
-        app:layout_constraintTop_toBottomOf="@id/textView4"
+        app:layout_constraintEnd_toEndOf="@id/tv_income_title"
+        app:layout_constraintStart_toStartOf="@id/tv_income_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_income_title"
         tools:text="894.00" />
 
     <TextView
@@ -175,6 +174,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/textView5"
         app:layout_constraintStart_toStartOf="@id/textView5"
-        app:layout_constraintTop_toBottomOf="@id/textView4"
+        app:layout_constraintTop_toBottomOf="@id/tv_income_title"
         tools:text="894.00" />
 </androidx.constraintlayout.widget.ConstraintLayout>

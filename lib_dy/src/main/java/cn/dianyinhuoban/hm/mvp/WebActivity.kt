@@ -98,4 +98,9 @@ class WebActivity : BaseActivity<IPresenter?>() {
         }
     }
 
+    override fun onDestroy() {
+        web_view.destroy()
+        super.onDestroy()
+    }
+
 }

@@ -14,6 +14,7 @@ data class MemberDetailBean(
     var username: String?,
     var weekTrans: String?,
     var monthlyTrans: String?,
+    var dailyTrans: String?
 )
 
 data class Purchase(

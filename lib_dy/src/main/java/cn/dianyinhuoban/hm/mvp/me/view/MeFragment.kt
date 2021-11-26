@@ -68,7 +68,7 @@ class MeFragment : BaseFragment<MePresenter?>(), MeContract.View {
         }
         //我的成员
         cl_member.setOnClickListener {
-            startActivity(Intent(context, MemberActivity::class.java))
+            startActivity(Intent(context, TeamActivity::class.java))
         }
 
         iv_message.setOnClickListener {

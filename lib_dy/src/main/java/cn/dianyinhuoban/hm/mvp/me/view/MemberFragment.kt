@@ -1,15 +1,12 @@
 package cn.dianyinhuoban.hm.mvp.me.view
 
-import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
 import android.text.TextUtils
 import android.view.View
 import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.mvp.bean.TeamMemberBean
 import cn.dianyinhuoban.hm.mvp.me.contract.TeamMemberContract
 import cn.dianyinhuoban.hm.mvp.me.presenter.TeamMemberPresenter
-import com.wareroom.lib_base.mvp.IPresenter
 import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
 import com.wareroom.lib_base.utils.NumberUtils

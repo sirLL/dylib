@@ -29,7 +29,6 @@
         android:singleLine="true"
         android:textColor="@color/color_333333"
         android:textSize="14sp"
-        android:visibility="invisible"
         app:layout_constraintBaseline_toBaselineOf="@id/tv_name"
         app:layout_constraintEnd_toStartOf="@id/tv_transaction"
         app:layout_constraintHorizontal_weight="1"

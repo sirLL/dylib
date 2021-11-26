@@ -9,6 +9,7 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.mvp.ScanActivity
 import cn.dianyinhuoban.hm.mvp.bean.MachineItemBean
@@ -20,22 +21,24 @@ import cn.dianyinhuoban.hm.mvp.machine.presenter.MachineTypePresenter
 import cn.dianyinhuoban.hm.widget.dialog.BaseBottomPicker
 import com.wareroom.lib_base.ui.BaseListFragment
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter
+import com.wareroom.lib_base.utils.NumberUtils
 import kotlinx.android.synthetic.main.dy_fragment_transfer_multi.*
-import kotlinx.android.synthetic.main.dy_fragment_transfer_multi.tv_machine
 import kotlinx.android.synthetic.main.dy_item_transfer_multi.view.*
 
 class TransferMultiFragment : BaseListFragment<MachineItemBean?, MachineQueryPresenter?>(),
     MachineQueryContract.View {
     private var mMachineType: MachineTypeBean? = null
     private var mMachineCount = 0
+    private var mCashBackAmount: String? = null
 
     companion object {
         private const val RC_SCAN_START_MACHINE = 1
         private const val RC_SCAN_END_MACHINE = 2
 
-        fun newInstance(machineType: MachineTypeBean?): TransferMultiFragment {
+        fun newInstance(machineType: MachineTypeBean?, cashBackAmount: String?): TransferMultiFragment {
             val args = Bundle()
             args.putParcelable("type", machineType)
+            args.putString("cashBackAmount", cashBackAmount)
             val fragment = TransferMultiFragment()
             fragment.arguments = args
             return fragment
@@ -60,6 +63,8 @@ class TransferMultiFragment : BaseListFragment<MachineItemBean?, MachineQueryPre
         savedInstanceState: Bundle?
     ): View? {
         mMachineType = arguments?.getParcelable("type")
+        mCashBackAmount = arguments?.getString("cashBackAmount", "0.0")
+
         mPresenter?.fetchMachineType()
         return super.onCreateView(inflater, container, savedInstanceState)
     }
@@ -81,19 +86,20 @@ class TransferMultiFragment : BaseListFragment<MachineItemBean?, MachineQueryPre
         }
 
         btn_submit.setOnClickListener {
-            val intent = Intent()
-            val bundle = Bundle()
-            bundle.putParcelable("type", mMachineType)
-            bundle.putString("startSN", ed_start_no.text.toString())
-            bundle.putString("endSN", ed_end_no.text.toString())
-            bundle.putInt("machineCount", mMachineCount)
-            intent.putExtras(bundle)
-            activity?.let {
-                if (!it.isDestroyed) {
-                    it.setResult(Activity.RESULT_OK, intent)
-                    it.finish()
-                }
-            }
+//            val intent = Intent()
+//            val bundle = Bundle()
+//            bundle.putParcelable("type", mMachineType)
+//            bundle.putString("startSN", ed_start_no.text.toString())
+//            bundle.putString("endSN", ed_end_no.text.toString())
+//            bundle.putInt("machineCount", mMachineCount)
+//            intent.putExtras(bundle)
+//            activity?.let {
+//                if (!it.isDestroyed) {
+//                    it.setResult(Activity.RESULT_OK, intent)
+//                    it.finish()
+//                }
+//            }
+            setResult()
         }
 
         ed_start_no.addTextChangedListener(
@@ -148,6 +154,38 @@ class TransferMultiFragment : BaseListFragment<MachineItemBean?, MachineQueryPre
         }
     }
 
+    private fun setResult() {
+        val checkedData = ArrayList<MachineItemBean>()
+        val data = mAdapter?.data
+        val cashBackAmount = if (!mCashBackAmount.isNullOrBlank()) {
+            mCashBackAmount!!.toDouble()
+        } else {
+            0.0
+        }
+        data?.let {
+            for (bean in it) {
+                bean?.let { itemBean ->
+                    val backMoney = if (bean?.backMoney.isNullOrBlank()) {
+                        0.0
+                    } else {
+                        NumberUtils.numberScale(bean?.backMoney).toDouble()
+                    }
+                    if (cashBackAmount <= backMoney) {
+                        checkedData.add(itemBean)
+                    }
+                }
+            }
+        }
+
+        val intent = Intent()
+        val bundle = Bundle()
+        bundle.putParcelableArrayList("checkedData", checkedData)
+        bundle.putParcelable("type", mMachineType)
+        intent.putExtras(bundle)
+        activity?.setResult(Activity.RESULT_OK, intent)
+        activity?.finish()
+    }
+
     private fun showTypePicker() {
         mMachineTypePicker.setOnItemSelectedListener(object :
             BaseBottomPicker.OnItemSelectedListener<MachineTypeBean?, MachineTypePresenter?> {
@@ -174,8 +212,30 @@ class TransferMultiFragment : BaseListFragment<MachineItemBean?, MachineQueryPre
     }
 
     private fun setSubmitEnable() {
-        btn_submit.isEnabled =
-            mMachineType != null && mAdapter?.data != null && mAdapter?.data?.isNotEmpty()!!
+//        btn_submit.isEnabled =
+//                mMachineType != null && mAdapter?.data != null && mAdapter?.data?.isNotEmpty()!!
+        val enableData = mutableListOf<MachineItemBean>()
+        val cashBackAmount = if (!mCashBackAmount.isNullOrBlank()) {
+            mCashBackAmount!!.toDouble()
+        } else {
+            0.0
+        }
+        mAdapter?.data?.let {
+            for (bean in it) {
+                bean?.let { itemBean ->
+                    val backMoney = if (itemBean.backMoney.isNullOrBlank()) {
+                        0.0
+                    } else {
+                        NumberUtils.numberScale(itemBean.backMoney).toDouble()
+                    }
+                    if (cashBackAmount <= backMoney) {
+                        enableData.add(itemBean)
+                    }
+                }
+
+            }
+        }
+        btn_submit.isEnabled = enableData.size > 0
     }
 
     override fun onRequest(page: Int) {
@@ -184,7 +244,8 @@ class TransferMultiFragment : BaseListFragment<MachineItemBean?, MachineQueryPre
         if (TextUtils.isEmpty(startSN) || TextUtils.isEmpty(endSN) || mMachineType == null) {
             loadData(null)
         } else {
-            mPresenter?.fetchMachine(mMachineType?.id ?: "", "1", "${startSN},${endSN}", page)
+            mPresenter?.fetchMachine(mMachineType?.id
+                ?: "", "1", "${startSN},${endSN}", mCashBackAmount ?: "", page)
         }
     }
 
@@ -217,11 +278,29 @@ class TransferMultiFragment : BaseListFragment<MachineItemBean?, MachineQueryPre
         position: Int,
         itemData: MachineItemBean?
     ) {
-        viewHolder?.itemView?.tv_title?.text = "${itemData?.name} ${itemData?.pos_sn}"
-        viewHolder?.itemView?.tv_status?.text = if ("1" == itemData?.isNew) {
-            "新机器"
+        val cashBackAmount = if (mCashBackAmount.isNullOrBlank()) {
+            0.0
         } else {
-            "返还机"
+            mCashBackAmount!!.toDouble()
+        }
+        val backMoney = if (itemData?.backMoney.isNullOrBlank()) {
+            0.0
+        } else {
+            NumberUtils.numberScale(itemData?.backMoney).toDouble()
+        }
+        viewHolder?.itemView?.tv_title?.text = "${itemData?.name} ${itemData?.pos_sn}"
+        viewHolder?.itemView?.tv_status?.text = "返现金额：${NumberUtils.formatMoney(backMoney)}"
+        viewHolder?.itemView?.tv_status?.setTextColor(
+            if (cashBackAmount > backMoney) {
+                ContextCompat.getColor(requireContext(), R.color.color_ea2618)
+            } else {
+                ContextCompat.getColor(requireContext(), R.color.color_999999)
+            }
+        )
+        viewHolder?.itemView?.iv_unavailable?.visibility = if (cashBackAmount > backMoney) {
+            View.VISIBLE
+        } else {
+            View.INVISIBLE
         }
     }
 
@@ -244,7 +323,7 @@ class TransferMultiFragment : BaseListFragment<MachineItemBean?, MachineQueryPre
             showToast("请选择机具样式")
             return
         }
-        mPresenter?.fetchMachineBySN(type!!, sn, DEF_START_PAGE, requestCode)
+        mPresenter?.fetchMachineBySN(type!!, sn, "", DEF_START_PAGE, requestCode)
     }
 
     override fun bindMachineBySN(data: MyMachineBean?, requestCode: Int) {

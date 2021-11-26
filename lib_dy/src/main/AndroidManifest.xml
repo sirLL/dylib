@@ -20,7 +20,14 @@
     <application
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/dy_network_security_config">
-
+        <!--     我的成员(未实名)   -->
+        <activity
+            android:name=".mvp.me.view.TeamNotCertifiedActivity"
+            android:screenOrientation="portrait" />
+        <!-- 我的成员 -->
+        <activity
+            android:name=".mvp.me.view.TeamActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="cn.dianyinhuoban.hm.mvp.order.OrderListActivity"
             android:screenOrientation="portrait" />

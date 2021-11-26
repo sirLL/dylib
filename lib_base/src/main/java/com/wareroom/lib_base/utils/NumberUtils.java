@@ -39,6 +39,11 @@ public class NumberUtils {
         return bigDecimal.setScale(2, roundingMode).toPlainString();
     }
 
+    public static String numberScale(double money, int roundingMode, int scale) {
+        BigDecimal bigDecimal = new BigDecimal(money);
+        return bigDecimal.setScale(scale, roundingMode).toPlainString();
+    }
+
     public static String formatMoney(String money) {
         if (TextUtils.isEmpty(money)) {
             money = "0";
@@ -62,10 +67,10 @@ public class NumberUtils {
 
     public static String formatMoney(BigDecimal money) {
         BigDecimal bigDecimal;
-        if(money==null){
-            bigDecimal= new BigDecimal(0);
-        }else {
-            bigDecimal=money;
+        if (money == null) {
+            bigDecimal = new BigDecimal(0);
+        } else {
+            bigDecimal = money;
         }
         if (bigDecimal.doubleValue() >= 10000) {
             return bigDecimal.divide(BigDecimal.valueOf(10000), 4, BigDecimal.ROUND_HALF_UP)
