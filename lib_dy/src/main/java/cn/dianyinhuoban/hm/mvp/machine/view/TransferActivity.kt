@@ -1,11 +1,13 @@
 package cn.dianyinhuoban.hm.mvp.machine.view
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import androidx.core.content.ContextCompat
 import cn.dianyinhuoban.hm.R
@@ -32,6 +34,16 @@ class TransferActivity : BaseActivity<TransferPresenter?>(), TransferContract.Vi
 
         const val PICKER_TYPE_SELECTOR = "PICKER_TYPE_SELECTOR"
         const val PICKER_TYPE_MULTI = "PICKER_TYPE_MULTI"
+        const val TAG = "TransferActivity"
+
+        //从团队成员详情跳转过来
+        fun open(context: Context, member: TeamMemberBean) {
+            val intent = Intent(context, TransferActivity::class.java)
+            val bundle = Bundle()
+            bundle.putParcelable("member", member)
+            intent.putExtras(bundle)
+            context.startActivity(intent)
+        }
     }
 
     private var mMachineType: MachineTypeBean? = null
@@ -42,12 +54,17 @@ class TransferActivity : BaseActivity<TransferPresenter?>(), TransferContract.Vi
         MachineTypePicker.newInstance("-1")
     }
 
-    private val mShouldPayPicker: ShouldPayPicker by lazy {
-        ShouldPayPicker.newInstance()
-    }
+//    private val mShouldPayPicker: ShouldPayPicker by lazy {
+//        ShouldPayPicker.newInstance()
+//    }
 
     override fun getPresenter(): TransferPresenter? {
         return TransferPresenter(this)
+    }
+
+    override fun handleIntent(bundle: Bundle?) {
+        super.handleIntent(bundle)
+        mMember = bundle?.getParcelable("member")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,7 +79,7 @@ class TransferActivity : BaseActivity<TransferPresenter?>(), TransferContract.Vi
         btn_submit.setOnClickListener {
             submitTransfer()
         }
-        ed_cash_back.addTextChangedListener(object:TextWatcher{
+        ed_cash_back.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
 
@@ -75,16 +92,23 @@ class TransferActivity : BaseActivity<TransferPresenter?>(), TransferContract.Vi
             }
 
         })
+
+        //从团队成员详情跳转过来
+        mMember?.let {
+            bindCheckedMember(it)
+        }
     }
 
     private fun setSubmitEnable() {
+        Log.d(TAG, "setSubmitEnable: ")
         val backAmount = ed_cash_back.text.toString()
-        val enableData = mutableListOf<MachineItemBean>()
-        val cashBackAmount = if (!backAmount.isNullOrBlank()) {
-            backAmount!!.toDouble()
+        val cashBackAmount: Double? = if (backAmount.isNotBlank()) {
+            backAmount.toDouble()
         } else {
-            0.0
+            null
         }
+
+        val enableData = mutableListOf<MachineItemBean>()
         mAdapter?.data?.let {
             for (bean in it) {
                 bean?.let { itemBean ->
@@ -93,20 +117,71 @@ class TransferActivity : BaseActivity<TransferPresenter?>(), TransferContract.Vi
                     } else {
                         NumberUtils.numberScale(itemBean.backMoney).toDouble()
                     }
-                    if (cashBackAmount <= backMoney) {
-                        enableData.add(itemBean)
+                    when {
+                        cashBackAmount == null -> {
+                            enableData.add(itemBean)
+                        }
+                        cashBackAmount <= backMoney -> {
+                            enableData.add(itemBean)
+                        }
+                        else -> {
+
+                        }
                     }
                 }
-
             }
         }
 
+        val maxBackMoney = setupBackMoney()
         tv_count.text = "(${enableData.size}台)"
 
-        btn_submit.isEnabled =  mMember != null && mMachineType != null
+        btn_submit.isEnabled = mMember != null
+                && mMachineType != null
                 && enableData.size > 0
-                && !TextUtils.isEmpty(ed_cash_back.text.toString())
+                && cashBackAmount != null
+                && maxBackMoney != null
+                && cashBackAmount <= maxBackMoney
+    }
 
+    private fun setupBackMoney(): Double? {
+        Log.d(TAG, "setupBackMoney: ")
+        ll_back_money.visibility = if (mAdapter?.data.isNullOrEmpty()) {
+            View.GONE
+        } else {
+            View.VISIBLE
+        }
+        if (ll_back_money.visibility == View.GONE && ed_cash_back.text.toString().isNotBlank()) {
+            ed_cash_back?.setText("")
+        }
+        var maxBackMoney: Double? = null
+        if (!mAdapter?.data.isNullOrEmpty()) {
+            mAdapter?.data?.let {
+                for (bean in it) {
+                    bean?.let { itemBean ->
+                        val backMoney = if (itemBean.backMoney.isNullOrBlank()) {
+                            0.0
+                        } else {
+                            NumberUtils.numberScale(itemBean.backMoney).toDouble()
+                        }
+                        if (maxBackMoney == null) {
+                            maxBackMoney = backMoney
+                        } else if (maxBackMoney != null && maxBackMoney!! > backMoney) {
+                            maxBackMoney = backMoney
+                        }
+                    }
+                }
+            }
+        }
+        ed_cash_back.hint = "请输入返现金额(最大${
+            NumberUtils.numberScale(
+                if (maxBackMoney == null) {
+                    0.00
+                } else {
+                    maxBackMoney!!
+                }
+            )
+        })"
+        return maxBackMoney
     }
 
     private fun setupRecyclerView() {
@@ -135,15 +210,21 @@ class TransferActivity : BaseActivity<TransferPresenter?>(), TransferContract.Vi
                         ContextCompat.getColor(this@TransferActivity, R.color.color_999999)
                     }
                 )
-                viewHolder?.itemView?.iv_unavailable?.visibility = if (cashBackAmountDouble > backMoney) {
-                    View.VISIBLE
-                } else {
-                    View.INVISIBLE
-                }
+                viewHolder?.itemView?.iv_unavailable?.visibility =
+                    if (cashBackAmountDouble > backMoney) {
+                        View.VISIBLE
+                    } else {
+                        View.INVISIBLE
+                    }
                 viewHolder?.itemView?.iv_delete?.setOnClickListener {
+                    Log.d(TAG, "convert: position=$position")
                     if (data != null && data.size > position) {
                         data?.removeAt(position)
                         notifyItemRemoved(position)
+                        if (position != data.size) {
+                            notifyItemRangeChanged(position, data.size - position)
+                        }
+                        Log.d(TAG, "convert: delete item->$position  size=${data.size}")
                         setSubmitEnable()
                     }
                 }
@@ -191,15 +272,21 @@ class TransferActivity : BaseActivity<TransferPresenter?>(), TransferContract.Vi
                 showToast("请选择机具样式")
                 return@setOnClickListener
             }
-            val cashBackAmount = ed_cash_back.text.toString()
-            if (cashBackAmount.isBlank()) {
-                showToast("请输入返现金额")
-                return@setOnClickListener
-            } else if (cashBackAmount.toDouble() < 0) {
-                showToast("返现金额必须大于等于0")
-                return@setOnClickListener
-            }
-            TransferMultiActivity.openTransferMultiActivity(this, mMachineType, cashBackAmount, RC_MULTI_PICKER)
+            val cashBackAmount = "0"
+//            val cashBackAmount = ed_cash_back.text.toString()
+//            if (cashBackAmount.isBlank()) {
+//                showToast("请输入返现金额")
+//                return@setOnClickListener
+//            } else if (cashBackAmount.toDouble() < 0) {
+//                showToast("返现金额必须大于等于0")
+//                return@setOnClickListener
+//            }
+            TransferMultiActivity.openTransferMultiActivity(
+                this,
+                mMachineType,
+                cashBackAmount,
+                RC_MULTI_PICKER
+            )
         }
 
         //选择划分
@@ -208,14 +295,15 @@ class TransferActivity : BaseActivity<TransferPresenter?>(), TransferContract.Vi
                 showToast("请选择机具样式")
                 return@setOnClickListener
             }
-            val cashBackAmount = ed_cash_back.text.toString()
-            if (cashBackAmount.isBlank()) {
-                showToast("请输入返现金额")
-                return@setOnClickListener
-            } else if (cashBackAmount.toDouble() < 0) {
-                showToast("返现金额必须大于等于0")
-                return@setOnClickListener
-            }
+            val cashBackAmount = "0"
+//            val cashBackAmount = ed_cash_back.text.toString()
+//            if (cashBackAmount.isBlank()) {
+//                showToast("请输入返现金额")
+//                return@setOnClickListener
+//            } else if (cashBackAmount.toDouble() < 0) {
+//                showToast("返现金额必须大于等于0")
+//                return@setOnClickListener
+//            }
 
             val checkedData = mAdapter?.data
             val checkedIDList = arrayListOf<String>()
