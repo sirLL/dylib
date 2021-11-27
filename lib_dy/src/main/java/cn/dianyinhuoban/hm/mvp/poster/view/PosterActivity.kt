@@ -7,6 +7,7 @@ import cn.dianyinhuoban.hm.R
 import cn.dianyinhuoban.hm.mvp.bean.PosterTypeBean
 import cn.dianyinhuoban.hm.mvp.poster.contract.PosterTypeContract
 import cn.dianyinhuoban.hm.mvp.poster.presenter.PosterTypePresenter
+import cn.dianyinhuoban.hm.mvp.setting.view.JiangWuTangFragment
 import com.wareroom.lib_base.ui.BaseActivity
 import kotlinx.android.synthetic.main.dy_activity_poster.*
 
@@ -38,6 +39,9 @@ class PosterActivity : BaseActivity<PosterTypePresenter?>(), PosterTypeContract.
                 }
             }
         }
+
+        titles.add("讲武堂")
+        fragmentList.add(JiangWuTangFragment.newInstance())
 
         if (titles.size > 0) {
             val titleArr = arrayOfNulls<String>(titles.size)

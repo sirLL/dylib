@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
 import cn.dianyinhuoban.hm.R
+import cn.dianyinhuoban.hm.mvp.bean.AuthResult
 import cn.dianyinhuoban.hm.mvp.bean.MeMenuBean
 import cn.dianyinhuoban.hm.mvp.bean.PersonalBean
 import cn.dianyinhuoban.hm.mvp.income.view.IncomeActivity
@@ -132,7 +133,7 @@ class MeFragment : BaseFragment<MePresenter?>(), MeContract.View {
         val menuData: MutableList<MeMenuBean> = ArrayList()
         menuData.add(MeMenuBean(1, "机具划拨", R.drawable.dy_ic_me_menu_transfer))
         menuData.add(MeMenuBean(2, "机具申领", R.drawable.dy_ic_me_menu_purchase))
-        menuData.add(MeMenuBean(3, "讲武堂", R.drawable.dy_ic_me_menu_school))
+//        menuData.add(MeMenuBean(3, "讲武堂", R.drawable.dy_ic_me_menu_school))
         menuData.add(MeMenuBean(4, "申领订单", R.drawable.dy_ic_me_menu_purchase_order))
         menuData.add(MeMenuBean(5, "银行卡", R.drawable.dy_ic_me_menu_bank_card))
         menuData.add(MeMenuBean(6, "PK", R.drawable.dy_ic_me_menu_pk))
@@ -144,6 +145,7 @@ class MeFragment : BaseFragment<MePresenter?>(), MeContract.View {
 
     override fun onStart() {
         super.onStart()
+        fetchAuthResult()
         fetchPersonalData()
     }
 
@@ -181,7 +183,7 @@ class MeFragment : BaseFragment<MePresenter?>(), MeContract.View {
             tv_amount_purchase.text = NumberUtils.formatMoney(it.purchase)
             //团队名称
             tv_team_name.text = if (TextUtils.isEmpty(it.teamName)) {
-                "--的团队"
+                "${it.username})的团队"
             } else {
                 it.teamName
             }
@@ -198,4 +200,21 @@ class MeFragment : BaseFragment<MePresenter?>(), MeContract.View {
         }
     }
 
+    private fun fetchAuthResult() {
+        mPresenter?.fetchAuthResult()
+    }
+
+    override fun bindAuthResult(authResult: AuthResult) {
+        when (authResult.status) {
+            "0" -> {
+                tv_realname_status?.text = "审核中"
+            }
+            "2" -> {
+                tv_realname_status?.text = "已认证"
+            }
+            else -> {
+                tv_realname_status?.text = "未认证"
+            }
+        }
+    }
 }

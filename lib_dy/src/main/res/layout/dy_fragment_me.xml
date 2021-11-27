@@ -36,19 +36,38 @@
 
         <TextView
             android:id="@+id/tv_name"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginTop="6dp"
             android:layout_marginEnd="32dp"
-            android:maxLines="1"
+            android:ellipsize="end"
+            android:maxEms="10"
+            android:singleLine="true"
             android:text="--"
             android:textColor="@color/color_333333"
             android:textSize="16sp"
-            app:layout_constraintEnd_toStartOf="@id/iv_message"
             app:layout_constraintStart_toEndOf="@id/iv_avatar"
             app:layout_constraintTop_toTopOf="@id/iv_avatar"
             tools:text="娃哈哈" />
+
+        <TextView
+            android:id="@+id/tv_realname_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/dy_shape_27a4ff_radius_2"
+            android:includeFontPadding="false"
+            android:paddingStart="6dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="6dp"
+            android:paddingBottom="2dp"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_name"
+            app:layout_constraintStart_toEndOf="@id/tv_name"
+            app:layout_constraintTop_toTopOf="@id/tv_name"
+            tools:text="已认证" />
 
         <TextView
             android:id="@+id/tv_level"
@@ -221,7 +240,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:alpha="0.8"
-                    android:text="申领奖励/元"
+                    android:text="采购奖励/元"
                     android:textColor="@color/color_white"
                     app:layout_goneMarginEnd="12dp"
                     android:textSize="10sp"
