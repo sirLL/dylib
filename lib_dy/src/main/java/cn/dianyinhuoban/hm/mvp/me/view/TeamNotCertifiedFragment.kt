@@ -17,19 +17,24 @@ import com.wareroom.lib_base.utils.cache.MMKVUtil
 import com.wareroom.lib_base.widget.image_view.CircleImageView
 import kotlinx.android.synthetic.main.dy_item_team.view.*
 
-class TeamNotCertifiedFragment : BaseListFragment<MemberBean, TeamContract.Presenter?>(), TeamContract.View {
+class TeamNotCertifiedFragment : BaseListFragment<MemberBean, TeamContract.Presenter?>(),
+    TeamContract.View {
 
     companion object {
-        fun newInstance(): TeamNotCertifiedFragment {
+        fun newInstance(status: String): TeamNotCertifiedFragment {
             val args = Bundle()
+            args.putString("status", status)
             val fragment = TeamNotCertifiedFragment()
             fragment.arguments = args
             return fragment
         }
     }
 
+    private var status: String? = null
+
     override fun initView(contentView: View?) {
         super.initView(contentView)
+        status = arguments?.getString("status")
         mRefreshLayout.autoRefresh()
     }
 
@@ -38,17 +43,21 @@ class TeamNotCertifiedFragment : BaseListFragment<MemberBean, TeamContract.Prese
     }
 
     override fun onRequest(page: Int) {
-        mPresenter?.fetchMyTeam("", "", "", page, "1")
+        mPresenter?.fetchMyTeam("", "", "", page, status ?: "1")
     }
 
     override fun getItemLayout(): Int {
         return R.layout.dy_item_team
     }
 
-    override fun convert(viewHolder: SimpleAdapter.SimpleViewHolder?, position: Int, itemData: MemberBean?) {
-        val ivAvatar=viewHolder?.itemView?.findViewById<CircleImageView>(R.id.iv_avatar)
+    override fun convert(
+        viewHolder: SimpleAdapter.SimpleViewHolder?,
+        position: Int,
+        itemData: MemberBean?
+    ) {
+        val ivAvatar = viewHolder?.itemView?.findViewById<CircleImageView>(R.id.iv_avatar)
         ivAvatar?.let {
-            it.load(itemData?.avatar){
+            it.load(itemData?.avatar) {
                 placeholder(R.drawable.dy_img_avatar_def)
                 error(R.drawable.dy_img_avatar_def)
                 allowHardware(false)
@@ -63,16 +72,19 @@ class TeamNotCertifiedFragment : BaseListFragment<MemberBean, TeamContract.Prese
             NumberUtils.formatMoney(itemData?.teamMonth)
         }
         viewHolder?.itemView?.tv_rate?.text = itemData?.rate ?: "--"
-        viewHolder?.itemView?.tv_rate?.setTextColor(if (itemData?.rate.isNullOrBlank() || itemData?.rate!!.startsWith("-")) {
-            ContextCompat.getColor(requireContext(), R.color.color_eab160)
-        } else {
-            ContextCompat.getColor(requireContext(), R.color.color_c50018)
-        })
-        viewHolder?.itemView?.findViewById<TextView>(R.id.tv_self)?.visibility = if (MMKVUtil.getUserID().isNotBlank() && MMKVUtil.getUserID() == itemData?.uid) {
-            View.VISIBLE
-        } else {
-            View.GONE
-        }
+        viewHolder?.itemView?.tv_rate?.setTextColor(
+            if (itemData?.rate.isNullOrBlank() || itemData?.rate!!.startsWith("-")) {
+                ContextCompat.getColor(requireContext(), R.color.color_eab160)
+            } else {
+                ContextCompat.getColor(requireContext(), R.color.color_c50018)
+            }
+        )
+        viewHolder?.itemView?.findViewById<TextView>(R.id.tv_self)?.visibility =
+            if (MMKVUtil.getUserID().isNotBlank() && MMKVUtil.getUserID() == itemData?.uid) {
+                View.VISIBLE
+            } else {
+                View.GONE
+            }
     }
 
     override fun onItemClick(data: MemberBean?, position: Int) {

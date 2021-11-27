@@ -28,10 +28,11 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
         </com.wareroom.lib_base.widget.LoadingLayout>
     </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:background="@color/color_1a27a4ff"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/color_1a27a4ff">
 
         <TextView
             android:id="@+id/tv_no_team"
@@ -48,11 +49,11 @@
             android:id="@+id/iv_avatar_team"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginStart="48dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_no_team"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView

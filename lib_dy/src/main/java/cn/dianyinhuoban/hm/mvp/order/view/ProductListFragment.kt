@@ -62,7 +62,6 @@ class ProductListFragment : BaseListFragment<PurchaseProductBean, ProductListPre
     ) {
         viewHolder?.itemView?.iv_cover?.load(itemData?.img) {
             crossfade(true)
-            transformations(RoundedCornersTransformation(mDp2px6, mDp2px6, mDp2px6, mDp2px6))
         }
         viewHolder?.itemView?.tv_title?.text = itemData?.name ?: "--"
         viewHolder?.itemView?.tv_title_des?.text = itemData?.describe ?: "--"

@@ -53,6 +53,7 @@
             android:layout_width="68dp"
             android:layout_height="68dp"
             android:layout_marginTop="12dp"
+            android:scaleType="fitCenter"
             tools:src="@drawable/dy_ic_app_logo" />
 
         <TextView

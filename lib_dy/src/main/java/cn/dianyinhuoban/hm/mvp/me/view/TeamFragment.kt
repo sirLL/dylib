@@ -1,6 +1,5 @@
 package cn.dianyinhuoban.hm.mvp.me.view
 
-import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
@@ -81,7 +80,10 @@ class TeamFragment : BaseListFragment<MemberBean, TeamContract.Presenter?>(), Te
     override fun initView(contentView: View?) {
         super.initView(contentView)
         contentView?.findViewById<TextView>(R.id.textView3)?.setOnClickListener {
-            startActivity(Intent(requireContext(), TeamNotCertifiedActivity::class.java))
+            TeamNotCertifiedActivity.open(requireContext(),"1")
+        }
+        contentView?.findViewById<TextView>(R.id.textView2)?.setOnClickListener {
+            TeamNotCertifiedActivity.open(requireContext(),"2")
         }
         contentView?.findViewById<TextView>(R.id.tv_sort)?.setOnClickListener {
             showSortDialog()

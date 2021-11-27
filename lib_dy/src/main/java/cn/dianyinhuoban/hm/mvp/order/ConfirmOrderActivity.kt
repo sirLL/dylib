@@ -181,7 +181,6 @@ class ConfirmOrderActivity : BaseActivity<CreateOrderPresenter?>(), CreateOrderC
             crossfade(true)
             error(R.drawable.dy_ic_app_logo)
             placeholder(R.drawable.dy_ic_app_logo)
-            transformations(RoundedCornersTransformation(dp2px3, dp2px3, dp2px3, dp2px3))
         }
 
         tv_price.text = NumberUtils.formatMoney(mProductPrice)

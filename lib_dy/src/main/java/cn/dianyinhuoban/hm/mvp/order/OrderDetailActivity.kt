@@ -85,9 +85,8 @@ class OrderDetailActivity : BaseActivity<OrderDetailPresenter?>(), OrderDetailCo
             crossfade(true)
             placeholder(R.drawable.dy_ic_app_logo)
             error(R.drawable.dy_ic_app_logo)
-            transformations(RoundedCornersTransformation(dp2px3, dp2px3, dp2px3, dp2px3))
         }
-        tv_order_no.text = ""
+        tv_order_no.text = order?.purchaseNo ?: ""
         tv_order_status.text = getOrderStatusName(order?.status ?: "")
         tv_order_product.text = order?.machineName ?: ""
         tv_order_price.text = "¥${NumberUtils.formatMoney(order?.price)}"
@@ -179,10 +178,22 @@ class OrderDetailActivity : BaseActivity<OrderDetailPresenter?>(), OrderDetailCo
     private fun getPayTypeName(payType: String): String {
         return when (payType) {
             "1" -> {
-                "余额支付"
+                "余额"
+            }
+            "2" -> {
+                "积分"
+            }
+            "3" -> {
+                "支付宝APP支付"
+            }
+            "4" -> {
+                "微信"
+            }
+            "5" -> {
+                "支付宝WAP支付"
             }
             else -> {
-                "其他"
+                ""
             }
         }
     }
