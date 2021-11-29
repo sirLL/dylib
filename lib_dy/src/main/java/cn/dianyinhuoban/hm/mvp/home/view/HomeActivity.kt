@@ -3,9 +3,12 @@ package cn.dianyinhuoban.hm.mvp.home.view
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import cn.dianyinhuoban.hm.R
+import cn.dianyinhuoban.hm.mvp.auth.view.RealnameAuthActivity
+import cn.dianyinhuoban.hm.mvp.bean.AuthResult
 import cn.dianyinhuoban.hm.mvp.bean.SystemItemBean
 import cn.dianyinhuoban.hm.mvp.home.contract.SystemContract
 import cn.dianyinhuoban.hm.mvp.home.presenter.SystemPresenter
@@ -15,6 +18,7 @@ import cn.dianyinhuoban.hm.mvp.poster.view.PosterActivity
 import cn.dianyinhuoban.hm.mvp.poster.view.PosterFragment
 import cn.dianyinhuoban.hm.mvp.ranking.view.RankingFragment
 import cn.dianyinhuoban.hm.qiyu.QYHelper
+import cn.dianyinhuoban.hm.widget.dialog.MessageDialog
 import com.qiyukf.unicorn.api.Unicorn
 import com.tencent.mmkv.MMKV
 import com.tencent.smtt.sdk.QbSdk
@@ -23,7 +27,7 @@ import kotlinx.android.synthetic.main.dy_activity_home.*
 import java.util.*
 
 class HomeActivity : BaseActivity<SystemPresenter?>(), SystemContract.View {
-
+    var mAuthResult: AuthResult? = null
     override fun getPresenter(): SystemPresenter? {
         return SystemPresenter(this)
     }
@@ -42,6 +46,7 @@ class HomeActivity : BaseActivity<SystemPresenter?>(), SystemContract.View {
 
     override fun onStart() {
         super.onStart()
+        mPresenter?.fetchAuthResult()
         mPresenter?.fetchSystemSetting()
     }
 
@@ -51,6 +56,9 @@ class HomeActivity : BaseActivity<SystemPresenter?>(), SystemContract.View {
         iv_custom_service.setOnClickListener {
             val title = "${getString(R.string.app_name)}客服"
             QYHelper.openQYService(HomeActivity@ this, title)
+        }
+        cover_view.setOnClickListener {
+            showAuthDialog()
         }
     }
 
@@ -132,6 +140,44 @@ class HomeActivity : BaseActivity<SystemPresenter?>(), SystemContract.View {
                     }
                 }
             }
+        }
+    }
+
+    override fun bindAuthResult(authResult: AuthResult) {
+        mAuthResult = authResult
+        when (authResult.status) {
+            "2" -> {
+                cover_view.visibility = View.GONE
+            }
+            else -> {
+                cover_view.visibility = View.VISIBLE
+                showAuthDialog()
+            }
+        }
+    }
+
+    private fun showAuthDialog() {
+        mAuthResult?.let { authResult ->
+            val message = if ("0" == authResult.status) {
+                "实名认证正在审核中，请稍后再试"
+            } else {
+                "您尚未完成实名认证，去认证?"
+            }
+            val messageDialog = MessageDialog(this)
+                .setMessage(message)
+                .setOnConfirmClickListener {
+                    if ("0" == authResult.status) {
+                        it.dismiss()
+                    } else {
+                        it.dismiss()
+                        startActivity(Intent(HomeActivity@ this, RealnameAuthActivity::class.java))
+                    }
+                }
+                .setOnCancelClickListener {
+                    it.dismiss()
+                }
+            messageDialog.setCanceledOnTouchOutside(false)
+            messageDialog.show()
         }
     }
 

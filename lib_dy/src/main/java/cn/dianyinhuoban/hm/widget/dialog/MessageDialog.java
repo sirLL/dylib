@@ -21,6 +21,7 @@ public class MessageDialog extends Dialog {
     private String mTitle;
     private String mContent;
     private OnConfirmClickListener mOnConfirmClickListener;
+    private OnCancelClickListener mOnCancelClickListener;
 
     public MessageDialog(@NonNull Context context) {
         super(context, R.style.MessageDialog);
@@ -36,10 +37,17 @@ public class MessageDialog extends Dialog {
             tvTitle.setVisibility(View.GONE);
         } else {
             tvTitle.setVisibility(View.VISIBLE);
+            tvTitle.setText(mTitle);
         }
 
         tvContent.setText(mContent);
-        findViewById(R.id.tv_cancel).setOnClickListener(v -> dismiss());
+        findViewById(R.id.tv_cancel).setOnClickListener(v -> {
+            if (mOnCancelClickListener != null) {
+                mOnCancelClickListener.onCancelClick(this);
+            } else {
+                dismiss();
+            }
+        });
         findViewById(R.id.tv_ok).setOnClickListener(v -> {
             if (mOnConfirmClickListener != null) {
                 mOnConfirmClickListener.onConfirmClick(this);
@@ -55,7 +63,7 @@ public class MessageDialog extends Dialog {
         window.setAttributes(layoutParams);
     }
 
-    private MessageDialog setTitle(String title) {
+    public MessageDialog setTitle(String title) {
         mTitle = title;
         if (tvTitle != null) {
             tvTitle.setText(mTitle);
@@ -81,7 +89,16 @@ public class MessageDialog extends Dialog {
         return this;
     }
 
+    public MessageDialog setOnCancelClickListener(OnCancelClickListener onCancelClickListener) {
+        mOnCancelClickListener = onCancelClickListener;
+        return this;
+    }
+
     public interface OnConfirmClickListener {
         void onConfirmClick(MessageDialog dialog);
+    }
+
+    public interface OnCancelClickListener {
+        void onCancelClick(MessageDialog dialog);
     }
 }

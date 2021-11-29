@@ -1,6 +1,7 @@
 package cn.dianyinhuoban.hm.mvp.home.model
 
 import cn.dianyinhuoban.hm.api.ApiService
+import cn.dianyinhuoban.hm.mvp.bean.AuthResult
 import cn.dianyinhuoban.hm.mvp.bean.SystemItemBean
 import cn.dianyinhuoban.hm.mvp.home.contract.SystemContract
 import com.wareroom.lib_base.mvp.BaseModel
@@ -13,5 +14,8 @@ class SystemModel : BaseModel(), SystemContract.Model {
             .fetchSystemSetting()
     }
 
-
+    override fun fetchAuthResult(): Observable<Response<AuthResult?>> {
+        return mRetrofit.create(ApiService::class.java)
+            .fetchAuthResult()
+    }
 }
