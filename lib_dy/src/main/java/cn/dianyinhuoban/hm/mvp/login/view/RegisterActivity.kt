@@ -107,7 +107,7 @@ class RegisterActivity : BaseActivity<RegisterPresenter?>(), RegisterContract.Vi
     }
 
     private fun setupAgreement() {
-        val agreementText = "点击注册，即表示您同意《电银管家泓盟版用户协议》"
+        val agreementText = "点击注册，即表示您同意《电银管家用户协议》"
         val spannableStringBuilder = SpannableStringBuilder(agreementText)
         val clickableSpan: ClickableSpan = object : ClickableSpan() {
             override fun onClick(widget: View) {
