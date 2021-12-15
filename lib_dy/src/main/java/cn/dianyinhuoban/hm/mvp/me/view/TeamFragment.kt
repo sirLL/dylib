@@ -51,7 +51,10 @@ class TeamFragment : BaseListFragment<MemberBean, TeamContract.Presenter?>(), Te
     }
 
     override fun getItemDecoration(): RecyclerView.ItemDecoration {
-        return DividerDecoration(ContextCompat.getColor(requireContext(), R.color.dy_color_divider), 0)
+        return DividerDecoration(
+            ContextCompat.getColor(requireContext(), R.color.dy_color_divider),
+            0
+        )
     }
 
     override fun getRefreshHeader(): RefreshHeader {
@@ -59,7 +62,12 @@ class TeamFragment : BaseListFragment<MemberBean, TeamContract.Presenter?>(), Te
     }
 
     override fun getLoadMoreFooter(): RefreshFooter {
-        return ClassicsFooter(requireContext()).setPrimaryColor(ContextCompat.getColor(requireContext(), R.color.dy_base_color_page_bg))
+        return ClassicsFooter(requireContext()).setPrimaryColor(
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.dy_base_color_page_bg
+            )
+        )
     }
 
     override fun getPresenter(): TeamContract.Presenter? {
@@ -80,10 +88,10 @@ class TeamFragment : BaseListFragment<MemberBean, TeamContract.Presenter?>(), Te
     override fun initView(contentView: View?) {
         super.initView(contentView)
         contentView?.findViewById<TextView>(R.id.textView3)?.setOnClickListener {
-            TeamNotCertifiedActivity.open(requireContext(),"1")
+            TeamNotCertifiedActivity.open(requireContext(), "1")
         }
         contentView?.findViewById<TextView>(R.id.textView2)?.setOnClickListener {
-            TeamNotCertifiedActivity.open(requireContext(),"2")
+            TeamNotCertifiedActivity.open(requireContext(), "2")
         }
         contentView?.findViewById<TextView>(R.id.tv_sort)?.setOnClickListener {
             showSortDialog()
@@ -94,10 +102,14 @@ class TeamFragment : BaseListFragment<MemberBean, TeamContract.Presenter?>(), Te
         mRefreshLayout.autoRefresh()
     }
 
-    override fun convert(viewHolder: SimpleAdapter.SimpleViewHolder?, position: Int, itemData: MemberBean?) {
-        val ivAvatar=viewHolder?.itemView?.findViewById<CircleImageView>(R.id.iv_avatar)
+    override fun convert(
+        viewHolder: SimpleAdapter.SimpleViewHolder?,
+        position: Int,
+        itemData: MemberBean?
+    ) {
+        val ivAvatar = viewHolder?.itemView?.findViewById<CircleImageView>(R.id.iv_avatar)
         ivAvatar?.let {
-            it.load(itemData?.avatar){
+            it.load(itemData?.avatar) {
                 placeholder(R.drawable.dy_img_avatar_def)
                 error(R.drawable.dy_img_avatar_def)
                 allowHardware(false)
@@ -112,15 +124,23 @@ class TeamFragment : BaseListFragment<MemberBean, TeamContract.Presenter?>(), Te
             NumberUtils.formatMoney(itemData?.teamMonth)
         }
         viewHolder?.itemView?.tv_rate?.text = itemData?.rate ?: "--"
-        viewHolder?.itemView?.tv_rate?.setTextColor(if (itemData?.rate.isNullOrBlank() || itemData?.rate!!.startsWith("-")) {
-            ContextCompat.getColor(requireContext(), R.color.color_eab160)
+        viewHolder?.itemView?.tv_rate?.setTextColor(
+            if (itemData?.rate.isNullOrBlank() || itemData?.rate!!.startsWith("-")) {
+                ContextCompat.getColor(requireContext(), R.color.color_eab160)
+            } else {
+                ContextCompat.getColor(requireContext(), R.color.color_c50018)
+            }
+        )
+        viewHolder?.itemView?.findViewById<TextView>(R.id.tv_self)?.visibility =
+            if (MMKVUtil.getUserID().isNotBlank() && MMKVUtil.getUserID() == itemData?.uid) {
+                View.VISIBLE
+            } else {
+                View.GONE
+            }
+        viewHolder?.itemView?.tv_status?.text = if ("1" == itemData?.isAuth) {
+            "已认证(${itemData.auth_name})"
         } else {
-            ContextCompat.getColor(requireContext(), R.color.color_c50018)
-        })
-        viewHolder?.itemView?.findViewById<TextView>(R.id.tv_self)?.visibility = if (MMKVUtil.getUserID().isNotBlank() && MMKVUtil.getUserID() == itemData?.uid) {
-            View.VISIBLE
-        } else {
-            View.GONE
+            "未认证"
         }
     }
 

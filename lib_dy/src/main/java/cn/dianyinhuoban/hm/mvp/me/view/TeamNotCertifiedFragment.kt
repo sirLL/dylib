@@ -85,6 +85,11 @@ class TeamNotCertifiedFragment : BaseListFragment<MemberBean, TeamContract.Prese
             } else {
                 View.GONE
             }
+        viewHolder?.itemView?.tv_status?.text = if ("1" == itemData?.isAuth) {
+            "已认证(${itemData.auth_name})"
+        } else {
+            "未认证"
+        }
     }
 
     override fun onItemClick(data: MemberBean?, position: Int) {

@@ -67,7 +67,11 @@ class MainActivity : AppCompatActivity() {
             override fun onLoginError(code: Int, message: String?) {
                 //若code=2 账号不存在，其他直接弹toast
                 Log.d(TAG, "onLoginError: code=${code} message=${message}")
-                Toast.makeText(this@MainActivity, message, Toast.LENGTH_SHORT).show()
+                if (code == 2) {
+                    //调用你那边的登录
+                } else {
+                    Toast.makeText(this@MainActivity, message, Toast.LENGTH_SHORT).show()
+                }
             }
         })
     }

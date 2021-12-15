@@ -13,5 +13,7 @@ data class MemberBean(
     var rate: String?,
     var regtime: String?,
     var teamMonth: String?,
-    var uid: String?
+    var uid: String?,
+    var isAuth: String?,
+    var auth_name: String
 )

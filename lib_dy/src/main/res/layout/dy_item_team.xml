@@ -32,25 +32,51 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/dy_img_avatar_def"
-        app:layout_constraintEnd_toStartOf="@id/tv_name"
+        app:layout_constraintEnd_toStartOf="@id/cl_name_container"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_name"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_name_container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:ellipsize="middle"
-        android:singleLine="true"
-        android:textColor="@color/color_333333"
-        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
         app:layout_constraintEnd_toStartOf="@id/tv_date"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@id/iv_avatar"
-        app:layout_constraintTop_toTopOf="@id/iv_avatar"
-        tools:text="张三" />
+        app:layout_constraintTop_toTopOf="@id/iv_avatar">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="middle"
+            android:singleLine="true"
+            android:textColor="@color/color_333333"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="张三" />
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="middle"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:textColor="@color/color_666666"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <TextView
         android:id="@+id/tv_date"
@@ -66,10 +92,11 @@
         app:autoSizeMaxTextSize="12sp"
         app:autoSizeMinTextSize="8sp"
         app:autoSizeTextType="uniform"
-        app:layout_constraintBaseline_toBaselineOf="@id/tv_name"
+        app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toEndOf="@id/tv_name" />
+        app:layout_constraintStart_toEndOf="@id/cl_name_container"
+        app:layout_constraintTop_toTopOf="@id/iv_avatar" />
 
     <View
         android:id="@+id/divider1"
