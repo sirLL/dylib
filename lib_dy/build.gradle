@@ -11,8 +11,8 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
-        versionCode 100215
-        versionName "1.2.15"
+        versionCode 100216
+        versionName "1.2.16"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -88,11 +88,11 @@ dependencies {
     implementation rootProject.ext.deps.adapterRxJava
     implementation rootProject.ext.deps.okhttp3Logging
 
-//    implementation project(':lib_base')
+    implementation project(':lib_base')
 //    implementation project(':lib_http')
 //    implementation project(':lib_tablayout')
 
-    implementation 'io.github.sirll:lib_base:1.0.8'
+//    implementation 'io.github.sirll:lib_base:1.0.8'
     implementation 'io.github.sirll:lib_http:1.0.5'
     implementation 'io.github.sirll:lib_tablayout:1.0.2'
 
@@ -125,6 +125,6 @@ dependencies {
 ext {
     PUBLISH_GROUP_ID = "io.github.sirll"        //项目包名
     PUBLISH_ARTIFACT_ID = 'lib_dy'            //项目名
-    PUBLISH_VERSION = "1.2.15"                   //版本号
+    PUBLISH_VERSION = "1.2.16"                   //版本号
 }
 apply from: '../publish-mavencentral.gradle'

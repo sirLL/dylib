@@ -18,7 +18,7 @@ public class NumberUtils {
             money = "0";
         }
         BigDecimal bigDecimal = new BigDecimal(money);
-        return bigDecimal.setScale(2, BigDecimal.ROUND_DOWN).toPlainString();
+        return bigDecimal.setScale(2, BigDecimal.ROUND_DOWN).stripTrailingZeros().toPlainString();
     }
 
     public static String numberScale(String money, int roundingMode) {
@@ -26,22 +26,22 @@ public class NumberUtils {
             money = "0";
         }
         BigDecimal bigDecimal = new BigDecimal(money);
-        return bigDecimal.setScale(2, roundingMode).toPlainString();
+        return bigDecimal.setScale(2, roundingMode).stripTrailingZeros().toPlainString();
     }
 
     public static String numberScale(double money) {
         BigDecimal bigDecimal = new BigDecimal(money);
-        return bigDecimal.setScale(2, BigDecimal.ROUND_DOWN).toPlainString();
+        return bigDecimal.setScale(2, BigDecimal.ROUND_DOWN).stripTrailingZeros().toPlainString();
     }
 
     public static String numberScale(double money, int roundingMode) {
         BigDecimal bigDecimal = new BigDecimal(money);
-        return bigDecimal.setScale(2, roundingMode).toPlainString();
+        return bigDecimal.setScale(2, roundingMode).stripTrailingZeros().toPlainString();
     }
 
     public static String numberScale(double money, int roundingMode, int scale) {
         BigDecimal bigDecimal = new BigDecimal(money);
-        return bigDecimal.setScale(scale, roundingMode).toPlainString();
+        return bigDecimal.setScale(scale, roundingMode).stripTrailingZeros().toPlainString();
     }
 
     public static String formatMoney(String money) {
@@ -49,20 +49,20 @@ public class NumberUtils {
             money = "0";
         }
         BigDecimal bigDecimal = new BigDecimal(money);
-        if (bigDecimal.doubleValue() >= 10000) {
-            return bigDecimal.divide(BigDecimal.valueOf(10000), 4, BigDecimal.ROUND_HALF_UP)
-                    .setScale(2, BigDecimal.ROUND_DOWN).toPlainString() + "w";
-        }
-        return bigDecimal.setScale(2, BigDecimal.ROUND_DOWN).toPlainString();
+//        if (bigDecimal.doubleValue() >= 10000) {
+//            return bigDecimal.divide(BigDecimal.valueOf(10000), 4, BigDecimal.ROUND_HALF_UP)
+//                    .setScale(2, BigDecimal.ROUND_DOWN).toPlainString() + "w";
+//        }
+        return bigDecimal.setScale(2, BigDecimal.ROUND_DOWN).stripTrailingZeros().toPlainString();
     }
 
     public static String formatMoney(double money) {
         BigDecimal bigDecimal = new BigDecimal(money);
-        if (bigDecimal.doubleValue() >= 10000) {
-            return bigDecimal.divide(BigDecimal.valueOf(10000), 4, BigDecimal.ROUND_HALF_UP)
-                    .setScale(2, BigDecimal.ROUND_DOWN).toPlainString() + "w";
-        }
-        return bigDecimal.setScale(2, BigDecimal.ROUND_DOWN).toPlainString();
+//        if (bigDecimal.doubleValue() >= 10000) {
+//            return bigDecimal.divide(BigDecimal.valueOf(10000), 4, BigDecimal.ROUND_HALF_UP)
+//                    .setScale(2, BigDecimal.ROUND_DOWN).toPlainString() + "w";
+//        }
+        return bigDecimal.setScale(2, BigDecimal.ROUND_DOWN).stripTrailingZeros().toPlainString();
     }
 
     public static String formatMoney(BigDecimal money) {
@@ -72,10 +72,10 @@ public class NumberUtils {
         } else {
             bigDecimal = money;
         }
-        if (bigDecimal.doubleValue() >= 10000) {
-            return bigDecimal.divide(BigDecimal.valueOf(10000), 4, BigDecimal.ROUND_HALF_UP)
-                    .setScale(2, BigDecimal.ROUND_DOWN).toPlainString() + "w";
-        }
-        return bigDecimal.setScale(2, BigDecimal.ROUND_DOWN).toPlainString();
+//        if (bigDecimal.doubleValue() >= 10000) {
+//            return bigDecimal.divide(BigDecimal.valueOf(10000), 4, BigDecimal.ROUND_HALF_UP)
+//                    .setScale(2, BigDecimal.ROUND_DOWN).toPlainString() + "w";
+//        }
+        return bigDecimal.setScale(2, BigDecimal.ROUND_DOWN).stripTrailingZeros().toPlainString();
     }
 }

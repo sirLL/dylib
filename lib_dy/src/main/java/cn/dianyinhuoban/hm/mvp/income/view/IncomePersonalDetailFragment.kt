@@ -237,11 +237,11 @@ class IncomePersonalDetailFragment : BaseListFragment<DetailBean, IncomeDetailPr
         val rateStr = if (rate >= 0) {
             "+${
                 BigDecimal.valueOf(rate).multiply(BigDecimal(100))
-                    .setScale(2, BigDecimal.ROUND_HALF_UP).toPlainString()
+                    .setScale(2, BigDecimal.ROUND_HALF_UP).stripTrailingZeros().toPlainString()
             }"
         } else {
             BigDecimal.valueOf(rate).multiply(BigDecimal(100)).setScale(2, BigDecimal.ROUND_HALF_UP)
-                .toPlainString()
+                .stripTrailingZeros().toPlainString()
         }
 
         tv_rate_transfer.text = if (mDataType == DATA_TYPE_MONTH) {

@@ -74,7 +74,7 @@ class SubmitOrderActivity : BaseActivity<ProductListPresenter?>(), ProductListCo
                     val price = NumberUtils.string2BigDecimal(mCheckedProduct?.price)
                     val amount = num.multiply(price)
                     tv_amount.text = "¥${
-                        amount.setScale(2, BigDecimal.ROUND_HALF_UP).toPlainString()
+                        amount.setScale(2, BigDecimal.ROUND_HALF_UP).stripTrailingZeros().toPlainString()
                     } (共计 ${mCheckedProduct?.set_meal ?: "--"} 台)"
                 }
             }
@@ -83,13 +83,13 @@ class SubmitOrderActivity : BaseActivity<ProductListPresenter?>(), ProductListCo
         btn_less.setOnClickListener {
             val num = NumberUtils.string2BigDecimal(tv_count.text.toString())
             if (num.toInt() > 1) {
-                tv_count.text = num.subtract(BigDecimal.ONE).toPlainString()
+                tv_count.text = num.subtract(BigDecimal.ONE).stripTrailingZeros().toPlainString()
             }
         }
 
         btn_add.setOnClickListener {
             val num = NumberUtils.string2BigDecimal(tv_count.text.toString())
-            tv_count.text = num.add(BigDecimal.ONE).toPlainString()
+            tv_count.text = num.add(BigDecimal.ONE).stripTrailingZeros().toPlainString()
         }
 
         btn_submit.setOnClickListener {
