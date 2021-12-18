@@ -21,7 +21,8 @@ data class DetailBean(
     var price: String?,
     var add_time: String?,
     var order_no: String?,
-    var customerName: String?
+    var customerName: String?,
+    var type:String?
 )
 
 

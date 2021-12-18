@@ -91,6 +91,7 @@
                             android:maxLines="1"
                             android:textColor="@color/color_333333"
                             android:textSize="14sp"
+                            android:visibility="gone"
                             app:layout_constraintEnd_toStartOf="@id/tv_amount_transfer"
                             app:layout_constraintHorizontal_weight="1"
                             app:layout_constraintStart_toStartOf="parent"
@@ -100,15 +101,17 @@
                             android:id="@+id/tv_amount_transfer"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="32dp"
                             android:layout_marginEnd="14dp"
+                            android:layout_marginStart="14dp"
                             android:gravity="center_horizontal"
                             android:maxLines="1"
                             android:textColor="@color/color_333333"
                             android:textSize="14sp"
-                            app:layout_constraintBaseline_toBaselineOf="@id/tv_amount_activation"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_weight="1"
-                            app:layout_constraintStart_toEndOf="@id/tv_amount_activation" />
+                            app:layout_constraintStart_toEndOf="@id/tv_amount_activation"
+                            app:layout_constraintTop_toBottomOf="@id/tv_date_description" />
 
                         <TextView
                             android:id="@+id/textView1"
@@ -120,6 +123,7 @@
                             android:text="昨日返现/元"
                             android:textColor="@color/color_999999"
                             android:textSize="12sp"
+                            android:visibility="gone"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="@id/tv_amount_activation"
                             app:layout_constraintStart_toStartOf="@id/tv_amount_activation"
@@ -129,18 +133,22 @@
                             android:id="@+id/textView2"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="20dp"
                             android:gravity="center_horizontal"
                             android:text="机具交易量/元"
                             android:textColor="@color/color_999999"
                             android:textSize="12sp"
-                            app:layout_constraintBaseline_toBaselineOf="@id/textView1"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="@id/tv_amount_transfer"
-                            app:layout_constraintStart_toStartOf="@id/tv_amount_transfer" />
+                            app:layout_constraintStart_toStartOf="@id/tv_amount_transfer"
+                            app:layout_constraintTop_toBottomOf="@id/tv_amount_transfer" />
 
                         <View
                             android:layout_width="0.5dp"
                             android:layout_height="0dp"
                             android:background="@color/color_e5e5e6"
+                            android:visibility="gone"
                             app:layout_constraintBottom_toBottomOf="@id/textView1"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"

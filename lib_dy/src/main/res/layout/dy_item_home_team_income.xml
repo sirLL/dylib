@@ -126,27 +126,27 @@
             android:text="激活量/台"
             android:textColor="@color/color_999999"
             android:textSize="12sp"
-            app:layout_constraintEnd_toStartOf="@id/textView5"
+            app:layout_constraintEnd_toStartOf="@id/tv_activation_title_team"
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_amount_team"
             app:layout_goneMarginStart="0dp" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/tv_activation_title_team"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="16dp"
-            android:text="团队收益/元"
             android:textColor="@color/color_999999"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toEndOf="@id/textView4"
             app:layout_constraintTop_toBottomOf="@id/tv_amount_team"
-            app:layout_goneMarginStart="16dp" />
+            app:layout_goneMarginStart="16dp"
+            tools:text="团队收益/元" />
 
         <TextView
             android:id="@+id/tv_activation_amount_team"
@@ -175,9 +175,9 @@
             android:textColor="@color/color_333333"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/textView5"
-            app:layout_constraintStart_toStartOf="@id/textView5"
-            app:layout_constraintTop_toBottomOf="@id/textView5"
+            app:layout_constraintEnd_toEndOf="@id/tv_activation_title_team"
+            app:layout_constraintStart_toStartOf="@id/tv_activation_title_team"
+            app:layout_constraintTop_toBottomOf="@id/tv_activation_title_team"
             tools:text="894.00" />
 
         <View

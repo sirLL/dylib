@@ -125,25 +125,25 @@
         android:layout_marginEnd="16dp"
         android:textColor="@color/color_999999"
         android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@id/textView5"
+        app:layout_constraintEnd_toStartOf="@id/tv_activation_title"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/divider1" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tv_activation_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
-        android:text="激活返现/元"
         android:textColor="@color/color_999999"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@id/tv_income_title"
-        app:layout_constraintTop_toBottomOf="@id/divider1" />
+        app:layout_constraintTop_toBottomOf="@id/divider1"
+        tools:text="激活返现/元" />
 
     <TextView
         android:id="@+id/tv_machine_amount"
@@ -172,8 +172,8 @@
         android:textColor="@color/color_333333"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/textView5"
-        app:layout_constraintStart_toStartOf="@id/textView5"
+        app:layout_constraintEnd_toEndOf="@id/tv_activation_title"
+        app:layout_constraintStart_toStartOf="@id/tv_activation_title"
         app:layout_constraintTop_toBottomOf="@id/tv_income_title"
         tools:text="894.00" />
 </androidx.constraintlayout.widget.ConstraintLayout>

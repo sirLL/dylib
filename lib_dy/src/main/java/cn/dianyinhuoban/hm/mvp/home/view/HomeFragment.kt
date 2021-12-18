@@ -245,6 +245,11 @@ class HomeFragment : BaseFragment<HomePresenter?>(), OnRefreshListener, HomeCont
         } else {
             "本月收益/元"
         }
+        tv_activation_title.text = if (tv_tab_day.isSelected) {
+            "今日激活返现/元"
+        } else {
+            "本月激活返现/元"
+        }
         tv_machine_amount.text = NumberUtils.numberScale(dayMonth?.inCome)
         tv_activation_amount.text = NumberUtils.numberScale(dayMonth?.activeTrans)
     }
@@ -264,9 +269,14 @@ class HomeFragment : BaseFragment<HomePresenter?>(), OnRefreshListener, HomeCont
         }
         tv_team_name.text = teamName
         tv_amount_title_team.text = if (tv_tab_day_team.isSelected) {
-            "团队今日总交易量/元"
+            "今日团队总交易量/元"
         } else {
-            "团队本月总交易量/元"
+            "本月团队总交易量/元"
+        }
+        tv_activation_title_team.text = if (tv_tab_day_team.isSelected) {
+            "今日收益/元"
+        } else {
+            "本月收益/元"
         }
         tv_amount_team.text = NumberUtils.numberScale(weekMonth?.total)
         tv_activation_amount_team.text = if (weekMonth?.activeMachine.isNullOrBlank()) {
