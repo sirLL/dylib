@@ -8,8 +8,14 @@ import com.wareroom.lib_http.response.Response
 import io.reactivex.Observable
 
 class WithdrawRecordModel : BaseModel(), WithdrawRecordContract.Model {
-    override fun fetchWithdrawRecord(page: Int): Observable<Response<List<WithdrawRecordBean>?>> {
+    override fun fetchWithdrawRecord(
+        startTime: String,
+        endTime: String,
+        type: String,
+        status: String,
+        page: Int
+    ): Observable<Response<List<WithdrawRecordBean>?>> {
         return mRetrofit.create(ApiService::class.java)
-            .fetchWithdrawRecord(page)
+            .fetchWithdrawRecord(startTime, endTime, type, status, page)
     }
 }

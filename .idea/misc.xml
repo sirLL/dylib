@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/workSpace/git/dylib/lib_dy/src/main/res/drawable/dy_shape_d0b376_radius_8.xml" value="0.1962962962962963" />
         <entry key="..\:/workSpace/git/dylib/lib_dy/src/main/res/layout/dy_activity_poster_edit.xml" value="0.24074074074074073" />
+        <entry key="..\:/workSpace/git/dylib/lib_dy/src/main/res/layout/dy_dialog_withdraw_record_date_picker.xml" value="0.36666666666666664" />
+        <entry key="..\:/workSpace/git/dylib/lib_dy/src/main/res/layout/dy_fragment_withdraw_record.xml" value="0.36666666666666664" />
+        <entry key="..\:/workSpace/git/dylib/lib_dy/src/main/res/layout/dy_item_dialog_withdraw_type_status.xml" value="0.36666666666666664" />
+        <entry key="..\:/workSpace/git/dylib/lib_dy/src/main/res/layout/dy_item_withdraw_record.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

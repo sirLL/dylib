@@ -96,60 +96,7 @@ class IncomeActivationDetailFragment : BaseListFragment<DetailBean?, IncomeDetai
         viewHolder?.itemView?.tv_time?.text =
             DateTimeUtils.getYYYYMMDDHHMMSS((itemData?.add_time?.toLong() ?: 0) * 1000)
         viewHolder?.itemView?.tv_no?.text = itemData?.order_no ?: "--"
-        viewHolder?.itemView?.tv_title?.text = when (itemData?.type) {
-            "1" -> {
-                "个人分润"
-            }
-            "2" -> {
-                "团队分润"
-            }
-            "3" -> {
-                if (itemData.customerName.isNullOrBlank()) {
-                    "激活返现"
-                } else {
-                    "激活返现(${itemData.customerName})"
-                }
-            }
-            "4" -> {
-                "提现"
-            }
-            "5" -> {
-                "个人分润月结补贴"
-            }
-            "6" -> {
-                "团队分润月结补贴"
-            }
-            "7" -> {
-                "系统补贴"
-            }
-            "8" -> {
-                "系统扣除"
-            }
-            "9" -> {
-                "运营中心收益"
-            }
-            "11" -> {
-                "盟主收益"
-            }
-            "12" -> {
-                "达标返现"
-            }
-            "13" -> {
-                "采购礼包激活额外奖励"
-            }
-            "14" -> {
-                "采购礼包直推奖励"
-            }
-            "15" -> {
-                "采购礼包间推奖励"
-            }
-            "16" -> {
-                "流量卡奖励"
-            }
-            else -> {
-                ""
-            }
-        }
+        viewHolder?.itemView?.tv_title?.text = itemData?.note ?: ""
     }
 
     override fun onItemClick(data: DetailBean?, position: Int) {

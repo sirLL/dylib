@@ -162,6 +162,10 @@ interface ApiService {
     @FormUrlEncoded
     @POST(URLConfig.URL_WITHDRAW_RECORD)
     fun fetchWithdrawRecord(
+        @Field("start_time") startTime: String,
+        @Field("end_time") endTime: String,
+        @Field("type") type: String,
+        @Field("status") status: String,
         @Field("page") page: Int,
     ): Observable<Response<List<WithdrawRecordBean>?>>
 

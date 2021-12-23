@@ -35,7 +35,7 @@ class WithdrawRecordFragment : BaseListFragment<WithdrawRecordBean, WithdrawReco
     }
 
     override fun onRequest(page: Int) {
-        mPresenter?.fetchWithdrawRecord(page)
+        mPresenter?.fetchWithdrawRecord("", "", "", "", page)
     }
 
     override fun bindWithdrawRecord(recordData: List<WithdrawRecordBean>?) {
@@ -58,21 +58,24 @@ class WithdrawRecordFragment : BaseListFragment<WithdrawRecordBean, WithdrawReco
         } else {
             "提现-${itemData.bankName}(${StringUtil.getBankCardEndNo(itemData.bankNo)})"
         }
-        viewHolder?.itemView?.tv_amount?.text = if (itemData == null) {
-            "--"
-        } else {
-            NumberUtils.formatMoney(itemData.amount)
-        }
-        viewHolder?.itemView?.tv_date?.text = if (itemData == null) {
-            "--"
-        } else {
-            DateTimeUtils.getYYYYMMDDHHMMSS(itemData.inputTime.toLong() * 1000)
-        }
-        viewHolder?.itemView?.tv_status?.text = if (itemData == null) {
-            "--"
-        } else {
-            getStatusName(itemData.status)
-        }
+        viewHolder?.itemView?.tv_amount?.text =
+            if (itemData == null || itemData.amount.isNullOrEmpty()) {
+                "--"
+            } else {
+                NumberUtils.formatMoney(itemData.amount)
+            }
+        viewHolder?.itemView?.tv_date?.text =
+            if (itemData == null || itemData?.inputTime.isNullOrEmpty()) {
+                "--"
+            } else {
+                DateTimeUtils.getYYYYMMDDHHMMSS(itemData.inputTime!!.toLong() * 1000)
+            }
+        viewHolder?.itemView?.tv_status?.text =
+            if (itemData == null || itemData?.status.isNullOrEmpty()) {
+                "--"
+            } else {
+                getStatusName(itemData.status!!)
+            }
     }
 
     override fun onItemClick(data: WithdrawRecordBean?, position: Int) {

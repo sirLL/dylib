@@ -16,11 +16,17 @@ class WithdrawRecordPresenter(view: WithdrawRecordContract.View) :
         return WithdrawRecordModel()
     }
 
-    override fun fetchWithdrawRecord(page: Int) {
+    override fun fetchWithdrawRecord(
+        startTime: String,
+        endTime: String,
+        type: String,
+        status: String,
+        page: Int
+    ) {
         if (!isDestroy) {
             mModel?.let {
                 addDispose(
-                    it.fetchWithdrawRecord(page)
+                    it.fetchWithdrawRecord(startTime, endTime, type, status, page)
                         .compose(SchedulerProvider.getInstance().applySchedulers())
                         .compose(ResponseTransformer.handleResult())
                         .subscribeWith(object :
