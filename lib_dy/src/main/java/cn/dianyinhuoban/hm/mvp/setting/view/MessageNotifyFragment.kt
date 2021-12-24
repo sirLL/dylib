@@ -163,17 +163,29 @@ class MessageNotifyFragment : BaseFragment<MessagePresenter>(), MessageContract.
             when (holder.itemViewType) {
                 VIEW_ITEM_MESSAGE -> {
                     val h = (holder as OtherViewHolder)
-                    h.itemView.tv_msg_title.text = data.title
-                    h.itemView.tv_msg_sub_title.text = data.subTitle
-                    h.itemView.tv_msg_content.text = data.content
+                    if ("1" == data.type) {
+                        h.itemView.tv_msg_title.text = "公告"
+                        h.itemView.tv_msg_sub_title.text = data.title
+                        h.itemView.tv_msg_content.text = data.subTitle
+                        h.itemView.tv_msg_sub_title.visibility = if (data.title.isNullOrBlank()) {
+                            View.GONE
+                        } else {
+                            View.VISIBLE
+                        }
+                    } else {
+                        h.itemView.tv_msg_title.text = data.title
+                        h.itemView.tv_msg_sub_title.text = data.subTitle
+                        h.itemView.tv_msg_content.text = data.content
+                        h.itemView.tv_msg_sub_title.visibility =
+                            if (data.subTitle.isNullOrBlank()) {
+                                View.GONE
+                            } else {
+                                View.VISIBLE
+                            }
+                    }
+
                     h.itemView.tv_msg_time.text =
                         DateTimeUtils.getYYYYMMDDHHMMSS((data.inputTime.toLong() * 1000))
-
-                    h.itemView.tv_msg_sub_title.visibility = if (data.subTitle.isNullOrBlank()) {
-                        View.GONE
-                    } else {
-                        View.VISIBLE
-                    }
                     when (data.type) {
                         "2", "11", "12", "15" -> {
                             h.itemView.img_msg_logo.setImageResource(R.drawable.dy_ic_msg_invite)
