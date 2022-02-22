@@ -13,6 +13,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import cn.dianyinhuoban.hm.DYHelper
+import cn.dianyinhuoban.hm.mvp.login.view.LoginActivity
 
 class MainActivity : AppCompatActivity() {
     companion object {
@@ -40,7 +41,8 @@ class MainActivity : AppCompatActivity() {
             DYHelper.openLoginPage(this@MainActivity, true)
         }
         findViewById<Button>(R.id.btn_test).setOnClickListener {
-            checkInput()
+//            checkInput()
+            startActivity(Intent(this,LoginActivity::class.java))
         }
     }
 
